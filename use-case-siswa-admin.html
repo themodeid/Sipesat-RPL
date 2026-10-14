@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TUGAS 4 RPL - USE CASE, ACTIVITY & SEQUENCE DIAGRAM (UNINDRA 2026) - KELOMPOK 7</title>
+  <!-- Mermaid.js CDN for client-side rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontSize: '12px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        primaryColor: '#e0f2fe',
+        primaryBorderColor: '#0284c7',
+        primaryTextColor: '#0f172a',
+        lineColor: '#334155',
+        signalColor: '#1e293b',
+        signalTextColor: '#0f172a'
+      },
+      flowchart: { useMaxWidth: true, curve: 'basis' }
+    });
+  </script>
+  <style>
+    @page {
+      size: A4;
+      margin: 2cm 1.5cm 2cm 2cm;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #111;
+      margin: 0 auto;
+      padding: 1.5cm 1.5cm;
+      max-width: 210mm;
+      background: #fff;
+    }
+    @media print {
+      body { padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+      .diagram-card { page-break-inside: avoid; }
+    }
+    .print-bar {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 1000;
+      background: #0f172a;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+    }
+    .print-btn {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: #7dd3fc; }
+    .header-box {
+      text-align: center;
+      border-bottom: 2.5px solid #111;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-box h1 {
+      font-size: 14pt;
+      margin: 0 0 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header-box h2 {
+      font-size: 12pt;
+      margin: 0 0 6px 0;
+      font-weight: normal;
+    }
+    .header-box p {
+      font-size: 10pt;
+      margin: 0;
+      color: #444;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 10.5pt;
+    }
+    .meta-table td {
+      padding: 4px 8px;
+      vertical-align: top;
+    }
+    .meta-table td.label {
+      width: 28%;
+      font-weight: bold;
+    }
+    h2.section-title {
+      font-size: 12pt;
+      text-transform: uppercase;
+      border-bottom: 1px solid #111;
+      padding-bottom: 4px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    p, li {
+      text-align: justify;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 10pt;
+    }
+    .data-table th, .data-table td {
+      border: 1px solid #333;
+      padding: 6px 8px;
+      vertical-align: middle;
+    }
+    .data-table th {
+      background-color: #f1f5f9;
+      font-weight: bold;
+      text-align: center;
+    }
+    .badge-siswa {
+      display: inline-block;
+      padding: 2px 6px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 9pt;
+      font-family: system-ui, sans-serif;
+    }
+    .badge-admin {
+      display: inline-block;
+      padding: 2px 6px;
+      background: #ede9fe;
+      color: #4338ca;
+      border: 1px solid #ddd6fe;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 9pt;
+      font-family: system-ui, sans-serif;
+    }
+    .diagram-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .diagram-title {
+      font-weight: bold;
+      font-size: 11pt;
+      margin-bottom: 8px;
+      color: #0f172a;
+      font-family: system-ui, sans-serif;
+    }
+    .pill-title {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 10pt;
+      margin-bottom: 10px;
+      font-family: system-ui, sans-serif;
+    }
+    .pill-blue { background: #1e3a8a; }
+    .pill-green { background: #065f46; }
+    .pill-purple { background: #6b21a8; }
+    .pill-slate { background: #334155; }
+    .two-col-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .step-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 10pt;
+    }
+    .step-box ol {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .step-box li {
+      margin-bottom: 8px;
+    }
+    .note-box {
+      background: #f8fafc;
+      border-left: 4px solid #0284c7;
+      padding: 10px 14px;
+      margin: 14px 0;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Bar -->
+  <div class="print-bar no-print">
+    <span>📄 Format Bahan Ajar UNINDRA (Pertemuan 04 & SRS)</span>
+    <button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF (A4)</button>
+  </div>
+
+  <div class="header-box">
+    <h1>UNIVERSITAS INDRAPRASTA PGRI (UNINDRA)</h1>
+    <h2>FAKULTAS TEKNIK DAN ILMU KOMPUTER — TEKNIK INFORMATIKA</h2>
+    <p>Format Standar Bahan Ajar RPL 2026: Use Case, Activity Diagram (Swimlane), & Sequence Diagram (BCE Pattern)</p>
+  </div>
+
+  <table class="meta-table">
+    <tr>
+      <td class="label">Mata Kuliah</td>
+      <td>: Rekayasa Perangkat Lunak (RPL) — Pertemuan 04</td>
+    </tr>
+    <tr>
+      <td class="label">Nama Projek</td>
+      <td>: Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT)</td>
+    </tr>
+    <tr>
+      <td class="label">Kelompok / Kelas</td>
+      <td>: Kelompok 7 / S1 Teknik Informatika</td>
+    </tr>
+    <tr>
+      <td class="label">Anggota Kelompok</td>
+      <td>: Adam Wahyu Kurniawan (202343500510), Fathu Rahman (202343500467), Surya Edi Saputra (202343500468), Rizqi Muh. Al Hakimi (202343500449)</td>
+    </tr>
+    <tr>
+      <td class="label">Berkas Master Draw.io</td>
+      <td>: <code>use-case-siswa-admin.drawio</code> (7 Halaman Tab XML Lengkap Sesuai Slide UNINDRA: Simbol, Siswa, Petugas, Terpadu, Use Case, Sequence BCE, RBAC)</td>
+    </tr>
+  </table>
+
+  <h2 class="section-title">1. Aturan Emas Pemodelan RPL UNINDRA (Pertemuan 04)</h2>
+  <div class="note-box">
+    <strong>Pedoman Hubungan Antar Diagram (Sesuai Slide 9 & 27):</strong>
+    <ol style="margin: 4px 0 0 0; padding-left: 20px;">
+      <li><strong>Activity Diagram dibuat dari USE CASE pada Use Case Diagram</strong> (jumlah diagram minimal sama dengan use case utama).</li>
+      <li><strong>Sequence Diagram dibuat dari Activity Diagram</strong> (menerjemahkan urutan aksi internal ke interaksi antar-objek).</li>
+      <li><strong>Pola BCE (Boundary - Control - Entity)</strong> wajib diterapkan pada Sequence Diagram sesuai Slide 20 & 25-26.</li>
+    </ol>
+  </div>
+
+  <h2 class="section-title">2. Daftar Simbol Resmi Bahan Ajar (Format Slide 7, 8, 18, 19, 20)</h2>
+  <p>
+    Berikut adalah tabel kamus simbol resmi Unified Modeling Language (UML) yang diajarkan pada modul pertemuan 04 RPL UNINDRA:
+  </p>
+
+  <h3 style="font-size: 11pt; color: #1e3a8a; margin-top: 14px; margin-bottom: 6px;">A. Simbol Activity Diagram (Slide 7 & 8)</h3>
+  <table class="data-table" style="margin-top: 4px;">
+    <thead>
+      <tr style="background-color: #cbd5e1;">
+        <th style="width: 25%; text-align: left; padding-left: 12px;">NAMA SIMBOL</th>
+        <th style="width: 20%; text-align: center;">SIMBOL</th>
+        <th style="width: 55%; text-align: left; padding-left: 12px;">DESKRIPSI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">1. STATUS AWAL</td>
+        <td style="text-align: center;">
+          <svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="#000" /></svg>
+        </td>
+        <td>
+          <ul style="margin: 0; padding-left: 18px;">
+            <li>Status awal aktivitas sistem</li>
+            <li>Diagram aktivitas memiliki sebuah status awal</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">2. AKTIVITAS/STATE</td>
+        <td style="text-align: center;">
+          <div style="border: 1.5px solid #000; border-radius: 6px; padding: 4px 8px; font-size: 8pt; display: inline-block; background: #fff;">Aktivitas</div>
+        </td>
+        <td>
+          <ul style="margin: 0; padding-left: 18px;">
+            <li>Aktivitas yang dilakukan sistem</li>
+            <li>Aktivitas biasanya diawali dengan kata kerja</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">3. PERCABANGAN/ DECISION</td>
+        <td style="text-align: center;">
+          <svg width="40" height="26" viewBox="0 0 40 26"><polygon points="20,2 38,13 20,24 2,13" fill="#fff" stroke="#000" stroke-width="1.5" /></svg>
+        </td>
+        <td>
+          <ul style="margin: 0; padding-left: 18px;">
+            <li>Percabangan dimana jika ada pilihan aktivitas lebih dari satu</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">4. SWIMLANE</td>
+        <td style="text-align: center;">
+          <div style="border: 1.5px solid #000; width: 44px; height: 32px; margin: 0 auto; background: #fff;">
+            <div style="border-bottom: 1.5px solid #000; height: 10px; font-size: 6pt; line-height: 10px;">Aktor</div>
+          </div>
+        </td>
+        <td>
+          <ul style="margin: 0; padding-left: 18px;">
+            <li>Memisahkan organisasi bisnis yang bertanggung jawab terhadap aktivitas yang terjadi</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">5. STATUS AKHIR / END POINT</td>
+        <td style="text-align: center;">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="14" fill="none" stroke="#000" stroke-width="2" />
+            <circle cx="16" cy="16" r="9" fill="#000" />
+          </svg>
+        </td>
+        <td>
+          <ul style="margin: 0; padding-left: 18px;">
+            <li>Status akhir dari aktivitas sistem</li>
+            <li>Menandakan seluruh proses bisnis telah selesai</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">6. TRANSISI (SOLID LINE)</td>
+        <td style="text-align: center;">
+          <svg width="45" height="16" viewBox="0 0 45 16">
+            <line x1="2" y1="8" x2="36" y2="8" stroke="#000" stroke-width="2" />
+            <polygon points="36,4 43,8 36,12" fill="#000" />
+          </svg>
+        </td>
+        <td>
+          <ul style="margin: 0; padding-left: 18px;">
+            <li>Menunjukkan arah aliran kontrol dari satu aktivitas ke aktivitas selanjutnya</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-size: 11pt; color: #1e3a8a; margin-top: 16px; margin-bottom: 6px;">B. Simbol Sequence Diagram Pola BCE (Slide 18, 19 & 20)</h3>
+  <table class="data-table" style="margin-top: 4px;">
+    <thead>
+      <tr style="background-color: #cbd5e1;">
+        <th style="width: 25%; text-align: left; padding-left: 12px;">NAMA SIMBOL</th>
+        <th style="width: 20%; text-align: center;">SIMBOL</th>
+        <th style="width: 55%; text-align: left; padding-left: 12px;">DESKRIPSI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">1. AKTOR</td>
+        <td style="text-align: center;">
+          <svg width="24" height="34" viewBox="0 0 24 34">
+            <circle cx="12" cy="7" r="5" fill="#fff" stroke="#000" stroke-width="1.5" />
+            <line x1="12" y1="12" x2="12" y2="24" stroke="#000" stroke-width="1.5" />
+            <line x1="4" y1="17" x2="20" y2="17" stroke="#000" stroke-width="1.5" />
+            <line x1="12" y1="24" x2="5" y2="32" stroke="#000" stroke-width="1.5" />
+            <line x1="12" y1="24" x2="19" y2="32" stroke="#000" stroke-width="1.5" />
+          </svg>
+        </td>
+        <td>Merepresentasikan entitas luar yang berinteraksi dengan sistem (Siswa / Admin).</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">2. BOUNDARY CLASS</td>
+        <td style="text-align: center;">
+          <svg width="34" height="28" viewBox="0 0 34 28">
+            <line x1="4" y1="2" x2="4" y2="26" stroke="#000" stroke-width="1.5" />
+            <line x1="4" y1="14" x2="14" y2="14" stroke="#000" stroke-width="1.5" />
+            <circle cx="23" cy="14" r="9" fill="#fff" stroke="#000" stroke-width="1.5" />
+          </svg>
+        </td>
+        <td>Berupa tepi dari sistem (antarmuka pengguna / UI) seperti LoginUI, FormPengajuanUI.</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">3. CONTROL CLASS</td>
+        <td style="text-align: center;">
+          <svg width="30" height="30" viewBox="0 0 30 30">
+            <circle cx="15" cy="15" r="10" fill="#fff" stroke="#000" stroke-width="1.5" />
+            <path d="M 15,5 A 10,10 0 0,1 25,15" fill="none" stroke="#000" stroke-width="1.5" />
+            <polygon points="15,2 15,8 19,5" fill="#000" />
+          </svg>
+        </td>
+        <td>Mengatur alur proses logika bisnis antar-objek (AuthController, SuratController).</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; padding-left: 12px;">4. ENTITY CLASS</td>
+        <td style="text-align: center;">
+          <svg width="30" height="30" viewBox="0 0 30 30">
+            <circle cx="15" cy="13" r="10" fill="#fff" stroke="#000" stroke-width="1.5" />
+            <line x1="3" y1="26" x2="27" y2="26" stroke="#000" stroke-width="1.8" />
+          </svg>
+        </td>
+        <td>Menunjukkan penyimpanan data / database (User, SuratPengajuan).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-title">3. Use Case Diagram (2 Role: Siswa & Admin)</h2>
+  <p>
+    Sesuai Slide 10 bahan ajar, Use Case memetakan bagaimana <strong>Siswa</strong> (pemohon) dan <strong>Admin</strong> (verifikator & pengelola) berinteraksi dengan batas sistem (system boundary):
+  </p>
+
+  <div class="diagram-card">
+    <div class="diagram-title">Diagram Use Case SIPESAT (Mermaid Overview)</div>
+    <div class="mermaid">
+    flowchart LR
+      subgraph ACTORS_LEFT ["Aktor Pemohon"]
+        Siswa["👤 Siswa<br/>(Aktor Pemohon)"]
+      end
+
+      subgraph SYSTEM_BOUNDARY ["Boundary: Sistem Informasi Pengajuan Surat Siswa (SIPESAT)"]
+        direction TB
+        
+        subgraph MOD_AUTH ["Modul 1: Autentikasi & Akun"]
+          UC01(["UC-01: Login Sistem"])
+          UC01B(["UC-01B: Validasi JWT"])
+          UC02(["UC-02: Registrasi Akun Mandiri"])
+          UC03(["UC-03: Kelola Profil & Sandi"])
+          UC04(["UC-04: Logout Sesi"])
+        end
+
+        subgraph MOD_SISWA ["Modul 2: Fungsionalitas Siswa"]
+          UC05(["UC-05: Lihat Katalog & Syarat"])
+          UC06(["UC-06: Mengajukan Permohonan Surat"])
+          UC07(["UC-07: Unggah Berkas Persyaratan"])
+          UC08(["UC-08: Melacak Status Real-time"])
+          UC08A(["UC-08A: Lihat Catatan Revisi"])
+          UC09(["UC-09: Melihat Riwayat Surat"])
+          UC10(["UC-10: Unduh / Cetak PDF & QR"])
+        end
+
+        subgraph MOD_ADMIN ["Modul 3: Fungsionalitas Admin"]
+          UC11(["UC-11: Dashboard & Statistik"])
+          UC12(["UC-12: Antrean Pengajuan Masuk"])
+          UC13(["UC-13: Verifikasi Berkas Siswa"])
+          UC14(["UC-14: Approve Permohonan"])
+          UC14A(["UC-14A: Terbitkan No. Surat & QR"])
+          UC15(["UC-15: Reject / Minta Revisi"])
+          UC15A(["UC-15A: Input Catatan Penolakan"])
+          UC16(["UC-16: Kelola Master Jenis Surat"])
+          UC17(["UC-17: Kelola Data Siswa & Akun"])
+          UC18(["UC-18: Ekspor Rekapitulasi Laporan"])
+        end
+      end
+
+      subgraph ACTORS_RIGHT ["Aktor Administrator"]
+        Admin["👨‍💼 Admin<br/>(Pengelola & Verifikator)"]
+      end
+
+      Siswa --- UC01
+      Siswa --- UC02
+      Siswa --- UC03
+      Siswa --- UC04
+      Siswa --- UC05
+      Siswa --- UC06
+      Siswa --- UC08
+      Siswa --- UC09
+      Siswa --- UC10
+
+      Admin --- UC01
+      Admin --- UC03
+      Admin --- UC04
+      Admin --- UC11
+      Admin --- UC12
+      Admin --- UC13
+      Admin --- UC14
+      Admin --- UC15
+      Admin --- UC16
+      Admin --- UC17
+      Admin --- UC18
+
+      UC01 -.->|"<<include>>"| UC01B
+      UC06 -.->|"<<include>>"| UC07
+      UC08A -.->|"<<extend>>"| UC08
+      UC14 -.->|"<<include>>"| UC14A
+      UC15 -.->|"<<include>>"| UC15A
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-title">3. Activity Diagrams (Format Swimlane & Uraian Langkah Sesuai Slide 5-14)</h2>
+  <p>
+    Sesuai slide bahan ajar UNINDRA (Slide 5-14), activity diagram memodelkan alur proses bisnis menggunakan <strong>Swimlane 2 Kolom (Aktor di kiri vs Sistem di kanan)</strong> untuk masing-masing peran, serta dilengkapi <strong>Teks Uraian Langkah Bernomor</strong> di samping diagram. Di samping itu, tersedia diagram terpadu 3-swimlane untuk memperlihatkan interaksi end-to-end antar peran:
+  </p>
+
+  <!-- Section 3.1: Role Siswa (Tab 2A) -->
+  <div class="diagram-card" style="border: 2px solid #0284c7; background: #fafcff;">
+    <div class="pill-title pill-blue" style="background: #0284c7;">TAB 2A DRAW.IO: ACTIVITY DIAGRAM ALUR LAYANAN SISWA (ROLE SISWA)</div>
+    <div style="font-size: 10pt; color: #475569; margin-bottom: 12px;">
+      Diagram ini memodelkan alur proses bisnis pengajuan surat mandiri oleh peran <strong>Siswa (Aktor Pemohon)</strong> terhadap <strong>Sistem (SIPESAT Web)</strong> dalam Swimlane 2 Kolom sesuai kaidah Slide 5–7 dan Tab 2A Draw.io.
+    </div>
+    <div class="two-col-layout">
+      <div>
+        <div class="mermaid">
+        flowchart TD
+          subgraph Siswa ["Siswa (Aktor Pemohon)"]
+            S_START((●)) --> S1["Buka Web SIPESAT & Login Akun Siswa (NISN & Sandi)"]
+            S_DASH_IN --> S2["Pilih Menu 'Pengajuan Surat'"]
+            S_FORM_IN --> S3["Pilih Jenis Surat, Isi Keperluan & Unggah Berkas (PDF <= 2MB)"]
+            S3 --> S4["Klik Tombol 'Kirim Permohonan'"]
+            S_REJ["Menerima Catatan Koreksi & Perbaiki Berkas Unggahan"]
+            S_SAVE_IN --> S5["Pantau Tahapan Status via Stepper Tracking"]
+            S_STEP_IN --> S6["Menerima Notifikasi Selesai & Klik 'Unduh Surat PDF'"]
+            S6 --> S7["Menyimpan Berkas PDF Resmi Ber-QR Code di Perangkat"]
+            S_END(((⦿)))
+            S7 --> S_END
+          end
+
+          subgraph Sistem ["Sistem (Aplikasi Web SIPESAT)"]
+            S1 --> SYS1["Validasi Kredensial & Tampilkan Dashboard Siswa"]
+            SYS1 --> S_DASH_IN
+            S2 --> SYS2["Tampilkan Formulir Pengajuan & Katalog Jenis Surat + Syarat"]
+            SYS2 --> S_FORM_IN
+            S4 --> SYS3["Validasi Kelengkapan Form & Ukuran/Format File"]
+            SYS3 --> SYS_DEC{"Berkas Lengkap & Ukuran <= 2MB?"}
+            SYS_DEC -->|Tidak| SYS_ERR["Tampilkan Peringatan 'Ukuran > 2MB / Form Kurang'"]
+            SYS_ERR --> S3
+            SYS_DEC -->|Ya| SYS4["Simpan ke Database (DIAJUKAN), Terbitkan Resi Tiket, & Teruskan ke TU"]
+            SYS4 --> S_SAVE_IN
+            S5 --> SYS5["Sajikan Informasi Posisi Surat: DIAJUKAN / DIPROSES / SELESAI"]
+            SYS5 --> S_STEP_IN
+            S6 --> SYS6["Generate Stream Berkas PDF Ber-Kop Resmi & QR Code Validasi"]
+            SYS6 --> S7
+          end
+        </div>
+      </div>
+      <div class="step-box">
+        <strong style="color: #0369a1; font-size: 11pt;">📋 Uraian 10 Alur Kerja Siswa (Sesuai Slide 5-7):</strong>
+        <ol style="margin-top: 8px;">
+          <li><strong>Inisiasi Login</strong>: Siswa membuka website SIPESAT dan memasukkan NISN serta kata sandi terdaftar.</li>
+          <li><strong>Validasi Kredensial</strong>: Sistem memeriksa kredensial; jika valid, sistem menyajikan antarmuka Dashboard Siswa.</li>
+          <li><strong>Akses Layanan</strong>: Siswa memilih menu <em>'Pengajuan Surat'</em> pada bilah navigasi.</li>
+          <li><strong>Penyajian Formulir</strong>: Sistem memuat katalog master jenis surat (Aktif Sekolah, Rekomendasi, Izin, Mutasi) beserta daftar persyaratan dokumen.</li>
+          <li><strong>Pengisian & Unggah</strong>: Siswa memilih jenis surat, mengisi alasan keperluan, dan mengunggah berkas persyaratan (maksimal 2 MB).</li>
+          <li><strong>Pengiriman</strong>: Siswa menekan tombol <em>'Kirim Permohonan'</em>.</li>
+          <li><strong>Validasi Berkas</strong>: Sistem memeriksa kelengkapan form dan ukuran berkas:
+            <br/>• <em>Jika Tidak Valid</em>: Sistem menampilkan peringatan dan meminta siswa mengoreksi unggahan.
+            <br/>• <em>Jika Valid</em>: Sistem menyimpan data dengan status <strong>DIAJUKAN</strong>, menerbitkan resi tiket unik, dan meneruskan permohonan ke antrean Petugas TU.
+          </li>
+          <li><strong>Pemantauan Status</strong>: Siswa memantau perjalanan surat via timeline stepper tracking real-time.</li>
+          <li><strong>Pengunduhan PDF</strong>: Setelah status berubah menjadi <strong>SELESAI</strong>, siswa menekan tombol <em>'Unduh Surat PDF'</em> dan sistem mengalirkan file digital resmi ber-QR Code ke perangkat siswa.</li>
+          <li><strong>Selesai</strong>: Rangkaian proses pengajuan surat oleh peran Siswa selesai tuntas.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Section 3.2: Role Petugas TU (Tab 2B) -->
+  <div class="diagram-card" style="border: 2px solid #7c3aed; background: #faf5ff;">
+    <div class="pill-title pill-purple" style="background: #7c3aed;">TAB 2B DRAW.IO: ACTIVITY DIAGRAM ALUR VERIFIKASI & APPROVAL (ROLE PETUGAS TU)</div>
+    <div style="font-size: 10pt; color: #475569; margin-bottom: 12px;">
+      Diagram ini memodelkan alur proses verifikasi, penolakan revisi, dan pengesahan surat resmi oleh peran <strong>Petugas TU (Aktor Verifikator)</strong> terhadap <strong>Sistem (SIPESAT Web)</strong> dalam Swimlane 2 Kolom sesuai kaidah Slide 5–7 dan Tab 2B Draw.io.
+    </div>
+    <div class="two-col-layout">
+      <div>
+        <div class="mermaid">
+        flowchart TD
+          subgraph Petugas ["Petugas (Aktor Verifikator & Pengesah TU)"]
+            P_START((●)) --> P1["Buka Web SIPESAT & Login Panel Admin TU"]
+            P_DASH_IN --> P2["Buka Menu 'Antrean Surat Masuk'"]
+            P_INBOX_IN --> P3["Pilih Permohonan Siswa & Klik 'Pratinjau (Preview) Berkas'"]
+            P_PREV_IN --> P4["Periksa Kesesuaian Syarat & Keabsahan Dokumen Lampiran"]
+            P4 --> P_DEC{"Apakah Berkas Sah & Disetujui?"}
+            
+            P_DEC -->|Tidak / Tolak| P_REJ1["Tulis Catatan / Alasan Penolakan pada Form Koreksi"]
+            P_REJ1 --> P_REJ2["Klik Tombol 'Tolak & Minta Revisi'"]
+            P_END_REJ(((⦿)))
+            P_REJ2 --> P_END_REJ
+
+            P_DEC -->|Ya / Setujui| P_APP1["Input Nomor Agenda Masuk TU"]
+            P_APP1 --> P_APP2["Klik Tombol 'Setujui / Approve Permohonan'"]
+            P_END_APP(((⦿)))
+            P_APP2 --> P_END_APP
+          end
+
+          subgraph Sistem ["Sistem (Aplikasi Web SIPESAT)"]
+            P1 --> SYS_P1["Validasi Kredensial & Tampilkan Dashboard Staf TU"]
+            SYS_P1 --> P_DASH_IN
+            P2 --> SYS_P2["Kueri Data Berstatus DIAJUKAN & Sajikan Tabel Antrean"]
+            SYS_P2 --> P_INBOX_IN
+            P3 --> SYS_P3["Ambil Berkas dari Storage & Tampilkan Pratinjau Dokumen"]
+            SYS_P3 --> P_PREV_IN
+            P_REJ2 --> SYS_REJ["UPDATE Status: 'DITOLAK' & Simpan Catatan Koreksi ke DB"]
+            SYS_REJ --> SYS_REJ_NOTIF["Kirim Notifikasi Koreksi & Catatan Revisi ke Siswa"]
+            P_APP1 --> SYS_APP1["Generate Nomor Surat Resmi Sekolah Otomatis"]
+            P_APP2 --> SYS_APP2["Generate QR Code Validasi TTD Digital Terenkripsi"]
+            SYS_APP2 --> SYS_APP3["Kompilasi Kop Surat, Data & QR ke PDF, Set Status 'SELESAI' & Notifikasi Siswa"]
+          end
+        </div>
+      </div>
+      <div class="step-box">
+        <strong style="color: #6d28d9; font-size: 11pt;">📋 Uraian 10 Alur Kerja Petugas TU (Sesuai Slide 5-7):</strong>
+        <ol style="margin-top: 8px;">
+          <li><strong>Autentikasi Petugas</strong>: Petugas TU membuka aplikasi SIPESAT dan login ke panel staf TU.</li>
+          <li><strong>Penyajian Dashboard</strong>: Sistem memvalidasi hak akses Admin/TU dan menampilkan dasbor rekapitulasi surat.</li>
+          <li><strong>Akses Antrean Masuk</strong>: Petugas memilih menu <em>'Antrean Surat Masuk'</em>.</li>
+          <li><strong>Pemuatan Data</strong>: Sistem mengambil seluruh permohonan berstatus <strong>DIAJUKAN</strong> dari database.</li>
+          <li><strong>Pemeriksaan Lampiran</strong>: Petugas mengklik tombol <em>'Pratinjau'</em> untuk membedah dokumen pendukung (Kartu Pelajar, Bukti Bayar, dsb.).</li>
+          <li><strong>Uji Kelayakan & Keputusan</strong>: Petugas mengevaluasi kesesuaian berkas:
+            <br/>• <strong>Jika Ditolak ('Tidak')</strong>: Petugas mengisikan catatan koreksi pada kolom revisi, lalu menekan <em>'Tolak & Minta Revisi'</em>. Sistem memperbarui status menjadi <strong>DITOLAK</strong> dan mengirimkan notifikasi revisi ke akun siswa.
+            <br/>• <strong>Jika Disetujui ('Ya')</strong>: Petugas memasukkan nomor agenda masuk TU, lalu menekan <em>'Setujui / Approve Permohonan'</em>.
+          </li>
+          <li><strong>Penomoran Otomatis</strong>: Sistem membuat penomoran surat dinas resmi sekolah secara berurutan dan unik.</li>
+          <li><strong>Tanda Tangan Digital (QR)</strong>: Sistem menghasilkan QR Code kriptografis validasi keabsahan dokumen.</li>
+          <li><strong>Penerbitan Berkas Akhir</strong>: Sistem merender kop surat, isi dokumen, dan QR Code ke dalam berkas PDF berstatus <strong>SELESAI</strong>.</li>
+          <li><strong>Selesai</strong>: Alur operasional verifikasi dan penerbitan surat selesai tuntas.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Activity Master: Dari Siswa Sampai Petugas (Tab 2C) -->
+  <div class="diagram-card" style="border: 2px solid #059669; background: #f0fdf4;">
+    <div class="pill-title pill-green" style="background: #059669;">TAB 2C DRAW.IO: ACTIVITY DIAGRAM TERPADU (SISWA S.D PETUGAS)</div>
+    <div style="font-size: 10pt; color: #475569; margin-bottom: 12px;">
+      Diagram ini memodelkan keseluruhan proses bisnis terpadu dalam 3 Swimlane: <strong>Siswa (Pemohon)</strong> &rarr; <strong>Sistem (SIPESAT)</strong> &rarr; <strong>Petugas (Verifikator TU)</strong> sesuai format Tab 2C Draw.io.
+    </div>
+    <div class="two-col-layout">
+      <div>
+        <div class="mermaid">
+        flowchart TD
+          subgraph Siswa ["Siswa (Aktor Pemohon)"]
+            S_START((●)) --> S1["Buka Website SIPESAT & Login Akun Siswa"]
+            S1 --> S2["Pilih Menu 'Pengajuan' & Pilih Jenis Surat"]
+            S2 --> S3["Isi Formulir Keperluan & Unggah Berkas Syarat (Maks 2MB)"]
+            S3 --> S4["Klik Tombol 'Kirim Permohonan'"]
+            S_REJ["Menerima Catatan Revisi & Perbaiki Berkas Unggahan"]
+            S_OK["Menerima Notifikasi Surat Selesai & Unduh PDF Ber-QR Code"]
+            S_END(((⦿)))
+            S_OK --> S_END
+          end
+
+          subgraph Sistem ["Sistem (SIPESAT Web)"]
+            SYS_VAL["Validasi Kelengkapan Form & Format/Ukuran Berkas"]
+            SYS_DEC{"Berkas & Data Lengkap?"}
+            SYS_ERR["Tampilkan Pesan Peringatan 'Ukuran > 2MB / Form Kosong'"]
+            SYS_SAVE["Simpan ke DB (Status: DIAJUKAN) & Terbitkan Resi Tiket Unik"]
+            SYS_PUSH["Teruskan Permohonan ke Antrean Meja Petugas"]
+            SYS_REJ["UPDATE Status: 'DITOLAK' & Kirim Catatan Revisi ke Siswa"]
+            SYS_APP["Generate Nomor Surat Resmi Sekolah & Buat QR Code TTD Digital"]
+            SYS_PDF["Kompilasi Kop Surat, Data & QR ke PDF, Set Status: 'SELESAI'"]
+
+            SYS_VAL --> SYS_DEC
+            SYS_DEC -->|Tidak| SYS_ERR
+            SYS_DEC -->|Ya| SYS_SAVE
+            SYS_SAVE --> SYS_PUSH
+            SYS_APP --> SYS_PDF
+          end
+
+          subgraph Petugas ["Petugas (Aktor Verifikator TU)"]
+            P_LOGIN["Petugas Login ke Panel TU & Buka Antrean Surat Masuk"]
+            P_REVIEW["Tinjau Data Identitas Siswa & Periksa Lampiran Berkas"]
+            P_DEC{"Berkas Sah & Disetujui?"}
+            P_REJ["Input Catatan Koreksi & Klik 'Tolak & Minta Revisi'"]
+            P_APP["Input No. Agenda Masuk & Klik Tombol 'Setujui / Approve'"]
+
+            P_LOGIN --> P_REVIEW
+            P_REVIEW --> P_DEC
+            P_DEC -->|Tidak| P_REJ
+            P_DEC -->|Ya| P_APP
+          end
+
+          S4 --> SYS_VAL
+          SYS_ERR --> S3
+          SYS_PUSH --> P_LOGIN
+          P_REJ --> SYS_REJ
+          SYS_REJ --> S_REJ
+          S_REJ --> S3
+          P_APP --> SYS_APP
+          SYS_PDF --> S_OK
+        </div>
+      </div>
+      <div class="step-box">
+        <strong style="color: #0369a1; font-size: 11pt;">📋 Uraian 11 Alur Proses Kerja (Siswa s.d Petugas):</strong>
+        <ol style="margin-top: 8px;">
+          <li><strong>Inisiasi Siswa</strong>: Siswa membuka website SIPESAT dan login menggunakan NISN & kata sandi.</li>
+          <li><strong>Pemilihan Layanan</strong>: Siswa memilih jenis surat yang dibutuhkan (Surat Aktif Sekolah, Rekomendasi, Izin/Dispensasi, Pindah Sekolah).</li>
+          <li><strong>Pengisian & Unggah Berkas</strong>: Siswa mengisi keperluan dan mengunggah berkas persyaratan (format PDF/JPG maks 2MB).</li>
+          <li><strong>Pengiriman</strong>: Siswa mengklik tombol <em>'Kirim Permohonan'</em>.</li>
+          <li><strong>Validasi Sistem</strong>: Sistem memeriksa kelengkapan form dan ukuran berkas:
+            <br/>• <em>Jika Tidak Valid</em>: Tampilkan peringatan, kembali ke pengisian form.
+            <br/>• <em>Jika Valid</em>: Simpan ke database dengan status <strong>DIAJUKAN</strong>, terbitkan tiket resi, dan teruskan ke meja Petugas.
+          </li>
+          <li><strong>Pemeriksaan Petugas</strong>: Petugas TU login ke panel admin, membuka antrean surat masuk, dan meninjau keabsahan berkas permohonan.</li>
+          <li><strong>Keputusan Petugas</strong>:
+            <br/>• <em>Jika Ditolak</em>: Petugas mengisi catatan revisi dan klik <em>'Tolak & Minta Revisi'</em>. Sistem meng-update status menjadi <strong>DITOLAK</strong> dan meneruskan notifikasi revisi ke siswa.
+            <br/>• <em>Jika Disetujui</em>: Petugas memasukkan nomor agenda masuk dan klik <em>'Setujui / Approve'</em>.
+          </li>
+          <li><strong>Penerbitan Digital Sistem</strong>: Sistem secara otomatis men-generate penomoran surat resmi sekolah dan membuat QR Code validasi tanda tangan digital.</li>
+          <li><strong>Kompilasi Dokumen</strong>: Sistem menggabungkan kop resmi sekolah, identitas siswa, dan QR Code ke dalam berkas PDF resmi, lalu mengubah status menjadi <strong>SELESAI</strong>.</li>
+          <li><strong>Unduh Berkas Resmi</strong>: Siswa menerima notifikasi bahwa surat telah siap dan dapat mengunduh atau mencetak berkas PDF resmi ber-QR Code.</li>
+          <li><strong>Selesai</strong>: Keseluruhan alur operasional persuratan selesai tuntas.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Activity 1: Login -->
+  <div class="diagram-card">
+    <div class="pill-title pill-blue">1. ACTIVITY DIAGRAM LOGIN (Sesuai Slide 11)</div>
+    <div class="two-col-layout">
+      <div>
+        <div class="mermaid">
+        flowchart TD
+          subgraph Pengguna ["Pengguna (Siswa / Admin)"]
+            A1((●)) --> A2["Buka Aplikasi"]
+            A2 --> A3["Input NISN/Email & Sandi"]
+            A3 --> A4["Klik Tombol Login"]
+          end
+          subgraph Sistem ["Sistem SIPESAT"]
+            A4 --> S1["Validasi Kredensial & Role"]
+            S1 --> D1{"Data Valid?"}
+            D1 -->|Ya| S2["Tampilkan Dashboard"]
+            D1 -->|Tidak| S3["Tampilkan Pesan Error"]
+            S2 --> E1(((⦿)))
+            S3 --> E1
+          end
+        </div>
+      </div>
+      <div class="step-box">
+        <strong>Uraian Alur Proses Login:</strong>
+        <ol>
+          <li>Pengguna (Siswa atau Admin) membuka aplikasi SIPESAT.</li>
+          <li>Pengguna memasukkan NISN/Email dan kata sandi.</li>
+          <li>Pengguna mengklik tombol Login.</li>
+          <li>Sistem melakukan validasi data akun:
+            <br/>• Jika <strong>'Ya' (valid)</strong>, sistem membuka Dashboard sesuai hak akses peran.
+            <br/>• Jika <strong>'Tidak' (gagal)</strong>, maka sistem menampilkan pesan kesalahan.</li>
+          <li>Selesai.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity 2: Pengajuan Surat -->
+  <div class="diagram-card">
+    <div class="pill-title pill-green">2. ACTIVITY DIAGRAM PENGAJUAN SURAT (Sesuai Slide 12)</div>
+    <div class="two-col-layout">
+      <div>
+        <div class="mermaid">
+        flowchart TD
+          subgraph Siswa ["Siswa"]
+            B1((●)) --> B2["Pilih Menu Pengajuan Surat"]
+            B3["Isi Form Keperluan & Unggah Berkas"] --> B4["Klik Tombol Simpan Pengajuan"]
+          end
+          subgraph Sistem ["Sistem SIPESAT"]
+            B2 --> S4["Tampilkan Form & Katalog Syarat"]
+            S4 --> B3
+            B4 --> S5["Validasi Form & Ukuran File"]
+            S5 --> D2{"Data Lengkap?"}
+            D2 -->|Ya| S6["Simpan ke DB & Set Status DIAJUKAN"]
+            D2 -->|Tidak| S7["Tampilkan Pesan Kesalahan"]
+            S6 --> E2(((⦿)))
+            S7 --> E2
+          end
+        </div>
+      </div>
+      <div class="step-box">
+        <strong>Uraian Alur Pengajuan Surat:</strong>
+        <ol>
+          <li>Siswa memilih menu Pengajuan Surat.</li>
+          <li>Sistem menampilkan formulir pengajuan dan katalog syarat berkas.</li>
+          <li>Siswa mengisi keperluan dan mengunggah berkas persyaratan (maks 2MB).</li>
+          <li>Siswa mengklik tombol Simpan Pengajuan.</li>
+          <li>Sistem memvalidasi kelengkapan form dan file:
+            <br/>• Jika <strong>'Ya' (lengkap)</strong>, sistem menyimpan ke database, memberikan status DIAJUKAN, dan menampilkan resi.
+            <br/>• Jika <strong>'Tidak'</strong>, sistem menampilkan pesan peringatan koreksi.</li>
+          <li>Selesai.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Activity 3: Verifikasi & Approval -->
+  <div class="diagram-card">
+    <div class="pill-title pill-purple">3. ACTIVITY DIAGRAM VERIFIKASI & APPROVAL (Sesuai Slide 13)</div>
+    <div class="two-col-layout">
+      <div>
+        <div class="mermaid">
+        flowchart TD
+          subgraph Admin ["Admin"]
+            C1((●)) --> C2["Pilih Antrean Surat Masuk"]
+            C3["Periksa Berkas & Pilih Aksi"] --> D3{"Disetujui?"}
+            D3 -->|Ya| C4["Klik Tombol Approve"]
+            D3 -->|Tidak| C5["Input Catatan & Klik Tolak"]
+          end
+          subgraph Sistem ["Sistem SIPESAT"]
+            C2 --> S8["Tampilkan Detail & Pratinjau Berkas"]
+            S8 --> C3
+            C4 --> S9["Generate No. Surat, QR & Status SELESAI"]
+            C5 --> S10["Simpan Catatan & Set Status DITOLAK"]
+            S9 --> E3(((⦿)))
+            S10 --> E3
+          end
+        </div>
+      </div>
+      <div class="step-box">
+        <strong>Uraian Alur Verifikasi & Approval:</strong>
+        <ol>
+          <li>Admin memilih salah satu antrean permohonan surat masuk.</li>
+          <li>Sistem menampilkan detail permohonan dan pratinjau berkas lampiran.</li>
+          <li>Admin memeriksa kesesuaian berkas dan menentukan aksi keputusan:
+            <br/>• <strong>Jika Disetujui ('Ya')</strong>: Admin mengklik Approve. Sistem menerbitkan penomoran surat resmi dan QR Code digital, lalu mengubah status menjadi SELESAI.
+            <br/>• <strong>Jika Ditolak ('Tidak')</strong>: Admin memasukkan catatan revisi dan mengklik Tolak. Sistem menyimpan alasan penolakan dan mengubah status menjadi DITOLAK.</li>
+          <li>Sistem menyimpan seluruh perubahan ke database.</li>
+          <li>Selesai.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity 4: Tracking & Filter -->
+  <div class="diagram-card">
+    <div class="pill-title pill-slate">4. ACTIVITY DIAGRAM CARI / FILTER STATUS SURAT (Sesuai Slide 14)</div>
+    <div class="two-col-layout">
+      <div>
+        <div class="mermaid">
+        flowchart TD
+          subgraph Siswa ["Siswa"]
+            D11((●)) --> D12["Buka Halaman Tracking Surat"]
+            D12 --> D13["Input Kata Kunci / Filter Status"]
+            D13 --> D14["Klik Cari / Terapkan Filter"]
+          end
+          subgraph Sistem ["Sistem SIPESAT"]
+            D14 --> S11["Sistem Memproses Pencarian Data"]
+            S11 --> D4{"Surat Ditemukan?"}
+            D4 -->|Ya| S12["Tampilkan Daftar & Stepper Status"]
+            D4 -->|Tidak| S13["Tampilkan Pesan 'Data Tidak Ditemukan'"]
+            S12 --> E4(((⦿)))
+            S13 --> E4
+          end
+        </div>
+      </div>
+      <div class="step-box">
+        <strong>Uraian Alur Cari & Tracking Surat:</strong>
+        <ol>
+          <li>Siswa membuka halaman tracking atau riwayat pengajuan surat.</li>
+          <li>Siswa memasukkan kata kunci (nomor resi/nama) atau memilih filter status.</li>
+          <li>Siswa mengklik tombol Cari atau Terapkan Filter.</li>
+          <li>Sistem memproses pencarian query ke database:
+            <br/>• Jika ditemukan (<strong>'Ya'</strong>), sistem menampilkan daftar permohonan beserta tahapan stepper.
+            <br/>• Jika tidak ditemukan (<strong>'Tidak'</strong>), sistem menampilkan notifikasi <em>'data tidak ditemukan'</em>.</li>
+          <li>Selesai.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-title">4. Sequence Diagrams (Pola Arsitektur BCE Sesuai Slide 20 & 25-26)</h2>
+  <p>
+    Komponen dipecah ke dalam 3 kelas UML standar Unindra:
+    <strong>Boundary Class (Antarmuka UI)</strong>, 
+    <strong>Control Class (Controller Logika Bisnis)</strong>, dan 
+    <strong>Entity Class (Database Model/Tabel)</strong>, serta dilengkapi percabangan <code>alt</code>:
+  </p>
+
+  <!-- Sequence 1: Login -->
+  <div class="diagram-card">
+    <div class="pill-title pill-blue">1. SEQUENCE DIAGRAM LOGIN (Sesuai Slide 25 Kiri)</div>
+    <div class="mermaid">
+    sequenceDiagram
+      autonumber
+      actor Pengguna as Pengguna (Siswa/Admin)
+      participant LoginUI as LoginUI <<Boundary>>
+      participant AuthController as AuthController <<Control>>
+      participant User as User <<Entity>>
+
+      Pengguna->>LoginUI: bukaAplikasi()
+      LoginUI-->>Pengguna: tampilkanFormLogin()
+      Pengguna->>LoginUI: inputEmailPassword(identitas, pass)
+      Pengguna->>LoginUI: klikLogin()
+      LoginUI->>AuthController: validasiLogin(identitas, password)
+      AuthController->>User: getUserByEmailOrNISN(identitas)
+      User-->>AuthController: userData
+      AuthController->>AuthController: cekPasswordBcrypt(password, hash)
+
+      alt [Login Valid]
+        AuthController-->>LoginUI: loginBerhasil(jwtToken, role)
+        LoginUI-->>Pengguna: tampilkanDashboard(role)
+      else [Login Tidak Valid]
+        AuthController-->>LoginUI: loginGagal("Kredensial Tidak Sesuai")
+        LoginUI-->>Pengguna: tampilkanPesanError()
+      end
+    </div>
+  </div>
+
+  <!-- Sequence 2: Pengajuan Surat -->
+  <div class="diagram-card">
+    <div class="pill-title pill-green">2. SEQUENCE DIAGRAM PENGAJUAN SURAT (Sesuai Slide 25 Kanan)</div>
+    <div class="mermaid">
+    sequenceDiagram
+      autonumber
+      actor Siswa as Siswa
+      participant PengajuanSuratUI as PengajuanSuratUI <<Boundary>>
+      participant SuratController as SuratController <<Control>>
+      participant SuratPengajuan as SuratPengajuan <<Entity>>
+
+      Siswa->>PengajuanSuratUI: pilihMenuPengajuan()
+      PengajuanSuratUI-->>Siswa: tampilkanFormPengajuan()
+      Siswa->>PengajuanSuratUI: inputDataPengajuan(jenisId, berkas, alasan)
+      Siswa->>PengajuanSuratUI: klikKirimPermohonan()
+      PengajuanSuratUI->>SuratController: validasiData(payload, fileLampiran)
+
+      alt [Data Lengkap & File <= 2MB]
+        SuratController->>SuratPengajuan: createPengajuan(siswaId, jenisId, fileUrl, DIAJUKAN)
+        SuratPengajuan-->>SuratController: dataTersimpan(resiTiket)
+        SuratController-->>PengajuanSuratUI: pengajuanBerhasil(resiTiket)
+        PengajuanSuratUI-->>Siswa: tampilkanDashboardDanResi()
+      else [Data Tidak Lengkap / File > 2MB]
+        SuratController-->>PengajuanSuratUI: pengajuanGagal("Ukuran Melebihi Batas / Form Kurang")
+        PengajuanSuratUI-->>Siswa: tampilkanPesanError()
+      end
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Sequence 3: Approval -->
+  <div class="diagram-card">
+    <div class="pill-title pill-purple">3. SEQUENCE DIAGRAM VERIFIKASI & APPROVAL (Sesuai Slide 26 Kiri)</div>
+    <div class="mermaid">
+    sequenceDiagram
+      autonumber
+      actor Admin as Admin
+      participant VerifikasiSuratUI as VerifikasiSuratUI <<Boundary>>
+      participant VerifikasiController as VerifikasiController <<Control>>
+      participant SuratPengajuan as SuratPengajuan <<Entity>>
+
+      Admin->>VerifikasiSuratUI: pilihAntreanSurat(suratId)
+      VerifikasiSuratUI->>VerifikasiController: getSuratById(suratId)
+      VerifikasiController->>SuratPengajuan: findUnique(suratId)
+      SuratPengajuan-->>VerifikasiController: dataSuratDanBerkas
+      VerifikasiController-->>VerifikasiSuratUI: tampilkanDetailDanPratinjau(data)
+
+      alt [Persetujuan / Approve]
+        Admin->>VerifikasiSuratUI: klikApprove(suratId)
+        VerifikasiSuratUI->>VerifikasiController: approveSurat(suratId, adminId)
+        VerifikasiController->>SuratPengajuan: update(status: SELESAI, noSurat, qrCode)
+        SuratPengajuan-->>VerifikasiController: updateBerhasil
+        VerifikasiController-->>VerifikasiSuratUI: tampilkanNotifikasiBerhasil("Surat Disahkan")
+      else [Penolakan / Reject]
+        Admin->>VerifikasiSuratUI: inputCatatanRevisi(suratId, catatanTolak)
+        VerifikasiSuratUI->>VerifikasiController: rejectSurat(suratId, catatanTolak)
+        VerifikasiController->>SuratPengajuan: update(status: DITOLAK, catatan: catatanTolak)
+        SuratPengajuan-->>VerifikasiController: statusTolakTersimpan
+        VerifikasiController-->>VerifikasiSuratUI: tampilkanPesan("Pengajuan Ditolak Dengan Catatan")
+      end
+    </div>
+  </div>
+
+  <!-- Sequence 4: Cari & Filter -->
+  <div class="diagram-card">
+    <div class="pill-title pill-slate">4. SEQUENCE DIAGRAM CARI & FILTER SURAT (Sesuai Slide 26 Kanan)</div>
+    <div class="mermaid">
+    sequenceDiagram
+      autonumber
+      actor Siswa as Siswa
+      participant DashboardUI as DashboardUI <<Boundary>>
+      participant SuratController as SuratController <<Control>>
+      participant SuratPengajuan as SuratPengajuan <<Entity>>
+
+      Siswa->>DashboardUI: bukaDashboard()
+      DashboardUI-->>Siswa: tampilkanDaftarSurat()
+      Siswa->>DashboardUI: inputKataKunci / pilihFilter(keyword, status)
+      DashboardUI->>SuratController: cariSurat(keyword, status)
+      SuratController->>SuratPengajuan: searchSurat(keyword, filter)
+      SuratPengajuan-->>SuratController: daftarSuratHasil
+
+      alt [Hasil Ditemukan]
+        SuratController-->>DashboardUI: tampilkanDaftarSurat(hasil)
+        DashboardUI-->>Siswa: updateTampilanList()
+      else [Hasil Tidak Ditemukan]
+        SuratController-->>DashboardUI: tampilkanPesanDataTidakAda("Surat Tidak Ditemukan")
+        DashboardUI-->>Siswa: tampilkanNotifikasiKosong()
+      end
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-title">5. Matriks Hak Akses Peran (RBAC Matrix)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 5%;">No</th>
+        <th style="width: 25%;">Modul & Kasus Penggunaan</th>
+        <th style="width: 18%;">Hak Akses Siswa</th>
+        <th style="width: 18%;">Hak Akses Admin</th>
+        <th style="width: 34%;">Aturan Bisnis (Business Rules)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center;">1</td>
+        <td><strong>UC-01 & UC-02</strong><br/>Registrasi & Login Akun</td>
+        <td style="text-align: center;"><span class="badge-siswa">CREATE, READ</span></td>
+        <td style="text-align: center;"><span class="badge-admin">READ (Login)</span></td>
+        <td>Siswa registrasi mandiri via NISN & Email. Akun Admin dibuat terisolasi via sistem/seeding.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">2</td>
+        <td><strong>UC-03 & UC-04</strong><br/>Kelola Profil & Sesi</td>
+        <td style="text-align: center;"><span class="badge-siswa">READ, UPDATE</span></td>
+        <td style="text-align: center;"><span class="badge-admin">READ, UPDATE</span></td>
+        <td>Setiap pengguna hanya dapat memperbarui profil miliknya sendiri dan memvalidasi kata sandi lama.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">3</td>
+        <td><strong>UC-05 & UC-16</strong><br/>Katalog & Master Jenis Surat</td>
+        <td style="text-align: center;"><span class="badge-siswa">READ (Katalog)</span></td>
+        <td style="text-align: center;"><span class="badge-admin">C, R, U, D (Master)</span></td>
+        <td>Siswa membaca daftar surat aktif beserta persyaratannya. Admin mengelola jenis surat & dokumen wajib.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">4</td>
+        <td><strong>UC-06 & UC-07</strong><br/>Pengajuan Surat & Unggah Berkas</td>
+        <td style="text-align: center;"><span class="badge-siswa">CREATE, UPLOAD</span></td>
+        <td style="text-align: center;"><span class="badge-admin">READ, DOWNLOAD</span></td>
+        <td>Siswa mengisi keperluan, dan wajib melampirkan berkas (PDF/JPG/PNG maks 2MB).</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">5</td>
+        <td><strong>UC-12 & UC-13</strong><br/>Verifikasi Kelayakan Berkas</td>
+        <td style="text-align: center;"><em>Tidak Ada Akses</em></td>
+        <td style="text-align: center;"><span class="badge-admin">READ, UPDATE</span></td>
+        <td>Admin memeriksa kesesuaian dokumen siswa dan mengubah status internal dari DIAJUKAN menjadi DIPROSES.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">6</td>
+        <td><strong>UC-14 & UC-14A</strong><br/>Approval & Penomoran Resmi</td>
+        <td style="text-align: center;"><em>Tidak Ada Akses</em></td>
+        <td style="text-align: center;"><span class="badge-admin">UPDATE, GENERATE</span></td>
+        <td>Admin menyetujui permohonan. Sistem otomatis men-generate nomor surat unik dan QR Code validasi digital.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">7</td>
+        <td><strong>UC-15 & UC-15A</strong><br/>Penolakan & Catatan Revisi</td>
+        <td style="text-align: center;"><span class="badge-siswa">READ (Catatan)</span></td>
+        <td style="text-align: center;"><span class="badge-admin">UPDATE, CREATE</span></td>
+        <td>Admin wajib mengisi alasan penolakan jika berkas tidak sesuai agar siswa dapat memperbaiki berkasnya.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">8</td>
+        <td><strong>UC-08 & UC-09</strong><br/>Tracking Status & Riwayat</td>
+        <td style="text-align: center;"><span class="badge-siswa">READ (Pribadi)</span></td>
+        <td style="text-align: center;"><span class="badge-admin">READ (Seluruh Siswa)</span></td>
+        <td>Timeline stepper dinamis: DIAJUKAN ➔ DIPROSES ➔ SELESAI / DITOLAK lengkap dengan waktu pembaruan.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">9</td>
+        <td><strong>UC-10</strong><br/>Unduh Surat Resmi (PDF)</td>
+        <td style="text-align: center;"><span class="badge-siswa">READ, DOWNLOAD</span></td>
+        <td style="text-align: center;"><span class="badge-admin">READ, DOWNLOAD</span></td>
+        <td>Surat PDF ber-QR Code hanya dapat diunduh jika status permohonan telah mencapai tahap SELESAI.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">10</td>
+        <td><strong>UC-17</strong><br/>Manajemen Akun Siswa</td>
+        <td style="text-align: center;"><em>Tidak Ada Akses</em></td>
+        <td style="text-align: center;"><span class="badge-admin">C, R, U, D</span></td>
+        <td>Admin dapat mengaktifkan akun, mereset password siswa yang lupa, dan memvalidasi keabsahan data siswa.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">11</td>
+        <td><strong>UC-11 & UC-18</strong><br/>Dashboard & Ekspor Laporan</td>
+        <td style="text-align: center;"><em>Tidak Ada Akses</em></td>
+        <td style="text-align: center;"><span class="badge-admin">READ, EXPORT</span></td>
+        <td>Admin menganalisis statistik persuratan dan mengekspor rekapitulasi data ke format Excel atau PDF.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note-box" style="margin-top: 20px;">
+    <strong>📦 Status Berkas Master:</strong> Seluruh diagram visual pada dokumen ini telah disinkronkan 1:1 ke dalam file grafik master <a href="file:///c:/A_main_code/all-my-projek/RPL/use-case-siswa-admin.drawio"><code>use-case-siswa-admin.drawio</code></a> yang siap dibuka di <a href="https://app.diagrams.net/" target="_blank">Draw.io / diagrams.net</a>.
+  </div>
+
+</body>
+</html>

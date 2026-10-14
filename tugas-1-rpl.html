@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TUGAS 1 RPL - KELOMPOK 7</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 2.5cm 2.5cm 2.5cm 2.5cm;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12pt;
+      line-height: 1.5;
+      color: #111;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #111;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 14pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 0 4px 0;
+      letter-spacing: 0.5px;
+    }
+    .header h2 {
+      font-size: 12pt;
+      font-weight: bold;
+      margin: 0 0 4px 0;
+    }
+    .header p {
+      font-size: 11pt;
+      margin: 0;
+      color: #333;
+    }
+    .meta-box {
+      border: 1px solid #ccc;
+      background-color: #fcfcfc;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      border-radius: 4px;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11pt;
+    }
+    .meta-table td {
+      padding: 3px 0;
+      vertical-align: top;
+    }
+    .meta-table td.label {
+      width: 150px;
+      font-weight: bold;
+      color: #222;
+    }
+    .member-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .member-list li {
+      margin-bottom: 2px;
+      font-size: 11pt;
+    }
+    .section-title {
+      font-size: 12pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 3px;
+      color: #0d2d5e;
+    }
+    .project-name-box {
+      background: #f0f4fa;
+      border-left: 4px solid #1E6EEB;
+      padding: 10px 14px;
+      font-size: 12pt;
+      font-weight: bold;
+      color: #102a43;
+      margin-bottom: 14px;
+    }
+    p {
+      text-align: justify;
+      text-indent: 1.25cm;
+      margin: 0 0 10px 0;
+    }
+    p.no-indent {
+      text-indent: 0;
+    }
+    ol, ul {
+      margin: 0 0 12px 0;
+      padding-left: 1.25cm;
+    }
+    li {
+      margin-bottom: 5px;
+      text-align: justify;
+    }
+    .sub-scope {
+      margin-top: 10px;
+      margin-bottom: 4px;
+      font-weight: bold;
+      color: #102a43;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>TUGAS 1 - REKAYASA PERANGKAT LUNAK (RPL)</h1>
+    <h2>PROGRAM STUDI TEKNIK INFORMATIKA - FTIK</h2>
+    <p>UNIVERSITAS INDRAPRASTA PGRI (UNINDRA) JAKARTA • 2026</p>
+  </div>
+
+  <div class="meta-box">
+    <table class="meta-table">
+      <tr>
+        <td class="label">Mata Kuliah</td>
+        <td>: Rekayasa Perangkat Lunak (RPL)</td>
+      </tr>
+      <tr>
+        <td class="label">Kelompok</td>
+        <td>: <strong>Kelompok RPL 7</strong></td>
+      </tr>
+      <tr>
+        <td class="label">Anggota Kelompok</td>
+        <td>:
+          <ol class="member-list">
+            <li><strong>Adam Wahyu Kurnia</strong> — 202343500510</li>
+            <li><strong>Fathu Rahman</strong> — 202343500467</li>
+            <li><strong>Surya Edi Saputra</strong> — 202343500468</li>
+            <li><strong>Rizqi Muh. Al Hakimi</strong> — 202343500449</li>
+          </ol>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section-title">Nama Proyek:</div>
+  <div class="project-name-box">
+    Sistem Informasi Pengajuan Surat Siswa Berbasis Web
+  </div>
+
+  <div class="section-title">Latar Belakang:</div>
+  <p>
+    Dalam kegiatan administrasi sekolah, siswa sering membutuhkan berbagai jenis surat seperti surat keterangan siswa, surat izin, surat rekomendasi, dan surat lainnya. Proses pengajuan surat yang masih dilakukan secara manual dapat menyebabkan siswa harus datang langsung ke bagian administrasi, membutuhkan waktu lebih lama, serta menyulitkan petugas dalam melakukan pencatatan dan pencarian data. Oleh karena itu, diperlukan sebuah sistem informasi berbasis web yang dapat membantu siswa dalam melakukan pengajuan surat dan membantu pihak sekolah dalam mengelola proses administrasi secara lebih efektif dan terorganisir.
+  </p>
+
+  <div class="section-title">Permasalahan:</div>
+  <ol>
+    <li>Pengajuan surat masih dilakukan secara manual.</li>
+    <li>Siswa harus datang ke bagian administrasi untuk mengajukan surat.</li>
+    <li>Pencatatan pengajuan surat membutuhkan waktu.</li>
+    <li>Petugas kesulitan memantau status pengajuan surat.</li>
+    <li>Data pengajuan surat berpotensi sulit dicari apabila masih menggunakan pencatatan manual.</li>
+  </ol>
+
+  <div class="section-title">Tujuan Sistem:</div>
+  <ol>
+    <li>Membuat sistem pengajuan surat siswa berbasis web.</li>
+    <li>Mempermudah siswa dalam melakukan pengajuan surat.</li>
+    <li>Membantu petugas administrasi mengelola data pengajuan surat.</li>
+    <li>Memudahkan pemantauan status pengajuan surat.</li>
+    <li>Meningkatkan efektivitas dan efisiensi pelayanan administrasi sekolah.</li>
+  </ol>
+
+  <div class="section-title">Ruang Lingkup:</div>
+  
+  <div class="sub-scope">Sistem yang dikembangkan meliputi:</div>
+  <ol>
+    <li>Pengelolaan data siswa.</li>
+    <li>Pengelolaan jenis surat.</li>
+    <li>Pengajuan surat oleh siswa.</li>
+    <li>Verifikasi dan pengelolaan pengajuan oleh admin.</li>
+    <li>Informasi status pengajuan.</li>
+    <li>Riwayat pengajuan surat.</li>
+    <li>Laporan data pengajuan surat.</li>
+  </ol>
+
+  <div class="sub-scope">Menu utama yang bisa dibuat:</div>
+  <ul>
+    <li>Dashboard</li>
+    <li>Data/Jenis Surat</li>
+    <li>Pengajuan Surat</li>
+    <li>Riwayat/Laporan</li>
+  </ul>
+
+</body>
+</html>

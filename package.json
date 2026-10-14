@@ -1,0 +1,12 @@
+{
+  "name": "sipesat-surat-siswa",
+  "private": true,
+  "scripts": {
+    "dev:be": "cd be && npm run dev",
+    "dev:fe": "cd fe && npm run dev",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "db:push": "cd be && npm run prisma:push",
+    "db:seed": "cd be && npm run prisma:seed"
+  }
+}

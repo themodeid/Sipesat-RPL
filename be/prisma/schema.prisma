@@ -1,0 +1,90 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  PETUGAS
+  SISWA
+}
+
+enum StatusPengajuan {
+  MENUNGGU
+  DIPROSES
+  DISETUJUI
+  DITOLAK
+}
+
+model User {
+  id              String           @id @default(cuid())
+  username        String?          @unique
+  nisn            String?          @unique
+  nama            String
+  email           String?
+  password        String
+  role            Role             @default(SISWA)
+  kelas           String?
+  jurusan         String?
+  noTelepon       String?
+  alamat          String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  pengajuan       PengajuanSurat[] @relation("SiswaPengajuan")
+  prosesPengajuan PengajuanSurat[] @relation("PetugasPemroses")
+  logs            LogAktivitas[]
+}
+
+model JenisSurat {
+  id           String           @id @default(cuid())
+  kodeSurat    String           @unique
+  namaSurat    String
+  deskripsi    String
+  persyaratan  String?
+  formatNomor  String           @default("421.3/{NOMOR}/SMKN1/{BULAN_ROMAWI}/{TAHUN}")
+  templateIsi  String?
+  isActive     Boolean          @default(true)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  pengajuan    PengajuanSurat[]
+}
+
+model PengajuanSurat {
+  id              String          @id @default(cuid())
+  nomorPengajuan  String          @unique
+  siswaId         String
+  siswa           User            @relation("SiswaPengajuan", fields: [siswaId], references: [id], onDelete: Cascade)
+  jenisSuratId    String
+  jenisSurat      JenisSurat      @relation(fields: [jenisSuratId], references: [id])
+  keperluan       String
+  keterangan      String?
+  lampiran        String?         // file path or URL
+  status          StatusPengajuan @default(MENUNGGU)
+  nomorSuratResmi String?
+  petugasId       String?
+  petugas         User?           @relation("PetugasPemroses", fields: [petugasId], references: [id])
+  catatanPetugas  String?
+  tanggalPengajuan DateTime       @default(now())
+  tanggalSelesai  DateTime?
+  updatedAt       DateTime        @updatedAt
+
+  logs            LogAktivitas[]
+}
+
+model LogAktivitas {
+  id             String           @id @default(cuid())
+  pengajuanId    String
+  pengajuan      PengajuanSurat   @relation(fields: [pengajuanId], references: [id], onDelete: Cascade)
+  userId         String?
+  user           User?            @relation(fields: [userId], references: [id])
+  statusSebelum  StatusPengajuan?
+  statusSesudah  StatusPengajuan
+  catatan        String?
+  createdAt      DateTime         @default(now())
+}

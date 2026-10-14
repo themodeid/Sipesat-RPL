@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TUGAS 2 RPL - DOKUMEN SRS IEEE KARL WIEGERS - KELOMPOK 7</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 2.5cm 2.5cm 2.5cm 2.5cm;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12pt;
+      line-height: 1.5;
+      color: #111;
+      margin: 0 auto;
+      padding: 2.5cm 2cm;
+      max-width: 210mm;
+      background: #fff;
+    }
+    @media print {
+      body {
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    }
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #111;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 14pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 0 4px 0;
+      letter-spacing: 0.5px;
+    }
+    .header h2 {
+      font-size: 12pt;
+      font-weight: bold;
+      margin: 0 0 4px 0;
+    }
+    .header p {
+      font-size: 10.5pt;
+      margin: 0;
+      color: #333;
+    }
+    .meta-box {
+      border: 1px solid #999;
+      background-color: #fbfbfb;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11pt;
+    }
+    .meta-table th, .meta-table td {
+      padding: 4px 8px;
+      vertical-align: top;
+    }
+    .meta-table th {
+      text-align: left;
+      width: 28%;
+      color: #333;
+    }
+    .meta-table td {
+      color: #111;
+    }
+    h2.section-title {
+      font-size: 13pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #777;
+      padding-bottom: 4px;
+    }
+    h3.sub-section-title {
+      font-size: 12pt;
+      font-weight: bold;
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+    h4 {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+    p {
+      text-align: justify;
+      margin: 0 0 10px 0;
+      text-indent: 1.25cm;
+    }
+    p.no-indent {
+      text-indent: 0;
+    }
+    ol, ul {
+      margin: 0 0 12px 0;
+      padding-left: 28px;
+    }
+    li {
+      margin-bottom: 4px;
+      text-align: justify;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px 0;
+      font-size: 10.5pt;
+    }
+    table.data-table th, table.data-table td {
+      border: 1px solid #444;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.data-table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    table.data-table tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+    code, pre {
+      font-family: 'Consolas', 'Courier New', Courier, monospace;
+      font-size: 9.5pt;
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    pre {
+      padding: 10px;
+      border: 1px solid #ccc;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      line-height: 1.3;
+      margin: 10px 0;
+    }
+    .badge-high {
+      font-weight: bold;
+      color: #900;
+    }
+    .badge-med {
+      font-weight: bold;
+      color: #069;
+    }
+    .badge-low {
+      font-weight: bold;
+      color: #555;
+    }
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 18px;
+      background-color: #18181b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .print-btn:hover {
+      background-color: #27272a;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+
+  <div class="header">
+    <h1>SPESIFIKASI KEBUTUHAN PERANGKAT LUNAK (SRS)</h1>
+    <h2>SISTEM INFORMASI PENGAJUAN SURAT SISWA BERBASIS WEB (SIPESAT)</h2>
+    <p>Standar Spesifikasi: IEEE Std 830-1998 / Karl Wiegers Template</p>
+    <p>Program Studi Teknik Informatika — FTIK Universitas Indraprasta PGRI (UNINDRA) Jakarta 2026/2027</p>
+  </div>
+
+  <div class="meta-box">
+    <table class="meta-table">
+      <tr>
+        <th>Mata Kuliah:</th>
+        <td>Rekayasa Perangkat Lunak (RPL) — Tugas 2</td>
+      </tr>
+      <tr>
+        <th>Kelompok:</th>
+        <td><strong>Kelompok RPL 7</strong></td>
+      </tr>
+      <tr>
+        <th>Anggota Tim:</th>
+        <td>
+          1. <strong>Adam Wahyu Kurnia</strong> (202343500510) — <em>Lead System Architect</em><br>
+          2. <strong>Fathu Rahman</strong> (202343500467) — <em>Requirements Engineer</em><br>
+          3. <strong>Surya Edi Saputra</strong> (202343500468) — <em>Quality Assurance & Technical Writer</em><br>
+          4. <strong>Rizqi Muh. Al Hakimi</strong> (202343500449) — <em>Database & UI/UX Specialist</em>
+        </td>
+      </tr>
+      <tr>
+        <th>Status Dokumen:</th>
+        <td>Versi 2.0 (Resmi / Siap Dikumpulkan) — 24 September 2026</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- BAB 1 -->
+  <h2 class="section-title">1. PENDAHULUAN</h2>
+
+  <h3 class="sub-section-title">1.1 Tujuan Dokumen</h3>
+  <p>Dokumen Spesifikasi Kebutuhan Perangkat Lunak (<em>Software Requirements Specification</em> - SRS) ini disusun dengan tujuan untuk mendefinisikan secara menyeluruh, terperinci, dan sistematis mengenai kebutuhan fungsional dan nonfungsional dari <strong>Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT)</strong>. Dokumen ini menjadi kontrak kerja formal serta acuan tunggal (<em>single source of truth</em>) bagi seluruh pemangku kepentingan (<em>stakeholders</em>), yang meliputi analis sistem, perancang antarmuka (UI/UX), pengembang perangkat lunak (<em>software engineers</em>), penguji perangkat lunak (<em>quality assurance</em>), dosen pembimbing/pengampu mata kuliah, dan pihak sekolah sebagai pengguna akhir, guna memastikan kesesuaian 100% antara implementasi sistem dengan rumusan masalah yang diajukan.</p>
+
+  <h3 class="sub-section-title">1.2 Konvensi Dokumen</h3>
+  <p class="no-indent">Dokumen ini disusun mengikuti konvensi standar IEEE 830-1998 dan Karl Wiegers dengan kaidah:</p>
+  <ul>
+    <li>Setiap kebutuhan fungsional diberi kode unik: <code>[REQ-KATEGORI-NOMOR]</code>, contoh: <code>REQ-SUB-01</code>.</li>
+    <li>Setiap aturan bisnis diberi kode unik: <code>[BR-NOMOR]</code>, contoh: <code>BR-01</code>.</li>
+    <li>Tingkat prioritas kebutuhan diklasifikasikan menjadi:
+      <ul>
+        <li><span class="badge-high">Tinggi (High)</span>: Kebutuhan mutlak yang wajib ada agar sistem dapat berfungsi (<em>core</em>).</li>
+        <li><span class="badge-med">Sedang (Medium)</span>: Kebutuhan penting yang mendukung efisiensi operasional sistem.</li>
+        <li><span class="badge-low">Rendah (Low)</span>: Kebutuhan pelengkap atau peningkatan kenyamanan pengguna di masa depan.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 class="sub-section-title">1.3 Audiens yang Dituju dan Saran Pembacaan</h3>
+  <p>Dokumen ini ditujukan kepada dosen pengampu mata kuliah RPL untuk menilai ketepatan analisis rekayasa sistem, tim pengembang perangkat lunak sebagai acuan arsitektur basis data dan pembuatan API, penguji sistem (QA) sebagai dasar perancangan skenario uji coba (<em>test case</em>), serta staf tata usaha sekolah untuk memahami alur kerja operasional digital yang baru.</p>
+
+  <h3 class="sub-section-title">1.4 Cakupan Produk</h3>
+  <p>Perangkat lunak yang dikembangkan adalah sistem portal pelayanan mandiri (<em>self-service student administration portal</em>) berbasis web responsif bernama SIPESAT. Sistem ini memfasilitasi siswa mengajukan berbagai kebutuhan surat dinas sekolah (Surat Keterangan Siswa Aktif, Surat Rekomendasi, Surat Izin Penelitian, dll.), mengunggah berkas syarat secara digital, memantau posisi berkas secara <em>real-time</em>, serta memungkinkan Petugas Tata Usaha (Staf TU / Admin) melakukan validasi berkas, penolakan/revisi, serta penerbitan dan persetujuan (<em>approval</em>) surat dinas otomatis berformat PDF yang dilengkapi kode QR validator.</p>
+
+  <h3 class="sub-section-title">1.5 Referensi</h3>
+  <ol>
+    <li>IEEE Std 830-1998, <em>IEEE Recommended Practice for Software Requirements Specifications</em>.</li>
+    <li>Karl E. Wiegers & Joy Beatty, <em>Software Requirements (3rd Edition)</em>, Microsoft Press, 2013.</li>
+    <li>Panduan Tugas Mata Kuliah Rekayasa Perangkat Lunak, FTIK UNINDRA, 2026.</li>
+    <li>Dokumen Tugas 1 Kelompok 7 RPL UNINDRA: <em>Sistem Informasi Pengajuan Surat Siswa Berbasis Web</em>, September 2026.</li>
+  </ol>
+
+  <!-- BAB 2 -->
+  <h2 class="section-title">2. DESKRIPSI KESELURUHAN</h2>
+
+  <h3 class="sub-section-title">2.1 Perspektif Produk</h3>
+  <p>SIPESAT merupakan sistem mandiri berbasis web (<em>self-contained web application</em>) yang bertindak sebagai modul pelayanan administrasi ketatausahaan sekolah. Sistem terintegrasi dengan basis data relasional PostgreSQL untuk pencatatan transaksi surat dan manajemen berkas, serta menyediakan modul penomoran surat otomatis yang diselaraskan dengan buku agenda dinas sekolah.</p>
+
+  <h3 class="sub-section-title">2.2 Fungsi Produk</h3>
+  <p class="no-indent">Fungsi-fungsi utama yang disediakan oleh SIPESAT meliputi:</p>
+  <ul>
+    <li>Manajemen autentikasi dan kontrol akses berbasis peran (2 Role Eksklusif: Siswa dan Petugas TU / Admin).</li>
+    <li>Pengajuan surat mandiri oleh siswa disertai pengunggahan berkas prasyarat terkompresi.</li>
+    <li>Verifikasi kelengkapan berkas dan pencatatan alasan penolakan/revisi oleh Petugas TU.</li>
+    <li>Persetujuan (<em>approval</em>) dan penomoran surat dinas resmi sekolah secara terpadu oleh Petugas TU.</li>
+    <li>Generator dokumen dinas otomatis berformat PDF standar A4 dengan kop resmi dan tanda tangan digital QR Code.</li>
+    <li>Pelacakan linimasa status permohonan surat secara langsung (<em>live status tracking</em>).</li>
+    <li>Pencatatan buku agenda digital dan rekapitulasi laporan berkala.</li>
+  </ul>
+
+  <h3 class="sub-section-title">2.3 Kelas Pengguna dan Karakteristik</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 20%;">Kelas Pengguna</th>
+        <th style="width: 50%;">Deskripsi Karakteristik</th>
+        <th style="width: 30%;">Hak Akses Utama</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Siswa</strong></td>
+        <td>Pengguna siswa aktif. Mengakses via smartphone, membutuhkan UI simpel dan navigasi cepat.</td>
+        <td>Mengajukan surat, mengunggah syarat, melacak status, mengunduh PDF surat.</td>
+      </tr>
+      <tr>
+        <td><strong>Petugas Tata Usaha (Staf TU / Admin)</strong></td>
+        <td>Tenaga kependidikan operasional sekolah. Mengakses via PC desktop/laptop sekolah pada jam kerja. Memegang otoritas penuh terhadap verifikasi berkas dan persetujuan pengesahan surat.</td>
+        <td>Verifikasi berkas, validasi syarat, persetujuan (<em>approval</em>), input catatan revisi, input nomor surat, cetak fisik, kelola master data, dan rekapitulasi laporan.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-section-title">2.4 Lingkungan Operasi</h3>
+  <ul>
+    <li><strong>Sisi Klien:</strong> Peramban modern (Chrome, Edge, Firefox, Safari) pada perangkat Mobile/Desktop.</li>
+    <li><strong>Sisi Peladen:</strong> Node.js v20+ LTS, Framework Next.js 15 (App Router), Linux Ubuntu Server.</li>
+    <li><strong>Sisi Basis Data:</strong> PostgreSQL 15+ berbasis Docker Container dengan Prisma ORM.</li>
+  </ul>
+
+  <h3 class="sub-section-title">2.5 Batasan Desain dan Implementasi</h3>
+  <ul>
+    <li>Ukuran berkas syarat yang diunggah dibatasi maksimal 2 MB per file dengan ekstensi <code>.pdf</code>, <code>.jpg</code>, <code>.png</code>.</li>
+    <li>Antarmuka web mengadopsi standar desain profesional responsif (Neutral Zinc Enterprise) yang ramah aksesibilitas.</li>
+    <li>Setiap dokumen resmi yang terbit wajib memiliki tautan validasi kode QR yang unik dan terenkripsi.</li>
+  </ul>
+
+  <!-- BAB 3 -->
+  <h2 class="section-title">3. KEBUTUHAN ANTARMUKA EKSTERNAL</h2>
+
+  <h3 class="sub-section-title">3.1 Antarmuka Pengguna (UI)</h3>
+  <p>Antarmuka dibangun dengan pendekatan <em>Mobile-First Responsive Design</em>. Menampilkan elemen navigasi yang bersih, tabel data berangka monospaced tabular agar rapi, formulir validasi instan, dan linimasa pelacakan status dengan indikator visual warna bertingkat.</p>
+
+  <h3 class="sub-section-title">3.2 Antarmuka Perangkat Lunak & Perangkat Keras</h3>
+  <ul>
+    <li><strong>Koneksi Database:</strong> Prisma ORM terhubung ke PostgreSQL melalui protokol koneksi TCP terlindungi.</li>
+    <li><strong>Mesin Generator Dokumen:</strong> Pustaka internal compiler PDF untuk menyusun tata naskah dinas resmi.</li>
+    <li><strong>Generator Kode QR:</strong> Pustaka JavaScript untuk mengubah URL verifikasi dinamis menjadi QR Code matriks 2D.</li>
+    <li><strong>Perangkat Keras Server:</strong> Minimal 2 vCPU, 2 GB RAM, dan penyimpanan SSD dengan ruang cadangan aman.</li>
+  </ul>
+
+  <h3 class="sub-section-title">3.3 Antarmuka Komunikasi</h3>
+  <p>Komunikasi data klien dan peladen wajib melalui jalur terenkripsi HTTPS (Port 443) dengan standar TLS 1.3. Pertukaran data formulir menggunakan format JSON dan pengunggahan berkas menggunakan encoding <code>multipart/form-data</code>.</p>
+
+  <!-- BAB 4 -->
+  <h2 class="section-title">4. FITUR SISTEM & KEBUTUHAN FUNGSIONAL</h2>
+
+  <h3 class="sub-section-title">4.1 Fitur Autentikasi dan Manajemen Sesi</h3>
+  <p><strong>Deskripsi & Prioritas:</strong> Mengelola pendaftaran akun siswa baru, login multi-peran, dan pengamanan sesi. <span class="badge-high">[Tinggi]</span></p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">ID Kebutuhan</th>
+        <th style="width: 60%;">Deskripsi Kebutuhan Fungsional</th>
+        <th style="width: 15%;">Prioritas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>REQ-AUTH-01</code></td>
+        <td>Sistem wajib menyediakan pendaftaran mandiri siswa dengan memvalidasi NISN dan Nama.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-AUTH-02</code></td>
+        <td>Sistem wajib mengautentikasi pengguna menggunakan pengenal unik dan kata sandi terenkripsi.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-AUTH-03</code></td>
+        <td>Sistem wajib menerapkan pembatasan hak akses berbasis peran (RBAC) pada setiap halaman dan API.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-AUTH-04</code></td>
+        <td>Sistem wajib menghancurkan sesi (logout) saat pengguna memilih keluar dari aplikasi.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-section-title">4.2 Fitur Manajemen Master Data</h3>
+  <p><strong>Deskripsi & Prioritas:</strong> Memfasilitasi Staf TU mengelola basis data siswa, rombel kelas, dan jenis surat. <span class="badge-high">[Tinggi]</span></p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">ID Kebutuhan</th>
+        <th style="width: 60%;">Deskripsi Kebutuhan Fungsional</th>
+        <th style="width: 15%;">Prioritas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>REQ-MSTR-01</code></td>
+        <td>Sistem wajib menyediakan operasi CRUD untuk Master Data Siswa dan Kelas.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-MSTR-02</code></td>
+        <td>Sistem wajib menyediakan pengelolaan Master Jenis Surat beserta dokumen syarat wajibnya.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-MSTR-03</code></td>
+        <td>Sistem wajib memvalidasi keunikan NISN siswa dan kode jenis surat agar tidak ganda.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-section-title">4.3 Fitur Pengajuan Surat Mandiri Siswa</h3>
+  <p><strong>Deskripsi & Prioritas:</strong> Memberikan formulir mandiri bagi siswa untuk mengajukan surat dan mengunggah berkas syarat. <span class="badge-high">[Tinggi]</span></p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">ID Kebutuhan</th>
+        <th style="width: 60%;">Deskripsi Kebutuhan Fungsional</th>
+        <th style="width: 15%;">Prioritas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>REQ-SUB-01</code></td>
+        <td>Sistem wajib menampilkan katalog jenis surat aktif yang dapat dipilih oleh siswa.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-SUB-02</code></td>
+        <td>Sistem wajib menyediakan modul unggah berkas syarat (.pdf, .jpg, .png) maksimal 2 MB per file.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-SUB-03</code></td>
+        <td>Sistem wajib menerbitkan Nomor Resi Pengajuan otomatis berformat unik untuk setiap pengajuan baru.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-section-title">4.4 Fitur Verifikasi, Disposisi, dan Validasi Berkas</h3>
+  <p><strong>Deskripsi & Prioritas:</strong> Memungkinkan Petugas TU (Admin) memeriksa, memvalidasi berkas masuk, dan memberikan persetujuan (<em>approval</em>) akhir. <span class="badge-high">[Tinggi]</span></p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">ID Kebutuhan</th>
+        <th style="width: 60%;">Deskripsi Kebutuhan Fungsional</th>
+        <th style="width: 15%;">Prioritas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>REQ-VERIF-01</code></td>
+        <td>Sistem wajib menampilkan antrian surat masuk dengan urutan pengajuan terlama (FIFO).</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-VERIF-02</code></td>
+        <td>Sistem wajib mewajibkan Petugas TU mengisi catatan alasan jika menolak/meminta revisi berkas.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-VERIF-03</code></td>
+        <td>Sistem wajib menyediakan modul otorisasi persetujuan akhir (<em>approval</em>) dan penerbitan nomor surat dinas resmi khusus peran Petugas TU.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-section-title">4.5 Fitur Penerbitan Dokumen Digital & Penomoran Otomatis</h3>
+  <p><strong>Deskripsi & Prioritas:</strong> Mengompilasi naskah surat dinas resmi sekolah dalam format PDF berstempel QR Code. <span class="badge-high">[Tinggi]</span></p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">ID Kebutuhan</th>
+        <th style="width: 60%;">Deskripsi Kebutuhan Fungsional</th>
+        <th style="width: 15%;">Prioritas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>REQ-DOC-01</code></td>
+        <td>Sistem wajib menghasilkan nomor surat dinas otomatis sesuai tata naskah kedinasan sekolah.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-DOC-02</code></td>
+        <td>Sistem wajib menyusun dokumen surat dinas berformat PDF ukuran A4 siap unduh dan cetak.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-DOC-03</code></td>
+        <td>Sistem wajib menyematkan QR Code validator yang mengarah ke laman verifikasi keabsahan dokumen.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-section-title">4.6 Fitur Pelacakan Status & Riwayat Pengajuan</h3>
+  <p><strong>Deskripsi & Prioritas:</strong> Memberikan visibilitas linimasa perkembangan surat secara transparan kepada siswa. <span class="badge-high">[Tinggi]</span></p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">ID Kebutuhan</th>
+        <th style="width: 60%;">Deskripsi Kebutuhan Fungsional</th>
+        <th style="width: 15%;">Prioritas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>REQ-TRK-01</code></td>
+        <td>Sistem wajib menyajikan linimasa visual tahapan pengajuan surat secara langsung (real-time).</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-TRK-02</code></td>
+        <td>Sistem wajib menampilkan catatan perbaikan dari petugas secara transparan jika ada revisi berkas.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+      <tr>
+        <td><code>REQ-TRK-03</code></td>
+        <td>Sistem wajib mengaktifkan tombol unduh surat PDF saat status pengajuan telah mencapai 'Selesai'.</td>
+        <td><span class="badge-high">Tinggi</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- BAB 5 -->
+  <h2 class="section-title">5. KEBUTUHAN NONFUNGSIONAL & ATURAN BISNIS</h2>
+
+  <h3 class="sub-section-title">5.1 Kebutuhan Kinerja & Keamanan</h3>
+  <ul>
+    <li><code>NFR-PERF-01</code>: Waktu muat halaman tidak boleh melebihi 2,0 detik pada jaringan internet standar.</li>
+    <li><code>NFR-PERF-02</code>: Pembuatan dokumen PDF dan QR Code wajib tuntas dalam waktu kurang dari 3,0 detik.</li>
+    <li><code>NFR-SEC-01</code>: Enkripsi jalur komunikasi wajib menggunakan HTTPS (TLS 1.3).</li>
+    <li><code>NFR-SEC-02</code>: Kata sandi wajib di-hash menggunakan algoritma Bcrypt/Argon2id.</li>
+    <li><code>NFR-SEC-03</code>: Akun pengguna dikunci sementara selama 15 menit jika gagal login 5 kali berturut-turut.</li>
+    <li><code>NFR-SAFE-01</code>: Pencadangan data (backup database) dilakukan otomatis setiap hari pada pukul 02.00 WIB.</li>
+  </ul>
+
+  <h3 class="sub-section-title">5.2 Aturan Bisnis (Business Rules)</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 15%;">ID Aturan</th>
+        <th style="width: 25%;">Nama Aturan</th>
+        <th style="width: 60%;">Deskripsi Kebijakan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>BR-01</code></td>
+        <td>Status Siswa Aktif</td>
+        <td>Siswa wajib berstatus aktif pada tahun pelajaran berjalan untuk dapat mengajukan surat.</td>
+      </tr>
+      <tr>
+        <td><code>BR-02</code></td>
+        <td>Format Nomor Dinas</td>
+        <td>Format baku: <code>[Klasifikasi]/[Nomor_Urut]/[Kode_Sekolah]/[Bulan_Romawi]/[Tahun]</code>.</td>
+      </tr>
+      <tr>
+        <td><code>BR-03</code></td>
+        <td>SLA Pemrosesan</td>
+        <td>Staf TU wajib memproses atau memberikan tanggapan surat maksimal 2x24 jam kerja.</td>
+      </tr>
+      <tr>
+        <td><code>BR-04</code></td>
+        <td>Keabsahan QR Code</td>
+        <td>Surat digital dinyatakan sah jika QR Code mengarah ke laman validasi domain resmi sekolah.</td>
+      </tr>
+      <tr>
+        <td><code>BR-05</code></td>
+        <td>Batas Revisi Berkas</td>
+        <td>Siswa diberi batas revisi berkas maksimal 3 kali per nomor pengajuan yang ditolak.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- BAB 6 -->
+  <h2 class="section-title">6. LAMPIRAN: USE CASE DIAGRAM (2 ROLE EKSKLUSIF)</h2>
+  <pre>
+                  +----------------------------------------------------+
+                  |       SIPESAT (Sistem Pengajuan Surat Siswa)       |
+                  +----------------------------------------------------+
+                                            │
+   ( Siswa ) ─────┬───> [ Melakukan Registrasi & Login Akun ] <───┬─── ( Petugas TU / Admin )
+                  │                                               │
+                  ├───> [ Melihat Katalog Jenis Surat ]           ├───> [ Mengelola Master Siswa & Surat ]
+                  │                                               │
+                  ├───> [ Mengisi Form & Mengunggah Syarat ]      ├───> [ Memeriksa Antrean & Berkas Masuk ]
+                  │                                               │
+                  ├───> [ Memantau Pelacakan Status (Tracking) ]  ├───> [ Menyetujui (Approve) & Generate QR ]
+                  │                                               │
+                  └───> [ Mengunduh Salinan Surat PDF ]           ├───> [ Menolak (Reject) & Input Revisi ]
+                                                                  │
+                                                                  ├───> [ Mencetak Fisik Surat & Laporan ]
+                                                                  │
+                                                                  └───> [ Melihat Dashboard & Statistik ]
+  </pre>
+
+  <p style="text-align: center; margin-top: 30px; font-size: 10pt; color: #555;">
+    <em>Dokumen resmi Tugas 2 Rekayasa Perangkat Lunak — Kelompok 7 Teknik Informatika UNINDRA 2026/2027</em>
+  </p>
+
+</body>
+</html>

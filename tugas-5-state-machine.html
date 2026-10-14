@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TUGAS 5 RPL - STATE MACHINE DIAGRAM - KELOMPOK 7</title>
+  <!-- Mermaid.js CDN for client-side rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontSize: '12px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        primaryColor: '#e0f2fe',
+        primaryBorderColor: '#0284c7',
+        primaryTextColor: '#0f172a',
+        lineColor: '#334155',
+        signalColor: '#1e293b',
+        signalTextColor: '#0f172a'
+      },
+      state: { useMaxWidth: true }
+    });
+  </script>
+  <style>
+    @page {
+      size: A4;
+      margin: 2.5cm 2cm 2.5cm 2.5cm;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #111;
+      margin: 0 auto;
+      padding: 2cm 1.5cm;
+      max-width: 210mm;
+      background: #fff;
+    }
+    @media print {
+      body { padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+      .diagram-card { page-break-inside: avoid; }
+    }
+    .print-bar {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 1000;
+      background: #1e293b;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+    }
+    .print-btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .print-btn:hover { background: #1d4ed8; }
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #111;
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 13pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 0 3px 0;
+      letter-spacing: 0.5px;
+    }
+    .header h2 {
+      font-size: 11.5pt;
+      font-weight: bold;
+      margin: 0 0 3px 0;
+    }
+    .header p {
+      font-size: 10pt;
+      margin: 0;
+      color: #333;
+    }
+    .meta-box {
+      border: 1px solid #777;
+      background-color: #fafafa;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.5pt;
+    }
+    .meta-table th, .meta-table td {
+      padding: 3px 6px;
+      vertical-align: top;
+    }
+    .meta-table th {
+      text-align: left;
+      width: 28%;
+      color: #222;
+    }
+    h2.section-title {
+      font-size: 12pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 3px;
+    }
+    h3.sub-section-title {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+    p, li { text-align: justify; }
+    .diagram-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 12px;
+      margin: 12px 0 16px 0;
+      background: #f8fafc;
+      text-align: center;
+    }
+    .diagram-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .diagram-caption {
+      font-size: 9.5pt;
+      font-weight: bold;
+      color: #475569;
+      margin-top: 8px;
+      text-align: center;
+      font-style: italic;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px 0;
+      font-size: 9.5pt;
+    }
+    table.data-table th, table.data-table td {
+      border: 1px solid #64748b;
+      padding: 6px 8px;
+    }
+    table.data-table th {
+      background-color: #1e293b;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+    ol, ul { margin-top: 4px; margin-bottom: 8px; padding-left: 20px; }
+    code, pre {
+      background: #f1f5f9;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 9pt;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    pre {
+      padding: 10px;
+      overflow-x: auto;
+      border: 1px solid #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Control -->
+  <div class="print-bar no-print">
+    <span>Dokumen Siap Cetak A4 / PDF</span>
+    <button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+  </div>
+
+  <!-- Header Dokumen Formal UNINDRA -->
+  <div class="header">
+    <h1>TUGAS 5 - REKAYASA PERANGKAT LUNAK (RPL)</h1>
+    <h2>PERANCANGAN STATE MACHINE DIAGRAM BERDASARKAN SPESIFIKASI KEBUTUHAN SISTEM</h2>
+    <p>PROGRAM STUDI TEKNIK INFORMATIKA — FTIK UNIVERSITAS INDRAPRASTA PGRI (UNINDRA)</p>
+    <p>TAHUN AKADEMIK 2026/2027</p>
+  </div>
+
+  <!-- Box Informasi Identitas Kelompok & Proyek -->
+  <div class="meta-box">
+    <table class="meta-table">
+      <tr>
+        <th>Kelompok / Kelas</th>
+        <td>: <strong>Kelompok RPL 7 / Kelas RPL_XD</strong></td>
+      </tr>
+      <tr>
+        <th>Anggota Kelompok</th>
+        <td>: 
+          1. <strong>Adam Wahyu Kurniawan</strong> (NPM: 202343500510) — <em>Lead System Architect &amp; Software Engineer</em><br>
+          &nbsp;&nbsp;2. <strong>Fathu Rahman</strong> (NPM: 202343500467) — <em>Business Analyst &amp; Requirements Engineer</em><br>
+          &nbsp;&nbsp;3. <strong>Surya Edi Saputra</strong> (NPM: 202343500468) — <em>Quality Assurance &amp; Technical Writer</em><br>
+          &nbsp;&nbsp;4. <strong>Rizqi Muh. Al Hakimi</strong> (NPM: 202343500449) — <em>Database Specialist &amp; UI/UX</em>
+        </td>
+      </tr>
+      <tr>
+        <th>Judul Proyek</th>
+        <td>: <strong>Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT)</strong></td>
+      </tr>
+      <tr>
+        <th>Studi Kasus</th>
+        <td>: Pelayanan Administrasi Persuratan Siswa &amp; Tata Usaha Sekolah Menengah</td>
+      </tr>
+      <tr>
+        <th>Landasan Dokumen</th>
+        <td>: Dokumen Spesifikasi Kebutuhan Perangkat Lunak (SRS) Standar IEEE Std 830-1998 (Tugas 2) &amp; Pemodelan UML BCE (Tugas 4)</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- BAB I -->
+  <h2 class="section-title">BAB I: PENDAHULUAN &amp; LANDASAN TEORI</h2>
+  <h3 class="sub-section-title">1.1 Gambaran Umum Proyek SIPESAT</h3>
+  <p>
+    Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT) adalah platform layanan persuratan digital sekolah yang dirancang untuk mengotomatisasi proses birokrasi pengajuan surat keterangan siswa, rekomendasi beasiswa, legalisir, dan dispensasi. Melalui arsitektur Role-Based Access Control (RBAC), sistem melibatkan tiga aktor utama yaitu Siswa, Staf Tata Usaha (TU), dan Kepala Sekolah. Setiap permohonan surat melewati alur hidup formal yang menuntut kepatuhan integritas data, validasi berkas fisik-digital, penomoran berurutan resmi sekolah, dan tanda tangan elektronik (TTE) berbasis kode QR terenkripsi.
+  </p>
+
+  <h3 class="sub-section-title">1.2 Konsep Dasar State Machine Diagram (UML 2.5)</h3>
+  <p>
+    State Machine Diagram (dikenal juga sebagai Statechart Diagram) dalam standar Unified Modeling Language (UML) 2.5 adalah diagram perilaku dinamis yang memodelkan siklus hidup diskret dari suatu objek tunggal, mulai dari inisialisasi awal hingga terminasi akhir. Berbeda dengan Activity Diagram yang memetakan aliran kerja lintas fungsi (workflow) atau Sequence Diagram yang memodelkan pertukaran pesan antarkomponen berurutan waktu, State Machine Diagram berfokus secara eksklusif pada perubahan status keadaan (state) internal suatu entitas akibat rangsangan peristiwa (event).
+  </p>
+  <ul>
+    <li><strong>State (Keadaan)</strong>: Keadaan stabil di mana suatu entitas berada pada kondisi tertentu. Di dalamnya terdapat internal behaviors: <code>entry</code>, <code>do</code>, dan <code>exit</code>.</li>
+    <li><strong>Transition (Transisi)</strong>: Perubahan dari satu keadaan ke keadaan lain yang dipicu oleh stimulus eksternal/internal.</li>
+    <li><strong>Event / Trigger</strong>: Stimulus yang memicu transisi (misal: <code>submitPermohonan()</code>, <code>approveTU()</code>).</li>
+    <li><strong>Guard Condition</strong>: Syarat boolean <code>[kondisi]</code> yang wajib bernilai TRUE agar transisi diizinkan dieksekusi.</li>
+    <li><strong>Action / Effect</strong>: Aksi otomatis yang dieksekusi saat transisi berlangsung (misal: <code>/ generateTicketCode()</code>).</li>
+  </ul>
+
+  <!-- BAB II -->
+  <h2 class="section-title">BAB II: PERANCANGAN STATE MACHINE DIAGRAM SIPESAT</h2>
+  <h3 class="sub-section-title">2.1 State Machine Diagram 1: Siklus Hidup Permohonan Surat Siswa (SuratPengajuan)</h3>
+  <p>
+    Entitas utama pada sistem SIPESAT adalah objek permohonan surat (direpresentasikan oleh model tabel <code>tb_pengajuan_surat</code>). Diagram berikut memodelkan seluruh siklus hidup dokumen permohonan dari pembuatan draf hingga pengarsipan permanen:
+  </p>
+
+  <div class="diagram-card">
+    <img src="assets/diagram_state_pengajuan.png" alt="State Machine Pengajuan Surat" class="diagram-img">
+    <div class="diagram-caption">Gambar 2.1 — State Machine Diagram Siklus Hidup Permohonan Surat Siswa (SIPESAT)</div>
+  </div>
+
+  <p><strong>Uraian Rinci Status Keadaan (State) pada Gambar 2.1:</strong></p>
+  <ol>
+    <li><strong>State DRAFT</strong>: Siswa membuka form pengajuan di web, mengisi data formulir, dan mengunggah berkas persyaratan (maksimal 2 MB). Aksi exit memvalidasi integritas payload.</li>
+    <li><strong>State MENUNGGU_VERIFIKASI</strong>: Setelah siswa klik 'Kirim Permohonan' dengan guard <code>[berkas_valid == true]</code>, sistem menghasilkan kode tiket unik, memasukkan ke antrean TU, dan mengunci form.</li>
+    <li><strong>State DITOLAK_PERLU_REVISI</strong>: Staf TU menolak berkas buram/kurang via <code>rejectTU()</code>. Sistem membuka izin revisi upload dan mengirimkan alert notifikasi ke dasbor siswa.</li>
+    <li><strong>State DIVERIFIKASI_TU</strong>: Staf TU menyetujui berkas via <code>approveTU()</code> dan menginput nomor agenda masuk TU. Permohonan diteruskan ke antrean Kepala Sekolah.</li>
+    <li><strong>State DITOLAK_KEPSEK</strong>: Kepala Sekolah menolak draf surat dengan catatan evaluasi. Berkas dikembalikan ke meja TU untuk diperbaiki.</li>
+    <li><strong>State DISETUJUI_KEPSEK</strong>: Kepala Sekolah menyetujui permohonan. Sistem mengunci persetujuan, membuat hash QR Code TTE, dan mengambil nomor urut surat keluar.</li>
+    <li><strong>State SELESAI_SIAP_UNDUH</strong>: Mesin kompilasi PDF menyatukan kop sekolah, data siswa, dan kode QR menjadi file PDF resmi ber-watermark siap diunduh.</li>
+    <li><strong>State DIARSIPKAN</strong>: Surat telah diunduh siswa atau melewati masa simpan aktif, lalu dibekukan permanen ke buku agenda arsip surat keluar digital.</li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <h3 class="sub-section-title">2.2 State Machine Diagram 2: Siklus Sesi Autentikasi Pengguna Multi-Role (RBAC)</h3>
+  <p>
+    Entitas sesi pengguna (<code>UserSession</code>) memegang peranan krusial dalam keamanan sistem. Diagram berikut memodelkan siklus autentikasi berbasis JSON Web Token (JWT) dengan pembatasan hak akses berbasis peran (RBAC):
+  </p>
+
+  <div class="diagram-card">
+    <img src="assets/diagram_state_autentikasi.png" alt="State Machine Sesi Autentikasi" class="diagram-img">
+    <div class="diagram-caption">Gambar 2.2 — State Machine Diagram Siklus Sesi Autentikasi Multi-Role (RBAC)</div>
+  </div>
+
+  <p><strong>Uraian Rinci Status Keadaan Sesi pada Gambar 2.2:</strong></p>
+  <ol>
+    <li><strong>State ANONYMOUS</strong>: Pengguna mengakses landing page portal publik tanpa token sesi aktif.</li>
+    <li><strong>State AUTHENTICATING</strong>: Pengguna mengirimkan NISN/NIP dan password. Sistem memverifikasi hash bcrypt. Jika salah, kembali ke ANONYMOUS.</li>
+    <li><strong>State ACTIVE_SESSION</strong>: Login berhasil. Diterbitkan Access Token (15 menit) dan Refresh Token (7 hari) pada HttpOnly Cookie.</li>
+    <li><strong>State REFRESHING_TOKEN</strong>: Terjadi transparan di latar belakang saat access token kedaluwarsa untuk rotasi token tanpa memutus sesi aktif.</li>
+    <li><strong>State SESSION_TIMEOUT</strong>: Pengguna inaktif &gt; 2 jam. Sistem membatalkan sesi secara otomatis demi keamanan.</li>
+    <li><strong>State LOGGED_OUT</strong>: Pengguna menekan tombol keluar. Refresh token di-blacklist dan sesi ditutup permanen.</li>
+  </ol>
+
+  <!-- BAB III -->
+  <h2 class="section-title">BAB III: TABEL TRANSISI KEADAAN (STATE TRANSITION TABLE)</h2>
+  <h3 class="sub-section-title">Tabel 3.1: Matriks Transisi Keadaan Permohonan Surat Siswa (tb_pengajuan_surat)</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 18%;">State Asal</th>
+        <th style="width: 20%;">Event / Trigger</th>
+        <th style="width: 22%;">Guard Condition</th>
+        <th style="width: 22%;">Action / Effect</th>
+        <th style="width: 18%;">State Tujuan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">INITIAL (●)</td>
+        <td>openMenuPengajuan()</td>
+        <td>user_authenticated == true</td>
+        <td>initFormPayload()</td>
+        <td style="text-align: center; font-weight: bold;">DRAFT</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">DRAFT</td>
+        <td>submitPermohonan()</td>
+        <td>form_valid &amp;&amp; file_size &lt;= 2MB</td>
+        <td>generateTicketCode(), notifyTU()</td>
+        <td style="text-align: center; font-weight: bold;">MENUNGGU_VERIFIKASI</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">MENUNGGU_VERIFIKASI</td>
+        <td>rejectTU()</td>
+        <td>berkas_tidak_lengkap || buram</td>
+        <td>setCatatanRevisi(), alertSiswa()</td>
+        <td style="text-align: center; font-weight: bold;">DITOLAK_PERLU_REVISI</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">DITOLAK_PERLU_REVISI</td>
+        <td>reuploadBerkas()</td>
+        <td>file_revisi_valid == true</td>
+        <td>updateLampiran(), notifyTU()</td>
+        <td style="text-align: center; font-weight: bold;">MENUNGGU_VERIFIKASI</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">MENUNGGU_VERIFIKASI</td>
+        <td>approveTU()</td>
+        <td>berkas_lengkap_dan_absah == true</td>
+        <td>setNoAgenda(), forwardToKepsek()</td>
+        <td style="text-align: center; font-weight: bold;">DIVERIFIKASI_TU</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">DIVERIFIKASI_TU</td>
+        <td>rejectKepsek()</td>
+        <td>evaluasi_draf_tidak_sesuai</td>
+        <td>returnDraftToTU(), logNotes()</td>
+        <td style="text-align: center; font-weight: bold;">DITOLAK_KEPSEK</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">DITOLAK_KEPSEK</td>
+        <td>revisiDisposisiTU()</td>
+        <td>data_disposisi_diperbaiki == true</td>
+        <td>reForwardToKepsek()</td>
+        <td style="text-align: center; font-weight: bold;">DIVERIFIKASI_TU</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">DIVERIFIKASI_TU</td>
+        <td>approveKepsek()</td>
+        <td>validasi_kepsek_disetujui == true</td>
+        <td>createQR_TTE(), generateNoSurat()</td>
+        <td style="text-align: center; font-weight: bold;">DISETUJUI_KEPSEK</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">DISETUJUI_KEPSEK</td>
+        <td>autoGeneratePDF()</td>
+        <td>pdf_binary_compiled == true</td>
+        <td>saveToStorage(), notifySiswa()</td>
+        <td style="text-align: center; font-weight: bold;">SELESAI_SIAP_UNDUH</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- BAB IV -->
+  <h2 class="section-title">BAB IV: IMPLEMENTASI BASIS DATA &amp; INTEGRASI TEKNIS</h2>
+  <h3 class="sub-section-title">4.1 Definisi Enum Status pada PostgreSQL (Prisma ORM)</h3>
+  <pre><code>// Definisi Enum State Status Pengajuan pada prisma/schema.prisma
+enum StatusPengajuan {
+  DRAFT                        // Siswa menyusun formulir
+  MENUNGGU_VERIFIKASI          // Berkas masuk antrean TU
+  DITOLAK_PERLU_REVISI         // TU meminta perbaikan berkas
+  DIVERIFIKASI_TU_MENUNGGU_KEPSEK // Lolos verifikasi TU, antrean Kepsek
+  DITOLAK_KEPSEK               // Kepsek meminta evaluasi draf
+  DISETUJUI_KEPSEK             // Kepsek menyetujui penerbitan
+  SELESAI_SIAP_UNDUH           // PDF resmi &amp; QR Code siap diunduh
+  DIARSIPKAN                   // Dokumen tersimpan permanen
+}</code></pre>
+
+  <h3 class="sub-section-title">4.2 Matriks Penelusuran Kebutuhan SRS (Traceability Matrix)</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 15%;">Kode SRS</th>
+        <th style="width: 45%;">Deskripsi Kebutuhan Fungsional</th>
+        <th style="width: 25%;">State Entitas Terkait</th>
+        <th style="width: 15%;">Trigger Transisi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-01</td>
+        <td>Autentikasi Pengguna &amp; Pembatasan Akses Berbasis Peran (RBAC)</td>
+        <td>ANONYMOUS &rarr; ACTIVE_SESSION</td>
+        <td>submitLogin()</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-02</td>
+        <td>Pengajuan Surat Mandiri &amp; Unggah Berkas Persyaratan (Maks 2MB)</td>
+        <td>DRAFT &rarr; MENUNGGU_VERIFIKASI</td>
+        <td>submitPermohonan()</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-03</td>
+        <td>Verifikasi Kelengkapan, Disposisi &amp; Penolakan Berkas oleh TU</td>
+        <td>MENUNGGU_VERIFIKASI &rarr; DIVERIFIKASI_TU</td>
+        <td>rejectTU(), approveTU()</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-04</td>
+        <td>Validasi Eksekutif &amp; Persetujuan Pengesahan Kepala Sekolah</td>
+        <td>DIVERIFIKASI_TU &rarr; DISETUJUI_KEPSEK</td>
+        <td>rejectKepsek(), approveKepsek()</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-05</td>
+        <td>Penomoran Otomatis Berurutan &amp; QR Code Enkripsi TTE</td>
+        <td>DISETUJUI_KEPSEK (Internal Actions)</td>
+        <td>createQR_TTE()</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-06</td>
+        <td>Pelacakan Status Waktu Nyata &amp; Pengunduhan Dokumen PDF Resmi</td>
+        <td>SELESAI_SIAP_UNDUH &rarr; DIARSIPKAN</td>
+        <td>autoGeneratePDF(), unduhSurat()</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- BAB V -->
+  <h2 class="section-title">BAB V: KESIMPULAN</h2>
+  <p>
+    Berdasarkan hasil perancangan State Machine Diagram pada Tugas 5 ini, dapat disimpulkan bahwa:
+  </p>
+  <ol>
+    <li>Siklus hidup entitas permohonan surat siswa (<code>SuratPengajuan</code>) telah berhasil dimodelkan secara komprehensif mencakup seluruh kemungkinan status (normal, penolakan revisi TU, evaluasi Kepala Sekolah, hingga penerbitan dan pengarsipan).</li>
+    <li>Siklus sesi pengguna (<code>UserSession</code>) telah dimodelkan dengan standar keamanan industri modern yang menerapkan otentikasi JWT, rotasi refresh token, dan pembatasan batas waktu inaktif (inactivity timeout).</li>
+    <li>Matriks transisi keadaan formal dan pemetaan enum basis data membuktikan kesiapan arsitektur sistem SIPESAT untuk langsung diimplementasikan pada basis data PostgreSQL dan backend Next.js secara presisi tanpa ambiguitas logika bisnis.</li>
+    <li>Hasil pemodelan Tugas 5 ini 100% selaras dan dapat ditelusuri (traceable) ke dokumen spesifikasi kebutuhan perangkat lunak (SRS Tugas 2) dan diagram alir UML (Tugas 4).</li>
+  </ol>
+
+  <br>
+  <div style="text-align: right; margin-top: 20px; font-size: 10.5pt;">
+    <p>Jakarta, Oktober 2026</p>
+    <p style="margin-top: -6px;"><strong>Kelompok 7 RPL — Teknik Informatika UNINDRA</strong></p>
+  </div>
+
+</body>
+</html>
