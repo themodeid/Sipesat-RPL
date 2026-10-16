@@ -137,7 +137,7 @@
                     <mxGeometry height="140" width="80" x="1560" y="475" as="geometry" />
                 </mxCell>
 
-                <!-- ==================== DIRECT FAN ASSOCIATIONS (ZERO CROSSING) ==================== -->
+                <!-- ==================== DIRECT FAN ASSOCIATIONS ==================== -->
                 <!-- SISWA FAN -->
                 <mxCell id="edge_s_reg" edge="1" parent="1" source="act_siswa" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=1.5;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" target="uc_register">
                     <mxGeometry relative="1" as="geometry" />
@@ -158,7 +158,7 @@
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- SISWA TO TOP SHARED AUTH (Perimeter routing without crossing) -->
+                <!-- SISWA TO TOP SHARED AUTH (Perimeter routing in gap y=85 between header y=75 and boundary y=95) -->
                 <mxCell id="edge_s_logout" edge="1" parent="1" source="act_siswa" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" target="uc_logout">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
@@ -171,8 +171,8 @@
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="90" y="475" />
-                            <mxPoint x="90" y="65" />
-                            <mxPoint x="825" y="65" />
+                            <mxPoint x="90" y="85" />
+                            <mxPoint x="825" y="85" />
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -216,8 +216,8 @@
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="1620" y="475" />
-                            <mxPoint x="1620" y="65" />
-                            <mxPoint x="935" y="65" />
+                            <mxPoint x="1620" y="85" />
+                            <mxPoint x="935" y="85" />
                         </Array>
                     </mxGeometry>
                 </mxCell>

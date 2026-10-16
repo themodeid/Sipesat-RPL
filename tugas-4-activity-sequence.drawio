@@ -10,102 +10,104 @@
                     <mxGeometry height="55" width="1680" x="50" y="20" as="geometry" />
                 </mxCell>
 
-                <!-- SWIMLANE 1: SISWA (LEFT, WIDTH 500) -->
-                <mxCell id="lane_siswa" parent="1" style="swimlane;startSize=32;fontStyle=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;" value="Siswa (Aktor Pemohon)" vertex="1">
-                    <mxGeometry height="1200" width="500" x="50" y="95" as="geometry" />
+                <!-- SWIMLANE 1: SISWA (LEFT, WIDTH 520) -->
+                <mxCell id="lane_siswa" parent="1" style="swimlane;startSize=32;fontStyle=1;align=center;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;" value="Siswa (Aktor Pemohon)" vertex="1">
+                    <mxGeometry height="1200" width="520" x="50" y="95" as="geometry" />
                 </mxCell>
 
                 <mxCell id="act_start" parent="lane_siswa" style="ellipse;fillColor=#000000;strokeColor=#000000;fontColor=#000000" value="" vertex="1">
-                    <mxGeometry height="34" width="34" x="233" y="45" as="geometry" />
+                    <mxGeometry height="34" width="34" x="243" y="45" as="geometry" />
                 </mxCell>
 
                 <mxCell id="s_step_1" parent="lane_siswa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="1. Buka Web SIPESAT &amp;amp; Login Akun&#10;(Input NISN &amp;amp; Kata Sandi)" vertex="1">
-                    <mxGeometry height="52" width="290" x="105" y="110" as="geometry" />
+                    <mxGeometry height="52" width="280" x="120" y="110" as="geometry" />
                 </mxCell>
 
                 <mxCell id="s_step_2" parent="lane_siswa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="2. Masuk Menu 'Pengajuan Surat' &amp;amp;&#10;Pilih Jenis Surat yang Diperlukan" vertex="1">
-                    <mxGeometry height="52" width="290" x="105" y="200" as="geometry" />
+                    <mxGeometry height="52" width="280" x="120" y="200" as="geometry" />
                 </mxCell>
 
-                <mxCell id="s_step_3" parent="lane_siswa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="3. Isi Formulir Keperluan &amp;amp;&#10;Unggah Dokumen Syarat (PDF &amp;le; 2MB)" vertex="1">
-                    <mxGeometry height="52" width="290" x="105" y="290" as="geometry" />
+                <mxCell id="s_step_3" parent="lane_siswa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;" value="3. Isi Formulir Keperluan &amp;amp;&#10;Unggah Dokumen Syarat (PDF &amp;le; 2MB)" vertex="1">
+                    <mxGeometry height="52" width="280" x="120" y="290" as="geometry" />
                 </mxCell>
 
-                <mxCell id="s_step_4" parent="lane_siswa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="4. Klik Tombol 'Kirim Permohonan'" vertex="1">
-                    <mxGeometry height="48" width="270" x="115" y="380" as="geometry" />
+                <mxCell id="s_step_4" parent="lane_siswa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;" value="4. Klik Tombol 'Kirim Permohonan'" vertex="1">
+                    <mxGeometry height="50" width="280" x="120" y="380" as="geometry" />
                 </mxCell>
 
                 <mxCell id="s_step_revisi" parent="lane_siswa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="Menerima Catatan Koreksi Revisi &amp;amp;&#10;Perbaiki Berkas yang Kurang" vertex="1">
-                    <mxGeometry height="55" width="290" x="105" y="740" as="geometry" />
+                    <mxGeometry height="55" width="280" x="120" y="819" as="geometry" />
                 </mxCell>
 
                 <mxCell id="s_step_unduh" parent="lane_siswa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" value="12. Terima Notifikasi Selesai &amp;amp;&#10;Unduh Berkas PDF Surat Resmi" vertex="1">
-                    <mxGeometry height="55" width="290" x="105" y="1000" as="geometry" />
+                    <mxGeometry height="55" width="280" x="120" y="1000" as="geometry" />
                 </mxCell>
 
                 <mxCell id="s_end_node" parent="lane_siswa" style="ellipse;shape=doubleEllipse;fillColor=#000000;strokeColor=#000000;strokeWidth=2.2;fontColor=#000000" value="" vertex="1">
-                    <mxGeometry height="36" width="36" x="232" y="1100" as="geometry" />
+                    <mxGeometry height="36" width="36" x="242" y="1100" as="geometry" />
                 </mxCell>
 
                 <!-- SWIMLANE 2: SISTEM WEB SIPESAT (CENTER, WIDTH 580) -->
-                <mxCell id="lane_sistem" parent="1" style="swimlane;startSize=32;fontStyle=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;" value="Sistem (Aplikasi Web SIPESAT)" vertex="1">
-                    <mxGeometry height="1200" width="580" x="560" y="95" as="geometry" />
+                <mxCell id="lane_sistem" parent="1" style="swimlane;startSize=32;fontStyle=1;align=center;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;" value="Sistem (Aplikasi Web SIPESAT)" vertex="1">
+                    <mxGeometry height="1200" width="580" x="570" y="95" as="geometry" />
                 </mxCell>
 
-                <mxCell id="sys_step_val" parent="lane_sistem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="5. Validasi Kelengkapan Formulir &amp;amp;&#10;Format / Ukuran File Dokumen" vertex="1">
-                    <mxGeometry height="52" width="290" x="145" y="380" as="geometry" />
+                <mxCell id="sys_step_val" parent="lane_sistem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;" value="5. Validasi Kelengkapan Formulir &amp;amp;&#10;Format / Ukuran File Dokumen" vertex="1">
+                    <mxGeometry height="52" width="280" x="150" y="379" as="geometry" />
                 </mxCell>
 
-                <mxCell id="sys_dec_file" parent="lane_sistem" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=11;fontStyle=1;" value="Form Lengkap&#10;&amp;amp; File &amp;le; 2MB?" vertex="1">
+                <mxCell id="sys_dec_file" parent="lane_sistem" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=11.5;fontStyle=1;" value="Form Lengkap&#10;&amp;amp; File &amp;le; 2MB?" vertex="1">
                     <mxGeometry height="65" width="160" x="210" y="465" as="geometry" />
                 </mxCell>
 
-                <mxCell id="sys_err_alert" parent="lane_sistem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" value="Tampilkan Peringatan Validasi:&#10;'File &amp;gt; 2MB / Formulir Kosong'" vertex="1">
-                    <mxGeometry height="48" width="220" x="20" y="555" as="geometry" />
+                <!-- ERROR ALERT (Cleanly inside lane_sistem, 25px safe margin from divider) -->
+                <mxCell id="sys_err_alert" parent="lane_sistem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" value="Peringatan Validasi:&#10;'File &amp;gt; 2MB / Form Kosong'" vertex="1">
+                    <mxGeometry height="50" width="200" x="25" y="555" as="geometry" />
                 </mxCell>
 
                 <mxCell id="sys_step_save" parent="lane_sistem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="6. Simpan Database (Status: DIAJUKAN)&#10;&amp;amp; Terbitkan Nomor Resi Tiket Unik" vertex="1">
-                    <mxGeometry height="52" width="290" x="145" y="565" as="geometry" />
+                    <mxGeometry height="52" width="280" x="150" y="565" as="geometry" />
                 </mxCell>
 
-                <mxCell id="sys_step_forward" parent="lane_sistem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="7. Teruskan Berkas ke Meja Antrean TU" vertex="1">
-                    <mxGeometry height="48" width="290" x="145" y="650" as="geometry" />
+                <mxCell id="sys_step_forward" parent="lane_sistem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;" value="7. Teruskan Berkas ke Meja Antrean TU" vertex="1">
+                    <mxGeometry height="48" width="280" x="150" y="650" as="geometry" />
                 </mxCell>
 
                 <mxCell id="sys_step_rej" parent="lane_sistem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="UPDATE Status: 'DITOLAK_PERLU_REVISI'&#10;&amp;amp; Kirim Notifikasi Koreksi ke Siswa" vertex="1">
-                    <mxGeometry height="55" width="290" x="145" y="740" as="geometry" />
+                    <mxGeometry height="55" width="280" x="150" y="819" as="geometry" />
                 </mxCell>
 
                 <mxCell id="sys_step_compile" parent="lane_sistem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" value="11. Kompilasi Kop Sekolah, Data &amp;amp; QR Code&#10;ke File PDF (Status: SELESAI)" vertex="1">
-                    <mxGeometry height="55" width="310" x="135" y="1000" as="geometry" />
+                    <mxGeometry height="55" width="290" x="145" y="1000" as="geometry" />
                 </mxCell>
 
                 <!-- SWIMLANE 3: PETUGAS TU & KEPSEK (RIGHT, WIDTH 580) -->
-                <mxCell id="lane_petugas" parent="1" style="swimlane;startSize=32;fontStyle=1;align=center;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;" value="Petugas TU &amp;amp; Kepala Sekolah" vertex="1">
+                <mxCell id="lane_petugas" parent="1" style="swimlane;startSize=32;fontStyle=1;align=center;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;" value="Petugas TU &amp;amp; Kepala Sekolah" vertex="1">
                     <mxGeometry height="1200" width="580" x="1150" y="95" as="geometry" />
                 </mxCell>
 
-                <mxCell id="p_step_review" parent="lane_petugas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="8. Login ke Panel TU, Buka Antrean&#10;&amp;amp; Tinjau Berkas Dokumen Siswa" vertex="1">
-                    <mxGeometry height="52" width="290" x="145" y="650" as="geometry" />
+                <mxCell id="p_step_review" parent="lane_petugas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;" value="8. Login ke Panel TU, Buka Antrean&#10;&amp;amp; Tinjau Berkas Dokumen Siswa" vertex="1">
+                    <mxGeometry height="52" width="280" x="150" y="648" as="geometry" />
                 </mxCell>
 
-                <mxCell id="p_dec_valid" parent="lane_petugas" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=11;fontStyle=1;" value="Berkas Lengkap&#10;&amp;amp; Sah?" vertex="1">
-                    <mxGeometry height="65" width="160" x="210" y="735" as="geometry" />
+                <mxCell id="p_dec_valid" parent="lane_petugas" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=11.5;fontStyle=1;" value="Berkas Lengkap&#10;&amp;amp; Sah?" vertex="1">
+                    <mxGeometry height="65" width="160" x="210" y="730" as="geometry" />
                 </mxCell>
 
-                <mxCell id="p_step_rej" parent="lane_petugas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="9A. Input Alasan / Catatan Koreksi &amp;amp;&#10;Klik 'Tolak &amp;amp; Minta Revisi'" vertex="1">
-                    <mxGeometry height="52" width="260" x="20" y="830" as="geometry" />
+                <mxCell id="p_step_rej" parent="lane_petugas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="9A. Input Alasan / Koreksi &amp;amp;&#10;Klik 'Tolak &amp;amp; Minta Revisi'" vertex="1">
+                    <mxGeometry height="52" width="230" x="25" y="820" as="geometry" />
                 </mxCell>
 
                 <mxCell id="p_step_app" parent="lane_petugas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;fontSize=12;" value="9B. Input No. Agenda Masuk TU &amp;amp;&#10;Teruskan Permohonan ke Kepsek" vertex="1">
-                    <mxGeometry height="52" width="270" x="290" y="830" as="geometry" />
+                    <mxGeometry height="52" width="240" x="315" y="820" as="geometry" />
                 </mxCell>
 
                 <mxCell id="p_step_sign" parent="lane_petugas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" value="10. Kepsek Menyetujui, Generate No. Surat&#10;Resmi &amp;amp; Bubuhkan TTE Kode QR" vertex="1">
-                    <mxGeometry height="55" width="300" x="140" y="920" as="geometry" />
+                    <mxGeometry height="55" width="280" x="150" y="915" as="geometry" />
                 </mxCell>
 
-                <!-- ==================== FLOW CONNECTORS ==================== -->
+                <!-- ==================== FLOW CONNECTORS (ZERO CROSSINGS) ==================== -->
+                <!-- SISWA INTERNAL FORWARD FLOW -->
                 <mxCell id="c_1" edge="1" parent="1" source="act_start" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="s_step_1">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
@@ -119,33 +121,40 @@
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Siswa Kirim -> Sistem Validasi -->
+                <!-- FORWARD 4 -> 5 (Leaves right edge x=450, goes to x=720 at y=405) -->
                 <mxCell id="c_5" edge="1" parent="1" source="s_step_4" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_step_val">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Sistem Validasi -> Decision 1 -->
+                <!-- SISTEM VALIDATION FLOW -->
                 <mxCell id="c_6" edge="1" parent="1" source="sys_step_val" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_dec_file">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Decision 1: Tidak -->
-                <mxCell id="c_7" edge="1" parent="1" source="sys_dec_file" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_err_alert" value="[Tidak]">
-                    <mxGeometry relative="1" as="geometry" />
-                </mxCell>
-
-                <!-- Error Alert -> Siswa Step 3 (Loop back) -->
-                <mxCell id="c_8" edge="1" parent="1" source="sys_err_alert" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="s_step_3" value="Perbaiki File">
+                <!-- Decision 1: Tidak (Orthogonal to Error Alert inside lane_sistem) -->
+                <mxCell id="c_7" edge="1" parent="1" source="sys_dec_file" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_err_alert" value="[Tidak / &amp;gt; 2MB]">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="690" y="630" />
-                            <mxPoint x="300" y="630" />
+                            <mxPoint x="695" y="498" />
+                            <mxPoint x="695" y="650" />
                         </Array>
                     </mxGeometry>
                 </mxCell>
 
-                <!-- Decision 1: Ya -->
-                <mxCell id="c_9" edge="1" parent="1" source="sys_dec_file" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_step_save" value="[Ya]">
+                <!-- ERROR ALERT -> SISWA STEP 3 (HIGHWAY TRACK 2: x=135, completely left of boxes!) -->
+                <!-- Waypoints pass down to y=625 (empty zone), left to highway x=135, then up to Step 3 left edge! ZERO CROSSINGS! -->
+                <mxCell id="c_8" edge="1" parent="1" source="sys_err_alert" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="s_step_3" value="Perbaiki File">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="695" y="735" />
+                            <mxPoint x="135" y="735" />
+                            <mxPoint x="135" y="411" />
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- Decision 1: Ya (Straight down to Save DB) -->
+                <mxCell id="c_9" edge="1" parent="1" source="sys_dec_file" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_step_save" value="[Ya / Sah]">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
@@ -153,62 +162,80 @@
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Sistem Forward -> Petugas Review -->
+                <!-- FORWARD 7 -> 8 (Straight horizontal at y=674 from x=1000 to x=1300) -->
                 <mxCell id="c_11" edge="1" parent="1" source="sys_step_forward" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;labelBackgroundColor=#ffffff;" target="p_step_review">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Petugas Review -> Decision 2 -->
+                <!-- PETUGAS DECISION FLOW -->
                 <mxCell id="c_12" edge="1" parent="1" source="p_step_review" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="p_dec_valid">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Decision 2: Tidak -->
-                <mxCell id="c_13" edge="1" parent="1" source="p_dec_valid" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="p_step_rej" value="[Tidak / Buram]">
-                    <mxGeometry relative="1" as="geometry" />
-                </mxCell>
-
-                <!-- Petugas Tolak -> Sistem Update Tolak -->
-                <mxCell id="c_14" edge="1" parent="1" source="p_step_rej" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_step_rej">
-                    <mxGeometry relative="1" as="geometry" />
-                </mxCell>
-
-                <!-- Sistem Update Tolak -> Siswa Terima Catatan Revisi -->
-                <mxCell id="c_15" edge="1" parent="1" source="sys_step_rej" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="s_step_revisi">
-                    <mxGeometry relative="1" as="geometry" />
-                </mxCell>
-
-                <!-- Siswa Revisi -> Kirim Ulang (Loop to Step 3) -->
-                <mxCell id="c_16" edge="1" parent="1" source="s_step_revisi" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="s_step_3" value="Upload Ulang">
+                <!-- Decision 2: Tidak / Buram (Branch left to 9A) -->
+                <mxCell id="c_13" edge="1" parent="1" source="p_dec_valid" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="p_step_rej" value="[Tidak / Buram]">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="100" y="860" />
-                            <mxPoint x="100" y="411" />
+                            <mxPoint x="1290" y="763" />
                         </Array>
                     </mxGeometry>
                 </mxCell>
 
-                <!-- Decision 2: Ya -->
-                <mxCell id="c_17" edge="1" parent="1" source="p_dec_valid" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;labelBackgroundColor=#ffffff;" target="p_step_app" value="[Ya / Sah]">
+                <!-- REJECTION RETURN FLOW (HORIZONTAL LINE AT y=846: Petugas 9A -> Sistem Update) -->
+                <mxCell id="c_14" edge="1" parent="1" source="p_step_rej" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_step_rej">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Petugas App -> Kepsek Sign -->
-                <mxCell id="c_18" edge="1" parent="1" source="p_step_app" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="p_step_sign">
+                <!-- REJECTION RETURN FLOW (HORIZONTAL LINE AT y=846: Sistem Update -> Siswa Terima Revisi) -->
+                <mxCell id="c_15" edge="1" parent="1" source="sys_step_rej" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;fontColor=#000000;labelBackgroundColor=#ffffff;" target="s_step_revisi">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Kepsek Sign -> Sistem Compile PDF -->
-                <mxCell id="c_19" edge="1" parent="1" source="p_step_sign" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_step_compile">
-                    <mxGeometry relative="1" as="geometry" />
+                <!-- SISWA REVISI -> STEP 3 (HIGHWAY TRACK 1: x=95, furthest left highway!) -->
+                <!-- Runs in outer highway x=95 up to Step 3 left edge! ZERO CROSSINGS! -->
+                <mxCell id="c_16" edge="1" parent="1" source="s_step_revisi" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="s_step_3" value="Upload Ulang">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="95" y="846" />
+                            <mxPoint x="95" y="429" />
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
 
-                <!-- Sistem Compile -> Siswa Unduh -->
+                <!-- Decision 2: Ya / Sah (Branch right to 9B) -->
+                <mxCell id="c_17" edge="1" parent="1" source="p_dec_valid" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="p_step_app" value="[Ya / Sah]">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1585" y="763" />
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- 9B -> 10 KEPSEK SIGN (Orthogonal down) -->
+                <mxCell id="c_18" edge="1" parent="1" source="p_step_app" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1.8;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="p_step_sign">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1585" y="890" />
+                            <mxPoint x="1440" y="890" />
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- 10 KEPSEK SIGN -> 11 SISTEM COMPILE PDF (Orthogonal down-left) -->
+                <mxCell id="c_19" edge="1" parent="1" source="p_step_sign" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sys_step_compile">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1440" y="1027" />
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- 11 SISTEM COMPILE -> 12 SISWA UNDUH (Straight horizontal at y=1027) -->
                 <mxCell id="c_20" edge="1" parent="1" source="sys_step_compile" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;labelBackgroundColor=#ffffff;" target="s_step_unduh">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Siswa Unduh -> Selesai -->
+                <!-- 12 SISWA UNDUH -> SELESAI (Straight down) -->
                 <mxCell id="c_21" edge="1" parent="1" source="s_step_unduh" style="endArrow=classic;html=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;labelBackgroundColor=#ffffff;" target="s_end_node">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
