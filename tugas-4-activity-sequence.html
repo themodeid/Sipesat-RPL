@@ -1,824 +1,823 @@
--<-!-D-O-C-T-Y-P-E- -h-t-m-l->-
--<-h-t-m-l- -l-a-n-g-=-"-i-d-"->-
--<-h-e-a-d->-
-- - -<-m-e-t-a- -c-h-a-r-s-e-t-=-"-U-T-F---8-"->-
-- - -<-t-i-t-l-e->-T-U-G-A-S- -4- -R-P-L- --- -A-C-T-I-V-I-T-Y- -&- -S-E-Q-U-E-N-C-E- -D-I-A-G-R-A-M- --- -K-E-L-O-M-P-O-K- -7-<-/-t-i-t-l-e->-
-- - -<-!----- -M-e-r-m-a-i-d-.-j-s- -C-D-N- -f-o-r- -c-l-i-e-n-t---s-i-d-e- -r-e-n-d-e-r-i-n-g- ----->-
-- - -<-s-c-r-i-p-t- -s-r-c-=-"-h-t-t-p-s-:-/-/-c-d-n-.-j-s-d-e-l-i-v-r-.-n-e-t-/-n-p-m-/-m-e-r-m-a-i-d-@-1-0-/-d-i-s-t-/-m-e-r-m-a-i-d-.-m-i-n-.-j-s-"->-<-/-s-c-r-i-p-t->-
-- - -<-s-c-r-i-p-t->-
-- - - - -m-e-r-m-a-i-d-.-i-n-i-t-i-a-l-i-z-e-(-{-
-- - - - - - -s-t-a-r-t-O-n-L-o-a-d-:- -t-r-u-e-,-
-- - - - - - -t-h-e-m-e-:- -'-d-e-f-a-u-l-t-'-,-
-- - - - - - -s-e-c-u-r-i-t-y-L-e-v-e-l-:- -'-l-o-o-s-e-'-,-
-- - - - - - -f-l-o-w-c-h-a-r-t-:- -{- -u-s-e-M-a-x-W-i-d-t-h-:- -t-r-u-e-,- -h-t-m-l-L-a-b-e-l-s-:- -t-r-u-e-,- -c-u-r-v-e-:- -'-b-a-s-i-s-'- -}-,-
-- - - - - - -s-e-q-u-e-n-c-e-:- -{- -u-s-e-M-a-x-W-i-d-t-h-:- -t-r-u-e-,- -s-h-o-w-S-e-q-u-e-n-c-e-N-u-m-b-e-r-s-:- -t-r-u-e- -}-
-- - - - -}-)-;-
-- - -<-/-s-c-r-i-p-t->-
-- - -<-s-t-y-l-e->-
-- - - - -@-p-a-g-e- -{-
-- - - - - - -s-i-z-e-:- -A-4-;-
-- - - - - - -m-a-r-g-i-n-:- -2-c-m- -2-c-m- -2-c-m- -2-c-m-;-
-- - - - -}-
-- - - - -b-o-d-y- -{-
-- - - - - - -f-o-n-t---f-a-m-i-l-y-:- -'-T-i-m-e-s- -N-e-w- -R-o-m-a-n-'-,- -T-i-m-e-s-,- -s-e-r-i-f-;-
-- - - - - - -f-o-n-t---s-i-z-e-:- -1-1-p-t-;-
-- - - - - - -l-i-n-e---h-e-i-g-h-t-:- -1-.-4-5-;-
-- - - - - - -c-o-l-o-r-:- -#-1-1-1-;-
-- - - - - - -m-a-r-g-i-n-:- -0- -a-u-t-o-;-
-- - - - - - -p-a-d-d-i-n-g-:- -2-c-m- -1-.-5-c-m-;-
-- - - - - - -m-a-x---w-i-d-t-h-:- -2-1-0-m-m-;-
-- - - - - - -b-a-c-k-g-r-o-u-n-d-:- -#-f-f-f-;-
-- - - - -}-
-- - - - -@-m-e-d-i-a- -p-r-i-n-t- -{-
-- - - - - - -b-o-d-y- -{-
-- - - - - - - - -p-a-d-d-i-n-g-:- -0-;-
-- - - - - - - - -m-a-x---w-i-d-t-h-:- -1-0-0-%-;-
-- - - - - - -}-
-- - - - - - -.-n-o---p-r-i-n-t- -{-
-- - - - - - - - -d-i-s-p-l-a-y-:- -n-o-n-e- -!-i-m-p-o-r-t-a-n-t-;-
-- - - - - - -}-
-- - - - - - -.-p-a-g-e---b-r-e-a-k- -{-
-- - - - - - - - -p-a-g-e---b-r-e-a-k---b-e-f-o-r-e-:- -a-l-w-a-y-s-;-
-- - - - - - -}-
-- - - - - - -.-d-i-a-g-r-a-m---c-o-n-t-a-i-n-e-r- -{-
-- - - - - - - - -p-a-g-e---b-r-e-a-k---i-n-s-i-d-e-:- -a-v-o-i-d-;-
-- - - - - - -}-
-- - - - -}-
-- - - - -.-p-r-i-n-t---b-a-r- -{-
-- - - - - - -p-o-s-i-t-i-o-n-:- -f-i-x-e-d-;-
-- - - - - - -t-o-p-:- -1-2-p-x-;-
-- - - - - - -r-i-g-h-t-:- -1-6-p-x-;-
-- - - - - - -z---i-n-d-e-x-:- -1-0-0-0-;-
-- - - - - - -b-a-c-k-g-r-o-u-n-d-:- -#-1-e-2-9-3-b-;-
-- - - - - - -c-o-l-o-r-:- -#-f-f-f-;-
-- - - - - - -p-a-d-d-i-n-g-:- -8-p-x- -1-6-p-x-;-
-- - - - - - -b-o-r-d-e-r---r-a-d-i-u-s-:- -6-p-x-;-
-- - - - - - -b-o-x---s-h-a-d-o-w-:- -0- -4-p-x- -1-2-p-x- -r-g-b-a-(-0-,-0-,-0-,-0-.-1-5-)-;-
-- - - - - - -d-i-s-p-l-a-y-:- -f-l-e-x-;-
-- - - - - - -g-a-p-:- -1-0-p-x-;-
-- - - - - - -a-l-i-g-n---i-t-e-m-s-:- -c-e-n-t-e-r-;-
-- - - - - - -f-o-n-t---f-a-m-i-l-y-:- -s-y-s-t-e-m---u-i-,- ---a-p-p-l-e---s-y-s-t-e-m-,- -s-a-n-s---s-e-r-i-f-;-
-- - - - - - -f-o-n-t---s-i-z-e-:- -1-3-p-x-;-
-- - - - -}-
-- - - - -.-p-r-i-n-t---b-t-n- -{-
-- - - - - - -b-a-c-k-g-r-o-u-n-d-:- -#-2-5-6-3-e-b-;-
-- - - - - - -c-o-l-o-r-:- -#-f-f-f-;-
-- - - - - - -b-o-r-d-e-r-:- -n-o-n-e-;-
-- - - - - - -p-a-d-d-i-n-g-:- -6-p-x- -1-4-p-x-;-
-- - - - - - -b-o-r-d-e-r---r-a-d-i-u-s-:- -4-p-x-;-
-- - - - - - -f-o-n-t---w-e-i-g-h-t-:- -6-0-0-;-
-- - - - - - -c-u-r-s-o-r-:- -p-o-i-n-t-e-r-;-
-- - - - - - -t-r-a-n-s-i-t-i-o-n-:- -b-a-c-k-g-r-o-u-n-d- -0-.-1-5-s-;-
-- - - - -}-
-- - - - -.-p-r-i-n-t---b-t-n-:-h-o-v-e-r- -{-
-- - - - - - -b-a-c-k-g-r-o-u-n-d-:- -#-1-d-4-e-d-8-;-
-- - - - -}-
-- - - - -.-h-e-a-d-e-r- -{-
-- - - - - - -t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;-
-- - - - - - -b-o-r-d-e-r---b-o-t-t-o-m-:- -2-p-x- -s-o-l-i-d- -#-1-1-1-;-
-- - - - - - -p-a-d-d-i-n-g---b-o-t-t-o-m-:- -1-0-p-x-;-
-- - - - - - -m-a-r-g-i-n---b-o-t-t-o-m-:- -1-6-p-x-;-
-- - - - -}-
-- - - - -.-h-e-a-d-e-r- -h-1- -{-
-- - - - - - -f-o-n-t---s-i-z-e-:- -1-3-p-t-;-
-- - - - - - -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-
-- - - - - - -t-e-x-t---t-r-a-n-s-f-o-r-m-:- -u-p-p-e-r-c-a-s-e-;-
-- - - - - - -m-a-r-g-i-n-:- -0- -0- -3-p-x- -0-;-
-- - - - - - -l-e-t-t-e-r---s-p-a-c-i-n-g-:- -0-.-5-p-x-;-
-- - - - -}-
-- - - - -.-h-e-a-d-e-r- -h-2- -{-
-- - - - - - -f-o-n-t---s-i-z-e-:- -1-1-.-5-p-t-;-
-- - - - - - -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-
-- - - - - - -m-a-r-g-i-n-:- -0- -0- -3-p-x- -0-;-
-- - - - -}-
-- - - - -.-h-e-a-d-e-r- -p- -{-
-- - - - - - -f-o-n-t---s-i-z-e-:- -1-0-p-t-;-
-- - - - - - -m-a-r-g-i-n-:- -0-;-
-- - - - - - -c-o-l-o-r-:- -#-3-3-3-;-
-- - - - -}-
-- - - - -.-m-e-t-a---b-o-x- -{-
-- - - - - - -b-o-r-d-e-r-:- -1-p-x- -s-o-l-i-d- -#-7-7-7-;-
-- - - - - - -b-a-c-k-g-r-o-u-n-d---c-o-l-o-r-:- -#-f-a-f-a-f-a-;-
-- - - - - - -p-a-d-d-i-n-g-:- -1-0-p-x- -1-4-p-x-;-
-- - - - - - -m-a-r-g-i-n---b-o-t-t-o-m-:- -2-0-p-x-;-
-- - - - - - -b-o-r-d-e-r---r-a-d-i-u-s-:- -4-p-x-;-
-- - - - -}-
-- - - - -.-m-e-t-a---t-a-b-l-e- -{-
-- - - - - - -w-i-d-t-h-:- -1-0-0-%-;-
-- - - - - - -b-o-r-d-e-r---c-o-l-l-a-p-s-e-:- -c-o-l-l-a-p-s-e-;-
-- - - - - - -f-o-n-t---s-i-z-e-:- -1-0-.-5-p-t-;-
-- - - - -}-
-- - - - -.-m-e-t-a---t-a-b-l-e- -t-h-,- -.-m-e-t-a---t-a-b-l-e- -t-d- -{-
-- - - - - - -p-a-d-d-i-n-g-:- -3-p-x- -6-p-x-;-
-- - - - - - -v-e-r-t-i-c-a-l---a-l-i-g-n-:- -t-o-p-;-
-- - - - -}-
-- - - - -.-m-e-t-a---t-a-b-l-e- -t-h- -{-
-- - - - - - -t-e-x-t---a-l-i-g-n-:- -l-e-f-t-;-
-- - - - - - -w-i-d-t-h-:- -2-8-%-;-
-- - - - - - -c-o-l-o-r-:- -#-2-2-2-;-
-- - - - -}-
-- - - - -h-2-.-s-e-c-t-i-o-n---t-i-t-l-e- -{-
-- - - - - - -f-o-n-t---s-i-z-e-:- -1-2-p-t-;-
-- - - - - - -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-
-- - - - - - -t-e-x-t---t-r-a-n-s-f-o-r-m-:- -u-p-p-e-r-c-a-s-e-;-
-- - - - - - -m-a-r-g-i-n---t-o-p-:- -2-0-p-x-;-
-- - - - - - -m-a-r-g-i-n---b-o-t-t-o-m-:- -8-p-x-;-
-- - - - - - -b-o-r-d-e-r---b-o-t-t-o-m-:- -1-p-x- -s-o-l-i-d- -#-4-4-4-;-
-- - - - - - -p-a-d-d-i-n-g---b-o-t-t-o-m-:- -3-p-x-;-
-- - - - -}-
-- - - - -h-3-.-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e- -{-
-- - - - - - -f-o-n-t---s-i-z-e-:- -1-1-p-t-;-
-- - - - - - -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-
-- - - - - - -m-a-r-g-i-n---t-o-p-:- -1-4-p-x-;-
-- - - - - - -m-a-r-g-i-n---b-o-t-t-o-m-:- -6-p-x-;-
-- - - - - - -c-o-l-o-r-:- -#-0-f-1-7-2-a-;-
-- - - - -}-
-- - - - -p-,- -l-i- -{-
-- - - - - - -t-e-x-t---a-l-i-g-n-:- -j-u-s-t-i-f-y-;-
-- - - - -}-
-- - - - -.-d-i-a-g-r-a-m---c-a-r-d- -{-
-- - - - - - -b-o-r-d-e-r-:- -1-p-x- -s-o-l-i-d- -#-c-b-d-5-e-1-;-
-- - - - - - -b-o-r-d-e-r---r-a-d-i-u-s-:- -6-p-x-;-
-- - - - - - -p-a-d-d-i-n-g-:- -1-2-p-x-;-
-- - - - - - -m-a-r-g-i-n-:- -1-2-p-x- -0- -1-6-p-x- -0-;-
-- - - - - - -b-a-c-k-g-r-o-u-n-d-:- -#-f-8-f-a-f-c-;-
-- - - - - - -t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;-
-- - - - -}-
-- - - - -.-d-i-a-g-r-a-m---c-a-p-t-i-o-n- -{-
-- - - - - - -f-o-n-t---s-i-z-e-:- -9-.-5-p-t-;-
-- - - - - - -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-
-- - - - - - -c-o-l-o-r-:- -#-4-7-5-5-6-9-;-
-- - - - - - -m-a-r-g-i-n---t-o-p-:- -8-p-x-;-
-- - - - - - -t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;-
-- - - - - - -f-o-n-t---s-t-y-l-e-:- -i-t-a-l-i-c-;-
-- - - - -}-
-- - - - -t-a-b-l-e-.-d-a-t-a---t-a-b-l-e- -{-
-- - - - - - -w-i-d-t-h-:- -1-0-0-%-;-
-- - - - - - -b-o-r-d-e-r---c-o-l-l-a-p-s-e-:- -c-o-l-l-a-p-s-e-;-
-- - - - - - -m-a-r-g-i-n-:- -1-0-p-x- -0- -1-6-p-x- -0-;-
-- - - - - - -f-o-n-t---s-i-z-e-:- -1-0-p-t-;-
-- - - - -}-
-- - - - -t-a-b-l-e-.-d-a-t-a---t-a-b-l-e- -t-h-,- -t-a-b-l-e-.-d-a-t-a---t-a-b-l-e- -t-d- -{-
-- - - - - - -b-o-r-d-e-r-:- -1-p-x- -s-o-l-i-d- -#-6-4-7-4-8-b-;-
-- - - - - - -p-a-d-d-i-n-g-:- -6-p-x- -8-p-x-;-
-- - - - -}-
-- - - - -t-a-b-l-e-.-d-a-t-a---t-a-b-l-e- -t-h- -{-
-- - - - - - -b-a-c-k-g-r-o-u-n-d---c-o-l-o-r-:- -#-f-1-f-5-f-9-;-
-- - - - - - -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-
-- - - - - - -t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;-
-- - - - -}-
-- - - - -o-l-,- -u-l- -{-
-- - - - - - -m-a-r-g-i-n---t-o-p-:- -4-p-x-;-
-- - - - - - -m-a-r-g-i-n---b-o-t-t-o-m-:- -8-p-x-;-
-- - - - - - -p-a-d-d-i-n-g---l-e-f-t-:- -2-0-p-x-;-
-- - - - -}-
-- - - - -.-b-a-d-g-e- -{-
-- - - - - - -d-i-s-p-l-a-y-:- -i-n-l-i-n-e---b-l-o-c-k-;-
-- - - - - - -p-a-d-d-i-n-g-:- -1-p-x- -6-p-x-;-
-- - - - - - -b-o-r-d-e-r---r-a-d-i-u-s-:- -3-p-x-;-
-- - - - - - -f-o-n-t---s-i-z-e-:- -8-.-5-p-t-;-
-- - - - - - -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-
-- - - - - - -f-o-n-t---f-a-m-i-l-y-:- -m-o-n-o-s-p-a-c-e-;-
-- - - - -}-
-- - - - -.-b-a-d-g-e---a-c-t-o-r- -{- -b-a-c-k-g-r-o-u-n-d-:- -#-e-0-f-2-f-e-;- -c-o-l-o-r-:- -#-0-3-6-9-a-1-;- -b-o-r-d-e-r-:- -1-p-x- -s-o-l-i-d- -#-b-a-e-6-f-d-;- -}-
-- - - - -.-b-a-d-g-e---b-c-e- -{- -b-a-c-k-g-r-o-u-n-d-:- -#-f-e-f-3-c-7-;- -c-o-l-o-r-:- -#-b-4-5-3-0-9-;- -b-o-r-d-e-r-:- -1-p-x- -s-o-l-i-d- -#-f-d-e-6-8-a-;- -}-
-- - -<-/-s-t-y-l-e->-
--<-/-h-e-a-d->-
--<-b-o-d-y->-
--
-- - -<-!----- -F-l-o-a-t-i-n-g- -P-r-i-n-t- -C-o-n-t-r-o-l- -(-H-i-d-d-e-n- -w-h-e-n- -p-r-i-n-t-e-d-)- ----->-
-- - -<-d-i-v- -c-l-a-s-s-=-"-p-r-i-n-t---b-a-r- -n-o---p-r-i-n-t-"->-
-- - - - -<-s-p-a-n->-D-o-k-u-m-e-n- -S-i-a-p- -C-e-t-a-k- -A-4- -/- -P-D-F-<-/-s-p-a-n->-
-- - - - -<-b-u-t-t-o-n- -c-l-a-s-s-=-"-p-r-i-n-t---b-t-n-"- -o-n-c-l-i-c-k-=-"-w-i-n-d-o-w-.-p-r-i-n-t-(-)-"->-🖨-️- -C-e-t-a-k- -/- -S-i-m-p-a-n- -P-D-F-<-/-b-u-t-t-o-n->-
-- - -<-/-d-i-v->-
--
-- - -<-!----- -H-e-a-d-e-r- -D-o-k-u-m-e-n- -F-o-r-m-a-l- -U-N-I-N-D-R-A- ----->-
-- - -<-d-i-v- -c-l-a-s-s-=-"-h-e-a-d-e-r-"->-
-- - - - -<-h-1->-T-U-G-A-S- -4- --- -R-E-K-A-Y-A-S-A- -P-E-R-A-N-G-K-A-T- -L-U-N-A-K- -(-R-P-L-)-<-/-h-1->-
-- - - - -<-h-2->-P-E-R-A-N-C-A-N-G-A-N- -A-C-T-I-V-I-T-Y- -D-I-A-G-R-A-M- -D-A-N- -S-E-Q-U-E-N-C-E- -D-I-A-G-R-A-M-<-/-h-2->-
-- - - - -<-p->-P-R-O-G-R-A-M- -S-T-U-D-I- -T-E-K-N-I-K- -I-N-F-O-R-M-A-T-I-K-A- -&-m-d-a-s-h-;- -F-T-I-K- -U-N-I-V-E-R-S-I-T-A-S- -I-N-D-R-A-P-R-A-S-T-A- -P-G-R-I- -(-U-N-I-N-D-R-A-)-<-/-p->-
-- - - - -<-p->-T-A-H-U-N- -A-K-A-D-E-M-I-K- -2-0-2-6-/-2-0-2-7-<-/-p->-
-- - -<-/-d-i-v->-
--
-- - -<-!----- -B-o-x- -I-n-f-o-r-m-a-s-i- -I-d-e-n-t-i-t-a-s- -K-e-l-o-m-p-o-k- -&- -P-r-o-y-e-k- ----->-
-- - -<-d-i-v- -c-l-a-s-s-=-"-m-e-t-a---b-o-x-"->-
-- - - - -<-t-a-b-l-e- -c-l-a-s-s-=-"-m-e-t-a---t-a-b-l-e-"->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-h->-K-e-l-o-m-p-o-k- -/- -K-e-l-a-s-<-/-t-h->-
-- - - - - - - - -<-t-d->-:- -<-s-t-r-o-n-g->-K-e-l-o-m-p-o-k- -R-P-L- -7-<-/-s-t-r-o-n-g->-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-h->-A-n-g-g-o-t-a- -K-e-l-o-m-p-o-k-<-/-t-h->-
-- - - - - - - - -<-t-d->-:- -
-- - - - - - - - - - -1-.- -<-s-t-r-o-n-g->-A-d-a-m- -W-a-h-y-u- -K-u-r-n-i-a-w-a-n-<-/-s-t-r-o-n-g->- -(-N-P-M-:- -2-0-2-3-4-3-5-0-0-5-1-0-)-<-b-r->-
-- - - - - - - - - - -&-n-b-s-p-;-&-n-b-s-p-;-2-.- -<-s-t-r-o-n-g->-F-a-t-h-u- -R-a-h-m-a-n-<-/-s-t-r-o-n-g->- -(-N-P-M-:- -2-0-2-3-4-3-5-0-0-4-6-7-)-<-b-r->-
-- - - - - - - - - - -&-n-b-s-p-;-&-n-b-s-p-;-3-.- -<-s-t-r-o-n-g->-S-u-r-y-a- -E-d-i- -S-a-p-u-t-r-a-<-/-s-t-r-o-n-g->- -(-N-P-M-:- -2-0-2-3-4-3-5-0-0-4-6-8-)-<-b-r->-
-- - - - - - - - - - -&-n-b-s-p-;-&-n-b-s-p-;-4-.- -<-s-t-r-o-n-g->-R-i-z-q-i- -M-u-h-.- -A-l- -H-a-k-i-m-i-<-/-s-t-r-o-n-g->- -(-N-P-M-:- -2-0-2-3-4-3-5-0-0-4-4-9-)-
-- - - - - - - - -<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-h->-J-u-d-u-l- -P-r-o-y-e-k-<-/-t-h->-
-- - - - - - - - -<-t-d->-:- -<-s-t-r-o-n-g->-S-i-s-t-e-m- -I-n-f-o-r-m-a-s-i- -P-e-n-g-a-j-u-a-n- -S-u-r-a-t- -S-i-s-w-a- -B-e-r-b-a-s-i-s- -W-e-b- -(-S-I-P-E-S-A-T-)-<-/-s-t-r-o-n-g->-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-h->-S-t-u-d-i- -K-a-s-u-s-<-/-t-h->-
-- - - - - - - - -<-t-d->-:- -P-e-l-a-y-a-n-a-n- -A-d-m-i-n-i-s-t-r-a-s-i- -P-e-r-s-u-r-a-t-a-n- -S-i-s-w-a- -&-a-m-p-;- -T-a-t-a- -U-s-a-h-a- -S-e-k-o-l-a-h- -M-e-n-e-n-g-a-h-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-h->-L-a-n-d-a-s-a-n- -D-o-k-u-m-e-n-<-/-t-h->-
-- - - - - - - - -<-t-d->-:- -D-o-k-u-m-e-n- -S-p-e-s-i-f-i-k-a-s-i- -K-e-b-u-t-u-h-a-n- -P-e-r-a-n-g-k-a-t- -L-u-n-a-k- -(-S-R-S-)- -S-t-a-n-d-a-r- -I-E-E-E- -S-t-d- -8-3-0---1-9-9-8- -(-T-u-g-a-s- -2-)-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - -<-/-t-a-b-l-e->-
-- - -<-/-d-i-v->-
--
-- - -<-!----- -B-A-B- -I-:- -P-E-N-D-A-H-U-L-U-A-N- ----->-
-- - -<-h-2- -c-l-a-s-s-=-"-s-e-c-t-i-o-n---t-i-t-l-e-"->-B-A-B- -I-:- -P-E-N-D-A-H-U-L-U-A-N- -&-a-m-p-;- -G-A-M-B-A-R-A-N- -U-M-U-M- -S-I-S-T-E-M-<-/-h-2->-
-- - -
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-1-.-1- -D-e-s-k-r-i-p-s-i- -P-r-o-y-e-k- -S-I-P-E-S-A-T-<-/-h-3->-
-- - -<-p->-
-- - - - -S-i-s-t-e-m- -I-n-f-o-r-m-a-s-i- -P-e-n-g-a-j-u-a-n- -S-u-r-a-t- -S-i-s-w-a- -B-e-r-b-a-s-i-s- -W-e-b- -(-S-I-P-E-S-A-T-)- -a-d-a-l-a-h- -s-i-s-t-e-m- -y-a-n-g- -k-a-m-i- -k-e-m-b-a-n-g-k-a-n- -u-n-t-u-k- -m-e-m-p-e-r-m-u-d-a-h- -p-r-o-s-e-s- -p-e-l-a-y-a-n-a-n- -a-d-m-i-n-i-s-t-r-a-s-i- -p-e-r-s-u-r-a-t-a-n- -b-a-g-i- -s-i-s-w-a- -d-i- -l-i-n-g-k-u-n-g-a-n- -s-e-k-o-l-a-h-.- -P-a-d-a- -s-i-s-t-e-m- -s-e-b-e-l-u-m-n-y-a-,- -s-i-s-w-a- -h-a-r-u-s- -d-a-t-a-n-g- -l-a-n-g-s-u-n-g- -k-e- -r-u-a-n-g- -T-a-t-a- -U-s-a-h-a- -(-T-U-)- -u-n-t-u-k- -m-e-m-i-n-t-a- -f-o-r-m- -k-e-r-t-a-s- -d-a-n- -m-e-n-u-n-g-g-u- -p-r-o-s-e-s- -p-e-m-b-u-a-t-a-n- -s-u-r-a-t- -y-a-n-g- -m-e-m-a-k-a-n- -w-a-k-t-u- -c-u-k-u-p- -l-a-m-a-.- -M-e-l-a-l-u-i- -S-I-P-E-S-A-T-,- -s-i-s-w-a- -d-a-p-a-t- -m-e-n-g-a-j-u-k-a-n- -s-u-r-a-t- -k-a-p-a-n- -s-a-j-a- -s-e-c-a-r-a- -o-n-l-i-n-e-,- -m-e-m-a-n-t-a-u- -p-o-s-i-s-i- -s-u-r-a-t-n-y-a-,- -d-a-n- -m-e-n-g-u-n-d-u-h- -s-u-r-a-t- -r-e-s-m-i- -y-a-n-g- -s-u-d-a-h- -d-i-s-e-t-u-j-u-i-.-
-- - -<-/-p->-
-- - -<-p->-
-- - - - -S-i-s-t-e-m- -i-n-i- -m-e-m-b-a-g-i- -h-a-k- -a-k-s-e-s- -k-e- -d-a-l-a-m- -3- -(-t-i-g-a-)- -p-e-r-a-n- -p-e-n-g-g-u-n-a- -(-a-k-t-o-r-)- -u-t-a-m-a-:-
-- - -<-/-p->-
-- - -<-u-l->-
-- - - - -<-l-i->-<-s-t-r-o-n-g->-S-i-s-w-a-<-/-s-t-r-o-n-g->-:- -M-e-n-g-a-j-u-k-a-n- -p-e-r-m-o-h-o-n-a-n- -s-u-r-a-t- -s-e-c-a-r-a- -m-a-n-d-i-r-i-,- -m-e-l-a-m-p-i-r-k-a-n- -b-e-r-k-a-s- -p-e-r-s-y-a-r-a-t-a-n- -(-m-a-k-s-i-m-a-l- -2- -M-B-)-,- -m-e-m-a-n-t-a-u- -p-e-r-k-e-m-b-a-n-g-a-n- -s-t-a-t-u-s- -s-u-r-a-t-,- -s-e-r-t-a- -m-e-n-g-u-n-d-u-h- -s-u-r-a-t- -P-D-F- -y-a-n-g- -t-e-l-a-h- -d-i-s-a-h-k-a-n-.-<-/-l-i->-
-- - - - -<-l-i->-<-s-t-r-o-n-g->-S-t-a-f- -T-a-t-a- -U-s-a-h-a- -(-T-U-)-<-/-s-t-r-o-n-g->-:- -M-e-m-e-r-i-k-s-a- -d-a-n- -m-e-m-v-e-r-i-f-i-k-a-s-i- -k-e-l-e-n-g-k-a-p-a-n- -b-e-r-k-a-s- -y-a-n-g- -d-i-a-j-u-k-a-n- -s-i-s-w-a-,- -m-e-m-b-e-r-i-k-a-n- -n-o-m-o-r- -a-g-e-n-d-a- -s-u-r-a-t- -m-a-s-u-k-,- -d-a-n- -m-e-n-e-r-u-s-k-a-n- -b-e-r-k-a-s- -y-a-n-g- -v-a-l-i-d- -k-e- -K-e-p-a-l-a- -S-e-k-o-l-a-h- -(-a-t-a-u- -m-e-n-o-l-a-k-n-y-a- -d-e-n-g-a-n- -c-a-t-a-t-a-n- -r-e-v-i-s-i- -j-i-k-a- -b-e-r-k-a-s- -b-e-l-u-m- -l-e-n-g-k-a-p-)-.-<-/-l-i->-
-- - - - -<-l-i->-<-s-t-r-o-n-g->-K-e-p-a-l-a- -S-e-k-o-l-a-h-<-/-s-t-r-o-n-g->-:- -M-e-m-e-r-i-k-s-a- -d-r-a-f- -s-u-r-a-t- -y-a-n-g- -s-u-d-a-h- -d-i-v-e-r-i-f-i-k-a-s-i- -T-U-,- -m-e-m-b-e-r-i-k-a-n- -p-e-r-s-e-t-u-j-u-a-n- -(-a-p-p-r-o-v-a-l-)-,- -d-a-n- -m-e-n-g-e-s-a-h-k-a-n- -s-u-r-a-t- -d-e-n-g-a-n- -t-a-n-d-a- -t-a-n-g-a-n- -e-l-e-k-t-r-o-n-i-k- -b-e-r-b-a-s-i-s- -k-o-d-e- -Q-R-.-<-/-l-i->-
-- - -<-/-u-l->-
--
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-1-.-2- -T-u-j-u-a-n- -P-e-m-o-d-e-l-a-n- -U-M-L-<-/-h-3->-
-- - -<-p->-
-- - - - -P-e-m-o-d-e-l-a-n- -U-M-L- -(-U-n-i-f-i-e-d- -M-o-d-e-l-i-n-g- -L-a-n-g-u-a-g-e-)- -p-a-d-a- -d-o-k-u-m-e-n- -i-n-i- -d-i-s-u-s-u-n- -u-n-t-u-k- -m-e-n-j-e-l-a-s-k-a-n- -a-l-u-r- -s-i-s-t-e-m- -d-a-r-i- -d-u-a- -s-u-d-u-t- -p-a-n-d-a-n-g-:-
-- - -<-/-p->-
-- - -<-u-l->-
-- - - - -<-l-i->-<-s-t-r-o-n-g->-A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m-<-/-s-t-r-o-n-g->-:- -D-i-g-u-n-a-k-a-n- -u-n-t-u-k- -m-e-m-e-t-a-k-a-n- -a-l-u-r- -a-k-t-i-v-i-t-a-s- -k-e-r-j-a- -(-w-o-r-k-f-l-o-w-)- -p-a-d-a- -s-i-s-t-e-m-,- -b-a-i-k- -y-a-n-g- -d-i-l-a-k-u-k-a-n- -o-l-e-h- -p-e-n-g-g-u-n-a- -m-a-u-p-u-n- -p-r-o-s-e-s- -i-n-t-e-r-n-a-l- -y-a-n-g- -d-i-l-a-k-u-k-a-n- -o-l-e-h- -s-i-s-t-e-m-.-<-/-l-i->-
-- - - - -<-l-i->-<-s-t-r-o-n-g->-S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m-<-/-s-t-r-o-n-g->-:- -D-i-g-u-n-a-k-a-n- -u-n-t-u-k- -m-e-n-g-g-a-m-b-a-r-k-a-n- -i-n-t-e-r-a-k-s-i- -a-n-t-a-r-k-o-m-p-o-n-e-n- -p-r-o-g-r-a-m- -b-e-r-d-a-s-a-r-k-a-n- -u-r-u-t-a-n- -w-a-k-t-u- -p-e-m-a-n-g-g-i-l-a-n- -f-u-n-g-s-i-,- -d-e-n-g-a-n- -m-e-m-b-a-g-i- -k-o-m-p-o-n-e-n- -k-e- -d-a-l-a-m- -p-o-l-a- -<-e-m->-B-o-u-n-d-a-r-y---C-o-n-t-r-o-l---E-n-t-i-t-y- -(-B-C-E-)-<-/-e-m->- -a-g-a-r- -s-t-r-u-k-t-u-r- -k-o-d-e- -l-e-b-i-h- -r-a-p-i-.-<-/-l-i->-
-- - -<-/-u-l->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-p-a-g-e---b-r-e-a-k-"->-<-/-d-i-v->-
--
-- - -<-!----- -B-A-B- -I-I-:- -A-C-T-I-V-I-T-Y- -D-I-A-G-R-A-M- ----->-
-- - -<-h-2- -c-l-a-s-s-=-"-s-e-c-t-i-o-n---t-i-t-l-e-"->-B-A-B- -I-I-:- -P-E-R-A-N-C-A-N-G-A-N- -A-C-T-I-V-I-T-Y- -D-I-A-G-R-A-M-<-/-h-2->-
-- - -<-p->-
-- - - - -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -m-e-n-g-g-a-m-b-a-r-k-a-n- -u-r-u-t-a-n- -a-l-u-r- -k-e-r-j-a- -d-a-r-i- -s-u-a-t-u- -a-k-t-i-v-i-t-a-s- -p-a-d-a- -s-i-s-t-e-m- -S-I-P-E-S-A-T-,- -m-u-l-a-i- -d-a-r-i- -t-i-t-i-k- -a-w-a-l- -(-s-t-a-r-t-)-,- -a-k-s-i- -p-e-n-g-g-u-n-a-,- -p-e-r-c-a-b-a-n-g-a-n- -k-e-p-u-t-u-s-a-n- -(-d-e-c-i-s-i-o-n-)-,- -h-i-n-g-g-a- -s-e-l-e-s-a-i-.- -T-e-r-d-a-p-a-t- -4- -(-e-m-p-a-t-)- -a-l-u-r- -u-t-a-m-a- -y-a-n-g- -k-a-m-i- -m-o-d-e-l-k-a-n-:-
-- - -<-/-p->-
--
-- - -<-!----- -A-c-t-i-v-i-t-y- -1- ----->-
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-2-.-1- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -1-:- -A-l-u-r- -P-e-n-g-a-j-u-a-n- -S-u-r-a-t- -o-l-e-h- -S-i-s-w-a-<-/-h-3->-
-- - -<-p->-
-- - - - -D-i-a-g-r-a-m- -i-n-i- -m-e-n-g-g-a-m-b-a-r-k-a-n- -a-l-u-r- -s-a-a-t- -s-i-s-w-a- -m-a-s-u-k- -k-e- -s-i-s-t-e-m-,- -m-e-m-i-l-i-h- -j-e-n-i-s- -s-u-r-a-t-,- -m-e-n-g-i-s-i- -k-e-p-e-r-l-u-a-n-,- -m-e-n-g-u-n-g-g-a-h- -d-o-k-u-m-e-n- -p-e-r-s-y-a-r-a-t-a-n-,- -h-i-n-g-g-a- -m-e-n-d-a-p-a-t-k-a-n- -b-u-k-t-i- -r-e-s-i- -n-o-m-o-r- -t-i-k-e-t-.-
-- - -<-/-p->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-r-d-"->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-m-e-r-m-a-i-d-"->-
--f-l-o-w-c-h-a-r-t- -T-D-
-- - - - -s-u-b-g-r-a-p-h- -S-i-s-w-a-[-"-A-k-t-o-r-:- -S-i-s-w-a-"-]-
-- - - - - - - - -A-1-(-[-M-u-l-a-i-]-)- ----->- -A-2-[-B-u-k-a- -W-e-b- -S-I-P-E-S-A-T-]-
-- - - - - - - - -A-2- ----->- -A-3-[-I-n-p-u-t- -N-I-S-N- -&- -P-a-s-s-w-o-r-d-]-
-- - - - - - - - -A-3- ----->- -A-4-[-P-i-l-i-h- -M-e-n-u- -'-P-e-n-g-a-j-u-a-n- -S-u-r-a-t-'-]-
-- - - - - - - - -A-4- ----->- -A-5-[-P-i-l-i-h- -J-e-n-i-s- -S-u-r-a-t-]-
-- - - - - - - - -A-5- ----->- -A-6-[-I-s-i- -F-o-r-m- -&- -U-n-g-g-a-h- -B-e-r-k-a-s- -P-e-r-s-y-a-r-a-t-a-n-]-
-- - - - - - - - -A-6- ----->- -A-7-[-K-l-i-k- -'-K-i-r-i-m- -P-e-r-m-o-h-o-n-a-n-'-]-
-- - - - - - - - -A-1-3-[-T-e-r-i-m-a- -R-e-s-i- -P-e-n-g-a-j-u-a-n- -&- -K-o-d-e- -T-i-k-e-t-]- ----->- -A-1-4-(-[-S-e-l-e-s-a-i-]-)-
-- - - - -e-n-d-
--
-- - - - -s-u-b-g-r-a-p-h- -W-e-b-[-"-B-o-u-n-d-a-r-y-:- -A-n-t-a-r-m-u-k-a- -W-e-b- -S-I-P-E-S-A-T-"-]-
-- - - - - - - - -A-7- ----->- -B-1-[-V-a-l-i-d-a-s-i- -K-e-l-e-n-g-k-a-p-a-n- -&- -F-o-r-m-a-t- -F-i-l-e-]-
-- - - - - - - - -B-1- ----->- -B-2-{-D-a-t-a- -L-e-n-g-k-a-p- -&- -V-a-l-i-d-?-}-
-- - - - - - - - -B-2- ----- -T-i-d-a-k- ----->- -B-3-[-T-a-m-p-i-l-k-a-n- -N-o-t-i-f-i-k-a-s-i- -E-r-r-o-r- -F-o-r-m-]-
-- - - - - - - - -B-3- ----->- -A-6-
-- - - - - - - - -B-2- ----- -Y-a- ----->- -B-4-[-K-i-r-i-m- -P-a-y-l-o-a-d- -P-e-n-g-a-j-u-a-n- -k-e- -S-e-r-v-e-r-]-
-- - - - - - - - -B-5-[-T-a-m-p-i-l-k-a-n- -R-e-s-i- -B-e-r-h-a-s-i-l- -&- -K-o-d-e- -T-i-k-e-t-]- ----->- -A-1-3-
-- - - - -e-n-d-
--
-- - - - -s-u-b-g-r-a-p-h- -S-e-r-v-e-r-[-"-S-i-s-t-e-m- -B-a-c-k-e-n-d- -&- -D-a-t-a-b-a-s-e-"-]-
-- - - - - - - - -B-4- ----->- -C-1-[-S-i-m-p-a-n- -B-e-r-k-a-s- -L-a-m-p-i-r-a-n- -k-e- -S-t-o-r-a-g-e-]-
-- - - - - - - - -C-1- ----->- -C-2-[-G-e-n-e-r-a-t-e- -K-o-d-e- -T-i-k-e-t- -U-n-i-k- -P-e-l-a-c-a-k-a-n-]-
-- - - - - - - - -C-2- ----->- -C-3-[-(-I-N-S-E-R-T- -D-a-t-a- -P-e-n-g-a-j-u-a-n- -S-t-a-t-u-s-:- -'-M-E-N-U-N-G-G-U-_-V-E-R-I-F-I-K-A-S-I-'-)-]-
-- - - - - - - - -C-3- ----->- -C-4-[-T-r-i-g-g-e-r- -N-o-t-i-f-i-k-a-s-i- -A-n-t-r-e-a-n- -k-e- -T-U-]-
-- - - - - - - - -C-4- ----->- -B-5-
-- - - - -e-n-d-
--
-- - - - -s-t-y-l-e- -A-1- -f-i-l-l-:-#-2-2-c-5-5-e-,-s-t-r-o-k-e-:-#-1-6-a-3-4-a-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -s-t-y-l-e- -A-1-4- -f-i-l-l-:-#-e-f-4-4-4-4-,-s-t-r-o-k-e-:-#-d-c-2-6-2-6-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -s-t-y-l-e- -B-2- -f-i-l-l-:-#-f-5-9-e-0-b-,-s-t-r-o-k-e-:-#-d-9-7-7-0-6-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -<-/-d-i-v->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-p-t-i-o-n-"->-G-a-m-b-a-r- -2-.-1- -&-m-d-a-s-h-;- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -A-l-u-r- -P-e-n-g-a-j-u-a-n- -S-u-r-a-t- -S-i-s-w-a-<-/-d-i-v->-
-- - -<-/-d-i-v->-
--
-- - -<-p->-<-s-t-r-o-n-g->-U-r-a-i-a-n- -A-l-u-r- -K-e-r-j-a-:-<-/-s-t-r-o-n-g->-<-/-p->-
-- - -<-o-l->-
-- - - - -<-l-i->-S-i-s-w-a- -m-e-m-b-u-k-a- -w-e-b-s-i-t-e- -S-I-P-E-S-A-T- -l-a-l-u- -l-o-g-i-n- -m-e-n-g-g-u-n-a-k-a-n- -N-I-S-N- -d-a-n- -k-a-t-a- -s-a-n-d-i-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-w-a- -m-a-s-u-k- -k-e- -m-e-n-u- -"-P-e-n-g-a-j-u-a-n- -S-u-r-a-t-"- -d-a-n- -m-e-m-i-l-i-h- -j-e-n-i-s- -s-u-r-a-t- -y-a-n-g- -d-i-b-u-t-u-h-k-a-n- -(-m-i-s-a-l-n-y-a- -S-u-r-a-t- -K-e-t-e-r-a-n-g-a-n- -S-i-s-w-a- -A-k-t-i-f-,- -R-e-k-o-m-e-n-d-a-s-i- -B-e-a-s-i-s-w-a-,- -d-s-b-)-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-w-a- -m-e-n-g-i-s-i- -k-e-p-e-r-l-u-a-n- -s-u-r-a-t- -s-e-r-t-a- -m-e-n-g-u-n-g-g-a-h- -f-i-l-e- -b-e-r-k-a-s- -p-e-r-s-y-a-r-a-t-a-n- -y-a-n-g- -d-i-m-i-n-t-a- -(-f-o-r-m-a-t- -P-D-F-/-J-P-G- -d-e-n-g-a-n- -u-k-u-r-a-n- -m-a-k-s-i-m-a-l- -2- -M-B-)-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-w-a- -m-e-n-e-k-a-n- -t-o-m-b-o-l- -"-K-i-r-i-m- -P-e-r-m-o-h-o-n-a-n-"-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-t-e-m- -m-e-m-e-r-i-k-s-a- -k-e-l-e-n-g-k-a-p-a-n- -i-s-i-a-n- -f-o-r-m- -d-a-n- -u-k-u-r-a-n- -f-i-l-e-.- -J-i-k-a- -f-i-l-e- -t-i-d-a-k- -s-e-s-u-a-i- -a-t-a-u- -m-e-l-e-b-i-h-i- -2- -M-B-,- -s-i-s-t-e-m- -m-e-m-u-n-c-u-l-k-a-n- -p-e-s-a-n- -k-e-s-a-l-a-h-a-n- -a-g-a-r- -s-i-s-w-a- -m-e-m-p-e-r-b-a-i-k-i- -u-n-g-g-a-h-a-n-n-y-a-.-<-/-l-i->-
-- - - - -<-l-i->-J-i-k-a- -d-a-t-a- -s-u-d-a-h- -l-e-n-g-k-a-p- -d-a-n- -v-a-l-i-d-,- -s-i-s-t-e-m- -m-e-n-y-i-m-p-a-n- -b-e-r-k-a-s- -l-a-m-p-i-r-a-n-,- -m-e-m-b-u-a-t- -k-o-d-e- -t-i-k-e-t- -u-n-i-k- -(-m-i-s-a-l-:- -<-c-o-d-e->-S-P-T---2-0-2-6-1-0---0-0-4-2-<-/-c-o-d-e->-)-,- -d-a-n- -m-e-n-y-i-m-p-a-n- -p-e-r-m-o-h-o-n-a-n- -k-e- -d-a-t-a-b-a-s-e- -d-e-n-g-a-n- -s-t-a-t-u-s- -a-w-a-l- -<-c-o-d-e->-M-E-N-U-N-G-G-U-_-V-E-R-I-F-I-K-A-S-I-<-/-c-o-d-e->-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-t-e-m- -m-e-n-a-m-p-i-l-k-a-n- -r-e-s-i- -t-a-n-d-a- -t-e-r-i-m-a- -p-e-n-g-a-j-u-a-n- -b-e-s-e-r-t-a- -k-o-d-e- -t-i-k-e-t- -y-a-n-g- -d-a-p-a-t- -d-i-s-i-m-p-a-n- -o-l-e-h- -s-i-s-w-a- -u-n-t-u-k- -m-e-l-a-c-a-k- -p-r-o-g-r-e-s- -s-u-r-a-t-.-<-/-l-i->-
-- - -<-/-o-l->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-p-a-g-e---b-r-e-a-k-"->-<-/-d-i-v->-
--
-- - -<-!----- -A-c-t-i-v-i-t-y- -2- ----->-
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-2-.-2- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -2-:- -A-l-u-r- -V-e-r-i-f-i-k-a-s-i- -B-e-r-k-a-s- -o-l-e-h- -S-t-a-f- -T-a-t-a- -U-s-a-h-a- -(-T-U-)-<-/-h-3->-
-- - -<-p->-
-- - - - -D-i-a-g-r-a-m- -i-n-i- -m-e-n-g-g-a-m-b-a-r-k-a-n- -a-l-u-r- -k-e-r-j-a- -s-t-a-f- -T-U- -d-a-l-a-m- -m-e-m-e-r-i-k-s-a- -k-e-l-e-n-g-k-a-p-a-n- -b-e-r-k-a-s- -y-a-n-g- -d-i-a-j-u-k-a-n- -o-l-e-h- -s-i-s-w-a-,- -m-e-n-e-n-t-u-k-a-n- -k-e-p-u-t-u-s-a-n- -a-p-a-k-a-h- -p-e-r-m-o-h-o-n-a-n- -d-i-s-e-t-u-j-u-i- -a-t-a-u- -d-i-t-o-l-a-k-,- -d-a-n- -m-e-m-b-e-r-i-k-a-n- -n-o-m-o-r- -a-g-e-n-d-a- -s-u-r-a-t- -m-a-s-u-k-.-
-- - -<-/-p->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-r-d-"->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-m-e-r-m-a-i-d-"->-
--f-l-o-w-c-h-a-r-t- -T-D-
-- - - - -s-u-b-g-r-a-p-h- -T-U-[-"-A-k-t-o-r-:- -S-t-a-f- -T-a-t-a- -U-s-a-h-a- -(-A-d-m-i-n-)-"-]-
-- - - - - - - - -D-1-(-[-M-u-l-a-i-]-)- ----->- -D-2-[-L-o-g-i-n- -k-e- -P-a-n-e-l- -A-d-m-i-n- -T-U-]-
-- - - - - - - - -D-2- ----->- -D-3-[-B-u-k-a- -M-e-n-u- -'-V-e-r-i-f-i-k-a-s-i- -M-a-s-u-k-'-]-
-- - - - - - - - -D-3- ----->- -D-4-[-P-i-l-i-h- -P-e-r-m-o-h-o-n-a-n- -S-i-s-w-a- -d-a-r-i- -A-n-t-r-e-a-n-]-
-- - - - - - - - -D-4- ----->- -D-5-[-T-i-n-j-a-u- -D-a-t-a- -&- -P-r-e-v-i-e-w- -B-e-r-k-a-s- -L-a-m-p-i-r-a-n-]-
-- - - - - - - - -D-5- ----->- -D-6-{-B-e-r-k-a-s- -L-e-n-g-k-a-p- -&- -A-b-s-a-h-?-}-
-- - - - - - - - -D-6- ----- -T-i-d-a-k- ----->- -D-7-[-T-u-l-i-s- -C-a-t-a-t-a-n- -/- -A-l-a-s-a-n- -P-e-n-o-l-a-k-a-n-]-
-- - - - - - - - -D-7- ----->- -D-8-[-K-l-i-k- -'-T-o-l-a-k- -&- -M-i-n-t-a- -R-e-v-i-s-i-'-]-
-- - - - - - - - -D-6- ----- -Y-a- ----->- -D-9-[-I-n-p-u-t- -N-o-m-o-r- -A-g-e-n-d-a- -M-a-s-u-k- -T-U-]-
-- - - - - - - - -D-9- ----->- -D-1-0-[-K-l-i-k- -'-V-e-r-i-f-i-k-a-s-i- -&- -T-e-r-u-s-k-a-n-'-]-
-- - - - - - - - -D-1-3-(-[-S-e-l-e-s-a-i-]-)-
-- - - - -e-n-d-
--
-- - - - -s-u-b-g-r-a-p-h- -S-y-s-t-e-m-[-"-S-i-s-t-e-m- -S-I-P-E-S-A-T- -&- -D-a-t-a-b-a-s-e-"-]-
-- - - - - - - - -D-8- ----->- -E-1-[-(-U-P-D-A-T-E- -S-t-a-t-u-s-:- -'-D-I-T-O-L-A-K-_-P-E-R-L-U-_-R-E-V-I-S-I-'-)-]-
-- - - - - - - - -E-1- ----->- -E-2-[-K-i-r-i-m- -N-o-t-i-f-i-k-a-s-i- -C-a-t-a-t-a-n- -R-e-v-i-s-i- -k-e- -S-i-s-w-a-]-
-- - - - - - - - -E-2- ----->- -D-1-3-
--
-- - - - - - - - -D-1-0- ----->- -E-3-[-(-U-P-D-A-T-E- -S-t-a-t-u-s-:- -'-D-I-V-E-R-I-F-I-K-A-S-I-_-T-U-_-M-E-N-U-N-G-G-U-_-K-E-P-S-E-K-'-)-]-
-- - - - - - - - -E-3- ----->- -E-4-[-K-i-r-i-m- -N-o-t-i-f-i-k-a-s-i- -A-n-t-r-e-a-n- -k-e- -K-e-p-a-l-a- -S-e-k-o-l-a-h-]-
-- - - - - - - - -E-4- ----->- -D-1-3-
-- - - - -e-n-d-
--
-- - - - -s-t-y-l-e- -D-1- -f-i-l-l-:-#-2-2-c-5-5-e-,-s-t-r-o-k-e-:-#-1-6-a-3-4-a-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -s-t-y-l-e- -D-1-3- -f-i-l-l-:-#-e-f-4-4-4-4-,-s-t-r-o-k-e-:-#-d-c-2-6-2-6-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -s-t-y-l-e- -D-6- -f-i-l-l-:-#-f-5-9-e-0-b-,-s-t-r-o-k-e-:-#-d-9-7-7-0-6-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -<-/-d-i-v->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-p-t-i-o-n-"->-G-a-m-b-a-r- -2-.-2- -&-m-d-a-s-h-;- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -A-l-u-r- -V-e-r-i-f-i-k-a-s-i- -B-e-r-k-a-s- -o-l-e-h- -S-t-a-f- -T-a-t-a- -U-s-a-h-a-<-/-d-i-v->-
-- - -<-/-d-i-v->-
--
-- - -<-p->-<-s-t-r-o-n-g->-U-r-a-i-a-n- -A-l-u-r- -K-e-r-j-a-:-<-/-s-t-r-o-n-g->-<-/-p->-
-- - -<-o-l->-
-- - - - -<-l-i->-S-t-a-f- -T-U- -m-e-m-b-u-k-a- -w-e-b-s-i-t-e- -S-I-P-E-S-A-T- -d-a-n- -m-e-l-a-k-u-k-a-n- -l-o-g-i-n- -k-e- -p-a-n-e-l- -a-d-m-i-n- -T-U-.-<-/-l-i->-
-- - - - -<-l-i->-S-t-a-f- -T-U- -m-e-m-b-u-k-a- -m-e-n-u- -"-V-e-r-i-f-i-k-a-s-i- -M-a-s-u-k-"- -u-n-t-u-k- -m-e-l-i-h-a-t- -d-a-f-t-a-r- -p-e-r-m-o-h-o-n-a-n- -s-u-r-a-t- -y-a-n-g- -m-a-s-u-k- -d-a-r-i- -s-i-s-w-a-.-<-/-l-i->-
-- - - - -<-l-i->-S-t-a-f- -T-U- -m-e-m-i-l-i-h- -s-a-l-a-h- -s-a-t-u- -p-e-r-m-o-h-o-n-a-n- -d-a-n- -m-e-l-i-h-a-t- -p-r-a-t-i-n-j-a-u- -(-p-r-e-v-i-e-w-)- -b-e-r-k-a-s- -l-a-m-p-i-r-a-n- -y-a-n-g- -d-i-u-n-g-g-a-h-.-<-/-l-i->-
-- - - - -<-l-i->-S-t-a-f- -T-U- -m-e-m-e-r-i-k-s-a- -a-p-a-k-a-h- -b-e-r-k-a-s- -p-e-r-s-y-a-r-a-t-a-n- -s-u-d-a-h- -l-e-n-g-k-a-p-,- -j-e-l-a-s- -t-e-r-b-a-c-a-,- -d-a-n- -s-a-h-.-<-/-l-i->-
-- - - - -<-l-i->-J-i-k-a- -b-e-r-k-a-s- -t-i-d-a-k- -l-e-n-g-k-a-p- -a-t-a-u- -b-u-r-a-m-,- -s-t-a-f- -T-U- -m-e-n-u-l-i-s-k-a-n- -c-a-t-a-t-a-n- -a-l-a-s-a-n- -p-e-n-o-l-a-k-a-n- -d-a-n- -m-e-n-e-k-a-n- -t-o-m-b-o-l- -"-T-o-l-a-k- -&-a-m-p-;- -M-i-n-t-a- -R-e-v-i-s-i-"-.- -S-t-a-t-u-s- -d-i-u-b-a-h- -m-e-n-j-a-d-i- -<-c-o-d-e->-D-I-T-O-L-A-K-_-P-E-R-L-U-_-R-E-V-I-S-I-<-/-c-o-d-e->- -d-a-n- -s-i-s-t-e-m- -o-t-o-m-a-t-i-s- -m-e-n-g-i-r-i-m-k-a-n- -n-o-t-i-f-i-k-a-s-i- -k-e- -s-i-s-w-a-.-<-/-l-i->-
-- - - - -<-l-i->-J-i-k-a- -b-e-r-k-a-s- -s-u-d-a-h- -l-e-n-g-k-a-p- -d-a-n- -b-e-n-a-r-,- -s-t-a-f- -T-U- -m-e-m-a-s-u-k-k-a-n- -n-o-m-o-r- -a-g-e-n-d-a- -m-a-s-u-k- -T-U- -l-a-l-u- -m-e-n-e-k-a-n- -t-o-m-b-o-l- -"-V-e-r-i-f-i-k-a-s-i- -&-a-m-p-;- -T-e-r-u-s-k-a-n-"-.- -S-t-a-t-u-s- -d-i-u-b-a-h- -m-e-n-j-a-d-i- -<-c-o-d-e->-D-I-V-E-R-I-F-I-K-A-S-I-_-T-U-_-M-E-N-U-N-G-G-U-_-K-E-P-S-E-K-<-/-c-o-d-e->- -d-a-n- -p-e-r-m-o-h-o-n-a-n- -d-i-t-e-r-u-s-k-a-n- -k-e- -a-n-t-r-e-a-n- -K-e-p-a-l-a- -S-e-k-o-l-a-h-.-<-/-l-i->-
-- - -<-/-o-l->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-p-a-g-e---b-r-e-a-k-"->-<-/-d-i-v->-
--
-- - -<-!----- -A-c-t-i-v-i-t-y- -3- ----->-
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-2-.-3- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -3-:- -A-l-u-r- -P-e-r-s-e-t-u-j-u-a-n- -o-l-e-h- -K-e-p-a-l-a- -S-e-k-o-l-a-h-<-/-h-3->-
-- - -<-p->-
-- - - - -D-i-a-g-r-a-m- -i-n-i- -m-e-n-g-g-a-m-b-a-r-k-a-n- -a-l-u-r- -k-e-r-j-a- -K-e-p-a-l-a- -S-e-k-o-l-a-h- -d-a-l-a-m- -m-e-n-i-n-j-a-u- -d-r-a-f- -p-e-r-m-o-h-o-n-a-n- -s-u-r-a-t- -y-a-n-g- -t-e-l-a-h- -d-i-v-e-r-i-f-i-k-a-s-i- -T-U-,- -m-e-m-b-e-r-i-k-a-n- -p-e-r-s-e-t-u-j-u-a-n-,- -h-i-n-g-g-a- -s-u-r-a-t- -r-e-s-m-i- -b-e-r---Q-R- -C-o-d-e- -b-e-r-h-a-s-i-l- -d-i-b-u-a-t- -o-l-e-h- -s-i-s-t-e-m-.-
-- - -<-/-p->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-r-d-"->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-m-e-r-m-a-i-d-"->-
--f-l-o-w-c-h-a-r-t- -T-D-
-- - - - -s-u-b-g-r-a-p-h- -K-e-p-s-e-k-[-"-A-k-t-o-r-:- -K-e-p-a-l-a- -S-e-k-o-l-a-h-"-]-
-- - - - - - - - -F-1-(-[-M-u-l-a-i-]-)- ----->- -F-2-[-L-o-g-i-n- -k-e- -P-a-n-e-l- -K-e-p-a-l-a- -S-e-k-o-l-a-h-]-
-- - - - - - - - -F-2- ----->- -F-3-[-B-u-k-a- -M-e-n-u- -'-P-e-r-s-e-t-u-j-u-a-n- -S-u-r-a-t-'-]-
-- - - - - - - - -F-3- ----->- -F-4-[-P-i-l-i-h- -D-r-a-f- -S-u-r-a-t- -T-e-r-v-e-r-i-f-i-k-a-s-i- -T-U-]-
-- - - - - - - - -F-4- ----->- -F-5-[-R-e-v-i-e-w- -D-r-a-f- -S-u-r-a-t- -&- -D-i-s-p-o-s-i-s-i- -T-U-]-
-- - - - - - - - -F-5- ----->- -F-6-{-S-e-t-u-j-u-i- -P-e-n-e-r-b-i-t-a-n- -S-u-r-a-t-?-}-
-- - - - - - - - -F-6- ----- -T-o-l-a-k-/-R-e-v-i-s-i- ----->- -F-7-[-I-n-p-u-t- -C-a-t-a-t-a-n- -E-v-a-l-u-a-s-i-]-
-- - - - - - - - -F-7- ----->- -F-8-[-K-l-i-k- -'-K-e-m-b-a-l-i-k-a-n- -k-e- -T-U-'-]-
-- - - - - - - - -F-6- ----- -S-e-t-u-j-u- ----->- -F-9-[-K-l-i-k- -'-S-e-t-u-j-u-i- -&- -T-a-n-d-a- -T-a-n-g-a-n-i-'-]-
-- - - - - - - - -F-1-4-(-[-S-e-l-e-s-a-i-]-)-
-- - - - -e-n-d-
--
-- - - - -s-u-b-g-r-a-p-h- -E-n-g-i-n-e-[-"-S-i-s-t-e-m- -&- -D-o-c-u-m-e-n-t- -G-e-n-e-r-a-t-i-o-n- -E-n-g-i-n-e-"-]-
-- - - - - - - - -F-8- ----->- -G-1-[-(-U-P-D-A-T-E- -S-t-a-t-u-s-:- -'-D-I-T-O-L-A-K-_-K-E-P-S-E-K-'-)-]-
-- - - - - - - - -G-1- ----->- -G-2-[-K-i-r-i-m- -N-o-t-i-f-i-k-a-s-i- -E-v-a-l-u-a-s-i- -k-e- -M-e-j-a- -T-U-]-
-- - - - - - - - -G-2- ----->- -F-1-4-
--
-- - - - - - - - -F-9- ----->- -G-3-[-A-m-b-i-l- -F-o-r-m-a-t- -P-e-n-o-m-o-r-a-n- -K-l-a-s-i-f-i-k-a-s-i- -S-e-k-o-l-a-h-]-
-- - - - - - - - -G-3- ----->- -G-4-[-G-e-n-e-r-a-t-e- -N-o-m-o-r- -S-u-r-a-t- -R-e-s-m-i- -O-t-o-m-a-t-i-s-]-
-- - - - - - - - -G-4- ----->- -G-5-[-G-e-n-e-r-a-t-e- -Q-R- -C-o-d-e- -T-T-E- -B-e-r---E-n-k-r-i-p-s-i- -H-a-s-h-]-
-- - - - - - - - -G-5- ----->- -G-6-[-K-o-m-p-i-l-a-s-i- -K-o-p- -S-u-r-a-t-,- -D-a-t-a- -S-i-s-w-a- -&- -Q-R- -k-e- -P-D-F-]-
-- - - - - - - - -G-6- ----->- -G-7-[-S-i-m-p-a-n- -F-i-l-e- -P-D-F- -R-e-s-m-i- -k-e- -C-l-o-u-d- -S-t-o-r-a-g-e-]-
-- - - - - - - - -G-7- ----->- -G-8-[-(-U-P-D-A-T-E- -S-t-a-t-u-s-:- -'-S-E-L-E-S-A-I-_-S-I-A-P-_-U-N-D-U-H-'-)-]-
-- - - - - - - - -G-8- ----->- -G-9-[-K-i-r-i-m- -N-o-t-i-f-i-k-a-s-i- -P-e-n-e-r-b-i-t-a-n- -S-u-r-a-t- -k-e- -S-i-s-w-a-]-
-- - - - - - - - -G-9- ----->- -F-1-4-
-- - - - -e-n-d-
--
-- - - - -s-t-y-l-e- -F-1- -f-i-l-l-:-#-2-2-c-5-5-e-,-s-t-r-o-k-e-:-#-1-6-a-3-4-a-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -s-t-y-l-e- -F-1-4- -f-i-l-l-:-#-e-f-4-4-4-4-,-s-t-r-o-k-e-:-#-d-c-2-6-2-6-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -s-t-y-l-e- -F-6- -f-i-l-l-:-#-f-5-9-e-0-b-,-s-t-r-o-k-e-:-#-d-9-7-7-0-6-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -<-/-d-i-v->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-p-t-i-o-n-"->-G-a-m-b-a-r- -2-.-3- -&-m-d-a-s-h-;- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -A-l-u-r- -P-e-r-s-e-t-u-j-u-a-n- -K-e-p-a-l-a- -S-e-k-o-l-a-h- -&-a-m-p-;- -P-e-n-e-r-b-i-t-a-n- -P-D-F-<-/-d-i-v->-
-- - -<-/-d-i-v->-
--
-- - -<-p->-<-s-t-r-o-n-g->-U-r-a-i-a-n- -A-l-u-r- -K-e-r-j-a-:-<-/-s-t-r-o-n-g->-<-/-p->-
-- - -<-o-l->-
-- - - - -<-l-i->-K-e-p-a-l-a- -S-e-k-o-l-a-h- -l-o-g-i-n- -k-e- -p-a-n-e-l- -K-e-p-a-l-a- -S-e-k-o-l-a-h- -d-a-n- -m-e-m-b-u-k-a- -m-e-n-u- -"-P-e-r-s-e-t-u-j-u-a-n- -S-u-r-a-t-"-.-<-/-l-i->-
-- - - - -<-l-i->-K-e-p-a-l-a- -S-e-k-o-l-a-h- -m-e-m-i-l-i-h- -d-r-a-f- -p-e-r-m-o-h-o-n-a-n- -s-u-r-a-t- -y-a-n-g- -s-e-b-e-l-u-m-n-y-a- -t-e-l-a-h- -d-i-v-e-r-i-f-i-k-a-s-i- -o-l-e-h- -s-t-a-f- -T-U-.-<-/-l-i->-
-- - - - -<-l-i->-K-e-p-a-l-a- -S-e-k-o-l-a-h- -m-e-m-e-r-i-k-s-a- -i-s-i- -p-e-r-m-o-h-o-n-a-n-.- -J-i-k-a- -a-d-a- -d-a-t-a- -y-a-n-g- -k-u-r-a-n-g- -t-e-p-a-t-,- -K-e-p-a-l-a- -S-e-k-o-l-a-h- -d-a-p-a-t- -m-e-n-g-i-s-i- -c-a-t-a-t-a-n- -e-v-a-l-u-a-s-i- -d-a-n- -m-e-n-g-e-m-b-a-l-i-k-a-n-n-y-a- -k-e- -m-e-j-a- -T-U- -d-e-n-g-a-n- -s-t-a-t-u-s- -<-c-o-d-e->-D-I-T-O-L-A-K-_-K-E-P-S-E-K-<-/-c-o-d-e->-.-<-/-l-i->-
-- - - - -<-l-i->-J-i-k-a- -d-i-s-e-t-u-j-u-i-,- -K-e-p-a-l-a- -S-e-k-o-l-a-h- -m-e-n-e-k-a-n- -t-o-m-b-o-l- -"-S-e-t-u-j-u-i- -&-a-m-p-;- -T-a-n-d-a- -T-a-n-g-a-n-i-"-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-t-e-m- -s-e-c-a-r-a- -o-t-o-m-a-t-i-s- -m-e-n-g-h-i-t-u-n-g- -n-o-m-o-r- -u-r-u-t- -s-u-r-a-t- -k-e-l-u-a-r- -r-e-s-m-i- -s-e-k-o-l-a-h- -(-m-i-s-a-l-:- -<-c-o-d-e->-4-2-1-.-3-/-0-8-5-/-S-M-K---P-S-K-D-3-/-X-/-2-0-2-6-<-/-c-o-d-e->-)-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-t-e-m- -m-e-m-b-u-a-t- -t-a-n-d-a- -t-a-n-g-a-n- -e-l-e-k-t-r-o-n-i-k- -b-e-r-u-p-a- -k-o-d-e- -Q-R- -y-a-n-g- -b-e-r-i-s-i- -i-d-e-n-t-i-t-a-s- -p-e-n-g-e-s-a-h-a-n- -(-n-a-m-a- -K-e-p-a-l-a- -S-e-k-o-l-a-h-,- -N-I-P-,- -t-a-n-g-g-a-l- -t-e-r-b-i-t-,- -d-a-n- -t-a-u-t-a-n- -v-e-r-i-f-i-k-a-s-i- -k-e-a-s-l-i-a-n- -d-o-k-u-m-e-n-)-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-t-e-m- -m-e-n-y-a-t-u-k-a-n- -k-o-p- -r-e-s-m-i- -s-e-k-o-l-a-h-,- -i-s-i- -p-e-r-m-o-h-o-n-a-n-,- -n-o-m-o-r- -s-u-r-a-t-,- -d-a-n- -k-o-d-e- -Q-R- -k-e- -d-a-l-a-m- -f-o-r-m-a-t- -P-D-F- -r-e-s-m-i-,- -l-a-l-u- -m-e-m-p-e-r-b-a-r-u-i- -s-t-a-t-u-s- -m-e-n-j-a-d-i- -<-c-o-d-e->-S-E-L-E-S-A-I-_-S-I-A-P-_-U-N-D-U-H-<-/-c-o-d-e->-.-<-/-l-i->-
-- - -<-/-o-l->-
--
-- - -<-!----- -A-c-t-i-v-i-t-y- -4- ----->-
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-2-.-4- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -4-:- -A-l-u-r- -P-e-l-a-c-a-k-a-n- -S-t-a-t-u-s- -&-a-m-p-;- -U-n-d-u-h- -S-u-r-a-t- -o-l-e-h- -S-i-s-w-a-<-/-h-3->-
-- - -<-p->-
-- - - - -D-i-a-g-r-a-m- -i-n-i- -m-e-n-g-g-a-m-b-a-r-k-a-n- -a-l-u-r- -s-i-s-w-a- -d-a-l-a-m- -m-e-m-a-n-t-a-u- -p-e-r-k-e-m-b-a-n-g-a-n- -s-u-r-a-t- -y-a-n-g- -d-i-a-j-u-k-a-n-n-y-a- -m-e-l-a-l-u-i- -i-n-d-i-k-a-t-o-r- -t-a-h-a-p-a-n- -(-s-t-e-p-p-e-r-)- -h-i-n-g-g-a- -m-e-n-g-u-n-d-u-h- -d-o-k-u-m-e-n- -P-D-F- -r-e-s-m-i-.-
-- - -<-/-p->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-r-d-"->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-m-e-r-m-a-i-d-"->-
--f-l-o-w-c-h-a-r-t- -T-D-
-- - - - -s-u-b-g-r-a-p-h- -S-i-s-w-a-[-"-A-k-t-o-r-:- -S-i-s-w-a-"-]-
-- - - - - - - - -H-1-(-[-M-u-l-a-i-]-)- ----->- -H-2-[-A-k-s-e-s- -M-e-n-u- -'-R-i-w-a-y-a-t- -/- -L-a-c-a-k- -S-u-r-a-t-'-]-
-- - - - - - - - -H-2- ----->- -H-3-[-I-n-p-u-t- -K-o-d-e- -T-i-k-e-t- -a-t-a-u- -B-u-k-a- -R-i-w-a-y-a-t- -A-k-u-n-]-
-- - - - - - - - -H-7-{-A-p-a-k-a-h- -S-t-a-t-u-s- -'-S-E-L-E-S-A-I-'-?-}-
-- - - - - - - - -H-7- ----- -B-e-l-u-m- -S-e-l-e-s-a-i- ----->- -H-8-[-P-a-n-t-a-u- -T-a-h-a-p-a-n- -S-t-e-p-p-e-r- -T-r-a-c-k-e-r-]-
-- - - - - - - - -H-8- ----->- -H-9-(-[-S-e-l-e-s-a-i-]-)-
-- - - - - - - - -H-7- ----- -S-e-l-e-s-a-i- ----->- -H-1-0-[-K-l-i-k- -T-o-m-b-o-l- -'-U-n-d-u-h- -S-u-r-a-t- -P-D-F-'-]-
-- - - - - - - - -H-1-0- ----->- -H-1-1-[-F-i-l-e- -P-D-F- -R-e-s-m-i- -T-e-r-u-n-d-u-h- -k-e- -P-e-r-a-n-g-k-a-t-]-
-- - - - - - - - -H-1-1- ----->- -H-1-2-(-[-S-e-l-e-s-a-i-]-)-
-- - - - -e-n-d-
--
-- - - - -s-u-b-g-r-a-p-h- -W-e-b-[-"-P-o-r-t-a-l- -S-I-P-E-S-A-T- -&- -S-e-r-v-e-r-"-]-
-- - - - - - - - -H-3- ----->- -J-1-[-Q-u-e-r-y- -D-a-t-a- -S-t-a-t-u-s- -P-e-n-g-a-j-u-a-n-]-
-- - - - - - - - -J-1- ----->- -J-2-[-(-A-m-b-i-l- -R-e-k-a-m-a-n- -D-a-t-a- -d-a-r-i- -B-a-s-i-s- -D-a-t-a-)-]-
-- - - - - - - - -J-2- ----->- -J-3-[-R-e-n-d-e-r- -V-i-s-u-a-l- -T-i-m-e-l-i-n-e- -S-t-e-p-p-e-r- -S-t-a-t-u-s-]-
-- - - - - - - - -J-3- ----->- -H-7-
-- - - - - - - - -H-1-0- ----->- -J-4-[-S-t-r-e-a-m- -F-i-l-e- -P-D-F- -R-e-s-m-i- -d-a-r-i- -S-t-o-r-a-g-e-]-
-- - - - - - - - -J-4- ----->- -H-1-1-
-- - - - -e-n-d-
--
-- - - - -s-t-y-l-e- -H-1- -f-i-l-l-:-#-2-2-c-5-5-e-,-s-t-r-o-k-e-:-#-1-6-a-3-4-a-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -s-t-y-l-e- -H-9- -f-i-l-l-:-#-6-4-7-4-8-b-,-s-t-r-o-k-e-:-#-4-7-5-5-6-9-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -s-t-y-l-e- -H-1-2- -f-i-l-l-:-#-2-2-c-5-5-e-,-s-t-r-o-k-e-:-#-1-6-a-3-4-a-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -s-t-y-l-e- -H-7- -f-i-l-l-:-#-f-5-9-e-0-b-,-s-t-r-o-k-e-:-#-d-9-7-7-0-6-,-c-o-l-o-r-:-#-f-f-f-
-- - - - -<-/-d-i-v->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-p-t-i-o-n-"->-G-a-m-b-a-r- -2-.-4- -&-m-d-a-s-h-;- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -A-l-u-r- -P-e-l-a-c-a-k-a-n- -&-a-m-p-;- -U-n-d-u-h- -S-u-r-a-t- -S-i-s-w-a-<-/-d-i-v->-
-- - -<-/-d-i-v->-
--
-- - -<-p->-<-s-t-r-o-n-g->-U-r-a-i-a-n- -A-l-u-r- -K-e-r-j-a-:-<-/-s-t-r-o-n-g->-<-/-p->-
-- - -<-o-l->-
-- - - - -<-l-i->-S-i-s-w-a- -m-e-m-b-u-k-a- -m-e-n-u- -"-R-i-w-a-y-a-t- -/- -L-a-c-a-k- -S-u-r-a-t-"- -p-a-d-a- -p-o-r-t-a-l- -S-I-P-E-S-A-T-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-w-a- -m-e-m-a-s-u-k-k-a-n- -k-o-d-e- -t-i-k-e-t- -u-n-i-k- -a-t-a-u- -l-a-n-g-s-u-n-g- -m-e-m-i-l-i-h- -d-a-r-i- -d-a-f-t-a-r- -r-i-w-a-y-a-t- -s-u-r-a-t- -y-a-n-g- -p-e-r-n-a-h- -d-i-a-j-u-k-a-n-.-<-/-l-i->-
-- - - - -<-l-i->-S-i-s-t-e-m- -m-e-n-g-a-m-b-i-l- -d-a-t-a- -d-a-r-i- -d-a-t-a-b-a-s-e- -d-a-n- -m-e-n-a-m-p-i-l-k-a-n- -t-a-h-a-p-a-n- -s-t-a-t-u-s- -s-e-c-a-r-a- -v-i-s-u-a-l- -(-s-t-e-p-p-e-r-)-:- -D-i-a-j-u-k-a-n- -&-r-a-r-r-;- -V-e-r-i-f-i-k-a-s-i- -T-U- -&-r-a-r-r-;- -P-e-r-s-e-t-u-j-u-a-n- -K-e-p-s-e-k- -&-r-a-r-r-;- -S-e-l-e-s-a-i-.-<-/-l-i->-
-- - - - -<-l-i->-J-i-k-a- -p-r-o-s-e-s- -b-e-l-u-m- -s-e-l-e-s-a-i-,- -s-i-s-w-a- -d-a-p-a-t- -m-e-m-a-n-t-a-u- -p-o-s-i-s-i- -s-u-r-a-t-n-y-a- -k-a-p-a-n- -s-a-j-a- -t-a-n-p-a- -p-e-r-l-u- -d-a-t-a-n-g- -l-a-n-g-s-u-n-g- -k-e- -s-e-k-o-l-a-h-.-<-/-l-i->-
-- - - - -<-l-i->-J-i-k-a- -s-t-a-t-u-s- -s-u-d-a-h- -<-c-o-d-e->-S-E-L-E-S-A-I-_-S-I-A-P-_-U-N-D-U-H-<-/-c-o-d-e->-,- -t-o-m-b-o-l- -"-U-n-d-u-h- -S-u-r-a-t- -P-D-F-"- -a-k-a-n- -a-k-t-i-f- -d-a-n- -s-i-s-w-a- -d-a-p-a-t- -l-a-n-g-s-u-n-g- -m-e-n-d-o-w-n-l-o-a-d- -s-u-r-a-t- -r-e-s-m-i- -t-e-r-s-e-b-u-t- -k-e- -p-e-r-a-n-g-k-a-t-n-y-a-.-<-/-l-i->-
-- - -<-/-o-l->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-p-a-g-e---b-r-e-a-k-"->-<-/-d-i-v->-
--
-- - -<-!----- -B-A-B- -I-I-I-:- -S-E-Q-U-E-N-C-E- -D-I-A-G-R-A-M- ----->-
-- - -<-h-2- -c-l-a-s-s-=-"-s-e-c-t-i-o-n---t-i-t-l-e-"->-B-A-B- -I-I-I-:- -P-E-R-A-N-C-A-N-G-A-N- -S-E-Q-U-E-N-C-E- -D-I-A-G-R-A-M-<-/-h-2->-
-- - -<-p->-
-- - - - -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -d-i-g-u-n-a-k-a-n- -u-n-t-u-k- -m-e-n-g-g-a-m-b-a-r-k-a-n- -i-n-t-e-r-a-k-s-i- -a-n-t-a-r-k-o-m-p-o-n-e-n- -o-b-j-e-k- -d-i- -d-a-l-a-m- -s-i-s-t-e-m- -b-e-r-d-a-s-a-r-k-a-n- -u-r-u-t-a-n- -w-a-k-t-u-.- -U-n-t-u-k- -m-e-m-p-e-r-m-u-d-a-h- -r-a-n-c-a-n-g-a-n- -t-e-k-n-i-s- -d-a-n- -p-e-m-i-s-a-h-a-n- -l-o-g-i-k-a- -k-o-d-i-n-g-,- -p-e-m-o-d-e-l-a-n- -i-n-i- -d-i-b-a-g-i- -k-e- -d-a-l-a-m- -3- -j-e-n-i-s- -k-o-m-p-o-n-e-n- -s-e-s-u-a-i- -k-o-n-s-e-p- -<-s-t-r-o-n-g->-B-o-u-n-d-a-r-y---C-o-n-t-r-o-l---E-n-t-i-t-y- -(-B-C-E-)-<-/-s-t-r-o-n-g->-:-
-- - -<-/-p->-
-- - -<-u-l->-
-- - - - -<-l-i->-<-s-t-r-o-n-g->-&-l-a-q-u-o-;-b-o-u-n-d-a-r-y-&-r-a-q-u-o-;- -(-A-n-t-a-r-m-u-k-a- -/- -F-o-r-m-)-<-/-s-t-r-o-n-g->-:- -K-o-m-p-o-n-e-n- -t-a-m-p-i-l-a-n- -w-e-b- -t-e-m-p-a-t- -p-e-n-g-g-u-n-a- -b-e-r-i-n-t-e-r-a-k-s-i- -l-a-n-g-s-u-n-g- -(-s-e-p-e-r-t-i- -f-o-r-m- -l-o-g-i-n- -a-t-a-u- -f-o-r-m- -i-s-i-a-n- -s-u-r-a-t-)-.-<-/-l-i->-
-- - - - -<-l-i->-<-s-t-r-o-n-g->-&-l-a-q-u-o-;-c-o-n-t-r-o-l-&-r-a-q-u-o-;- -(-P-e-n-g-o-n-t-r-o-l- -L-o-g-i-k-a-)-<-/-s-t-r-o-n-g->-:- -K-o-m-p-o-n-e-n- -p-r-o-g-r-a-m- -y-a-n-g- -m-e-n-g-a-t-u-r- -j-a-l-a-n-n-y-a- -l-o-g-i-k-a- -b-i-s-n-i-s-,- -v-a-l-i-d-a-s-i- -d-a-t-a-,- -d-a-n- -p-r-o-s-e-s- -p-e-m-r-o-s-e-s-a-n- -f-u-n-g-s-i-.-<-/-l-i->-
-- - - - -<-l-i->-<-s-t-r-o-n-g->-&-l-a-q-u-o-;-e-n-t-i-t-y-&-r-a-q-u-o-;- -&-a-m-p-;- -&-l-a-q-u-o-;-d-a-t-a-b-a-s-e-&-r-a-q-u-o-;- -(-M-o-d-e-l- -D-a-t-a- -&-a-m-p-;- -B-a-s-i-s- -D-a-t-a-)-<-/-s-t-r-o-n-g->-:- -K-o-m-p-o-n-e-n- -m-o-d-e-l- -d-a-t-a- -d-a-n- -t-a-b-e-l- -p-a-d-a- -b-a-s-i-s- -d-a-t-a- -(-P-o-s-t-g-r-e-S-Q-L-)- -t-e-m-p-a-t- -i-n-f-o-r-m-a-s-i- -d-i-s-i-m-p-a-n- -s-e-c-a-r-a- -p-e-r-m-a-n-e-n-.-<-/-l-i->-
-- - -<-/-u-l->-
--
-- - -<-!----- -S-e-q-u-e-n-c-e- -1- ----->-
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-3-.-1- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -1-:- -A-l-u-r- -L-o-g-i-n- -M-u-l-t-i---P-e-n-g-g-u-n-a- -(-R-B-A-C-)-<-/-h-3->-
-- - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-r-d-"->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-m-e-r-m-a-i-d-"->-
--s-e-q-u-e-n-c-e-D-i-a-g-r-a-m-
-- - - - -a-u-t-o-n-u-m-b-e-r-
-- - - - -a-c-t-o-r- -P-e-n-g-g-u-n-a- -a-s- -A-k-t-o-r-:- -P-e-n-g-g-u-n-a- -(-S-i-s-w-a-/-T-U-/-K-e-p-s-e-k-)-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -L-o-g-i-n-V-i-e-w- -a-s- -&-l-t-;-&-l-t-;-b-o-u-n-d-a-r-y-&-g-t-;-&-g-t-;- -L-o-g-i-n-F-o-r-m-V-i-e-w-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -A-u-t-h-C-t-r-l- -a-s- -&-l-t-;-&-l-t-;-c-o-n-t-r-o-l-&-g-t-;-&-g-t-;- -A-u-t-h-C-o-n-t-r-o-l-l-e-r-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -U-s-e-r-M-o-d-e-l- -a-s- -&-l-t-;-&-l-t-;-e-n-t-i-t-y-&-g-t-;-&-g-t-;- -U-s-e-r-M-o-d-e-l-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -D-B- -a-s- -&-l-t-;-&-l-t-;-d-a-t-a-b-a-s-e-&-g-t-;-&-g-t-;- -P-o-s-t-g-r-e-S-Q-L-
--
-- - - - -P-e-n-g-g-u-n-a--->->-L-o-g-i-n-V-i-e-w-:- -1-.- -I-n-p-u-t- -N-I-S-N-/-N-I-P- -&- -P-a-s-s-w-o-r-d-
-- - - - -P-e-n-g-g-u-n-a--->->-L-o-g-i-n-V-i-e-w-:- -2-.- -K-l-i-k- -t-o-m-b-o-l- -'-M-a-s-u-k-'-
-- - - - -a-c-t-i-v-a-t-e- -L-o-g-i-n-V-i-e-w-
-- - - - -L-o-g-i-n-V-i-e-w--->->-A-u-t-h-C-t-r-l-:- -3-.- -s-u-b-m-i-t-L-o-g-i-n-(-i-d-e-n-t-i-f-i-e-r-,- -p-a-s-s-w-o-r-d-)-
-- - - - -a-c-t-i-v-a-t-e- -A-u-t-h-C-t-r-l-
--
-- - - - -A-u-t-h-C-t-r-l--->->-A-u-t-h-C-t-r-l-:- -4-.- -v-a-l-i-d-a-t-e-S-a-n-i-t-i-z-a-t-i-o-n-(-)-
-- - - - -A-u-t-h-C-t-r-l--->->-U-s-e-r-M-o-d-e-l-:- -5-.- -f-i-n-d-B-y-I-d-e-n-t-i-f-i-e-r-(-i-d-e-n-t-i-f-i-e-r-)-
-- - - - -a-c-t-i-v-a-t-e- -U-s-e-r-M-o-d-e-l-
-- - - - -U-s-e-r-M-o-d-e-l--->->-D-B-:- -6-.- -S-E-L-E-C-T- -*- -F-R-O-M- -u-s-e-r-s- -W-H-E-R-E- -i-d-e-n-t-i-f-i-e-r- -=- -$-1-
-- - - - -a-c-t-i-v-a-t-e- -D-B-
-- - - - -D-B----->->-U-s-e-r-M-o-d-e-l-:- -7-.- -R-e-c-o-r-d- -u-s-e-r- -&- -p-a-s-s-w-o-r-d-_-h-a-s-h-
-- - - - -d-e-a-c-t-i-v-a-t-e- -D-B-
-- - - - -U-s-e-r-M-o-d-e-l----->->-A-u-t-h-C-t-r-l-:- -8-.- -r-e-t-u-r-n- -U-s-e-r-E-n-t-i-t-y-
-- - - - -d-e-a-c-t-i-v-a-t-e- -U-s-e-r-M-o-d-e-l-
--
-- - - - -a-l-t- -K-r-e-d-e-n-s-i-a-l- -S-a-l-a-h-
-- - - - - - - - -A-u-t-h-C-t-r-l--->->-A-u-t-h-C-t-r-l-:- -9-a-.- -v-e-r-i-f-y-H-a-s-h-(-p-a-s-s-w-o-r-d-,- -h-a-s-h-)- -=->- -F-a-l-s-e-
-- - - - - - - - -A-u-t-h-C-t-r-l----->->-L-o-g-i-n-V-i-e-w-:- -1-0-a-.- -r-e-t-u-r-n- -E-r-r-o-r-(-'-K-r-e-d-e-n-s-i-a-l- -T-i-d-a-k- -V-a-l-i-d-'-)-
-- - - - - - - - -L-o-g-i-n-V-i-e-w----->->-P-e-n-g-g-u-n-a-:- -1-1-a-.- -T-a-m-p-i-l-k-a-n- -n-o-t-i-f-i-k-a-s-i- -e-r-r-o-r- -l-o-g-i-n-
-- - - - -e-l-s-e- -K-r-e-d-e-n-s-i-a-l- -V-a-l-i-d-
-- - - - - - - - -A-u-t-h-C-t-r-l--->->-A-u-t-h-C-t-r-l-:- -9-b-.- -v-e-r-i-f-y-H-a-s-h-(-p-a-s-s-w-o-r-d-,- -h-a-s-h-)- -=->- -T-r-u-e-
-- - - - - - - - -A-u-t-h-C-t-r-l--->->-A-u-t-h-C-t-r-l-:- -1-0-b-.- -g-e-n-e-r-a-t-e-S-e-s-s-i-o-n-J-W-T-(-r-o-l-e-,- -u-s-e-r-I-d-)-
-- - - - - - - - -A-u-t-h-C-t-r-l----->->-L-o-g-i-n-V-i-e-w-:- -1-1-b-.- -r-e-t-u-r-n- -S-u-c-c-e-s-s-(-t-o-k-e-n-,- -r-o-l-e-U-r-l-)-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -A-u-t-h-C-t-r-l-
-- - - - - - - - -L-o-g-i-n-V-i-e-w----->->-P-e-n-g-g-u-n-a-:- -1-2-b-.- -R-e-d-i-r-e-c-t- -k-e- -D-a-s-b-o-r- -(-S-i-s-w-a- -/- -T-U- -/- -K-e-p-s-e-k-)-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -L-o-g-i-n-V-i-e-w-
-- - - - -e-n-d-
-- - - - -<-/-d-i-v->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-p-t-i-o-n-"->-G-a-m-b-a-r- -3-.-1- -&-m-d-a-s-h-;- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -A-u-t-e-n-t-i-k-a-s-i- -P-e-n-g-g-u-n-a- -M-u-l-t-i---R-o-l-e-<-/-d-i-v->-
-- - -<-/-d-i-v->-
--
-- - -<-p->-<-s-t-r-o-n-g->-P-e-n-j-e-l-a-s-a-n- -A-l-u-r- -P-r-o-g-r-a-m-:-<-/-s-t-r-o-n-g->-<-/-p->-
-- - -<-p->-
-- - - - -P-e-n-g-g-u-n-a- -(-S-i-s-w-a-,- -S-t-a-f- -T-U-,- -a-t-a-u- -K-e-p-a-l-a- -S-e-k-o-l-a-h-)- -m-e-m-a-s-u-k-k-a-n- -N-I-S-N-/-N-I-P- -d-a-n- -k-a-t-a- -s-a-n-d-i- -p-a-d-a- -h-a-l-a-m-a-n- -<-c-o-d-e->-L-o-g-i-n-F-o-r-m-V-i-e-w-<-/-c-o-d-e->-.- -K-o-m-p-o-n-e-n- -<-c-o-d-e->-A-u-t-h-C-o-n-t-r-o-l-l-e-r-<-/-c-o-d-e->- -m-e-m-e-r-i-k-s-a- -v-a-l-i-d-i-t-a-s- -i-n-p-u-t- -d-a-n- -m-e-m-a-n-g-g-i-l- -<-c-o-d-e->-U-s-e-r-M-o-d-e-l-<-/-c-o-d-e->- -u-n-t-u-k- -m-e-n-c-a-r-i- -d-a-t-a- -p-e-n-g-g-u-n-a- -d-i- -b-a-s-i-s- -d-a-t-a-.- -J-i-k-a- -k-a-t-a- -s-a-n-d-i- -c-o-c-o-k- -d-e-n-g-a-n- -d-a-t-a- -y-a-n-g- -t-e-r-s-i-m-p-a-n-,- -c-o-n-t-r-o-l-l-e-r- -m-e-m-b-u-a-t-k-a-n- -t-o-k-e-n- -s-e-s-i- -(-J-W-T-)- -y-a-n-g- -m-e-n-e-n-t-u-k-a-n- -h-a-k- -a-k-s-e-s- -p-e-n-g-g-u-n-a-,- -l-a-l-u- -m-e-n-g-a-r-a-h-k-a-n- -p-e-n-g-g-u-n-a- -k-e- -h-a-l-a-m-a-n- -d-a-s-b-o-r- -m-a-s-i-n-g---m-a-s-i-n-g-.-
-- - -<-/-p->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-p-a-g-e---b-r-e-a-k-"->-<-/-d-i-v->-
--
-- - -<-!----- -S-e-q-u-e-n-c-e- -2- ----->-
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-3-.-2- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -2-:- -A-l-u-r- -P-e-n-g-a-j-u-a-n- -S-u-r-a-t- -&-a-m-p-;- -U-n-g-g-a-h- -B-e-r-k-a-s- -o-l-e-h- -S-i-s-w-a-<-/-h-3->-
-- - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-r-d-"->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-m-e-r-m-a-i-d-"->-
--s-e-q-u-e-n-c-e-D-i-a-g-r-a-m-
-- - - - -a-u-t-o-n-u-m-b-e-r-
-- - - - -a-c-t-o-r- -S-i-s-w-a- -a-s- -A-k-t-o-r-:- -S-i-s-w-a-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -F-o-r-m-V-i-e-w- -a-s- -&-l-t-;-&-l-t-;-b-o-u-n-d-a-r-y-&-g-t-;-&-g-t-;- -F-o-r-m-P-e-n-g-a-j-u-a-n-V-i-e-w-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -S-u-r-a-t-C-t-r-l- -a-s- -&-l-t-;-&-l-t-;-c-o-n-t-r-o-l-&-g-t-;-&-g-t-;- -S-u-r-a-t-C-o-n-t-r-o-l-l-e-r-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -F-i-l-e-S-e-r-v-i-c-e- -a-s- -&-l-t-;-&-l-t-;-c-o-n-t-r-o-l-&-g-t-;-&-g-t-;- -S-t-o-r-a-g-e-S-e-r-v-i-c-e-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -P-e-n-g-a-j-u-a-n-M-o-d-e-l- -a-s- -&-l-t-;-&-l-t-;-e-n-t-i-t-y-&-g-t-;-&-g-t-;- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -D-B- -a-s- -&-l-t-;-&-l-t-;-d-a-t-a-b-a-s-e-&-g-t-;-&-g-t-;- -P-o-s-t-g-r-e-S-Q-L-
--
-- - - - -S-i-s-w-a--->->-F-o-r-m-V-i-e-w-:- -1-.- -B-u-k-a- -f-o-r-m- -&- -p-i-l-i-h- -j-e-n-i-s- -s-u-r-a-t-
-- - - - -a-c-t-i-v-a-t-e- -F-o-r-m-V-i-e-w-
-- - - - -F-o-r-m-V-i-e-w--->->-S-u-r-a-t-C-t-r-l-:- -2-.- -g-e-t-P-r-a-s-y-a-r-a-t-(-i-d-_-j-e-n-i-s-)-
-- - - - -a-c-t-i-v-a-t-e- -S-u-r-a-t-C-t-r-l-
-- - - - -S-u-r-a-t-C-t-r-l----->->-F-o-r-m-V-i-e-w-:- -3-.- -r-e-t-u-r-n- -D-a-f-t-a-r-D-o-k-u-m-e-n-P-r-a-s-y-a-r-a-t-
-- - - - -d-e-a-c-t-i-v-a-t-e- -S-u-r-a-t-C-t-r-l-
--
-- - - - -S-i-s-w-a--->->-F-o-r-m-V-i-e-w-:- -4-.- -I-n-p-u-t- -k-e-p-e-r-l-u-a-n- -&- -u-n-g-g-a-h- -f-i-l-e- -b-e-r-k-a-s-
-- - - - -S-i-s-w-a--->->-F-o-r-m-V-i-e-w-:- -5-.- -K-l-i-k- -s-u-b-m-i-t- -'-K-i-r-i-m- -P-e-r-m-o-h-o-n-a-n-'-
-- - - - -F-o-r-m-V-i-e-w--->->-S-u-r-a-t-C-t-r-l-:- -6-.- -c-r-e-a-t-e-P-e-n-g-a-j-u-a-n-(-s-i-s-w-a-I-d-,- -i-d-J-e-n-i-s-,- -k-e-p-e-r-l-u-a-n-,- -f-i-l-e-B-u-f-f-e-r-)-
-- - - - -a-c-t-i-v-a-t-e- -S-u-r-a-t-C-t-r-l-
--
-- - - - -S-u-r-a-t-C-t-r-l--->->-F-i-l-e-S-e-r-v-i-c-e-:- -7-.- -u-p-l-o-a-d-F-i-l-e-(-f-i-l-e-B-u-f-f-e-r-,- -m-i-m-e-T-y-p-e-,- -m-a-x-2-M-B-)-
-- - - - -a-c-t-i-v-a-t-e- -F-i-l-e-S-e-r-v-i-c-e-
-- - - - -a-l-t- -B-e-r-k-a-s- -T-i-d-a-k- -V-a-l-i-d- -/- -U-k-u-r-a-n- ->- -2-M-B-
-- - - - - - - - -F-i-l-e-S-e-r-v-i-c-e----->->-S-u-r-a-t-C-t-r-l-:- -8-a-.- -r-e-t-u-r-n- -E-r-r-o-r-(-'-F-i-l-e- -t-i-d-a-k- -v-a-l-i-d- -/- -m-e-l-e-b-i-h-i- -2-M-B-'-)-
-- - - - - - - - -S-u-r-a-t-C-t-r-l----->->-F-o-r-m-V-i-e-w-:- -9-a-.- -r-e-t-u-r-n- -V-a-l-i-d-a-t-i-o-n-F-a-i-l-e-d-(-e-r-r-o-r-M-s-g-)-
-- - - - - - - - -F-o-r-m-V-i-e-w----->->-S-i-s-w-a-:- -1-0-a-.- -T-a-m-p-i-l-k-a-n- -p-e-r-i-n-g-a-t-a-n- -k-e-s-a-l-a-h-a-n- -b-e-r-k-a-s-
-- - - - -e-l-s-e- -B-e-r-k-a-s- -S-a-h- -&- -T-e-r-s-i-m-p-a-n-
-- - - - - - - - -F-i-l-e-S-e-r-v-i-c-e----->->-S-u-r-a-t-C-t-r-l-:- -8-b-.- -r-e-t-u-r-n- -f-i-l-e-U-r-l-P-a-t-h-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -F-i-l-e-S-e-r-v-i-c-e-
-- - - - - - - - -S-u-r-a-t-C-t-r-l--->->-S-u-r-a-t-C-t-r-l-:- -9-b-.- -g-e-n-e-r-a-t-e-T-i-c-k-e-t-C-o-d-e-(-'-S-P-T---Y-Y-Y-Y-M-M---X-X-X-X-'-)-
-- - - - - - - - -S-u-r-a-t-C-t-r-l--->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -1-0-b-.- -i-n-s-e-r-t-P-e-n-g-a-j-u-a-n-(-p-a-y-l-o-a-d-,- -f-i-l-e-U-r-l-P-a-t-h-)-
-- - - - - - - - -a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - - - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l--->->-D-B-:- -1-1-b-.- -I-N-S-E-R-T- -I-N-T-O- -t-b-_-p-e-n-g-a-j-u-a-n-_-s-u-r-a-t- -V-A-L-U-E-S- -(-.-.-.-)-
-- - - - - - - - -a-c-t-i-v-a-t-e- -D-B-
-- - - - - - - - -D-B----->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -1-2-b-.- -C-o-n-f-i-r-m- -I-D- -P-e-n-g-a-j-u-a-n-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -D-B-
-- - - - - - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l----->->-S-u-r-a-t-C-t-r-l-:- -1-3-b-.- -r-e-t-u-r-n- -P-e-n-g-a-j-u-a-n-E-n-t-i-t-y-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - - - - - -S-u-r-a-t-C-t-r-l----->->-F-o-r-m-V-i-e-w-:- -1-4-b-.- -r-e-t-u-r-n- -S-u-c-c-e-s-s-(-t-i-c-k-e-t-C-o-d-e-,- -r-e-s-i-D-a-t-a-)-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -S-u-r-a-t-C-t-r-l-
-- - - - - - - - -F-o-r-m-V-i-e-w----->->-S-i-s-w-a-:- -1-5-b-.- -T-a-m-p-i-l-k-a-n- -R-e-s-i- -P-e-n-g-a-j-u-a-n- -&- -K-o-d-e- -T-i-k-e-t-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -F-o-r-m-V-i-e-w-
-- - - - -e-n-d-
-- - - - -<-/-d-i-v->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-p-t-i-o-n-"->-G-a-m-b-a-r- -3-.-2- -&-m-d-a-s-h-;- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -P-e-n-g-a-j-u-a-n- -S-u-r-a-t- -&-a-m-p-;- -U-n-g-g-a-h- -B-e-r-k-a-s- -S-i-s-w-a-<-/-d-i-v->-
-- - -<-/-d-i-v->-
--
-- - -<-p->-<-s-t-r-o-n-g->-P-e-n-j-e-l-a-s-a-n- -A-l-u-r- -P-r-o-g-r-a-m-:-<-/-s-t-r-o-n-g->-<-/-p->-
-- - -<-p->-
-- - - - -S-i-s-w-a- -m-e-m-b-u-k-a- -f-o-r-m- -p-e-r-m-o-h-o-n-a-n- -s-u-r-a-t- -m-e-l-a-l-u-i- -<-c-o-d-e->-F-o-r-m-P-e-n-g-a-j-u-a-n-V-i-e-w-<-/-c-o-d-e->-.- -S-a-a-t- -j-e-n-i-s- -s-u-r-a-t- -d-i-p-i-l-i-h-,- -<-c-o-d-e->-S-u-r-a-t-C-o-n-t-r-o-l-l-e-r-<-/-c-o-d-e->- -m-e-n-g-a-m-b-i-l- -d-a-f-t-a-r- -p-e-r-s-y-a-r-a-t-a-n- -y-a-n-g- -d-i-b-u-t-u-h-k-a-n-.- -K-e-t-i-k-a- -f-o-r-m- -d-a-n- -b-e-r-k-a-s- -d-i---s-u-b-m-i-t-,- -<-c-o-d-e->-S-t-o-r-a-g-e-S-e-r-v-i-c-e-<-/-c-o-d-e->- -m-e-m-e-r-i-k-s-a- -f-o-r-m-a-t- -d-a-n- -b-a-t-a-s- -u-k-u-r-a-n- -f-i-l-e- -(-m-a-k-s-i-m-a-l- -2- -M-B-)-.- -S-e-t-e-l-a-h- -b-e-r-k-a-s- -b-e-r-h-a-s-i-l- -d-i-s-i-m-p-a-n-,- -<-c-o-d-e->-S-u-r-a-t-C-o-n-t-r-o-l-l-e-r-<-/-c-o-d-e->- -m-e-m-b-u-a-t- -k-o-d-e- -t-i-k-e-t- -u-n-i-k- -d-a-n- -<-c-o-d-e->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-<-/-c-o-d-e->- -m-e-n-c-a-t-a-t- -p-e-r-m-o-h-o-n-a-n- -k-e- -b-a-s-i-s- -d-a-t-a- -d-e-n-g-a-n- -s-t-a-t-u-s- -a-w-a-l- -<-c-o-d-e->-M-E-N-U-N-G-G-U-_-V-E-R-I-F-I-K-A-S-I-<-/-c-o-d-e->-,- -k-e-m-u-d-i-a-n- -s-i-s-t-e-m- -m-e-n-a-m-p-i-l-k-a-n- -b-u-k-t-i- -t-a-n-d-a- -t-e-r-i-m-a- -b-e-s-e-r-t-a- -k-o-d-e- -t-i-k-e-t- -k-e- -s-i-s-w-a-.-
-- - -<-/-p->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-p-a-g-e---b-r-e-a-k-"->-<-/-d-i-v->-
--
-- - -<-!----- -S-e-q-u-e-n-c-e- -3- ----->-
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-3-.-3- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -3-:- -A-l-u-r- -V-e-r-i-f-i-k-a-s-i- -B-e-r-k-a-s- -o-l-e-h- -S-t-a-f- -T-a-t-a- -U-s-a-h-a- -(-T-U-)-<-/-h-3->-
-- - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-r-d-"->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-m-e-r-m-a-i-d-"->-
--s-e-q-u-e-n-c-e-D-i-a-g-r-a-m-
-- - - - -a-u-t-o-n-u-m-b-e-r-
-- - - - -a-c-t-o-r- -S-t-a-f-T-U- -a-s- -A-k-t-o-r-:- -S-t-a-f- -T-U-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -A-d-m-i-n-V-i-e-w- -a-s- -&-l-t-;-&-l-t-;-b-o-u-n-d-a-r-y-&-g-t-;-&-g-t-;- -V-e-r-i-f-i-k-a-s-i-A-n-t-r-e-a-n-V-i-e-w-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -V-e-r-i-f-C-t-r-l- -a-s- -&-l-t-;-&-l-t-;-c-o-n-t-r-o-l-&-g-t-;-&-g-t-;- -V-e-r-i-f-i-k-a-s-i-C-o-n-t-r-o-l-l-e-r-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -P-e-n-g-a-j-u-a-n-M-o-d-e-l- -a-s- -&-l-t-;-&-l-t-;-e-n-t-i-t-y-&-g-t-;-&-g-t-;- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -N-o-t-i-f-S-e-r-v-i-c-e- -a-s- -&-l-t-;-&-l-t-;-c-o-n-t-r-o-l-&-g-t-;-&-g-t-;- -N-o-t-i-f-i-k-a-s-i-S-e-r-v-i-c-e-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -D-B- -a-s- -&-l-t-;-&-l-t-;-d-a-t-a-b-a-s-e-&-g-t-;-&-g-t-;- -P-o-s-t-g-r-e-S-Q-L-
--
-- - - - -S-t-a-f-T-U--->->-A-d-m-i-n-V-i-e-w-:- -1-.- -B-u-k-a- -m-e-n-u- -a-n-t-r-e-a-n- -v-e-r-i-f-i-k-a-s-i-
-- - - - -a-c-t-i-v-a-t-e- -A-d-m-i-n-V-i-e-w-
-- - - - -A-d-m-i-n-V-i-e-w--->->-V-e-r-i-f-C-t-r-l-:- -2-.- -g-e-t-A-n-t-r-e-a-n-V-e-r-i-f-i-k-a-s-i-(-)-
-- - - - -a-c-t-i-v-a-t-e- -V-e-r-i-f-C-t-r-l-
-- - - - -V-e-r-i-f-C-t-r-l--->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -3-.- -f-e-t-c-h-P-e-n-d-i-n-g-L-i-s-t-(-)-
-- - - - -a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l--->->-D-B-:- -4-.- -S-E-L-E-C-T- -*- -F-R-O-M- -t-b-_-p-e-n-g-a-j-u-a-n-_-s-u-r-a-t- -W-H-E-R-E- -s-t-a-t-u-s- -=- -'-M-E-N-U-N-G-G-U-_-V-E-R-I-F-I-K-A-S-I-'-
-- - - - -a-c-t-i-v-a-t-e- -D-B-
-- - - - -D-B----->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -5-.- -r-e-t-u-r-n- -R-e-c-o-r-d-s-
-- - - - -d-e-a-c-t-i-v-a-t-e- -D-B-
-- - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l----->->-V-e-r-i-f-C-t-r-l-:- -6-.- -r-e-t-u-r-n- -D-a-t-a-L-i-s-t-
-- - - - -d-e-a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - -V-e-r-i-f-C-t-r-l----->->-A-d-m-i-n-V-i-e-w-:- -7-.- -R-e-n-d-e-r- -t-a-b-e-l- -a-n-t-r-e-a-n-
-- - - - -d-e-a-c-t-i-v-a-t-e- -V-e-r-i-f-C-t-r-l-
--
-- - - - -S-t-a-f-T-U--->->-A-d-m-i-n-V-i-e-w-:- -8-.- -T-i-n-j-a-u- -d-o-k-u-m-e-n- -&- -t-e-n-t-u-k-a-n- -k-e-p-u-t-u-s-a-n-
--
-- - - - -a-l-t- -K-e-p-u-t-u-s-a-n-:- -D-i-t-o-l-a-k- -(-B-e-r-k-a-s- -B-u-r-a-m- -/- -K-u-r-a-n-g-)-
-- - - - - - - - -S-t-a-f-T-U--->->-A-d-m-i-n-V-i-e-w-:- -9-a-.- -I-n-p-u-t- -c-a-t-a-t-a-n- -r-e-v-i-s-i- -&- -k-l-i-k- -'-T-o-l-a-k-'-
-- - - - - - - - -A-d-m-i-n-V-i-e-w--->->-V-e-r-i-f-C-t-r-l-:- -1-0-a-.- -r-e-j-e-c-t-P-e-n-g-a-j-u-a-n-(-i-d-,- -c-a-t-a-t-a-n-,- -t-u-I-d-)-
-- - - - - - - - -a-c-t-i-v-a-t-e- -V-e-r-i-f-C-t-r-l-
-- - - - - - - - -V-e-r-i-f-C-t-r-l--->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -1-1-a-.- -u-p-d-a-t-e-S-t-a-t-u-s-(-i-d-,- -'-D-I-T-O-L-A-K-_-P-E-R-L-U-_-R-E-V-I-S-I-'-,- -c-a-t-a-t-a-n-)-
-- - - - - - - - -a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - - - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l--->->-D-B-:- -1-2-a-.- -U-P-D-A-T-E- -t-b-_-p-e-n-g-a-j-u-a-n-_-s-u-r-a-t- -S-E-T- -s-t-a-t-u-s- -=- -.-.-.-,- -c-a-t-a-t-a-n- -=- -.-.-.-
-- - - - - - - - -a-c-t-i-v-a-t-e- -D-B-
-- - - - - - - - -D-B----->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -1-3-a-.- -C-o-n-f-i-r-m- -U-P-D-A-T-E-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -D-B-
-- - - - - - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l----->->-V-e-r-i-f-C-t-r-l-:- -1-4-a-.- -r-e-t-u-r-n- -U-p-d-a-t-e-d-E-n-t-i-t-y-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - - - - - -V-e-r-i-f-C-t-r-l--->->-N-o-t-i-f-S-e-r-v-i-c-e-:- -1-5-a-.- -s-e-n-d-A-l-e-r-t-S-i-s-w-a-(-s-i-s-w-a-I-d-,- -c-a-t-a-t-a-n-)-
-- - - - - - - - -V-e-r-i-f-C-t-r-l----->->-A-d-m-i-n-V-i-e-w-:- -1-6-a-.- -r-e-t-u-r-n- -S-u-c-c-e-s-s-(-'-P-e-n-g-a-j-u-a-n- -D-i-t-o-l-a-k-'-)-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -V-e-r-i-f-C-t-r-l-
-- - - - - - - - -A-d-m-i-n-V-i-e-w----->->-S-t-a-f-T-U-:- -1-7-a-.- -P-e-r-b-a-r-u-i- -a-n-t-r-e-a-n-
-- - - - -e-l-s-e- -K-e-p-u-t-u-s-a-n-:- -L-o-l-o-s- -V-e-r-i-f-i-k-a-s-i-
-- - - - - - - - -S-t-a-f-T-U--->->-A-d-m-i-n-V-i-e-w-:- -9-b-.- -I-n-p-u-t- -n-o-_-a-g-e-n-d-a- -&- -k-l-i-k- -'-T-e-r-u-s-k-a-n-'-
-- - - - - - - - -A-d-m-i-n-V-i-e-w--->->-V-e-r-i-f-C-t-r-l-:- -1-0-b-.- -a-p-p-r-o-v-e-V-e-r-i-f-i-k-a-s-i-(-i-d-,- -n-o-A-g-e-n-d-a-,- -t-u-I-d-)-
-- - - - - - - - -a-c-t-i-v-a-t-e- -V-e-r-i-f-C-t-r-l-
-- - - - - - - - -V-e-r-i-f-C-t-r-l--->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -1-1-b-.- -u-p-d-a-t-e-S-t-a-t-u-s-(-i-d-,- -'-D-I-V-E-R-I-F-I-K-A-S-I-_-T-U-_-M-E-N-U-N-G-G-U-_-K-E-P-S-E-K-'-,- -n-o-A-g-e-n-d-a-)-
-- - - - - - - - -a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - - - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l--->->-D-B-:- -1-2-b-.- -U-P-D-A-T-E- -t-b-_-p-e-n-g-a-j-u-a-n-_-s-u-r-a-t- -S-E-T- -s-t-a-t-u-s- -=- -.-.-.-,- -n-o-_-a-g-e-n-d-a- -=- -.-.-.-
-- - - - - - - - -a-c-t-i-v-a-t-e- -D-B-
-- - - - - - - - -D-B----->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -1-3-b-.- -C-o-n-f-i-r-m- -U-P-D-A-T-E-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -D-B-
-- - - - - - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l----->->-V-e-r-i-f-C-t-r-l-:- -1-4-b-.- -r-e-t-u-r-n- -U-p-d-a-t-e-d-E-n-t-i-t-y-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - - - - - -V-e-r-i-f-C-t-r-l--->->-N-o-t-i-f-S-e-r-v-i-c-e-:- -1-5-b-.- -n-o-t-i-f-y-K-e-p-s-e-k-Q-u-e-u-e-(-i-d-)-
-- - - - - - - - -V-e-r-i-f-C-t-r-l----->->-A-d-m-i-n-V-i-e-w-:- -1-6-b-.- -r-e-t-u-r-n- -S-u-c-c-e-s-s-(-'-D-i-t-e-r-u-s-k-a-n- -k-e- -K-e-p-a-l-a- -S-e-k-o-l-a-h-'-)-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -V-e-r-i-f-C-t-r-l-
-- - - - - - - - -A-d-m-i-n-V-i-e-w----->->-S-t-a-f-T-U-:- -1-7-b-.- -P-e-r-b-a-r-u-i- -a-n-t-r-e-a-n-
-- - - - - - - - -d-e-a-c-t-i-v-a-t-e- -A-d-m-i-n-V-i-e-w-
-- - - - -e-n-d-
-- - - - -<-/-d-i-v->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-p-t-i-o-n-"->-G-a-m-b-a-r- -3-.-3- -&-m-d-a-s-h-;- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -A-l-u-r- -V-e-r-i-f-i-k-a-s-i- -B-e-r-k-a-s- -o-l-e-h- -S-t-a-f- -T-a-t-a- -U-s-a-h-a-<-/-d-i-v->-
-- - -<-/-d-i-v->-
--
-- - -<-p->-<-s-t-r-o-n-g->-P-e-n-j-e-l-a-s-a-n- -A-l-u-r- -P-r-o-g-r-a-m-:-<-/-s-t-r-o-n-g->-<-/-p->-
-- - -<-p->-
-- - - - -S-t-a-f- -T-U- -m-e-m-b-u-k-a- -<-c-o-d-e->-V-e-r-i-f-i-k-a-s-i-A-n-t-r-e-a-n-V-i-e-w-<-/-c-o-d-e->- -u-n-t-u-k- -m-e-l-i-h-a-t- -a-n-t-r-e-a-n- -p-e-r-m-o-h-o-n-a-n- -s-u-r-a-t- -m-a-s-u-k-.- -<-c-o-d-e->-V-e-r-i-f-i-k-a-s-i-C-o-n-t-r-o-l-l-e-r-<-/-c-o-d-e->- -m-e-n-g-e-l-o-l-a- -d-u-a- -k-e-m-u-n-g-k-i-n-a-n- -a-l-u-r-:- -j-i-k-a- -b-e-r-k-a-s- -d-i-t-o-l-a-k- -k-a-r-e-n-a- -k-u-r-a-n-g- -a-t-a-u- -b-u-r-a-m-,- -c-o-n-t-r-o-l-l-e-r- -m-e-n-c-a-t-a-t- -a-l-a-s-a-n- -p-e-n-o-l-a-k-a-n- -d-a-n- -m-e-m-i-c-u- -<-c-o-d-e->-N-o-t-i-f-i-k-a-s-i-S-e-r-v-i-c-e-<-/-c-o-d-e->- -a-g-a-r- -s-i-s-w-a- -m-e-m-p-e-r-b-a-i-k-i- -l-a-m-p-i-r-a-n-;- -j-i-k-a- -b-e-r-k-a-s- -s-a-h-,- -s-t-a-f- -T-U- -m-e-m-a-s-u-k-k-a-n- -n-o-m-o-r- -a-g-e-n-d-a- -m-a-s-u-k- -d-a-n- -s-t-a-t-u-s- -p-e-r-m-o-h-o-n-a-n- -d-i-u-b-a-h- -m-e-n-j-a-d-i- -<-c-o-d-e->-D-I-V-E-R-I-F-I-K-A-S-I-_-T-U-_-M-E-N-U-N-G-G-U-_-K-E-P-S-E-K-<-/-c-o-d-e->- -u-n-t-u-k- -d-i-t-e-r-u-s-k-a-n- -k-e- -a-n-t-r-e-a-n- -K-e-p-a-l-a- -S-e-k-o-l-a-h-.-
-- - -<-/-p->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-p-a-g-e---b-r-e-a-k-"->-<-/-d-i-v->-
--
-- - -<-!----- -S-e-q-u-e-n-c-e- -4- ----->-
-- - -<-h-3- -c-l-a-s-s-=-"-s-u-b---s-e-c-t-i-o-n---t-i-t-l-e-"->-3-.-4- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -4-:- -A-l-u-r- -P-e-r-s-e-t-u-j-u-a-n- -K-e-p-a-l-a- -S-e-k-o-l-a-h- -&-a-m-p-;- -P-e-n-e-r-b-i-t-a-n- -S-u-r-a-t- -P-D-F-<-/-h-3->-
-- - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-r-d-"->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-m-e-r-m-a-i-d-"->-
--s-e-q-u-e-n-c-e-D-i-a-g-r-a-m-
-- - - - -a-u-t-o-n-u-m-b-e-r-
-- - - - -a-c-t-o-r- -K-e-p-s-e-k- -a-s- -A-k-t-o-r-:- -K-e-p-a-l-a- -S-e-k-o-l-a-h-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -P-o-r-t-a-l-V-i-e-w- -a-s- -&-l-t-;-&-l-t-;-b-o-u-n-d-a-r-y-&-g-t-;-&-g-t-;- -A-p-p-r-o-v-a-l-P-o-r-t-a-l-V-i-e-w-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -A-p-p-r-C-t-r-l- -a-s- -&-l-t-;-&-l-t-;-c-o-n-t-r-o-l-&-g-t-;-&-g-t-;- -A-p-p-r-o-v-a-l-C-o-n-t-r-o-l-l-e-r-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -N-o-S-u-r-a-t-S-e-r-v-i-c-e- -a-s- -&-l-t-;-&-l-t-;-c-o-n-t-r-o-l-&-g-t-;-&-g-t-;- -N-o-m-o-r-S-u-r-a-t-S-e-r-v-i-c-e-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -Q-R-S-e-r-v-i-c-e- -a-s- -&-l-t-;-&-l-t-;-c-o-n-t-r-o-l-&-g-t-;-&-g-t-;- -Q-R-C-o-d-e-G-e-n-e-r-a-t-o-r-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -P-D-F-E-n-g-i-n-e- -a-s- -&-l-t-;-&-l-t-;-c-o-n-t-r-o-l-&-g-t-;-&-g-t-;- -P-D-F-C-o-m-p-i-l-e-r-S-e-r-v-i-c-e-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -P-e-n-g-a-j-u-a-n-M-o-d-e-l- -a-s- -&-l-t-;-&-l-t-;-e-n-t-i-t-y-&-g-t-;-&-g-t-;- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - -p-a-r-t-i-c-i-p-a-n-t- -D-B- -a-s- -&-l-t-;-&-l-t-;-d-a-t-a-b-a-s-e-&-g-t-;-&-g-t-;- -P-o-s-t-g-r-e-S-Q-L-
--
-- - - - -K-e-p-s-e-k--->->-P-o-r-t-a-l-V-i-e-w-:- -1-.- -B-u-k-a- -a-n-t-r-e-a-n- -p-e-r-s-e-t-u-j-u-a-n- -d-r-a-f- -s-u-r-a-t-
-- - - - -a-c-t-i-v-a-t-e- -P-o-r-t-a-l-V-i-e-w-
-- - - - -P-o-r-t-a-l-V-i-e-w--->->-A-p-p-r-C-t-r-l-:- -2-.- -g-e-t-P-e-n-d-i-n-g-A-p-p-r-o-v-a-l-L-i-s-t-(-)-
-- - - - -a-c-t-i-v-a-t-e- -A-p-p-r-C-t-r-l-
-- - - - -A-p-p-r-C-t-r-l--->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -3-.- -f-e-t-c-h-K-e-p-s-e-k-Q-u-e-u-e-(-)-
-- - - - -a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l--->->-D-B-:- -4-.- -S-E-L-E-C-T- -*- -F-R-O-M- -t-b-_-p-e-n-g-a-j-u-a-n-_-s-u-r-a-t- -W-H-E-R-E- -s-t-a-t-u-s- -=- -'-D-I-V-E-R-I-F-I-K-A-S-I-_-T-U-_-M-E-N-U-N-G-G-U-_-K-E-P-S-E-K-'-
-- - - - -a-c-t-i-v-a-t-e- -D-B-
-- - - - -D-B----->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -5-.- -r-e-t-u-r-n- -R-e-c-o-r-d-s-
-- - - - -d-e-a-c-t-i-v-a-t-e- -D-B-
-- - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l----->->-A-p-p-r-C-t-r-l-:- -6-.- -r-e-t-u-r-n- -D-a-t-a-L-i-s-t-
-- - - - -d-e-a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - -A-p-p-r-C-t-r-l----->->-P-o-r-t-a-l-V-i-e-w-:- -7-.- -R-e-n-d-e-r- -d-a-f-t-a-r- -s-u-r-a-t- -s-i-a-p- -t-a-n-d-a- -t-a-n-g-a-n-
-- - - - -d-e-a-c-t-i-v-a-t-e- -A-p-p-r-C-t-r-l-
--
-- - - - -K-e-p-s-e-k--->->-P-o-r-t-a-l-V-i-e-w-:- -8-.- -T-i-n-j-a-u- -p-e-r-m-o-h-o-n-a-n- -&- -k-l-i-k- -'-S-e-t-u-j-u-i- -&- -T-a-n-d-a- -T-a-n-g-a-n-i-'-
-- - - - -P-o-r-t-a-l-V-i-e-w--->->-A-p-p-r-C-t-r-l-:- -9-.- -e-x-e-c-u-t-e-A-p-p-r-o-v-a-l-(-i-d-P-e-n-g-a-j-u-a-n-,- -k-e-p-s-e-k-I-d-)-
-- - - - -a-c-t-i-v-a-t-e- -A-p-p-r-C-t-r-l-
--
-- - - - -A-p-p-r-C-t-r-l--->->-N-o-S-u-r-a-t-S-e-r-v-i-c-e-:- -1-0-.- -g-e-n-e-r-a-t-e-O-f-f-i-c-i-a-l-N-u-m-b-e-r-(-i-d-J-e-n-i-s-,- -t-a-h-u-n-)-
-- - - - -a-c-t-i-v-a-t-e- -N-o-S-u-r-a-t-S-e-r-v-i-c-e-
-- - - - -N-o-S-u-r-a-t-S-e-r-v-i-c-e--->->-D-B-:- -1-1-.- -S-E-L-E-C-T- -M-A-X-(-n-o-m-o-r-_-u-r-u-t-)- -F-R-O-M- -t-b-_-s-u-r-a-t-_-k-e-l-u-a-r- -W-H-E-R-E- -t-a-h-u-n- -=- -$-1-
-- - - - -a-c-t-i-v-a-t-e- -D-B-
-- - - - -D-B----->->-N-o-S-u-r-a-t-S-e-r-v-i-c-e-:- -1-2-.- -r-e-t-u-r-n- -l-a-s-t-N-u-m-b-e-r-
-- - - - -d-e-a-c-t-i-v-a-t-e- -D-B-
-- - - - -N-o-S-u-r-a-t-S-e-r-v-i-c-e----->->-A-p-p-r-C-t-r-l-:- -1-3-.- -r-e-t-u-r-n- -f-o-r-m-a-t-t-e-d-N-o-S-u-r-a-t- -(-'-4-2-1-.-3-/-0-8-5-/-S-M-K---P-S-K-D-3-/-X-/-2-0-2-6-'-)-
-- - - - -d-e-a-c-t-i-v-a-t-e- -N-o-S-u-r-a-t-S-e-r-v-i-c-e-
--
-- - - - -A-p-p-r-C-t-r-l--->->-Q-R-S-e-r-v-i-c-e-:- -1-4-.- -c-r-e-a-t-e-D-i-g-i-t-a-l-S-i-g-n-a-t-u-r-e-Q-R-(-m-e-t-a-d-a-t-a-,- -s-e-c-r-e-t-K-e-y-)-
-- - - - -a-c-t-i-v-a-t-e- -Q-R-S-e-r-v-i-c-e-
-- - - - -Q-R-S-e-r-v-i-c-e----->->-A-p-p-r-C-t-r-l-:- -1-5-.- -r-e-t-u-r-n- -q-r-I-m-a-g-e-B-u-f-f-e-r-
-- - - - -d-e-a-c-t-i-v-a-t-e- -Q-R-S-e-r-v-i-c-e-
--
-- - - - -A-p-p-r-C-t-r-l--->->-P-D-F-E-n-g-i-n-e-:- -1-6-.- -c-o-m-p-i-l-e-O-f-f-i-c-i-a-l-P-D-F-(-d-a-t-a-S-i-s-w-a-,- -f-o-r-m-a-t-t-e-d-N-o-S-u-r-a-t-,- -q-r-I-m-a-g-e-B-u-f-f-e-r-)-
-- - - - -a-c-t-i-v-a-t-e- -P-D-F-E-n-g-i-n-e-
-- - - - -P-D-F-E-n-g-i-n-e----->->-A-p-p-r-C-t-r-l-:- -1-7-.- -r-e-t-u-r-n- -p-d-f-B-i-n-a-r-y-U-r-l-P-a-t-h-
-- - - - -d-e-a-c-t-i-v-a-t-e- -P-D-F-E-n-g-i-n-e-
--
-- - - - -A-p-p-r-C-t-r-l--->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -1-8-.- -f-i-n-a-l-i-z-e-S-u-r-a-t-(-i-d-,- -f-o-r-m-a-t-t-e-d-N-o-S-u-r-a-t-,- -p-d-f-B-i-n-a-r-y-U-r-l-P-a-t-h-)-
-- - - - -a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
-- - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l--->->-D-B-:- -1-9-.- -U-P-D-A-T-E- -t-b-_-p-e-n-g-a-j-u-a-n-_-s-u-r-a-t- -S-E-T- -s-t-a-t-u-s- -=- -'-S-E-L-E-S-A-I-_-S-I-A-P-_-U-N-D-U-H-'-,- -n-o-_-s-u-r-a-t- -=- -.-.-.-,- -p-d-f-_-u-r-l- -=- -.-.-.-
-- - - - -a-c-t-i-v-a-t-e- -D-B-
-- - - - -D-B----->->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-:- -2-0-.- -C-o-n-f-i-r-m- -U-P-D-A-T-E-
-- - - - -d-e-a-c-t-i-v-a-t-e- -D-B-
-- - - - -P-e-n-g-a-j-u-a-n-M-o-d-e-l----->->-A-p-p-r-C-t-r-l-:- -2-1-.- -r-e-t-u-r-n- -F-i-n-a-l-i-z-e-d-E-n-t-i-t-y-
-- - - - -d-e-a-c-t-i-v-a-t-e- -P-e-n-g-a-j-u-a-n-M-o-d-e-l-
--
-- - - - -A-p-p-r-C-t-r-l----->->-P-o-r-t-a-l-V-i-e-w-:- -2-2-.- -r-e-t-u-r-n- -S-u-c-c-e-s-s-(-'-S-u-r-a-t- -R-e-s-m-i- -B-e-r-h-a-s-i-l- -D-i-t-e-r-b-i-t-k-a-n-'-)-
-- - - - -d-e-a-c-t-i-v-a-t-e- -A-p-p-r-C-t-r-l-
-- - - - -P-o-r-t-a-l-V-i-e-w----->->-K-e-p-s-e-k-:- -2-3-.- -T-a-m-p-i-l-k-a-n- -p-e-s-a-n- -b-e-r-h-a-s-i-l- -&- -p-e-r-b-a-r-u-i- -d-a-s-b-o-r-
-- - - - -d-e-a-c-t-i-v-a-t-e- -P-o-r-t-a-l-V-i-e-w-
-- - - - -<-/-d-i-v->-
-- - - - -<-d-i-v- -c-l-a-s-s-=-"-d-i-a-g-r-a-m---c-a-p-t-i-o-n-"->-G-a-m-b-a-r- -3-.-4- -&-m-d-a-s-h-;- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -P-e-r-s-e-t-u-j-u-a-n- -K-e-p-a-l-a- -S-e-k-o-l-a-h- -&-a-m-p-;- -P-e-n-e-r-b-i-t-a-n- -S-u-r-a-t- -P-D-F-<-/-d-i-v->-
-- - -<-/-d-i-v->-
--
-- - -<-p->-<-s-t-r-o-n-g->-P-e-n-j-e-l-a-s-a-n- -A-l-u-r- -P-r-o-g-r-a-m-:-<-/-s-t-r-o-n-g->-<-/-p->-
-- - -<-p->-
-- - - - -K-e-t-i-k-a- -K-e-p-a-l-a- -S-e-k-o-l-a-h- -m-e-n-y-e-t-u-j-u-i- -s-u-r-a-t- -m-e-l-a-l-u-i- -<-c-o-d-e->-A-p-p-r-o-v-a-l-P-o-r-t-a-l-V-i-e-w-<-/-c-o-d-e->-,- -<-c-o-d-e->-A-p-p-r-o-v-a-l-C-o-n-t-r-o-l-l-e-r-<-/-c-o-d-e->- -m-e-m-a-n-g-g-i-l- -t-i-g-a- -f-u-n-g-s-i- -l-a-y-a-n-a-n- -s-e-c-a-r-a- -b-e-r-u-r-u-t-a-n-:- -p-e-r-t-a-m-a-,- -<-c-o-d-e->-N-o-m-o-r-S-u-r-a-t-S-e-r-v-i-c-e-<-/-c-o-d-e->- -m-e-n-g-a-m-b-i-l- -n-o-m-o-r- -u-r-u-t- -s-u-r-a-t- -r-e-s-m-i- -t-e-r-b-a-r-u-;- -k-e-d-u-a-,- -<-c-o-d-e->-Q-R-C-o-d-e-G-e-n-e-r-a-t-o-r-<-/-c-o-d-e->- -m-e-m-b-u-a-t- -g-a-m-b-a-r- -k-o-d-e- -Q-R- -s-e-b-a-g-a-i- -t-a-n-d-a- -t-a-n-g-a-n- -d-i-g-i-t-a-l- -r-e-s-m-i-;- -k-e-t-i-g-a-,- -<-c-o-d-e->-P-D-F-C-o-m-p-i-l-e-r-S-e-r-v-i-c-e-<-/-c-o-d-e->- -m-e-n-g-g-a-b-u-n-g-k-a-n- -k-o-p- -s-u-r-a-t- -s-e-k-o-l-a-h-,- -d-a-t-a- -p-e-r-m-o-h-o-n-a-n-,- -d-a-n- -k-o-d-e- -Q-R- -m-e-n-j-a-d-i- -f-i-l-e- -d-o-k-u-m-e-n- -P-D-F- -r-e-s-m-i-.- -S-e-t-e-l-a-h- -b-e-r-k-a-s- -s-i-a-p-,- -<-c-o-d-e->-P-e-n-g-a-j-u-a-n-M-o-d-e-l-<-/-c-o-d-e->- -m-e-m-p-e-r-b-a-r-u-i- -s-t-a-t-u-s- -s-u-r-a-t- -d-i- -d-a-t-a-b-a-s-e- -m-e-n-j-a-d-i- -<-c-o-d-e->-S-E-L-E-S-A-I-_-S-I-A-P-_-U-N-D-U-H-<-/-c-o-d-e->-.-
-- - -<-/-p->-
--
-- - -<-d-i-v- -c-l-a-s-s-=-"-p-a-g-e---b-r-e-a-k-"->-<-/-d-i-v->-
--
-- - -<-!----- -B-A-B- -I-V-:- -T-R-A-C-E-A-B-I-L-I-T-Y- -M-A-T-R-I-X- ----->-
-- - -<-h-2- -c-l-a-s-s-=-"-s-e-c-t-i-o-n---t-i-t-l-e-"->-B-A-B- -I-V-:- -M-A-T-R-I-K-S- -P-E-N-E-L-U-S-U-R-A-N- -K-E-B-U-T-U-H-A-N- -(-T-R-A-C-E-A-B-I-L-I-T-Y- -M-A-T-R-I-X-)-<-/-h-2->-
-- - -<-p->-
-- - - - -T-a-b-e-l- -m-a-t-r-i-k-s- -b-e-r-i-k-u-t- -d-i-g-u-n-a-k-a-n- -u-n-t-u-k- -m-e-m-a-s-t-i-k-a-n- -b-a-h-w-a- -s-e-t-i-a-p- -k-e-b-u-t-u-h-a-n- -f-u-n-g-s-i-o-n-a-l- -y-a-n-g- -s-u-d-a-h- -d-i-s-u-s-u-n- -p-a-d-a- -D-o-k-u-m-e-n- -S-R-S- -(-T-u-g-a-s- -2-)- -b-e-n-a-r---b-e-n-a-r- -s-u-d-a-h- -d-i-g-a-m-b-a-r-k-a-n- -p-a-d-a- -r-a-n-c-a-n-g-a-n- -d-i-a-g-r-a-m- -T-u-g-a-s- -4- -i-n-i-:-
-- - -<-/-p->-
--
-- - -<-t-a-b-l-e- -c-l-a-s-s-=-"-d-a-t-a---t-a-b-l-e-"->-
-- - - - -<-t-h-e-a-d->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-h- -s-t-y-l-e-=-"-w-i-d-t-h-:- -1-5-%-;-"->-K-o-d-e- -K-e-b-u-t-u-h-a-n-<-/-t-h->-
-- - - - - - - - -<-t-h- -s-t-y-l-e-=-"-w-i-d-t-h-:- -4-5-%-;-"->-D-e-s-k-r-i-p-s-i- -K-e-b-u-t-u-h-a-n- -F-u-n-g-s-i-o-n-a-l- -(-S-R-S-)-<-/-t-h->-
-- - - - - - - - -<-t-h- -s-t-y-l-e-=-"-w-i-d-t-h-:- -2-0-%-;-"->-A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m-<-/-t-h->-
-- - - - - - - - -<-t-h- -s-t-y-l-e-=-"-w-i-d-t-h-:- -2-0-%-;-"->-S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m-<-/-t-h->-
-- - - - - - -<-/-t-r->-
-- - - - -<-/-t-h-e-a-d->-
-- - - - -<-t-b-o-d-y->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;- -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-R-E-Q---F---0-1-<-/-t-d->-
-- - - - - - - - -<-t-d->-A-u-t-e-n-t-i-k-a-s-i- -P-e-n-g-g-u-n-a- -&-a-m-p-;- -P-e-m-b-a-t-a-s-a-n- -H-a-k- -A-k-s-e-s- -B-e-r-b-a-s-i-s- -P-e-r-a-n- -(-R-B-A-C-)-<-/-t-d->-
-- - - - - - - - -<-t-d->-A-c-t-i-v-i-t-y- -1-,- -2-,- -3-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -1-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;- -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-R-E-Q---F---0-2-<-/-t-d->-
-- - - - - - - - -<-t-d->-P-e-n-g-a-j-u-a-n- -S-u-r-a-t- -M-a-n-d-i-r-i- -&-a-m-p-;- -U-n-g-g-a-h- -B-e-r-k-a-s- -D-o-k-u-m-e-n- -P-r-a-s-y-a-r-a-t- -S-i-s-w-a-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -1-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -2-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;- -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-R-E-Q---F---0-3-<-/-t-d->-
-- - - - - - - - -<-t-d->-V-e-r-i-f-i-k-a-s-i- -B-e-r-k-a-s-,- -P-e-m-e-r-i-k-s-a-a-n- -K-e-l-e-n-g-k-a-p-a-n- -&-a-m-p-;- -D-i-s-p-o-s-i-s-i- -M-e-j-a- -T-U-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -2-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -3-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;- -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-R-E-Q---F---0-4-<-/-t-d->-
-- - - - - - - - -<-t-d->-V-a-l-i-d-a-s-i- -E-k-s-e-k-u-t-i-f- -&-a-m-p-;- -P-e-r-s-e-t-u-j-u-a-n- -P-e-n-g-e-s-a-h-a-n- -K-e-p-a-l-a- -S-e-k-o-l-a-h-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -3-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -4-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;- -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-R-E-Q---F---0-5-<-/-t-d->-
-- - - - - - - - -<-t-d->-P-e-n-o-m-o-r-a-n- -S-u-r-a-t- -O-t-o-m-a-t-i-s- -B-e-r-u-r-u-t-a-n- -&-a-m-p-;- -T-a-n-d-a- -T-a-n-g-a-n- -Q-R- -D-i-g-i-t-a-l-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -3-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -4-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - - - -<-t-r->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-t-e-x-t---a-l-i-g-n-:- -c-e-n-t-e-r-;- -f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-R-E-Q---F---0-6-<-/-t-d->-
-- - - - - - - - -<-t-d->-P-e-l-a-c-a-k-a-n- -S-t-a-t-u-s- -W-a-k-t-u- -N-y-a-t-a- -(-S-t-e-p-p-e-r-)- -&-a-m-p-;- -P-e-n-g-u-n-d-u-h-a-n- -P-D-F- -M-a-n-d-i-r-i-<-/-t-d->-
-- - - - - - - - -<-t-d- -s-t-y-l-e-=-"-f-o-n-t---w-e-i-g-h-t-:- -b-o-l-d-;-"->-A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -4-<-/-t-d->-
-- - - - - - - - -<-t-d->-S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -2- -&-a-m-p-;- -4-<-/-t-d->-
-- - - - - - -<-/-t-r->-
-- - - - -<-/-t-b-o-d-y->-
-- - -<-/-t-a-b-l-e->-
--
-- - -<-!----- -B-A-B- -V-:- -K-E-S-I-M-P-U-L-A-N- ----->-
-- - -<-h-2- -c-l-a-s-s-=-"-s-e-c-t-i-o-n---t-i-t-l-e-"->-B-A-B- -V-:- -K-E-S-I-M-P-U-L-A-N-<-/-h-2->-
-- - -<-p->-
-- - - - -B-e-r-d-a-s-a-r-k-a-n- -h-a-s-i-l- -p-e-r-a-n-c-a-n-g-a-n- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -d-a-n- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -u-n-t-u-k- -s-i-s-t-e-m- -S-I-P-E-S-A-T- -p-a-d-a- -T-u-g-a-s- -4- -i-n-i-,- -d-a-p-a-t- -k-a-m-i- -s-i-m-p-u-l-k-a-n- -b-a-h-w-a-:-
-- - -<-/-p->-
-- - -<-o-l->-
-- - - - -<-l-i->-S-e-l-u-r-u-h- -a-l-u-r- -p-e-l-a-y-a-n-a-n- -p-e-r-s-u-r-a-t-a-n- -s-i-s-w-a- -p-a-d-a- -s-i-s-t-e-m- -S-I-P-E-S-A-T-,- -m-u-l-a-i- -d-a-r-i- -p-e-n-g-a-j-u-a-n- -m-a-n-d-i-r-i- -o-l-e-h- -s-i-s-w-a-,- -v-e-r-i-f-i-k-a-s-i- -b-e-r-k-a-s- -o-l-e-h- -s-t-a-f- -T-U-,- -p-e-r-s-e-t-u-j-u-a-n- -d-a-n- -p-e-n-g-e-s-a-h-a-n- -t-a-n-d-a- -t-a-n-g-a-n- -e-l-e-k-t-r-o-n-i-k- -o-l-e-h- -K-e-p-a-l-a- -S-e-k-o-l-a-h-,- -h-i-n-g-g-a- -p-e-l-a-c-a-k-a-n- -d-a-n- -p-e-n-g-u-n-d-u-h-a-n- -s-u-r-a-t- -t-e-l-a-h- -b-e-r-h-a-s-i-l- -d-i-m-o-d-e-l-k-a-n- -d-e-n-g-a-n- -r-u-n-t-u-t-.-<-/-l-i->-
-- - - - -<-l-i->-P-e-n-g-g-u-n-a-a-n- -p-e-m-b-a-g-i-a-n- -k-o-l-o-m- -(-s-w-i-m-l-a-n-e-)- -p-a-d-a- -A-c-t-i-v-i-t-y- -D-i-a-g-r-a-m- -m-e-m-p-e-r-m-u-d-a-h- -p-e-m-b-a-g-i-a-n- -h-a-k- -a-k-s-e-s- -d-a-n- -b-a-t-a-s-a-n- -t-a-n-g-g-u-n-g- -j-a-w-a-b- -a-n-t-a-r-a- -s-i-s-w-a-,- -s-t-a-f- -T-U-,- -k-e-p-a-l-a- -s-e-k-o-l-a-h-,- -d-a-n- -s-i-s-t-e-m-.-<-/-l-i->-
-- - - - -<-l-i->-P-e-n-e-r-a-p-a-n- -k-o-n-s-e-p- -B-o-u-n-d-a-r-y---C-o-n-t-r-o-l---E-n-t-i-t-y- -(-B-C-E-)- -p-a-d-a- -S-e-q-u-e-n-c-e- -D-i-a-g-r-a-m- -m-e-m-p-e-r-m-u-d-a-h- -p-e-m-a-h-a-m-a-n- -m-e-n-g-e-n-a-i- -p-e-m-i-s-a-h-a-n- -a-n-t-a-r-m-u-k-a- -(-v-i-e-w-)-,- -l-o-g-i-k-a- -p-e-m-r-o-s-e-s-a-n- -(-c-o-n-t-r-o-l-l-e-r-)-,- -d-a-n- -t-a-b-e-l- -d-a-t-a-b-a-s-e- -(-m-o-d-e-l-)- -y-a-n-g- -a-k-a-n- -d-i-i-m-p-l-e-m-e-n-t-a-s-i-k-a-n- -s-a-a-t- -k-o-d-i-n-g- -a-p-l-i-k-a-s-i-.-<-/-l-i->-
-- - - - -<-l-i->-R-a-n-c-a-n-g-a-n- -d-i-a-g-r-a-m- -y-a-n-g- -d-i-b-u-a-t- -s-u-d-a-h- -s-e-s-u-a-i- -d-a-n- -s-e-l-a-r-a-s- -d-e-n-g-a-n- -k-e-b-u-t-u-h-a-n- -f-u-n-g-s-i-o-n-a-l- -y-a-n-g- -t-e-l-a-h- -d-i-a-j-u-k-a-n- -p-a-d-a- -d-o-k-u-m-e-n- -S-R-S- -t-u-g-a-s- -s-e-b-e-l-u-m-n-y-a-.-<-/-l-i->-
-- - -<-/-o-l->-
--
-- - -<-b-r->-
-- - -<-d-i-v- -s-t-y-l-e-=-"-t-e-x-t---a-l-i-g-n-:- -r-i-g-h-t-;- -m-a-r-g-i-n---t-o-p-:- -2-0-p-x-;- -f-o-n-t---s-i-z-e-:- -1-0-.-5-p-t-;-"->-
-- - - - -<-p->-J-a-k-a-r-t-a-,- -O-k-t-o-b-e-r- -2-0-2-6-<-/-p->-
-- - - - -<-p- -s-t-y-l-e-=-"-m-a-r-g-i-n---t-o-p-:- ---6-p-x-;-"->-<-s-t-r-o-n-g->-K-e-l-o-m-p-o-k- -7- -R-P-L- -&-m-d-a-s-h-;- -T-e-k-n-i-k- -I-n-f-o-r-m-a-t-i-k-a- -U-N-I-N-D-R-A-<-/-s-t-r-o-n-g->-<-/-p->-
-- - -<-/-d-i-v->-
--
--<-/-b-o-d-y->-
--<-/-h-t-m-l->-
--
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TUGAS 4 RPL - ACTIVITY & SEQUENCE DIAGRAM - KELOMPOK 7</title>
+  <!-- Mermaid.js CDN for client-side rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+      sequence: { useMaxWidth: true, showSequenceNumbers: true }
+    });
+  </script>
+  <style>
+    @page {
+      size: A4;
+      margin: 2cm 2cm 2cm 2cm;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #111;
+      margin: 0 auto;
+      padding: 2cm 1.5cm;
+      max-width: 210mm;
+      background: #fff;
+    }
+    @media print {
+      body {
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .diagram-container {
+        page-break-inside: avoid;
+      }
+    }
+    .print-bar {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 1000;
+      background: #1e293b;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+    }
+    .print-btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .print-btn:hover {
+      background: #1d4ed8;
+    }
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #111;
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 13pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 0 3px 0;
+      letter-spacing: 0.5px;
+    }
+    .header h2 {
+      font-size: 11.5pt;
+      font-weight: bold;
+      margin: 0 0 3px 0;
+    }
+    .header p {
+      font-size: 10pt;
+      margin: 0;
+      color: #333;
+    }
+    .meta-box {
+      border: 1px solid #777;
+      background-color: #fafafa;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.5pt;
+    }
+    .meta-table th, .meta-table td {
+      padding: 3px 6px;
+      vertical-align: top;
+    }
+    .meta-table th {
+      text-align: left;
+      width: 28%;
+      color: #222;
+    }
+    h2.section-title {
+      font-size: 12pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 3px;
+    }
+    h3.sub-section-title {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+    p, li {
+      text-align: justify;
+    }
+    .diagram-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 12px;
+      margin: 12px 0 16px 0;
+      background: #f8fafc;
+      text-align: center;
+    }
+    .diagram-caption {
+      font-size: 9.5pt;
+      font-weight: bold;
+      color: #475569;
+      margin-top: 8px;
+      text-align: center;
+      font-style: italic;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px 0;
+      font-size: 10pt;
+    }
+    table.data-table th, table.data-table td {
+      border: 1px solid #64748b;
+      padding: 6px 8px;
+    }
+    table.data-table th {
+      background-color: #f1f5f9;
+      font-weight: bold;
+      text-align: center;
+    }
+    ol, ul {
+      margin-top: 4px;
+      margin-bottom: 8px;
+      padding-left: 20px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 8.5pt;
+      font-weight: bold;
+      font-family: monospace;
+    }
+    .badge-actor { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    .badge-bce { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Control (Hidden when printed) -->
+  <div class="print-bar no-print">
+    <span>Dokumen Siap Cetak A4 / PDF</span>
+    <button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+  </div>
+
+  <!-- Header Dokumen Formal UNINDRA -->
+  <div class="header">
+    <h1>TUGAS 4 - REKAYASA PERANGKAT LUNAK (RPL)</h1>
+    <h2>PERANCANGAN ACTIVITY DIAGRAM DAN SEQUENCE DIAGRAM</h2>
+    <p>PROGRAM STUDI TEKNIK INFORMATIKA &mdash; FTIK UNIVERSITAS INDRAPRASTA PGRI (UNINDRA)</p>
+    <p>TAHUN AKADEMIK 2026/2027</p>
+  </div>
+
+  <!-- Box Informasi Identitas Kelompok & Proyek -->
+  <div class="meta-box">
+    <table class="meta-table">
+      <tr>
+        <th>Kelompok / Kelas</th>
+        <td>: <strong>Kelompok RPL 7</strong></td>
+      </tr>
+      <tr>
+        <th>Anggota Kelompok</th>
+        <td>: 
+          1. <strong>Adam Wahyu Kurniawan</strong> (NPM: 202343500510)<br>
+          &nbsp;&nbsp;2. <strong>Fathu Rahman</strong> (NPM: 202343500467)<br>
+          &nbsp;&nbsp;3. <strong>Surya Edi Saputra</strong> (NPM: 202343500468)<br>
+          &nbsp;&nbsp;4. <strong>Rizqi Muh. Al Hakimi</strong> (NPM: 202343500449)
+        </td>
+      </tr>
+      <tr>
+        <th>Judul Proyek</th>
+        <td>: <strong>Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT)</strong></td>
+      </tr>
+      <tr>
+        <th>Studi Kasus</th>
+        <td>: Pelayanan Administrasi Persuratan Siswa &amp; Tata Usaha Sekolah Menengah</td>
+      </tr>
+      <tr>
+        <th>Landasan Dokumen</th>
+        <td>: Dokumen Spesifikasi Kebutuhan Perangkat Lunak (SRS) Standar IEEE Std 830-1998 (Tugas 2)</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- BAB I: PENDAHULUAN -->
+  <h2 class="section-title">BAB I: PENDAHULUAN &amp; GAMBARAN UMUM SISTEM</h2>
+  
+  <h3 class="sub-section-title">1.1 Deskripsi Proyek SIPESAT</h3>
+  <p>
+    Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT) adalah sistem yang kami kembangkan untuk mempermudah proses pelayanan administrasi persuratan bagi siswa di lingkungan sekolah. Pada sistem sebelumnya, siswa harus datang langsung ke ruang Tata Usaha (TU) untuk meminta form kertas dan menunggu proses pembuatan surat yang memakan waktu cukup lama. Melalui SIPESAT, siswa dapat mengajukan surat kapan saja secara online, memantau posisi suratnya, dan mengunduh surat resmi yang sudah disetujui.
+  </p>
+  <p>
+    Sistem ini membagi hak akses ke dalam 3 (tiga) peran pengguna (aktor) utama:
+  </p>
+  <ul>
+    <li><strong>Siswa</strong>: Mengajukan permohonan surat secara mandiri, melampirkan berkas persyaratan (maksimal 2 MB), memantau perkembangan status surat, serta mengunduh surat PDF yang telah disahkan.</li>
+    <li><strong>Staf Tata Usaha (TU)</strong>: Memeriksa dan memverifikasi kelengkapan berkas yang diajukan siswa, memberikan nomor agenda surat masuk, dan meneruskan berkas yang valid ke Kepala Sekolah (atau menolaknya dengan catatan revisi jika berkas belum lengkap).</li>
+    <li><strong>Kepala Sekolah</strong>: Memeriksa draf surat yang sudah diverifikasi TU, memberikan persetujuan (approval), dan mengesahkan surat dengan tanda tangan elektronik berbasis kode QR.</li>
+  </ul>
+
+  <h3 class="sub-section-title">1.2 Tujuan Pemodelan UML</h3>
+  <p>
+    Pemodelan UML (Unified Modeling Language) pada dokumen ini disusun untuk menjelaskan alur sistem dari dua sudut pandang:
+  </p>
+  <ul>
+    <li><strong>Activity Diagram</strong>: Digunakan untuk memetakan alur aktivitas kerja (workflow) pada sistem, baik yang dilakukan oleh pengguna maupun proses internal yang dilakukan oleh sistem.</li>
+    <li><strong>Sequence Diagram</strong>: Digunakan untuk menggambarkan interaksi antarkomponen program berdasarkan urutan waktu pemanggilan fungsi, dengan membagi komponen ke dalam pola <em>Boundary-Control-Entity (BCE)</em> agar struktur kode lebih rapi.</li>
+  </ul>
+
+  <div class="page-break"></div>
+
+  <!-- BAB II: ACTIVITY DIAGRAM -->
+  <h2 class="section-title">BAB II: PERANCANGAN ACTIVITY DIAGRAM</h2>
+  <p>
+    Activity Diagram menggambarkan urutan alur kerja dari suatu aktivitas pada sistem SIPESAT, mulai dari titik awal (start), aksi pengguna, percabangan keputusan (decision), hingga selesai. Terdapat 4 (empat) alur utama yang kami modelkan:
+  </p>
+
+  <!-- Activity 1 -->
+  <h3 class="sub-section-title">2.1 Activity Diagram 1: Alur Pengajuan Surat oleh Siswa</h3>
+  <p>
+    Diagram ini menggambarkan alur saat siswa masuk ke sistem, memilih jenis surat, mengisi keperluan, mengunggah dokumen persyaratan, hingga mendapatkan bukti resi nomor tiket.
+  </p>
+
+  <div class="diagram-card">
+    <div class="mermaid">
+flowchart TD
+    subgraph Siswa["Aktor: Siswa"]
+        A1([Mulai]) --> A2[Buka Web SIPESAT]
+        A2 --> A3[Input NISN & Password]
+        A3 --> A4[Pilih Menu 'Pengajuan Surat']
+        A4 --> A5[Pilih Jenis Surat]
+        A5 --> A6[Isi Form & Unggah Berkas Persyaratan]
+        A6 --> A7[Klik 'Kirim Permohonan']
+        A13[Terima Resi Pengajuan & Kode Tiket] --> A14([Selesai])
+    end
+
+    subgraph Web["Boundary: Antarmuka Web SIPESAT"]
+        A7 --> B1[Validasi Kelengkapan & Format File]
+        B1 --> B2{Data Lengkap & Valid?}
+        B2 -- Tidak --> B3[Tampilkan Notifikasi Error Form]
+        B3 --> A6
+        B2 -- Ya --> B4[Kirim Payload Pengajuan ke Server]
+        B5[Tampilkan Resi Berhasil & Kode Tiket] --> A13
+    end
+
+    subgraph Server["Sistem Backend & Database"]
+        B4 --> C1[Simpan Berkas Lampiran ke Storage]
+        C1 --> C2[Generate Kode Tiket Unik Pelacakan]
+        C2 --> C3[(INSERT Data Pengajuan Status: 'MENUNGGU_VERIFIKASI')]
+        C3 --> C4[Trigger Notifikasi Antrean ke TU]
+        C4 --> B5
+    end
+
+    style A1 fill:#22c55e,stroke:#16a34a,color:#fff
+    style A14 fill:#ef4444,stroke:#dc2626,color:#fff
+    style B2 fill:#f59e0b,stroke:#d97706,color:#fff
+    </div>
+    <div class="diagram-caption">Gambar 2.1 &mdash; Activity Diagram Alur Pengajuan Surat Siswa</div>
+  </div>
+
+  <p><strong>Uraian Alur Kerja:</strong></p>
+  <ol>
+    <li>Siswa membuka website SIPESAT lalu login menggunakan NISN dan kata sandi.</li>
+    <li>Siswa masuk ke menu "Pengajuan Surat" dan memilih jenis surat yang dibutuhkan (misalnya Surat Keterangan Siswa Aktif, Rekomendasi Beasiswa, dsb).</li>
+    <li>Siswa mengisi keperluan surat serta mengunggah file berkas persyaratan yang diminta (format PDF/JPG dengan ukuran maksimal 2 MB).</li>
+    <li>Siswa menekan tombol "Kirim Permohonan".</li>
+    <li>Sistem memeriksa kelengkapan isian form dan ukuran file. Jika file tidak sesuai atau melebihi 2 MB, sistem memunculkan pesan kesalahan agar siswa memperbaiki unggahannya.</li>
+    <li>Jika data sudah lengkap dan valid, sistem menyimpan berkas lampiran, membuat kode tiket unik (misal: <code>SPT-202610-0042</code>), dan menyimpan permohonan ke database dengan status awal <code>MENUNGGU_VERIFIKASI</code>.</li>
+    <li>Sistem menampilkan resi tanda terima pengajuan beserta kode tiket yang dapat disimpan oleh siswa untuk melacak progres surat.</li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <!-- Activity 2 -->
+  <h3 class="sub-section-title">2.2 Activity Diagram 2: Alur Verifikasi Berkas oleh Staf Tata Usaha (TU)</h3>
+  <p>
+    Diagram ini menggambarkan alur kerja staf TU dalam memeriksa kelengkapan berkas yang diajukan oleh siswa, menentukan keputusan apakah permohonan disetujui atau ditolak, dan memberikan nomor agenda surat masuk.
+  </p>
+
+  <div class="diagram-card">
+    <div class="mermaid">
+flowchart TD
+    subgraph TU["Aktor: Staf Tata Usaha (Admin)"]
+        D1([Mulai]) --> D2[Login ke Panel Admin TU]
+        D2 --> D3[Buka Menu 'Verifikasi Masuk']
+        D3 --> D4[Pilih Permohonan Siswa dari Antrean]
+        D4 --> D5[Tinjau Data & Preview Berkas Lampiran]
+        D5 --> D6{Berkas Lengkap & Absah?}
+        D6 -- Tidak --> D7[Tulis Catatan / Alasan Penolakan]
+        D7 --> D8[Klik 'Tolak & Minta Revisi']
+        D6 -- Ya --> D9[Input Nomor Agenda Masuk TU]
+        D9 --> D10[Klik 'Verifikasi & Teruskan']
+        D13([Selesai])
+    end
+
+    subgraph System["Sistem SIPESAT & Database"]
+        D8 --> E1[(UPDATE Status: 'DITOLAK_PERLU_REVISI')]
+        E1 --> E2[Kirim Notifikasi Catatan Revisi ke Siswa]
+        E2 --> D13
+
+        D10 --> E3[(UPDATE Status: 'DIVERIFIKASI_TU_MENUNGGU_KEPSEK')]
+        E3 --> E4[Kirim Notifikasi Antrean ke Kepala Sekolah]
+        E4 --> D13
+    end
+
+    style D1 fill:#22c55e,stroke:#16a34a,color:#fff
+    style D13 fill:#ef4444,stroke:#dc2626,color:#fff
+    style D6 fill:#f59e0b,stroke:#d97706,color:#fff
+    </div>
+    <div class="diagram-caption">Gambar 2.2 &mdash; Activity Diagram Alur Verifikasi Berkas oleh Staf Tata Usaha</div>
+  </div>
+
+  <p><strong>Uraian Alur Kerja:</strong></p>
+  <ol>
+    <li>Staf TU membuka website SIPESAT dan melakukan login ke panel admin TU.</li>
+    <li>Staf TU membuka menu "Verifikasi Masuk" untuk melihat daftar permohonan surat yang masuk dari siswa.</li>
+    <li>Staf TU memilih salah satu permohonan dan melihat pratinjau (preview) berkas lampiran yang diunggah.</li>
+    <li>Staf TU memeriksa apakah berkas persyaratan sudah lengkap, jelas terbaca, dan sah.</li>
+    <li>Jika berkas tidak lengkap atau buram, staf TU menuliskan catatan alasan penolakan dan menekan tombol "Tolak &amp; Minta Revisi". Status diubah menjadi <code>DITOLAK_PERLU_REVISI</code> dan sistem otomatis mengirimkan notifikasi ke siswa.</li>
+    <li>Jika berkas sudah lengkap dan benar, staf TU memasukkan nomor agenda masuk TU lalu menekan tombol "Verifikasi &amp; Teruskan". Status diubah menjadi <code>DIVERIFIKASI_TU_MENUNGGU_KEPSEK</code> dan permohonan diteruskan ke antrean Kepala Sekolah.</li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <!-- Activity 3 -->
+  <h3 class="sub-section-title">2.3 Activity Diagram 3: Alur Persetujuan oleh Kepala Sekolah</h3>
+  <p>
+    Diagram ini menggambarkan alur kerja Kepala Sekolah dalam meninjau draf permohonan surat yang telah diverifikasi TU, memberikan persetujuan, hingga surat resmi ber-QR Code berhasil dibuat oleh sistem.
+  </p>
+
+  <div class="diagram-card">
+    <div class="mermaid">
+flowchart TD
+    subgraph Kepsek["Aktor: Kepala Sekolah"]
+        F1([Mulai]) --> F2[Login ke Panel Kepala Sekolah]
+        F2 --> F3[Buka Menu 'Persetujuan Surat']
+        F3 --> F4[Pilih Draf Surat Terverifikasi TU]
+        F4 --> F5[Review Draf Surat & Disposisi TU]
+        F5 --> F6{Setujui Penerbitan Surat?}
+        F6 -- Tolak/Revisi --> F7[Input Catatan Evaluasi]
+        F7 --> F8[Klik 'Kembalikan ke TU']
+        F6 -- Setuju --> F9[Klik 'Setujui & Tanda Tangani']
+        F14([Selesai])
+    end
+
+    subgraph Engine["Sistem & Document Generation Engine"]
+        F8 --> G1[(UPDATE Status: 'DITOLAK_KEPSEK')]
+        G1 --> G2[Kirim Notifikasi Evaluasi ke Meja TU]
+        G2 --> F14
+
+        F9 --> G3[Ambil Format Penomoran Klasifikasi Sekolah]
+        G3 --> G4[Generate Nomor Surat Resmi Otomatis]
+        G4 --> G5[Generate QR Code TTE Ber-Enkripsi Hash]
+        G5 --> G6[Kompilasi Kop Surat, Data Siswa & QR ke PDF]
+        G6 --> G7[Simpan File PDF Resmi ke Cloud Storage]
+        G7 --> G8[(UPDATE Status: 'SELESAI_SIAP_UNDUH')]
+        G8 --> G9[Kirim Notifikasi Penerbitan Surat ke Siswa]
+        G9 --> F14
+    end
+
+    style F1 fill:#22c55e,stroke:#16a34a,color:#fff
+    style F14 fill:#ef4444,stroke:#dc2626,color:#fff
+    style F6 fill:#f59e0b,stroke:#d97706,color:#fff
+    </div>
+    <div class="diagram-caption">Gambar 2.3 &mdash; Activity Diagram Alur Persetujuan Kepala Sekolah &amp; Penerbitan PDF</div>
+  </div>
+
+  <p><strong>Uraian Alur Kerja:</strong></p>
+  <ol>
+    <li>Kepala Sekolah login ke panel Kepala Sekolah dan membuka menu "Persetujuan Surat".</li>
+    <li>Kepala Sekolah memilih draf permohonan surat yang sebelumnya telah diverifikasi oleh staf TU.</li>
+    <li>Kepala Sekolah memeriksa isi permohonan. Jika ada data yang kurang tepat, Kepala Sekolah dapat mengisi catatan evaluasi dan mengembalikannya ke meja TU dengan status <code>DITOLAK_KEPSEK</code>.</li>
+    <li>Jika disetujui, Kepala Sekolah menekan tombol "Setujui &amp; Tanda Tangani".</li>
+    <li>Sistem secara otomatis menghitung nomor urut surat keluar resmi sekolah (misal: <code>421.3/085/SMK-PSKD3/X/2026</code>).</li>
+    <li>Sistem membuat tanda tangan elektronik berupa kode QR yang berisi identitas pengesahan (nama Kepala Sekolah, NIP, tanggal terbit, dan tautan verifikasi keaslian dokumen).</li>
+    <li>Sistem menyatukan kop resmi sekolah, isi permohonan, nomor surat, dan kode QR ke dalam format PDF resmi, lalu memperbarui status menjadi <code>SELESAI_SIAP_UNDUH</code>.</li>
+  </ol>
+
+  <!-- Activity 4 -->
+  <h3 class="sub-section-title">2.4 Activity Diagram 4: Alur Pelacakan Status &amp; Unduh Surat oleh Siswa</h3>
+  <p>
+    Diagram ini menggambarkan alur siswa dalam memantau perkembangan surat yang diajukannya melalui indikator tahapan (stepper) hingga mengunduh dokumen PDF resmi.
+  </p>
+
+  <div class="diagram-card">
+    <div class="mermaid">
+flowchart TD
+    subgraph Siswa["Aktor: Siswa"]
+        H1([Mulai]) --> H2[Akses Menu 'Riwayat / Lacak Surat']
+        H2 --> H3[Input Kode Tiket atau Buka Riwayat Akun]
+        H7{Apakah Status 'SELESAI'?}
+        H7 -- Belum Selesai --> H8[Pantau Tahapan Stepper Tracker]
+        H8 --> H9([Selesai])
+        H7 -- Selesai --> H10[Klik Tombol 'Unduh Surat PDF']
+        H10 --> H11[File PDF Resmi Terunduh ke Perangkat]
+        H11 --> H12([Selesai])
+    end
+
+    subgraph Web["Portal SIPESAT & Server"]
+        H3 --> J1[Query Data Status Pengajuan]
+        J1 --> J2[(Ambil Rekaman Data dari Basis Data)]
+        J2 --> J3[Render Visual Timeline Stepper Status]
+        J3 --> H7
+        H10 --> J4[Stream File PDF Resmi dari Storage]
+        J4 --> H11
+    end
+
+    style H1 fill:#22c55e,stroke:#16a34a,color:#fff
+    style H9 fill:#64748b,stroke:#475569,color:#fff
+    style H12 fill:#22c55e,stroke:#16a34a,color:#fff
+    style H7 fill:#f59e0b,stroke:#d97706,color:#fff
+    </div>
+    <div class="diagram-caption">Gambar 2.4 &mdash; Activity Diagram Alur Pelacakan &amp; Unduh Surat Siswa</div>
+  </div>
+
+  <p><strong>Uraian Alur Kerja:</strong></p>
+  <ol>
+    <li>Siswa membuka menu "Riwayat / Lacak Surat" pada portal SIPESAT.</li>
+    <li>Siswa memasukkan kode tiket unik atau langsung memilih dari daftar riwayat surat yang pernah diajukan.</li>
+    <li>Sistem mengambil data dari database dan menampilkan tahapan status secara visual (stepper): Diajukan &rarr; Verifikasi TU &rarr; Persetujuan Kepsek &rarr; Selesai.</li>
+    <li>Jika proses belum selesai, siswa dapat memantau posisi suratnya kapan saja tanpa perlu datang langsung ke sekolah.</li>
+    <li>Jika status sudah <code>SELESAI_SIAP_UNDUH</code>, tombol "Unduh Surat PDF" akan aktif dan siswa dapat langsung mendownload surat resmi tersebut ke perangkatnya.</li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <!-- BAB III: SEQUENCE DIAGRAM -->
+  <h2 class="section-title">BAB III: PERANCANGAN SEQUENCE DIAGRAM</h2>
+  <p>
+    Sequence Diagram digunakan untuk menggambarkan interaksi antarkomponen objek di dalam sistem berdasarkan urutan waktu. Untuk mempermudah rancangan teknis dan pemisahan logika koding, pemodelan ini dibagi ke dalam 3 jenis komponen sesuai konsep <strong>Boundary-Control-Entity (BCE)</strong>:
+  </p>
+  <ul>
+    <li><strong>&laquo;boundary&raquo; (Antarmuka / Form)</strong>: Komponen tampilan web tempat pengguna berinteraksi langsung (seperti form login atau form isian surat).</li>
+    <li><strong>&laquo;control&raquo; (Pengontrol Logika)</strong>: Komponen program yang mengatur jalannya logika bisnis, validasi data, dan proses pemrosesan fungsi.</li>
+    <li><strong>&laquo;entity&raquo; &amp; &laquo;database&raquo; (Model Data &amp; Basis Data)</strong>: Komponen model data dan tabel pada basis data (PostgreSQL) tempat informasi disimpan secara permanen.</li>
+  </ul>
+
+  <!-- Sequence 1 -->
+  <h3 class="sub-section-title">3.1 Sequence Diagram 1: Alur Login Multi-Pengguna (RBAC)</h3>
+  <div class="diagram-card">
+    <div class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Pengguna as Aktor: Pengguna (Siswa/TU/Kepsek)
+    participant LoginView as &lt;&lt;boundary&gt;&gt; LoginFormView
+    participant AuthCtrl as &lt;&lt;control&gt;&gt; AuthController
+    participant UserModel as &lt;&lt;entity&gt;&gt; UserModel
+    participant DB as &lt;&lt;database&gt;&gt; PostgreSQL
+
+    Pengguna->>LoginView: 1. Input NISN/NIP & Password
+    Pengguna->>LoginView: 2. Klik tombol 'Masuk'
+    activate LoginView
+    LoginView->>AuthCtrl: 3. submitLogin(identifier, password)
+    activate AuthCtrl
+
+    AuthCtrl->>AuthCtrl: 4. validateSanitization()
+    AuthCtrl->>UserModel: 5. findByIdentifier(identifier)
+    activate UserModel
+    UserModel->>DB: 6. SELECT * FROM users WHERE identifier = $1
+    activate DB
+    DB-->>UserModel: 7. Record user & password_hash
+    deactivate DB
+    UserModel-->>AuthCtrl: 8. return UserEntity
+    deactivate UserModel
+
+    alt Kredensial Salah
+        AuthCtrl->>AuthCtrl: 9a. verifyHash(password, hash) => False
+        AuthCtrl-->>LoginView: 10a. return Error('Kredensial Tidak Valid')
+        LoginView-->>Pengguna: 11a. Tampilkan notifikasi error login
+    else Kredensial Valid
+        AuthCtrl->>AuthCtrl: 9b. verifyHash(password, hash) => True
+        AuthCtrl->>AuthCtrl: 10b. generateSessionJWT(role, userId)
+        AuthCtrl-->>LoginView: 11b. return Success(token, roleUrl)
+        deactivate AuthCtrl
+        LoginView-->>Pengguna: 12b. Redirect ke Dasbor (Siswa / TU / Kepsek)
+        deactivate LoginView
+    end
+    </div>
+    <div class="diagram-caption">Gambar 3.1 &mdash; Sequence Diagram Autentikasi Pengguna Multi-Role</div>
+  </div>
+
+  <p><strong>Penjelasan Alur Program:</strong></p>
+  <p>
+    Pengguna (Siswa, Staf TU, atau Kepala Sekolah) memasukkan NISN/NIP dan kata sandi pada halaman <code>LoginFormView</code>. Komponen <code>AuthController</code> memeriksa validitas input dan memanggil <code>UserModel</code> untuk mencari data pengguna di basis data. Jika kata sandi cocok dengan data yang tersimpan, controller membuatkan token sesi (JWT) yang menentukan hak akses pengguna, lalu mengarahkan pengguna ke halaman dasbor masing-masing.
+  </p>
+
+  <div class="page-break"></div>
+
+  <!-- Sequence 2 -->
+  <h3 class="sub-section-title">3.2 Sequence Diagram 2: Alur Pengajuan Surat &amp; Unggah Berkas oleh Siswa</h3>
+  <div class="diagram-card">
+    <div class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Siswa as Aktor: Siswa
+    participant FormView as &lt;&lt;boundary&gt;&gt; FormPengajuanView
+    participant SuratCtrl as &lt;&lt;control&gt;&gt; SuratController
+    participant FileService as &lt;&lt;control&gt;&gt; StorageService
+    participant PengajuanModel as &lt;&lt;entity&gt;&gt; PengajuanModel
+    participant DB as &lt;&lt;database&gt;&gt; PostgreSQL
+
+    Siswa->>FormView: 1. Buka form & pilih jenis surat
+    activate FormView
+    FormView->>SuratCtrl: 2. getPrasyarat(id_jenis)
+    activate SuratCtrl
+    SuratCtrl-->>FormView: 3. return DaftarDokumenPrasyarat
+    deactivate SuratCtrl
+
+    Siswa->>FormView: 4. Input keperluan & unggah file berkas
+    Siswa->>FormView: 5. Klik submit 'Kirim Permohonan'
+    FormView->>SuratCtrl: 6. createPengajuan(siswaId, idJenis, keperluan, fileBuffer)
+    activate SuratCtrl
+
+    SuratCtrl->>FileService: 7. uploadFile(fileBuffer, mimeType, max2MB)
+    activate FileService
+    alt Berkas Tidak Valid / Ukuran > 2MB
+        FileService-->>SuratCtrl: 8a. return Error('File tidak valid / melebihi 2MB')
+        SuratCtrl-->>FormView: 9a. return ValidationFailed(errorMsg)
+        FormView-->>Siswa: 10a. Tampilkan peringatan kesalahan berkas
+    else Berkas Sah & Tersimpan
+        FileService-->>SuratCtrl: 8b. return fileUrlPath
+        deactivate FileService
+        SuratCtrl->>SuratCtrl: 9b. generateTicketCode('SPT-YYYYMM-XXXX')
+        SuratCtrl->>PengajuanModel: 10b. insertPengajuan(payload, fileUrlPath)
+        activate PengajuanModel
+        PengajuanModel->>DB: 11b. INSERT INTO tb_pengajuan_surat VALUES (...)
+        activate DB
+        DB-->>PengajuanModel: 12b. Confirm ID Pengajuan
+        deactivate DB
+        PengajuanModel-->>SuratCtrl: 13b. return PengajuanEntity
+        deactivate PengajuanModel
+        SuratCtrl-->>FormView: 14b. return Success(ticketCode, resiData)
+        deactivate SuratCtrl
+        FormView-->>Siswa: 15b. Tampilkan Resi Pengajuan & Kode Tiket
+        deactivate FormView
+    end
+    </div>
+    <div class="diagram-caption">Gambar 3.2 &mdash; Sequence Diagram Pengajuan Surat &amp; Unggah Berkas Siswa</div>
+  </div>
+
+  <p><strong>Penjelasan Alur Program:</strong></p>
+  <p>
+    Siswa membuka form permohonan surat melalui <code>FormPengajuanView</code>. Saat jenis surat dipilih, <code>SuratController</code> mengambil daftar persyaratan yang dibutuhkan. Ketika form dan berkas di-submit, <code>StorageService</code> memeriksa format dan batas ukuran file (maksimal 2 MB). Setelah berkas berhasil disimpan, <code>SuratController</code> membuat kode tiket unik dan <code>PengajuanModel</code> mencatat permohonan ke basis data dengan status awal <code>MENUNGGU_VERIFIKASI</code>, kemudian sistem menampilkan bukti tanda terima beserta kode tiket ke siswa.
+  </p>
+
+  <div class="page-break"></div>
+
+  <!-- Sequence 3 -->
+  <h3 class="sub-section-title">3.3 Sequence Diagram 3: Alur Verifikasi Berkas oleh Staf Tata Usaha (TU)</h3>
+  <div class="diagram-card">
+    <div class="mermaid">
+sequenceDiagram
+    autonumber
+    actor StafTU as Aktor: Staf TU
+    participant AdminView as &lt;&lt;boundary&gt;&gt; VerifikasiAntreanView
+    participant VerifCtrl as &lt;&lt;control&gt;&gt; VerifikasiController
+    participant PengajuanModel as &lt;&lt;entity&gt;&gt; PengajuanModel
+    participant NotifService as &lt;&lt;control&gt;&gt; NotifikasiService
+    participant DB as &lt;&lt;database&gt;&gt; PostgreSQL
+
+    StafTU->>AdminView: 1. Buka menu antrean verifikasi
+    activate AdminView
+    AdminView->>VerifCtrl: 2. getAntreanVerifikasi()
+    activate VerifCtrl
+    VerifCtrl->>PengajuanModel: 3. fetchPendingList()
+    activate PengajuanModel
+    PengajuanModel->>DB: 4. SELECT * FROM tb_pengajuan_surat WHERE status = 'MENUNGGU_VERIFIKASI'
+    activate DB
+    DB-->>PengajuanModel: 5. return Records
+    deactivate DB
+    PengajuanModel-->>VerifCtrl: 6. return DataList
+    deactivate PengajuanModel
+    VerifCtrl-->>AdminView: 7. Render tabel antrean
+    deactivate VerifCtrl
+
+    StafTU->>AdminView: 8. Tinjau dokumen & tentukan keputusan
+
+    alt Keputusan: Ditolak (Berkas Buram / Kurang)
+        StafTU->>AdminView: 9a. Input catatan revisi & klik 'Tolak'
+        AdminView->>VerifCtrl: 10a. rejectPengajuan(id, catatan, tuId)
+        activate VerifCtrl
+        VerifCtrl->>PengajuanModel: 11a. updateStatus(id, 'DITOLAK_PERLU_REVISI', catatan)
+        activate PengajuanModel
+        PengajuanModel->>DB: 12a. UPDATE tb_pengajuan_surat SET status = ..., catatan = ...
+        activate DB
+        DB-->>PengajuanModel: 13a. Confirm UPDATE
+        deactivate DB
+        PengajuanModel-->>VerifCtrl: 14a. return UpdatedEntity
+        deactivate PengajuanModel
+        VerifCtrl->>NotifService: 15a. sendAlertSiswa(siswaId, catatan)
+        VerifCtrl-->>AdminView: 16a. return Success('Pengajuan Ditolak')
+        deactivate VerifCtrl
+        AdminView-->>StafTU: 17a. Perbarui antrean
+    else Keputusan: Lolos Verifikasi
+        StafTU->>AdminView: 9b. Input no_agenda & klik 'Teruskan'
+        AdminView->>VerifCtrl: 10b. approveVerifikasi(id, noAgenda, tuId)
+        activate VerifCtrl
+        VerifCtrl->>PengajuanModel: 11b. updateStatus(id, 'DIVERIFIKASI_TU_MENUNGGU_KEPSEK', noAgenda)
+        activate PengajuanModel
+        PengajuanModel->>DB: 12b. UPDATE tb_pengajuan_surat SET status = ..., no_agenda = ...
+        activate DB
+        DB-->>PengajuanModel: 13b. Confirm UPDATE
+        deactivate DB
+        PengajuanModel-->>VerifCtrl: 14b. return UpdatedEntity
+        deactivate PengajuanModel
+        VerifCtrl->>NotifService: 15b. notifyKepsekQueue(id)
+        VerifCtrl-->>AdminView: 16b. return Success('Diteruskan ke Kepala Sekolah')
+        deactivate VerifCtrl
+        AdminView-->>StafTU: 17b. Perbarui antrean
+        deactivate AdminView
+    end
+    </div>
+    <div class="diagram-caption">Gambar 3.3 &mdash; Sequence Diagram Alur Verifikasi Berkas oleh Staf Tata Usaha</div>
+  </div>
+
+  <p><strong>Penjelasan Alur Program:</strong></p>
+  <p>
+    Staf TU membuka <code>VerifikasiAntreanView</code> untuk melihat antrean permohonan surat masuk. <code>VerifikasiController</code> mengelola dua kemungkinan alur: jika berkas ditolak karena kurang atau buram, controller mencatat alasan penolakan dan memicu <code>NotifikasiService</code> agar siswa memperbaiki lampiran; jika berkas sah, staf TU memasukkan nomor agenda masuk dan status permohonan diubah menjadi <code>DIVERIFIKASI_TU_MENUNGGU_KEPSEK</code> untuk diteruskan ke antrean Kepala Sekolah.
+  </p>
+
+  <div class="page-break"></div>
+
+  <!-- Sequence 4 -->
+  <h3 class="sub-section-title">3.4 Sequence Diagram 4: Alur Persetujuan Kepala Sekolah &amp; Penerbitan Surat PDF</h3>
+  <div class="diagram-card">
+    <div class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Kepsek as Aktor: Kepala Sekolah
+    participant PortalView as &lt;&lt;boundary&gt;&gt; ApprovalPortalView
+    participant ApprCtrl as &lt;&lt;control&gt;&gt; ApprovalController
+    participant NoSuratService as &lt;&lt;control&gt;&gt; NomorSuratService
+    participant QRService as &lt;&lt;control&gt;&gt; QRCodeGenerator
+    participant PDFEngine as &lt;&lt;control&gt;&gt; PDFCompilerService
+    participant PengajuanModel as &lt;&lt;entity&gt;&gt; PengajuanModel
+    participant DB as &lt;&lt;database&gt;&gt; PostgreSQL
+
+    Kepsek->>PortalView: 1. Buka antrean persetujuan draf surat
+    activate PortalView
+    PortalView->>ApprCtrl: 2. getPendingApprovalList()
+    activate ApprCtrl
+    ApprCtrl->>PengajuanModel: 3. fetchKepsekQueue()
+    activate PengajuanModel
+    PengajuanModel->>DB: 4. SELECT * FROM tb_pengajuan_surat WHERE status = 'DIVERIFIKASI_TU_MENUNGGU_KEPSEK'
+    activate DB
+    DB-->>PengajuanModel: 5. return Records
+    deactivate DB
+    PengajuanModel-->>ApprCtrl: 6. return DataList
+    deactivate PengajuanModel
+    ApprCtrl-->>PortalView: 7. Render daftar surat siap tanda tangan
+    deactivate ApprCtrl
+
+    Kepsek->>PortalView: 8. Tinjau permohonan & klik 'Setujui & Tanda Tangani'
+    PortalView->>ApprCtrl: 9. executeApproval(idPengajuan, kepsekId)
+    activate ApprCtrl
+
+    ApprCtrl->>NoSuratService: 10. generateOfficialNumber(idJenis, tahun)
+    activate NoSuratService
+    NoSuratService->>DB: 11. SELECT MAX(nomor_urut) FROM tb_surat_keluar WHERE tahun = $1
+    activate DB
+    DB-->>NoSuratService: 12. return lastNumber
+    deactivate DB
+    NoSuratService-->>ApprCtrl: 13. return formattedNoSurat ('421.3/085/SMK-PSKD3/X/2026')
+    deactivate NoSuratService
+
+    ApprCtrl->>QRService: 14. createDigitalSignatureQR(metadata, secretKey)
+    activate QRService
+    QRService-->>ApprCtrl: 15. return qrImageBuffer
+    deactivate QRService
+
+    ApprCtrl->>PDFEngine: 16. compileOfficialPDF(dataSiswa, formattedNoSurat, qrImageBuffer)
+    activate PDFEngine
+    PDFEngine-->>ApprCtrl: 17. return pdfBinaryUrlPath
+    deactivate PDFEngine
+
+    ApprCtrl->>PengajuanModel: 18. finalizeSurat(id, formattedNoSurat, pdfBinaryUrlPath)
+    activate PengajuanModel
+    PengajuanModel->>DB: 19. UPDATE tb_pengajuan_surat SET status = 'SELESAI_SIAP_UNDUH', no_surat = ..., pdf_url = ...
+    activate DB
+    DB-->>PengajuanModel: 20. Confirm UPDATE
+    deactivate DB
+    PengajuanModel-->>ApprCtrl: 21. return FinalizedEntity
+    deactivate PengajuanModel
+
+    ApprCtrl-->>PortalView: 22. return Success('Surat Resmi Berhasil Diterbitkan')
+    deactivate ApprCtrl
+    PortalView-->>Kepsek: 23. Tampilkan pesan berhasil & perbarui dasbor
+    deactivate PortalView
+    </div>
+    <div class="diagram-caption">Gambar 3.4 &mdash; Sequence Diagram Persetujuan Kepala Sekolah &amp; Penerbitan Surat PDF</div>
+  </div>
+
+  <p><strong>Penjelasan Alur Program:</strong></p>
+  <p>
+    Ketika Kepala Sekolah menyetujui surat melalui <code>ApprovalPortalView</code>, <code>ApprovalController</code> memanggil tiga fungsi layanan secara berurutan: pertama, <code>NomorSuratService</code> mengambil nomor urut surat resmi terbaru; kedua, <code>QRCodeGenerator</code> membuat gambar kode QR sebagai tanda tangan digital resmi; ketiga, <code>PDFCompilerService</code> menggabungkan kop surat sekolah, data permohonan, dan kode QR menjadi file dokumen PDF resmi. Setelah berkas siap, <code>PengajuanModel</code> memperbarui status surat di database menjadi <code>SELESAI_SIAP_UNDUH</code>.
+  </p>
+
+  <div class="page-break"></div>
+
+  <!-- BAB IV: TRACEABILITY MATRIX -->
+  <h2 class="section-title">BAB IV: MATRIKS PENELUSURAN KEBUTUHAN (TRACEABILITY MATRIX)</h2>
+  <p>
+    Tabel matriks berikut digunakan untuk memastikan bahwa setiap kebutuhan fungsional yang sudah disusun pada Dokumen SRS (Tugas 2) benar-benar sudah digambarkan pada rancangan diagram Tugas 4 ini:
+  </p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 15%;">Kode Kebutuhan</th>
+        <th style="width: 45%;">Deskripsi Kebutuhan Fungsional (SRS)</th>
+        <th style="width: 20%;">Activity Diagram</th>
+        <th style="width: 20%;">Sequence Diagram</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-01</td>
+        <td>Autentikasi Pengguna &amp; Pembatasan Hak Akses Berbasis Peran (RBAC)</td>
+        <td>Activity 1, 2, 3</td>
+        <td style="font-weight: bold;">Sequence Diagram 1</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-02</td>
+        <td>Pengajuan Surat Mandiri &amp; Unggah Berkas Dokumen Prasyarat Siswa</td>
+        <td style="font-weight: bold;">Activity Diagram 1</td>
+        <td style="font-weight: bold;">Sequence Diagram 2</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-03</td>
+        <td>Verifikasi Berkas, Pemeriksaan Kelengkapan &amp; Disposisi Meja TU</td>
+        <td style="font-weight: bold;">Activity Diagram 2</td>
+        <td style="font-weight: bold;">Sequence Diagram 3</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-04</td>
+        <td>Validasi Eksekutif &amp; Persetujuan Pengesahan Kepala Sekolah</td>
+        <td style="font-weight: bold;">Activity Diagram 3</td>
+        <td style="font-weight: bold;">Sequence Diagram 4</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-05</td>
+        <td>Penomoran Surat Otomatis Berurutan &amp; Tanda Tangan QR Digital</td>
+        <td style="font-weight: bold;">Activity Diagram 3</td>
+        <td style="font-weight: bold;">Sequence Diagram 4</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; font-weight: bold;">REQ-F-06</td>
+        <td>Pelacakan Status Waktu Nyata (Stepper) &amp; Pengunduhan PDF Mandiri</td>
+        <td style="font-weight: bold;">Activity Diagram 4</td>
+        <td>Sequence Diagram 2 &amp; 4</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- BAB V: KESIMPULAN -->
+  <h2 class="section-title">BAB V: KESIMPULAN</h2>
+  <p>
+    Berdasarkan hasil perancangan Activity Diagram dan Sequence Diagram untuk sistem SIPESAT pada Tugas 4 ini, dapat kami simpulkan bahwa:
+  </p>
+  <ol>
+    <li>Seluruh alur pelayanan persuratan siswa pada sistem SIPESAT, mulai dari pengajuan mandiri oleh siswa, verifikasi berkas oleh staf TU, persetujuan dan pengesahan tanda tangan elektronik oleh Kepala Sekolah, hingga pelacakan dan pengunduhan surat telah berhasil dimodelkan dengan runtut.</li>
+    <li>Penggunaan pembagian kolom (swimlane) pada Activity Diagram mempermudah pembagian hak akses dan batasan tanggung jawab antara siswa, staf TU, kepala sekolah, dan sistem.</li>
+    <li>Penerapan konsep Boundary-Control-Entity (BCE) pada Sequence Diagram mempermudah pemahaman mengenai pemisahan antarmuka (view), logika pemrosesan (controller), dan tabel database (model) yang akan diimplementasikan saat koding aplikasi.</li>
+    <li>Rancangan diagram yang dibuat sudah sesuai dan selaras dengan kebutuhan fungsional yang telah diajukan pada dokumen SRS tugas sebelumnya.</li>
+  </ol>
+
+  <br>
+  <div style="text-align: right; margin-top: 20px; font-size: 10.5pt;">
+    <p>Jakarta, Oktober 2026</p>
+    <p style="margin-top: -6px;"><strong>Kelompok 7 RPL &mdash; Teknik Informatika UNINDRA</strong></p>
+  </div>
+
+</body>
+</html>

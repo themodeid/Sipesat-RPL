@@ -1,0 +1,92 @@
+<mxfile host="65bd71144e">
+<diagram id="state-machine-surat" name="State Machine (SuratPengajuan)">
+        <mxGraphModel dx="1800" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1400" math="0" shadow="0">
+            <root>
+                <mxCell id="0" />
+                <mxCell id="1" parent="0" />
+                <mxCell id="sm_header" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;strokeWidth=2" value="&lt;b style='font-size:18px;'&gt;STATE MACHINE DIAGRAM 1: SIKLUS HIDUP PERMOHONAN SURAT SISWA (SIPESAT)&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:12px;color:#000000;'&gt;Pemodelan UML 2.5 Entitas Dokumen Permohonan (tb_pengajuan_surat) — Kelompok 7 (RPL_XD 2026)&lt;/span&gt;" vertex="1">
+                    <mxGeometry height="60" width="1900" x="50" y="20" as="geometry" />
+                </mxCell>
+                
+                <mxCell id="sm_init" parent="1" style="ellipse;fillColor=#000000;strokeColor=#000000;fontColor=#000000" value="" vertex="1">
+                    <mxGeometry height="35" width="35" x="80" y="250" as="geometry" />
+                </mxCell>
+                
+                <mxCell id="sm_draft" parent="1" style="swimlane;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;startSize=28" value="STATE: DRAFT (Siswa Mengisi Permohonan)" vertex="1">
+                    <mxGeometry height="220" width="360" x="180" y="160" as="geometry" />
+                </mxCell>
+                <mxCell id="sub_d1" parent="sm_draft" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=1" value="entry / renderFormPengajuan()&#10;do / validasiInputSiswa()&#10;exit / lockInitialDraft()" vertex="1">
+                    <mxGeometry height="140" width="300" x="30" y="45" as="geometry" />
+                </mxCell>
+
+                <mxCell id="sm_menunggu" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" value="STATE: MENUNGGU_VERIFIKASI&#10;&lt;span style='font-size:10px;font-weight:normal;color:#000000;'&gt;entry / generateTicketCode()&#10;entry / notifyTataUsahaQueue()&#10;do / listenCancellation()&lt;/span&gt;" vertex="1">
+                    <mxGeometry height="90" width="260" x="630" y="225" as="geometry" />
+                </mxCell>
+
+                <mxCell id="sm_revisi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" value="STATE: DITOLAK_PERLU_REVISI&#10;&lt;span style='font-size:10px;font-weight:normal;color:#000000;'&gt;entry / recordCatatanPenolakan()&#10;entry / notifySiswaRevisi()&#10;do / awaitReuploadFile()&lt;/span&gt;" vertex="1">
+                    <mxGeometry height="90" width="260" x="630" y="420" as="geometry" />
+                </mxCell>
+
+                <mxCell id="sm_diverifikasi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" value="STATE: DIVERIFIKASI_TU&#10;&lt;span style='font-size:10px;font-weight:normal;color:#000000;'&gt;entry / setNomorAgendaMasuk()&#10;entry / forwardToKepsekQueue()&#10;do / monitorApprovalTimeout()&lt;/span&gt;" vertex="1">
+                    <mxGeometry height="90" width="260" x="980" y="225" as="geometry" />
+                </mxCell>
+
+                <mxCell id="sm_disetujui" parent="1" style="swimlane;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;startSize=28" value="STATE: DISETUJUI_KEPSEK (Pengesahan Digital)" vertex="1">
+                    <mxGeometry height="220" width="380" x="1330" y="160" as="geometry" />
+                </mxCell>
+                <mxCell id="sub_app1" parent="sm_disetujui" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=1" value="1. GenerateNomorSuratResmi()&#10;2. GenerateQRCodeSecurityHash()&#10;3. KompilasiStreamPDFWithWatermark()" vertex="1">
+                    <mxGeometry height="140" width="320" x="30" y="45" as="geometry" />
+                </mxCell>
+
+                <mxCell id="sm_selesai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2.5;fontColor=#000000;fontSize=12;fontStyle=1" value="STATE: SELESAI_SIAP_UNDUH&#10;&lt;span style='font-size:10px;font-weight:normal;color:#000000;'&gt;entry / notifySiswaSuratTerbit()&#10;do / serveDownloadPDF()&#10;exit / logUnduhActivity()&lt;/span&gt;" vertex="1">
+                    <mxGeometry height="90" width="260" x="1390" y="480" as="geometry" />
+                </mxCell>
+
+                <mxCell id="sm_arsip" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" value="STATE: DIARSIPKAN&#10;&lt;span style='font-size:10px;font-weight:normal;color:#000000;'&gt;entry / freezeDatabaseRecord()&#10;entry / moveToPermanentArchive()&lt;/span&gt;" vertex="1">
+                    <mxGeometry height="90" width="240" x="1000" y="480" as="geometry" />
+                </mxCell>
+
+                <mxCell id="sm_final" parent="1" style="ellipse;shape=doubleEllipse;fillColor=#000000;strokeColor=#000000;strokeWidth=3;fontColor=#000000" value="" vertex="1">
+                    <mxGeometry height="35" width="35" x="870" y="507" as="geometry" />
+                </mxCell>
+
+                
+                <mxCell id="tr_init" edge="1" parent="1" source="sm_init" target="sm_draft" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff" value="openMenuPengajuan()">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+
+                <mxCell id="tr_submit" edge="1" parent="1" source="sm_draft" target="sm_menunggu" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff" value="submitPermohonan()&#10;[berkas_valid == true]&#10;/ generateTicketCode()">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+
+                <mxCell id="tr_reject_tu" edge="1" parent="1" source="sm_menunggu" target="sm_revisi" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff" value="rejectTU() [berkas_kurang]&#10;/ setCatatanRevisi()">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+
+                <mxCell id="tr_reupload" edge="1" parent="1" source="sm_revisi" target="sm_menunggu" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff" value="reuploadBerkas()&#10;[file_size &lt;= 2MB]">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+
+                <mxCell id="tr_approve_tu" edge="1" parent="1" source="sm_menunggu" target="sm_diverifikasi" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff" value="approveTU()&#10;[berkas_lengkap]&#10;/ setNoAgenda()">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+
+                <mxCell id="tr_approve_kepsek" edge="1" parent="1" source="sm_diverifikasi" target="sm_disetujui" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff" value="approveKepsek()&#10;[evaluasi_disetujui]&#10;/ createQR_TTE()">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+
+                <mxCell id="tr_compile" edge="1" parent="1" source="sm_disetujui" target="sm_selesai" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff" value="autoGeneratePDF()&#10;[pdf_compiled == true]">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+
+                <mxCell id="tr_unduh" edge="1" parent="1" source="sm_selesai" target="sm_arsip" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff" value="unduhSurat() / retentionExpired">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+
+                <mxCell id="tr_term" edge="1" parent="1" source="sm_arsip" target="sm_final" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff" value="purgeRetention()">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
