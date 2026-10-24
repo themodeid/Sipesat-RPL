@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TUGAS 6 RPL - CLASS & OBJECT DIAGRAM - KELOMPOK 7</title>
+  <!-- Mermaid.js CDN for client-side rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontSize: '11px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        primaryColor: '#f8fafc',
+        primaryBorderColor: '#334155',
+        primaryTextColor: '#0f172a',
+        lineColor: '#475569',
+        signalColor: '#1e293b',
+        signalTextColor: '#0f172a'
+      },
+      class: { useMaxWidth: true }
+    });
+  </script>
+  <style>
+    @page {
+      size: A4;
+      margin: 2.5cm 2cm 2.5cm 2.5cm;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #111;
+      margin: 0 auto;
+      padding: 2cm 1.5cm;
+      max-width: 210mm;
+      background: #fff;
+    }
+    @media print {
+      body { padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+      .diagram-card { page-break-inside: avoid; }
+    }
+    .print-bar {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 1000;
+      background: #1e293b;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+    }
+    .print-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .print-btn:hover { background: #1d4ed8; }
+    h1, h2, h3 { font-family: 'Times New Roman', Times, serif; color: #000; }
+    h1 { font-size: 14pt; text-align: center; margin-bottom: 4px; font-weight: bold; }
+    h2 { font-size: 12pt; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-top: 24px; font-weight: bold; }
+    h3 { font-size: 11pt; margin-top: 14px; font-weight: bold; }
+    p { text-align: justify; text-indent: 1.25cm; margin-bottom: 8px; }
+    p.no-indent { text-indent: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 16px 0; font-size: 9.5pt; }
+    th, td { border: 1px solid #cbd5e1; padding: 6px 8px; text-align: left; vertical-align: top; }
+    th { background-color: #f1f5f9; font-weight: bold; text-align: center; color: #0f172a; }
+    .center { text-align: center; }
+    .diagram-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 16px;
+      margin: 16px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      overflow-x: auto;
+    }
+    .diagram-caption {
+      text-align: center;
+      font-size: 10pt;
+      font-style: italic;
+      margin-top: 8px;
+      color: #334155;
+    }
+    code { font-family: Consolas, monospace; background: #f1f5f9; padding: 1px 4px; border-radius: 3px; font-size: 9.5pt; }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar no-print">
+    <span>Tugas 6 RPL UNINDRA — Kelompok 7</span>
+    <button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF (A4)</button>
+  </div>
+
+  <div class="center">
+    <h1>TUGAS 6 - REKAYASA PERANGKAT LUNAK (RPL)</h1>
+    <h1 style="font-size: 13pt;">PERANCANGAN CLASS DIAGRAM DAN OBJECT DIAGRAM</h1>
+    <p class="no-indent center" style="font-style: italic; margin-bottom: 16px;">
+      Pemodelan Struktur Statis dan Instansiasi Objek Runtime Sistem Berbasis UML 2.5<br>
+      Studi Kasus: Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT)
+    </p>
+    <p class="no-indent center" style="font-weight: bold; font-size: 10.5pt; margin-bottom: 20px;">
+      PROGRAM STUDI TEKNIK INFORMATIKA — FAKULTAS TEKNIK DAN ILMU KOMPUTER<br>
+      UNIVERSITAS INDRAPRASTA PGRI (UNINDRA) — 2026/2027
+    </p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 8%;">No.</th>
+        <th style="width: 52%;">Nama Anggota Kelompok 7 (RPL_XD)</th>
+        <th style="width: 40%;">NPM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="center">1</td>
+        <td><strong>Adam Wahyu Kurniawan</strong> (Lead Architect & SWE)</td>
+        <td class="center"><strong>202343500510</strong></td>
+      </tr>
+      <tr>
+        <td class="center">2</td>
+        <td>Fathu Rahman (Business Analyst)</td>
+        <td class="center">202343500467</td>
+      </tr>
+      <tr>
+        <td class="center">3</td>
+        <td>Surya Edi Saputra (QA & Technical Writer)</td>
+        <td class="center">202343500468</td>
+      </tr>
+      <tr>
+        <td class="center">4</td>
+        <td>Rizqi Muh. Al Hakimi (Database Specialist)</td>
+        <td class="center">202343500449</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>BAB I: PENDAHULUAN & LANDASAN TEORI</h2>
+  <h3>1.1 Gambaran Umum Proyek SIPESAT</h3>
+  <p>
+    Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT) adalah platform administrasi persuratan digital sekolah yang dirancang untuk mengotomatisasi birokrasi pengajuan surat keterangan siswa aktif, rekomendasi beasiswa, legalisir, dan dispensasi. Melalui arsitektur Role-Based Access Control (RBAC), sistem melibatkan tiga entitas pengguna utama: Siswa sebagai pemohon surat, Petugas Tata Usaha (TU) sebagai verifikator dan penerbit nomor surat resmi, serta Kepala Sekolah sebagai pengesah bertanda tangan elektronik digital (TTE) berbasis kode QR terenkripsi.
+  </p>
+
+  <h3>1.2 Konsep Dasar Class Diagram (UML 2.5)</h3>
+  <p>
+    Class Diagram adalah diagram struktural statis utama dalam Unified Modeling Language (UML) 2.5 yang memodelkan struktur perangkat lunak dengan mendefinisikan kelas-kelas, atribut, metode, serta hubungan keterkaitan antarkelas. Kelas merepresentasikan abstraksi dari kumpulan objek yang memiliki struktur data dan perilaku fungsional yang seragam. Tiga kompartemen utama dalam sebuah kelas UML meliputi nama kelas, atribut dengan visibilitas (+ public, - private, # protected), dan operasi/metode fungsional beserta tipe kembaliannya. Relasi antarkelas mencakup Generalisasi (Inheritance), Asosiasi, dan Komposisi dengan aturan multiplisitas yang ketat.
+  </p>
+
+  <h3>1.3 Konsep Dasar Object Diagram (UML 2.5)</h3>
+  <p>
+    Object Diagram adalah diagram struktural yang menggambarkan snapshot instansiasi konkret dari Class Diagram pada satu titik waktu tertentu (point in time) saat sistem sedang dieksekusi. Jika Class Diagram memodelkan aturan abstrak dan cetak biru, maka Object Diagram memodelkan entitas nyata yang telah diisi data atribut sesungguhnya di memori sistem (runtime state). Format penamaan objek menggunakan notasi namaObjek : NamaKelas bergaris bawah.
+  </p>
+
+  <div class="page-break"></div>
+
+  <h2>BAB II: PERANCANGAN CLASS DIAGRAM SIPESAT</h2>
+
+  <h3>2.1 Diagram UML Class Diagram SIPESAT</h3>
+  <div class="diagram-card">
+    <div class="mermaid">
+classDiagram
+    direction TB
+
+    class Pengguna {
+        <<Abstract>>
+        -UUID id_pengguna
+        -String username
+        -String password_hash
+        -String email
+        -RoleEnum role
+        -Boolean status_aktif
+        -DateTime created_at
+        +login(username, password) Boolean
+        +logout() Void
+        +updatePassword(newPass) Boolean
+    }
+
+    class Siswa {
+        -String nisn
+        -String nis
+        -String nama_lengkap
+        -String kelas
+        -String jurusan
+        -String no_telepon
+        +buatPengajuanSurat(idJenis, keperluan) PengajuanSurat
+        +uploadBerkas(idPengajuan, file) BerkasPersyaratan
+        +lacakStatus(nomorTiket) StatusSuratEnum
+    }
+
+    class PetugasTU {
+        -String nip
+        -String nama_petugas
+        -String nomor_sk
+        -String bagian
+        +verifikasiBerkas(idPengajuan) Boolean
+        +generateNomorSurat(idPengajuan) String
+        +forwardKeKepsek(idPengajuan) Void
+        +cetakSuratResmi(idPengajuan) FilePDF
+    }
+
+    class KepalaSekolah {
+        -String nip
+        -String nama_lengkap
+        -String pangkat_gol
+        -String ttd_digital_hash
+        +reviewPengajuan(idPengajuan) PengajuanSurat
+        +approveSurat(idPengajuan) Boolean
+        +rejectSurat(idPengajuan, alasan) Boolean
+        +bubuhkanQRCodeTTE(idPengajuan) String
+    }
+
+    class JenisSurat {
+        -UUID id_jenis
+        -String kode_surat
+        -String nama_surat
+        -Integer masa_berlaku_hari
+        -String template_path
+        +getSyaratDokumen() List~String~
+        +generateFormatNomor() String
+    }
+
+    class PengajuanSurat {
+        -UUID id_pengajuan
+        -String nomor_tiket
+        -DateTime tanggal_pengajuan
+        -String keperluan
+        -StatusSuratEnum status
+        -String nomor_surat_resmi
+        -String qr_code_hash
+        -String file_output_url
+        +hitungEstimasiSelesai() DateTime
+        +updateStatus(StatusSuratEnum newStatus) Void
+        +generateTiketCode() String
+        +batalkanPengajuan() Boolean
+    }
+
+    class BerkasPersyaratan {
+        -UUID id_berkas
+        -String nama_file
+        -String file_url
+        -Integer file_size_kb
+        -String file_extension
+        -Boolean status_valid
+        +validasiUkuranBerkas() Boolean
+        +validasiEkstensi() Boolean
+    }
+
+    class VerifikasiTU {
+        -UUID id_verifikasi
+        -DateTime tanggal_verifikasi
+        -Boolean status_berkas
+        -String catatan_revisi
+        +simpanCatatan() Void
+        +kirimNotifikasiRevisi() Void
+    }
+
+    class ApprovalKepsek {
+        -UUID id_approval
+        -DateTime tanggal_approval
+        -ApprovalEnum keputusan
+        -String catatan_kepsek
+        -String signature_token
+        +generateSignatureHash() String
+        +auditKeputusan() Void
+    }
+
+    class Notifikasi {
+        -UUID id_notifikasi
+        -String pesan
+        -Boolean is_read
+        -DateTime timestamp
+        +kirimNotifikasi() Void
+        +tandaiDibaca() Void
+    }
+
+    class AuditLog {
+        -UUID id_log
+        -String aktivitas
+        -String ip_address
+        -DateTime created_at
+        +catatAktivitas(act, ip) Void
+    }
+
+    Pengguna <|-- Siswa : Generalisasi
+    Pengguna <|-- PetugasTU : Generalisasi
+    Pengguna <|-- KepalaSekolah : Generalisasi
+
+    Siswa "1" --> "0..*" PengajuanSurat : mengajukan
+    JenisSurat "1" <-- "0..*" PengajuanSurat : memiliki jenis
+    PengajuanSurat "1" *-- "1..*" BerkasPersyaratan : melampirkan (Komposisi)
+    PengajuanSurat "1" --> "0..1" VerifikasiTU : diverifikasi
+    PengajuanSurat "1" --> "0..1" ApprovalKepsek : disahkan
+    PetugasTU "1" --> "0..*" VerifikasiTU : memverifikasi
+    KepalaSekolah "1" --> "0..*" ApprovalKepsek : memberikan approval
+    Pengguna "1" --> "0..*" Notifikasi : menerima
+    Pengguna "1" --> "0..*" AuditLog : merekam jejak
+    </div>
+    <div class="diagram-caption">Gambar 2.1: Class Diagram Arsitektur Sistem Informasi Pengajuan Surat Siswa (SIPESAT)</div>
+  </div>
+
+  <h3>2.2 Kamus Data Kelas (Class Dictionary)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 20%;">Nama Kelas</th>
+        <th style="width: 18%;">Tipe Layer</th>
+        <th style="width: 32%;">Atribut Utama</th>
+        <th style="width: 30%;">Metode / Operasi Utama</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pengguna</strong> <em>(Abstract)</em></td>
+        <td>Superclass RBAC</td>
+        <td><code>- id_pengguna: UUID<br>- username: String<br>- password_hash: String<br>- role: RoleEnum</code></td>
+        <td><code>+ login()<br>+ logout()<br>+ updatePassword()</code></td>
+      </tr>
+      <tr>
+        <td><strong>Siswa</strong></td>
+        <td>Subclass Pengguna</td>
+        <td><code>- nisn: String<br>- nis: String<br>- nama_lengkap: String<br>- kelas: String</code></td>
+        <td><code>+ buatPengajuanSurat()<br>+ uploadBerkas()<br>+ lacakStatus()</code></td>
+      </tr>
+      <tr>
+        <td><strong>PetugasTU</strong></td>
+        <td>Subclass Pengguna</td>
+        <td><code>- nip: String<br>- nama_petugas: String<br>- nomor_sk: String<br>- bagian: String</code></td>
+        <td><code>+ verifikasiBerkas()<br>+ generateNomorSurat()<br>+ forwardKeKepsek()</code></td>
+      </tr>
+      <tr>
+        <td><strong>KepalaSekolah</strong></td>
+        <td>Subclass Pengguna</td>
+        <td><code>- nip: String<br>- nama_lengkap: String<br>- ttd_digital_hash: String</code></td>
+        <td><code>+ reviewPengajuan()<br>+ approveSurat()<br>+ bubuhkanQRCodeTTE()</code></td>
+      </tr>
+      <tr>
+        <td><strong>JenisSurat</strong></td>
+        <td>Master Data</td>
+        <td><code>- id_jenis: UUID<br>- kode_surat: String<br>- nama_surat: String</code></td>
+        <td><code>+ getSyaratDokumen()<br>+ generateFormatNomor()</code></td>
+      </tr>
+      <tr>
+        <td><strong>PengajuanSurat</strong></td>
+        <td>Core Transaction</td>
+        <td><code>- id_pengajuan: UUID<br>- nomor_tiket: String<br>- status: StatusSuratEnum<br>- qr_code_hash: String</code></td>
+        <td><code>+ hitungEstimasiSelesai()<br>+ updateStatus()<br>+ generateTiketCode()</code></td>
+      </tr>
+      <tr>
+        <td><strong>BerkasPersyaratan</strong></td>
+        <td>Attachment Entity</td>
+        <td><code>- id_berkas: UUID<br>- nama_file: String<br>- file_size_kb: Integer<br>- status_valid: Boolean</code></td>
+        <td><code>+ validasiUkuranBerkas()<br>+ validasiEkstensi()</code></td>
+      </tr>
+      <tr>
+        <td><strong>VerifikasiTU</strong></td>
+        <td>Transaction Log</td>
+        <td><code>- id_verifikasi: UUID<br>- tanggal_verifikasi: DateTime<br>- catatan_revisi: String</code></td>
+        <td><code>+ simpanCatatan()<br>+ kirimNotifikasiRevisi()</code></td>
+      </tr>
+      <tr>
+        <td><strong>ApprovalKepsek</strong></td>
+        <td>Transaction Log</td>
+        <td><code>- id_approval: UUID<br>- keputusan: ApprovalEnum<br>- signature_token: String</code></td>
+        <td><code>+ generateSignatureHash()<br>+ auditKeputusan()</code></td>
+      </tr>
+      <tr>
+        <td><strong>Notifikasi</strong></td>
+        <td>Supporting Entity</td>
+        <td><code>- id_notifikasi: UUID<br>- pesan: String<br>- is_read: Boolean</code></td>
+        <td><code>+ kirimNotifikasi()<br>+ tandaiDibaca()</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2>BAB III: PERANCANGAN OBJECT DIAGRAM SIPESAT</h2>
+
+  <h3>3.1 Narasi Skenario Instansiasi Konkret (Runtime Snapshot)</h3>
+  <p>
+    Pada tanggal 16 Oktober 2026, siswa atas nama <strong>Adam Wahyu Kurniawan</strong> (NISN: 0051234567) mengajukan <strong>Surat Keterangan Siswa Aktif</strong> untuk keperluan beasiswa. Sistem menginstansiasi objek <code>pengajuan001 : PengajuanSurat</code> berstatus <code>DISETUJUI</code> dan melampirkan berkas <code>berkasKK : BerkasPersyaratan</code>. Permohonan diverifikasi valid oleh Staf TU <strong>Budi Santoso, S.Kom</strong> (<code>verif001 : VerifikasiTU</code>) dan secara resmi disahkan oleh Kepala Sekolah <strong>Drs. H. Hasan Basri, M.Pd</strong> (<code>appr001 : ApprovalKepsek</code>) dengan penerbitan nomor surat resmi <code>421.3/088/SMK/X/2026</code> ber-QR Code.
+  </p>
+
+  <h3>3.2 Diagram UML Object Diagram SIPESAT</h3>
+  <div class="diagram-card">
+    <div class="mermaid">
+classDiagram
+    direction TB
+
+    class adamSiswa {
+        id_pengguna = "USR-001"
+        username = "adam.wahyu"
+        nisn = "0051234567"
+        nama_lengkap = "Adam Wahyu Kurniawan"
+        kelas = "XII RPL 1"
+        jurusan = "Rekayasa Perangkat Lunak"
+    }
+
+    class budiTU {
+        id_pengguna = "USR-002"
+        username = "budi.tu"
+        nip = "198503152010011002"
+        nama_petugas = "Budi Santoso, S.Kom"
+        bagian = "Administrasi Kesiswaan"
+    }
+
+    class hasanKepsek {
+        id_pengguna = "USR-003"
+        username = "hasan.kepsek"
+        nip = "197204121998021001"
+        nama_lengkap = "Drs. H. Hasan Basri, M.Pd"
+        pangkat_gol = "Pembina Utama Muda / IV-C"
+    }
+
+    class suratAktif {
+        id_jenis = "JNS-001"
+        kode_surat = "SK-AKTIF"
+        nama_surat = "Surat Keterangan Siswa Aktif"
+        masa_berlaku_hari = 30
+    }
+
+    class pengajuan001 {
+        id_pengajuan = "REQ-202610-001"
+        nomor_tiket = "TKT-202610-001"
+        tanggal_pengajuan = "16-10-2026 09:15"
+        keperluan = "Persyaratan Beasiswa Prestasi 2026"
+        status = DISETUJUI
+        nomor_surat_resmi = "421.3/088/SMK/X/2026"
+        qr_code_hash = "e3b0c44298fc1c149afbf4c8996fb924"
+    }
+
+    class berkasKK {
+        id_berkas = "DOC-001"
+        nama_file = "kartu_keluarga_adam.pdf"
+        file_url = "/uploads/kk_adam.pdf"
+        file_size_kb = 485
+        status_valid = true
+    }
+
+    class verif001 {
+        id_verifikasi = "VRF-001"
+        tanggal_verifikasi = "16-10-2026 10:30"
+        status_berkas = true
+        catatan_revisi = "Berkas lengkap dan data absensi valid"
+    }
+
+    class appr001 {
+        id_approval = "APP-001"
+        tanggal_approval = "16-10-2026 11:45"
+        keputusan = DISETUJUI
+        catatan_kepsek = "Disetujui untuk pengajuan beasiswa prestasi"
+    }
+
+    class notif001 {
+        id_notifikasi = "NTF-001"
+        pesan = "Surat Keterangan Siswa Aktif Anda telah disahkan dan siap diunduh."
+        is_read = false
+        timestamp = "16-10-2026 11:46"
+    }
+
+    adamSiswa --> pengajuan001 : mengajukan
+    pengajuan001 --> suratAktif : jenis surat
+    pengajuan001 *-- berkasKK : lampiran berkas
+    budiTU --> verif001 : memverifikasi
+    verif001 --> pengajuan001 : diverifikasi
+    hasanKepsek --> appr001 : mengesahkan
+    appr001 --> pengajuan001 : hasil approval
+    adamSiswa <-- notif001 : dikirim ke
+    </div>
+    <div class="diagram-caption">Gambar 3.1: Object Diagram Instansiasi Konkret Runtime Permohonan Surat Aktif Ber-QR Code</div>
+  </div>
+
+  <h2>BAB IV: ANALISIS INTEGRASI DAN PENUTUP</h2>
+  <p>
+    Pemodelan Class Diagram dan Object Diagram pada Tugas 6 ini membuktikan keselarasan hulu-ke-hilir sistem persuratan sekolah SIPESAT. Rancangan berorientasi objek ini secara langsung siap dikonversi menjadi entitas basis data relasional PostgreSQL dengan Prisma ORM, memastikan penegakan aturan integritas data, validasi skema runtime, serta eliminasi dependensi siklis dalam implementasi perangkat lunak nyata.
+  </p>
+
+</body>
+</html>

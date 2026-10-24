@@ -418,27 +418,13 @@ Sistem akan dilengkapi dengan:
 
 ### 6.2 Lampiran B: Diagram Use Case Sistem (2 Role Eksklusif)
 
-Aktor dan hak akses fungsi sistem SIPESAT dipetakan ke dalam 2 peran utama sebagai berikut:
+Aktor dan hak akses fungsi sistem SIPESAT dipetakan ke dalam 2 peran utama (Siswa dan Petugas TU) sesuai standar pemodelan UML 2.5:
 
-```
-                  +----------------------------------------------------+
-                  |       SIPESAT (Sistem Pengajuan Surat Siswa)       |
-                  +----------------------------------------------------+
-                                            │
-   ( Siswa ) ─────┬───> [ Melakukan Registrasi & Login Akun ] <───┬─── ( Petugas TU / Admin )
-                  │                                               │
-                  ├───> [ Melihat Katalog Jenis Surat ]           ├───> [ Mengelola Master Siswa & Surat ]
-                  │                                               │
-                  ├───> [ Mengisi Form & Mengunggah Syarat ]      ├───> [ Memeriksa Antrean & Berkas Masuk ]
-                  │                                               │
-                  ├───> [ Memantau Pelacakan Status (Tracking) ]  ├───> [ Menyetujui (Approve) & Generate QR ]
-                  │                                               │
-                  └───> [ Mengunduh Salinan Surat PDF ]           ├───> [ Menolak (Reject) & Input Revisi ]
-                                                                  │
-                                                                  ├───> [ Mencetak Fisik Surat & Laporan ]
-                                                                  │
-                                                                  └───> [ Melihat Dashboard & Statistik ]
-```
+![Rancangan Use Case Diagram SIPESAT](assets/diagram_usecase.png)
+*Gambar 6.1: Use Case Diagram Sistem Informasi Pengajuan Surat Siswa (SIPESAT) Standar UML 2.5 (100% Bebas Tabrakan)*
+
+Seluruh diagram visual interaktif yang menjadi dasar perancangan SRS ini tersimpan pada berkas Draw.io master:
+- **`tugas-2-srs-wiegers.drawio`** (Format XML Native Draw.io: Tab 1 Diagram Konteks Arsitektur Produk & Tab 2 Use Case SRS Lampiran B).
 
 ---
 *Dokumen ini disusun dan disahkan oleh Kelompok RPL 7 untuk memenuhi syarat penilaian TUGAS 2 Mata Kuliah Rekayasa Perangkat Lunak, Program Studi Teknik Informatika, FTIK Universitas Indraprasta PGRI (UNINDRA) Tahun Akademik 2026/2027.*

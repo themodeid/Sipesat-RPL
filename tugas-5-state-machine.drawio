@@ -1,109 +1,102 @@
 <mxfile host="65bd71144e">
     <diagram id="state-machine-surat" name="State Machine (SuratPengajuan)">
-        <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1780" pageHeight="750" math="0" shadow="0">
+        <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1720" pageHeight="680" math="0" shadow="0">
             <root>
                 <mxCell id="0" />
                 <mxCell id="1" parent="0" />
                 
                 <!-- HEADER BANNER -->
                 <mxCell id="sm_header" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;strokeWidth=2;" value="&lt;b style='font-size:18px;'&gt;STATE MACHINE DIAGRAM — SIKLUS HIDUP PERMOHONAN SURAT SISWA (SIPESAT)&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:12px;color:#000000;'&gt;Pemodelan UML 2.5 Entitas Dokumen Permohonan (tb_pengajuan_surat) — Kelompok 7 (RPL_XD 2026)&lt;/span&gt;" vertex="1">
-                    <mxGeometry height="55" width="1680" x="50" y="20" as="geometry" />
+                    <mxGeometry height="55" width="1620" x="50" y="20" as="geometry" />
                 </mxCell>
 
                 <!-- START NODE -->
-                <mxCell id="sm_init" parent="1" style="ellipse;fillColor=#000000;strokeColor=#000000;fontColor=#000000" value="" vertex="1">
-                    <mxGeometry height="35" width="35" x="65" y="220" as="geometry" />
+                <mxCell id="sm_init" parent="1" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;fontColor=#000000;" value="" vertex="1">
+                    <mxGeometry height="36" width="36" x="60" y="210" as="geometry" />
                 </mxCell>
 
                 <!-- STATE 1: DRAFT -->
                 <mxCell id="sm_draft" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;align=center;verticalAlign=top;spacingTop=6;" value="&lt;b style='font-size:13px;'&gt;1. DRAFT&lt;/b&gt;&lt;hr style='border:0.5px solid #000000;margin:4px 0;'&gt;&lt;div style='font-size:11px;text-align:left;padding:0 8px;line-height:1.4;'&gt;entry / Tampilkan Form Surat&lt;br&gt;do / Input Data &amp;amp; Unggah Berkas&lt;br&gt;exit / Validasi Format Berkas&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="95" width="220" x="160" y="190" as="geometry" />
+                    <mxGeometry height="96" width="230" x="180" y="180" as="geometry" />
                 </mxCell>
 
                 <!-- STATE 2: MENUNGGU VERIFIKASI -->
                 <mxCell id="sm_menunggu" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;align=center;verticalAlign=top;spacingTop=6;" value="&lt;b style='font-size:13px;'&gt;2. MENUNGGU_VERIFIKASI&lt;/b&gt;&lt;hr style='border:0.5px solid #000000;margin:4px 0;'&gt;&lt;div style='font-size:11px;text-align:left;padding:0 8px;line-height:1.4;'&gt;entry / Generate Kode Tiket Resi&lt;br&gt;do / Masuk Antrean Verifikasi TU&lt;br&gt;exit / Notifikasi ke Meja Staf TU&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="95" width="240" x="470" y="190" as="geometry" />
+                    <mxGeometry height="96" width="240" x="560" y="180" as="geometry" />
                 </mxCell>
 
-                <!-- SUB-BRANCH: STATE DITOLAK PERLU REVISI -->
+                <!-- SUB-BRANCH: STATE DITOLAK PERLU REVISI (Directly below State 2) -->
                 <mxCell id="sm_revisi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;align=center;verticalAlign=top;spacingTop=6;" value="&lt;b style='font-size:13px;'&gt;DITOLAK_PERLU_REVISI&lt;/b&gt;&lt;hr style='border:0.5px solid #000000;margin:4px 0;'&gt;&lt;div style='font-size:11px;text-align:left;padding:0 8px;line-height:1.4;'&gt;entry / Catat Alasan Penolakan&lt;br&gt;do / Siswa Mengunggah Berkas Baru&lt;br&gt;exit / Notifikasi Perbaikan Selesai&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="95" width="240" x="470" y="380" as="geometry" />
+                    <mxGeometry height="96" width="240" x="560" y="410" as="geometry" />
                 </mxCell>
 
                 <!-- STATE 3: DIVERIFIKASI TU -->
                 <mxCell id="sm_diverifikasi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;align=center;verticalAlign=top;spacingTop=6;" value="&lt;b style='font-size:13px;'&gt;3. DIVERIFIKASI_TU&lt;/b&gt;&lt;hr style='border:0.5px solid #000000;margin:4px 0;'&gt;&lt;div style='font-size:11px;text-align:left;padding:0 8px;line-height:1.4;'&gt;entry / Tetapkan No. Agenda Masuk&lt;br&gt;do / Teruskan ke Meja Kepsek&lt;br&gt;exit / Siap Ditandatangani&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="95" width="230" x="800" y="190" as="geometry" />
+                    <mxGeometry height="96" width="230" x="950" y="180" as="geometry" />
                 </mxCell>
 
                 <!-- STATE 4: DISETUJUI KEPSEK -->
                 <mxCell id="sm_disetujui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;align=center;verticalAlign=top;spacingTop=6;" value="&lt;b style='font-size:13px;'&gt;4. DISETUJUI_KEPSEK&lt;/b&gt;&lt;hr style='border:0.5px solid #000000;margin:4px 0;'&gt;&lt;div style='font-size:11px;text-align:left;padding:0 8px;line-height:1.4;'&gt;entry / Generate Nomor Surat Keluar&lt;br&gt;do / Terbitkan QR Code Tanda Tangan&lt;br&gt;exit / Render Dokumen PDF Resmi&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="95" width="230" x="1120" y="190" as="geometry" />
+                    <mxGeometry height="96" width="240" x="1330" y="180" as="geometry" />
                 </mxCell>
 
-                <!-- STATE 5: SELESAI SIAP UNDUH -->
+                <!-- STATE 5: SELESAI SIAP UNDUH (Directly below State 4) -->
                 <mxCell id="sm_selesai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=top;spacingTop=6;" value="&lt;b style='font-size:13px;'&gt;5. SELESAI_SIAP_UNDUH&lt;/b&gt;&lt;hr style='border:0.5px solid #000000;margin:4px 0;'&gt;&lt;div style='font-size:11px;text-align:left;padding:0 8px;line-height:1.4;'&gt;entry / Kirim Notifikasi Surat Terbit&lt;br&gt;do / Layani Unduh File PDF Siswa&lt;br&gt;exit / Catat Riwayat Pengambilan&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="95" width="230" x="1440" y="190" as="geometry" />
+                    <mxGeometry height="96" width="240" x="1330" y="410" as="geometry" />
                 </mxCell>
 
-                <!-- SUB-BRANCH: STATE 6 DIARSIPKAN -->
+                <!-- STATE 6: DIARSIPKAN (Left of State 5) -->
                 <mxCell id="sm_arsip" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;align=center;verticalAlign=top;spacingTop=6;" value="&lt;b style='font-size:13px;'&gt;6. DIARSIPKAN&lt;/b&gt;&lt;hr style='border:0.5px solid #000000;margin:4px 0;'&gt;&lt;div style='font-size:11px;text-align:left;padding:0 8px;line-height:1.4;'&gt;entry / Kunci Record Data Surat&lt;br&gt;do / Masuk Arsip Statis Sekolah&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="85" width="230" x="1440" y="385" as="geometry" />
+                    <mxGeometry height="96" width="230" x="950" y="410" as="geometry" />
                 </mxCell>
 
                 <!-- END NODE -->
-                <mxCell id="sm_final" parent="1" style="ellipse;shape=doubleEllipse;fillColor=#000000;strokeColor=#000000;strokeWidth=2;fontColor=#000000" value="" vertex="1">
-                    <mxGeometry height="36" width="36" x="1290" y="410" as="geometry" />
+                <mxCell id="sm_final" parent="1" style="ellipse;shape=doubleEllipse;html=1;fillColor=#000000;strokeColor=#000000;strokeWidth=2.2;fontColor=#000000;" value="" vertex="1">
+                    <mxGeometry height="38" width="38" x="835" y="439" as="geometry" />
                 </mxCell>
 
-                <!-- ==================== CLEAN STRAIGHT TRANSITIONS ==================== -->
-                <!-- Init -> Draft -->
-                <mxCell id="tr_1" edge="1" parent="1" source="sm_init" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_draft" value="Pilih Surat">
+                <!-- ==================== EXPLICIT STRAIGHT TRANSITIONS ==================== -->
+                <mxCell id="tr_1" edge="1" parent="1" source="sm_init" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;exitY=0.5;entryY=0.5;entryDx=0;entryDy=0;" target="sm_draft" value="Pilih Surat">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Draft -> Menunggu -->
-                <mxCell id="tr_2" edge="1" parent="1" source="sm_draft" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_menunggu" value="Kirim Permohonan&#10;[Berkas Lengkap &amp;le; 2MB]">
+                <mxCell id="tr_2" edge="1" parent="1" source="sm_draft" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sm_menunggu" value="Kirim Permohonan&lt;br&gt;[Berkas &amp;le; 2MB]">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Menunggu -> Revisi (Down) -->
-                <mxCell id="tr_3" edge="1" parent="1" source="sm_menunggu" style="endArrow=block;endFill=1;strokeWidth=1.8;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_revisi" value="Tolak TU [Berkas Buram/Kurang]">
+                <!-- Menunggu -> Revisi (Straight vertical down on right half x=716) -->
+                <mxCell id="tr_3" edge="1" parent="1" source="sm_menunggu" style="endArrow=block;endFill=1;html=1;strokeWidth=1.8;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0.65;entryY=0;entryDx=0;entryDy=0;" target="sm_revisi" value="Tolak TU&lt;br&gt;[Berkas Kurang]">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Revisi -> Menunggu (Loop back up) -->
-                <mxCell id="tr_4" edge="1" parent="1" source="sm_revisi" style="endArrow=block;endFill=1;strokeWidth=1.8;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_menunggu" value="Unggah Ulang Berkas&#10;[Ukuran Sesuai]">
+                <!-- Revisi -> Menunggu (Clean loop on left side x=485) -->
+                <mxCell id="tr_4" edge="1" parent="1" source="sm_revisi" style="endArrow=block;endFill=1;html=1;strokeWidth=1.8;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.2;entryY=1;entryDx=0;entryDy=0;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_menunggu" value="Unggah Ulang&lt;br&gt;[Valid]">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="430" y="427" />
-                            <mxPoint x="430" y="320" />
-                            <mxPoint x="530" y="320" />
+                            <mxPoint x="485" y="458" />
+                            <mxPoint x="485" y="340" />
+                            <mxPoint x="608" y="340" />
                         </Array>
                     </mxGeometry>
                 </mxCell>
 
-                <!-- Menunggu -> Diverifikasi TU -->
-                <mxCell id="tr_5" edge="1" parent="1" source="sm_menunggu" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_diverifikasi" value="Verifikasi TU&#10;[Berkas Lengkap &amp;amp; Sah]">
+                <mxCell id="tr_5" edge="1" parent="1" source="sm_menunggu" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sm_diverifikasi" value="Verifikasi TU&lt;br&gt;[Berkas Sah]">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Diverifikasi TU -> Disetujui Kepsek -->
-                <mxCell id="tr_6" edge="1" parent="1" source="sm_diverifikasi" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_disetujui" value="Persetujuan Kepsek&#10;[Disahkan]">
+                <mxCell id="tr_6" edge="1" parent="1" source="sm_diverifikasi" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sm_disetujui" value="Approve Kepsek&lt;br&gt;[Disahkan]">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Disetujui -> Selesai -->
-                <mxCell id="tr_7" edge="1" parent="1" source="sm_disetujui" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_selesai" value="Kompilasi PDF&#10;Berhasil">
+                <mxCell id="tr_7" edge="1" parent="1" source="sm_disetujui" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sm_selesai" value="Kompilasi PDF&lt;br&gt;Berhasil">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Selesai -> Arsip (Down) -->
-                <mxCell id="tr_8" edge="1" parent="1" source="sm_selesai" style="endArrow=block;endFill=1;strokeWidth=1.8;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_arsip" value="Selesai Diunduh /&#10;Masa Retensi Aktif">
+                <mxCell id="tr_8" edge="1" parent="1" source="sm_selesai" style="endArrow=block;endFill=1;html=1;strokeWidth=1.8;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="sm_arsip" value="Selesai Diunduh /&lt;br&gt;Retensi Aktif">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
 
-                <!-- Arsip -> End (Left) -->
-                <mxCell id="tr_9" edge="1" parent="1" source="sm_arsip" style="endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;" target="sm_final" value="Arsip Permanen">
+                <mxCell id="tr_9" edge="1" parent="1" source="sm_arsip" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontColor=#000000;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="sm_final" value="Arsip">
                     <mxGeometry relative="1" as="geometry" />
                 </mxCell>
             </root>

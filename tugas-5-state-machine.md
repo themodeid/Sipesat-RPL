@@ -44,6 +44,9 @@ Elemen-elemen formal yang menyusun State Machine Diagram meliputi:
 ### 2.1 State Machine Diagram 1: Siklus Hidup Permohonan Surat Siswa (`SuratPengajuan`)
 Entitas utama pada sistem SIPESAT adalah objek permohonan surat (direpresentasikan oleh model tabel `tb_pengajuan_surat`). Diagram berikut memodelkan seluruh siklus hidup dokumen permohonan dari pembuatan draf hingga pengarsipan permanen:
 
+![State Machine Diagram Siklus Hidup Surat Siswa](assets/diagram_statemachine.png)
+*Gambar 2.1: State Machine Diagram Siklus Hidup Permohonan Surat Siswa (100% Bebas Tabrakan)*
+
 ```mermaid
 stateDiagram-v2
     [*] --> DRAFT : openMenuPengajuan()

@@ -41,10 +41,15 @@ Use Case Diagram dalam metodologi Unified Modeling Language (UML) berfungsi meme
 
 ## BAB II: PERANCANGAN USE CASE DIAGRAM SIPESAT
 
-### 2.1 Identifikasi Aktor Sistem
+### 2.1 Identifikasi Aktor & Diagram Use Case Terpadu
 Sistem SIPESAT menerapkan pemisahan tugas berbasis peran (Role-Based Access Control) yang terdiri dari 2 aktor utama:
 1. **Siswa (Aktor Pemohon)**: Aktor peserta didik yang terdaftar resmi di sekolah. Bertanggung jawab mengajukan permohonan surat secara mandiri, melampirkan berkas persyaratan sah, memantau status persuratan, dan mengunduh dokumen akhir.
 2. **Petugas TU / Admin (Aktor Pengelola & Verifikator)**: Aktor staf administrasi sekolah yang bertugas memverifikasi keabsahan dokumen permohonan, menerbitkan nomor register/agenda surat keluar, mengelola katalog template surat, memelihara master data akun, serta mengekspor rekapitulasi laporan bulanan.
+
+Berikut adalah rancangan visual Use Case Diagram SIPESAT standar UML 2.5:
+
+![Rancangan Use Case Diagram SIPESAT](assets/diagram_usecase.png)
+*Gambar 2.1: Use Case Diagram Sistem Informasi Pengajuan Surat Siswa (SIPESAT) Standar UML 2.5 (100% Bebas Tabrakan)*
 
 ---
 

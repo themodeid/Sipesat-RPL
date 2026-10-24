@@ -39,7 +39,14 @@ Pemodelan UML (Unified Modeling Language) pada dokumen ini disusun untuk menjela
 
 ## BAB II: PERANCANGAN ACTIVITY DIAGRAM
 
-Activity Diagram menggambarkan urutan alur kerja dari suatu aktivitas pada sistem SIPESAT, mulai dari titik awal (start), aksi pengguna, percabangan keputusan (decision), hingga selesai. Terdapat 4 (empat) alur utama yang kami modelkan:
+Activity Diagram menggambarkan urutan alur kerja dari suatu aktivitas pada sistem SIPESAT, mulai dari titik awal (start), aksi pengguna, percabangan keputusan (decision), hingga selesai.
+
+Berikut adalah diagram alur kerja terpadu (Swimlane Terpadu Siswa, Sistem SIPESAT, dan Petugas TU / Kepala Sekolah) standar modul RPL UNINDRA Pertemuan 04:
+
+![Activity Diagram Alur Terpadu SIPESAT](assets/diagram_activity.png)
+*Gambar 2.1: Activity Diagram Alur Terpadu SIPESAT Standar UNINDRA (100% Bebas Tabrakan)*
+
+---
 
 ### 2.1 Activity Diagram 1: Alur Pengajuan Surat oleh Siswa
 Diagram ini menggambarkan alur saat siswa masuk ke sistem, memilih jenis surat, mengisi keperluan, mengunggah dokumen persyaratan, hingga mendapatkan bukti resi nomor tiket.
@@ -226,6 +233,13 @@ Sequence Diagram digunakan untuk menggambarkan interaksi antarkomponen objek di 
 * **<<boundary>> (Antarmuka / Form)**: Komponen tampilan web tempat pengguna berinteraksi langsung (seperti form login atau form isian surat).
 * **<<control>> (Pengontrol Logika)**: Komponen program yang mengatur jalannya logika bisnis, validasi data, dan proses pemrosesan fungsi.
 * **<<entity>> & <<database>> (Model Data & Basis Data)**: Komponen model data dan tabel pada basis data (PostgreSQL) tempat informasi disimpan secara permanen.
+
+Berikut adalah rancangan visual Sequence Diagram Pengajuan Surat Siswa & Verifikasi Berkas TU standar BCE lengkap dengan frame `alt` alternatif:
+
+![Sequence Diagram Pola BCE](assets/diagram_sequence.png)
+*Gambar 3.1: Sequence Diagram Pengajuan & Verifikasi Dokumen Pola BCE (100% Bebas Tabrakan)*
+
+---
 
 ### 3.1 Sequence Diagram 1: Alur Login Multi-Pengguna (RBAC)
 Memodelkan verifikasi identitas pengguna (Siswa, TU, Kepala Sekolah) dan inisiasi sesi terotorisasi.
