@@ -51,9 +51,9 @@ export default function DashboardLayout({
   }
 
   return (
-    <div className="flex min-h-screen bg-surface-light">
+    <div className="flex h-screen overflow-hidden bg-surface-light">
       <Sidebar user={user} onLogout={handleLogout} />
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
         <Header user={user} />
         <main className="flex-1 p-6 sm:p-8 overflow-y-auto">
           {children}
