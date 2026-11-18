@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TUGAS DEPLOYMENT DIAGRAM RPL - SIPESAT - KELOMPOK 7</title>
+  <!-- Mermaid.js CDN for client-side rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontSize: '11px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        primaryColor: '#f8fafc',
+        primaryBorderColor: '#334155',
+        primaryTextColor: '#0f172a',
+        lineColor: '#475569',
+        signalColor: '#1e293b',
+        signalTextColor: '#0f172a'
+      },
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'linear' }
+    });
+  </script>
+  <style>
+    @page {
+      size: A4;
+      margin: 2.5cm 2cm 2.5cm 2.5cm;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #111;
+      margin: 0 auto;
+      padding: 2cm 1.5cm;
+      max-width: 210mm;
+      background: #fff;
+    }
+    @media print {
+      body { padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+      .diagram-card { page-break-inside: avoid; }
+    }
+    .print-bar {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 1000;
+      background: #1e293b;
+      padding: 8px 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .print-btn {
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-family: sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .print-btn:hover { background: #2563eb; }
+    .print-info {
+      color: #94a3b8;
+      font-family: sans-serif;
+      font-size: 11px;
+    }
+    h1 {
+      font-size: 14pt;
+      text-align: center;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 12pt;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    h3 {
+      font-size: 11pt;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+    p, li {
+      text-align: justify;
+      margin-bottom: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 10pt;
+    }
+    th, td {
+      border: 1px solid #334155;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: bold;
+    }
+    .diagram-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 16px;
+      margin: 14px 0;
+      background: #fafafa;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .diagram-caption {
+      font-style: italic;
+      font-size: 10pt;
+      text-align: center;
+      margin-top: 6px;
+      color: #475569;
+    }
+    .header-box {
+      border: 2px solid #000;
+      padding: 10px 14px;
+      text-align: center;
+      margin-bottom: 18px;
+      background: #fdfdfd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar no-print">
+    <span class="print-info">UNINDRA - Kelompok 7 RPL (SIPESAT)</span>
+    <button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF (A4)</button>
+  </div>
+
+  <div class="header-box">
+    <h1 style="margin:0 0 4px 0;">TUGAS REKAYASA PERANGKAT LUNAK (RPL)</h1>
+    <div style="font-size:11pt; font-weight:bold; margin-bottom:4px;">PERANCANGAN DEPLOYMENT DIAGRAM ARSITEKTUR FISIK DAN INFRASTRUKTUR SISTEM</div>
+    <div style="font-size:10pt;">PROGRAM STUDI TEKNIK INFORMATIKA - FTIK UNIVERSITAS INDRAPRASTA PGRI (UNINDRA)</div>
+    <div style="font-size:9pt; margin-top:4px; color:#333;">Tahun Akademik 2026/2027 • Sistem Informasi Pengajuan Surat Siswa (SIPESAT)</div>
+  </div>
+
+  <h3>IDENTITAS KELOMPOK (KELOMPOK RPL 7 / KELAS RPL_XD):</h3>
+  <table style="width:100%; margin-bottom:16px;">
+    <thead>
+      <tr>
+        <th style="width:8%; text-align:center;">No.</th>
+        <th style="width:34%;">Nama Lengkap</th>
+        <th style="width:20%; text-align:center;">NPM</th>
+        <th style="width:38%;">Peran & Tanggung Jawab</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:center;">1</td>
+        <td><b>Adam Wahyu Kurniawan</b></td>
+        <td style="text-align:center;"><code>202343500510</code></td>
+        <td>Lead System Architect & Software Engineer</td>
+      </tr>
+      <tr>
+        <td style="text-align:center;">2</td>
+        <td><b>Fathu Rahman</b></td>
+        <td style="text-align:center;"><code>202343500467</code></td>
+        <td>Business Analyst & Requirements Engineer</td>
+      </tr>
+      <tr>
+        <td style="text-align:center;">3</td>
+        <td><b>Surya Edi Saputra</b></td>
+        <td style="text-align:center;"><code>202343500468</code></td>
+        <td>Quality Assurance & Technical Writer</td>
+      </tr>
+      <tr>
+        <td style="text-align:center;">4</td>
+        <td><b>Rizqi Muh. Al Hakimi</b></td>
+        <td style="text-align:center;"><code>202343500449</code></td>
+        <td>Database Specialist & UI/UX</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>BAB I: PENDAHULUAN & LANDASAN TEORI</h2>
+  <p>Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT) adalah platform layanan digital mandiri yang dirancang untuk mengotomatisasi birokrasi persuratan siswa di sekolah menengah (Surat Keterangan Siswa Aktif, Rekomendasi Beasiswa, Legalisir Ijazah, dan Dispensasi). Sistem ini mengadopsi arsitektur terpisah (<i>Decoupled Architecture</i>) antara antarmuka web (Frontend), layanan logika bisnis (Backend REST API), dan penyimpanan data terisolasi (PostgreSQL Database).</p>
+  <p>Untuk memastikan sistem dapat dioperasikan secara stabil, aman, dan berkesinambungan di lingkungan produksi nyata, diperlukan pemodelan arsitektur infrastruktur fisik dan virtual melalui <b>Deployment Diagram</b>.</p>
+
+  <h3>Konsep Dasar Deployment Diagram (UML 2.5)</h3>
+  <p>Deployment Diagram memetakan bagaimana artefak-artefak perangkat lunak (<i>software artifacts</i>) didistribusikan dan dieksekusi di atas simpul-simpul komputasi fisik maupun lingkungan eksekusi virtual (<i>hardware nodes and execution environments</i>):</p>
+  <ul>
+    <li><b>Node (&laquo;device&raquo;)</b>: Representasi perangkat komputasi fisik (PC Klien, Server Fisik, atau Virtual Machine).</li>
+    <li><b>Execution Environment (&laquo;executionEnvironment&raquo;)</b>: Lingkungan eksekusi perangkat lunak (Node.js Runtime, Browser Engine, Docker Engine).</li>
+    <li><b>Artifact (&laquo;artifact&raquo;)</b>: Berkas fisik konkret hasil kompilasi program (.next build, dist JS, database schema).</li>
+    <li><b>Component (&laquo;component&raquo;)</b>: Unit modular logika fungsional dalam runtime (AuthMiddleware, Controllers, Prisma Client).</li>
+    <li><b>Communication Path (&laquo;protocol&raquo;)</b>: Jalur komunikasi jaringan antar simpul (HTTP/HTTPS, REST API JSON, TCP/IP Port 5432).</li>
+  </ul>
+
+  <h2>BAB II: VISUALISASI UML DEPLOYMENT DIAGRAM (UML 2.5)</h2>
+  
+  <div class="diagram-card">
+    <div class="mermaid">
+flowchart TB
+    subgraph ClientDevice ["«device» Client Tier: User Device (PC / Smartphone)"]
+        subgraph BrowserEnv ["«executionEnvironment» Web Browser Engine"]
+            ClientArtifact["«artifact» SIPESAT Web Application<br/>(HTML5 / CSS3 / React Virtual DOM)<br/>• Client JWT Token Storage<br/>• File Upload Input (Limit 2MB)<br/>• Real-Time Stepper UI Tracking<br/>• PDF Download & Viewer Component"]
+            UserActors["«actor / role»<br/>1. Siswa (Pemohon Surat)<br/>2. Petugas TU (Verifikator & Pengesah)"]
+        end
+    end
+
+    subgraph AppServer ["«device / executionServer» Application & Service Host"]
+        subgraph NextJSRuntime ["«executionEnvironment» Next.js 14 Web Server (Port: 3000)"]
+            NextArtifact["«artifact» fe/.next (Compiled App Router)<br/>• Server-Side Rendering (SSR)<br/>• API Client Proxy Helper (/lib/api.ts)<br/>• Role Guard Protected Routes"]
+        end
+
+        subgraph ExpressRuntime ["«executionEnvironment» Express REST API Server (Port: 5000)"]
+            AuthCmp["«component» AuthMiddleware (JWT Guard)"]
+            PengajuanCmp["«component» PengajuanController (CRUD & State)"]
+            SuratCmp["«component» SuratGenerator (Auto-Number & QR TTE)"]
+            MulterCmp["«component» Multer FileHandler (MIME & 2MB Check)"]
+            PrismaCmp["«component» Prisma Client ORM (Pool & Transactions)"]
+        end
+    end
+
+    subgraph DataServer ["«device / virtualizationHost» Data & Storage Tier (Docker Engine)"]
+        subgraph PostgresContainer ["«container» sipesat-postgres-1"]
+            subgraph PostgresDBMS ["«database» PostgreSQL 16 Alpine (Port: 5432)"]
+                DBTables["«database schema» sipesat_db (3NF)<br/>• tb_user (Akun & Role RBAC)<br/>• tb_siswa (Profil & Kelas)<br/>• tb_petugas (Staf Tata Usaha)<br/>• tb_jenis_surat (Katalog Layanan)<br/>• tb_pengajuan_surat (Transaksi & Nomor)<br/>• tb_berkas_persyaratan (Path & Ukuran)<br/>• tb_riwayat_status (Audit Trail)"]
+            end
+        end
+        
+        DBVolume[("«file system volume»<br/>sipesat_postgres_data<br/>(/var/lib/postgresql/data)")]
+        UploadsVolume[("«file system volume»<br/>Local Uploads Directory<br/>(be/uploads/)")]
+    end
+
+    %% Communication Paths
+    ClientArtifact <-->|«protocol» HTTP / HTTPS (Port 3000)<br/>UI Bundles & HTML SSR| NextArtifact
+    ClientArtifact <-->|«protocol» REST API JSON (Port 5000)<br/>Bearer Token & Multipart Form| ExpressRuntime
+    NextArtifact -.->|Internal Fetch / SSR Proxy (Port 5000)| ExpressRuntime
+    PrismaCmp <-->|«protocol» TCP/IP Connection Pool<br/>Port 5432 (PostgreSQL Driver)| PostgresDBMS
+    MulterCmp -.->|Write Uploaded Files| UploadsVolume
+    SuratCmp -.->|Generate & Save PDF Surat| UploadsVolume
+    PostgresDBMS -.->|Docker Volume Mount| DBVolume
+    </div>
+    <div class="diagram-caption">Gambar 1. Deployment Diagram UML 2.5 Arsitektur 3-Tier Decoupled Sistem SIPESAT</div>
+  </div>
+
+  <h2>BAB III: SPESIFIKASI NODE DAN ARTEFAK SISTEM</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th style="width:25%;">Simpul / Node</th>
+        <th style="width:25%;">Lingkungan Eksekusi</th>
+        <th style="width:50%;">Peran & Tanggung Jawab Komputasi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Client Device</b> (<code>&laquo;device&raquo;</code>)</td>
+        <td>Web Browser (Chrome, Edge, Safari)</td>
+        <td>Menjalankan antarmuka pengguna grafis, validasi input formulir sisi klien, dan penyimpanan token sesi JWT.</td>
+      </tr>
+      <tr>
+        <td><b>Web Server Host</b> (<code>&laquo;device&raquo;</code>)</td>
+        <td>Next.js 14 Web Server (Port 3000)</td>
+        <td>Menyajikan bundel halaman web, Server-Side Rendering (SSR), optimasi gambar, dan routing aplikasi.</td>
+      </tr>
+      <tr>
+        <td><b>API Server Host</b> (<code>&laquo;device&raquo;</code>)</td>
+        <td>Express.js + TypeScript (Port 5000)</td>
+        <td>Mengeksekusi logika bisnis, otorisasi RBAC (JWT), penomoran surat otomatis, pembuatan PDF ber-QR Code, dan upload berkas.</td>
+      </tr>
+      <tr>
+        <td><b>Database Server</b> (<code>&laquo;container&raquo;</code>)</td>
+        <td>PostgreSQL 16 Alpine (Port 5432)</td>
+        <td>Mengelola basis data relasional 3NF <code>sipesat_db</code>, integritas Foreign Key, dan transaksi ACID.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>BAB IV: KESIMPULAN</h2>
+  <p>Pemodelan Deployment Diagram pada sistem SIPESAT mendokumentasikan pemisahan tanggung jawab antarlapisan secara presisi. Melalui pendekatan <i>Decoupled 3-Tier Architecture</i> yang didukung isolasi container Docker, sistem SIPESAT menjamin skalabilitas independen antara frontend dan backend, keandalan dan integritas penyimpanan basis data, serta kemudahan proses deployment baik secara lokal maupun ke cloud VPS.</p>
+
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TUGAS 11 RPL - PENGUJIAN PERANGKAT LUNAK (BLACK BOX TESTING) - KELOMPOK 7</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 3.5cm 2.5cm 2.5cm 3.5cm;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #111;
+      margin: 0 auto;
+      padding: 3cm 2cm;
+      max-width: 210mm;
+      background: #fff;
+    }
+    @media print {
+      body { padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      h1, h2 { page-break-after: avoid; }
+      table { page-break-inside: auto; }
+      tr { page-break-inside: avoid; page-break-after: auto; }
+    }
+    .print-bar {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 1000;
+      background: #1e293b;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+    }
+    .print-btn {
+      background: #db2777;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: #be185d; }
+    h1 { font-size: 14pt; text-align: center; text-transform: uppercase; margin-bottom: 6px; }
+    h2 { font-size: 12pt; margin-top: 24px; border-bottom: 2px solid #f472b6; padding-bottom: 4px; }
+    h3 { font-size: 11.5pt; margin-top: 18px; }
+    h4 { font-size: 11pt; margin-top: 12px; font-style: italic; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 9.5pt;
+    }
+    th, td {
+      border: 1px solid #94a3b8;
+      padding: 7px 9px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f472b6 !important;
+      color: #000000 !important;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: middle;
+    }
+    tr:nth-child(even) { background: #fdf2f8; }
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 9.5pt;
+      overflow-x: auto;
+      line-height: 1.4;
+      border: 1px solid #334155;
+    }
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 10pt;
+      background: #fce7f3;
+      padding: 2px 4px;
+      border-radius: 4px;
+      color: #831843;
+    }
+    blockquote {
+      border-left: 4px solid #f472b6;
+      margin: 14px 0;
+      padding: 8px 16px;
+      background: #fdf2f8;
+      color: #475569;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #cbd5e1;
+      margin: 24px 0;
+    }
+    .badge-valid {
+      display: inline-block;
+      font-weight: bold;
+      color: #065f46;
+      background: #d1fae5;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="print-bar no-print">
+    <span>Tugas 11 RPL (Pengujian Black Box) - SIPESAT Kelompok 7</span>
+    <button class="print-btn" onclick="window.print()">Cetak / Simpan PDF</button>
+  </div>
+  <h1>TUGAS 11 - REKAYASA PERANGKAT LUNAK (RPL)</h1>
+<p><strong>PENGUJIAN PERANGKAT LUNAK (BLACK BOX TESTING) PADA SISTEM INFORMASI PENGAJUAN SURAT SISWA BERBASIS WEB (SIPESAT)</strong><br />
+<strong>PROGRAM STUDI TEKNIK INFORMATIKA - FTIK UNIVERSITAS INDRAPRASTA PGRI (UNINDRA)</strong><br />
+<strong>TAHUN AKADEMIK 2026/2027</strong></p>
+<hr />
+<h3>IDENTITAS KELOMPOK (KELOMPOK RPL 7 / KELAS RPL_XD)</h3>
+<ol>
+<li><strong>Adam Wahyu Kurniawan</strong> (NPM: 202343500510) - <em>Lead System Architect &amp; Software Engineer</em></li>
+<li><strong>Fathu Rahman</strong> (NPM: 202343500467) - <em>Business Analyst &amp; Requirements Engineer</em></li>
+<li><strong>Surya Edi Saputra</strong> (NPM: 202343500468) - <em>Quality Assurance &amp; Testing Specialist</em></li>
+<li>
+<p><strong>Rizqi Muh. Al Hakimi</strong> (NPM: 202343500449) - <em>Database Specialist &amp; UI/UX</em></p>
+</li>
+<li>
+<p><strong>Nama Proyek Perangkat Lunak:</strong><br />
+<em>Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT)</em></p>
+</li>
+<li><strong>Studi Kasus:</strong><br />
+  Pelayanan Administrasi Persuratan Siswa &amp; Tata Usaha Sekolah Menengah</li>
+<li><strong>Tech Stack:</strong><br />
+  Next.js 14 (App Router), TypeScript, Tailwind CSS, Express.js REST API, Prisma ORM, PostgreSQL (Docker).</li>
+<li><strong>Repositori GitHub Resmi:</strong><br />
+<a href="https://github.com/themodeid/Sipesat-RPL"><code>https://github.com/themodeid/Sipesat-RPL</code></a></li>
+</ol>
+<hr />
+<h2>BAB I: PENDAHULUAN &amp; METODOLOGI PENGUJIAN</h2>
+<h3>1.1 Latar Belakang &amp; Posisi Pengujian dalam SDLC</h3>
+<p>Pengujian Perangkat Lunak (<em>Software Testing</em>) merupakan tahap verifikasi dan validasi kritis dalam siklus hidup rekayasa perangkat lunak (<em>Software Development Life Cycle</em> - SDLC). Tahap ini bertujuan menjamin bahwa sistem yang telah dibangun pada tahap Konstruksi (Tugas 10) benar-benar beroperasi sesuai dengan spesifikasi kebutuhan fungsional yang tertuang dalam dokumen SRS (Tugas 2) serta mematuhi alur bisnis pada diagram UML (Tugas 3 s.d. 6).</p>
+<p>Pada sistem <strong>SIPESAT (Sistem Informasi Pengajuan Surat Siswa Berbasis Web)</strong>, pengujian difokuskan untuk memastikan bahwa alur birokrasi persuratan—mulai dari permohonan surat oleh siswa, validasi kelayakan dokumen, verifikasi dan disposisi oleh Petugas Tata Usaha (TU), hingga penomoran otomatis dan penerbitan dokumen digital PDF ber-QR Code—berjalan secara presisi, deterministik, dan kebal dari celah validasi (<em>input boundary errors</em>) maupun kebocoran otorisasi (<em>unauthorized privilege escalation</em>).</p>
+<h3>1.2 Metodologi Black Box Testing</h3>
+<p>Metodologi pengujian yang digunakan adalah <strong>Black Box Testing (Pengujian Kotak Hitam)</strong>. Pendekatan ini berfokus pada pengujian fungsionalitas eksternal perangkat lunak tanpa memeriksa struktur kode internal secara langsung. Teknik yang diterapkan mencakup:
+1. <strong>Equivalence Partitioning (EP)</strong>: Membagi rentang masukan data menjadi partisi valid dan tidak valid untuk menguji respons sistem terhadap masukan yang sah dan masukan yang menyimpang.
+2. <strong>Boundary Value Analysis (BVA)</strong>: Menguji nilai batas ekstrem pada form input (misalnya ukuran berkas unggahan maksimal 2 MB, batas minimal dan maksimal karakter alasan permohonan).
+3. <strong>Role-Based Access Control (RBAC) Testing</strong>: Memastikan pemisahan ketat hak akses antara peran Siswa dan peran Petugas TU.</p>
+<h3>1.3 Lingkungan Pengujian (Testing Environment)</h3>
+<ul>
+<li><strong>Perangkat Keras (Hardware)</strong>: Processor Intel Core i5 / AMD Ryzen 5, RAM 16 GB DDR4, SSD NVMe 512 GB.</li>
+<li><strong>Sistem Operasi</strong>: Windows 11 Pro 64-bit / Linux Ubuntu 22.04 LTS.</li>
+<li><strong>Peramban Web (Browser)</strong>: Google Chrome Version 128+ &amp; Microsoft Edge.</li>
+<li><strong>Database &amp; Server</strong>: PostgreSQL 16 (Docker Container Port 5432), Node.js v20 LTS, Express Backend Server (Port 5000), Next.js Frontend Server (Port 3000).</li>
+<li><strong>Akun Uji (Test Credentials)</strong>:</li>
+<li>Akun Siswa: Username <code>siswa_adam</code> | Password <code>siswa123</code> (Hak akses: Pengajuan &amp; Pelacakan).</li>
+<li>Akun Petugas TU (Admin): Username <code>admin</code> | Password <code>admin</code> (Hak akses: Verifikasi, Disposisi, Cetak PDF, &amp; Master Data).</li>
+</ul>
+<hr />
+<h2>BAB II: TABEL MATRIKS PENGUJIAN SISTEM SIPESAT (BLACK BOX TESTING)</h2>
+<p>Pengujian dilakukan secara menyeluruh terhadap 7 modul fungsional utama sistem SIPESAT dengan format tabel standar akademik resmi UNINDRA:
+* <strong>No</strong>: Nomor urut pengujian.
+* <strong>Skenario Pengujian</strong>: Tindakan operasional yang dieksekusi pengguna pada antarmuka.
+* <strong>Test Case</strong>: Masukan data spesifik (<em>input payload</em>) yang diberikan ke sistem.
+* <strong>Hasil yang Diharapkan</strong>: Respon semantik dan perilaku sistem yang disyaratkan dalam spesifikasi desain.
+* <strong>Hasil Pengujian</strong>: Perilaku faktual sistem saat pengujian berlangsung.
+* <strong>Kesimpulan</strong>: Status kelayakan pengujian (<strong>Valid</strong> bila sesuai harapan, <strong>Invalid</strong> bila terjadi deviasi/kegagalan).</p>
+<hr />
+<h3>2.1 Modul 1: Autentikasi, Login, &amp; Hak Akses Multi-Role</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">No</th>
+<th style="text-align: left;">Skenario Pengujian</th>
+<th style="text-align: left;">Test Case</th>
+<th style="text-align: left;">Hasil yang Diharapkan</th>
+<th style="text-align: center;">Hasil Pengujian</th>
+<th style="text-align: center;">Kesimpulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Username dan Password tidak diisi kemudian klik tombol Login</td>
+<td style="text-align: left;">Username: (kosong)<br>Password: (kosong)</td>
+<td style="text-align: left;">Sistem menolak akses dan menampilkan pesan validasi <em>"Harap isi username dan password"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Mengetikkan Username, dan password tidak diisi atau kosong kemudian klik tombol Login</td>
+<td style="text-align: left;">Username: admin<br>Password: (kosong)</td>
+<td style="text-align: left;">Sistem menolak akses dan menampilkan pesan validasi <em>"Password belum diisi"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Mengetikkan Password, dan username tidak diisi atau kosong kemudian klik tombol Login</td>
+<td style="text-align: left;">Username: (kosong)<br>Password: admin</td>
+<td style="text-align: left;">Sistem menolak akses dan menampilkan pesan validasi <em>"Username belum diisi"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Mengetikkan Username dan/atau password tidak sesuai, kemudian klik tombol Login</td>
+<td style="text-align: left;">Username: adm<br>Password: adm123</td>
+<td style="text-align: left;">Sistem menolak akses dan menampilkan pesan <em>"Username atau Password yang anda masukkan salah"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Mengetikkan Username dan password benar akun Petugas TU, kemudian klik tombol Login</td>
+<td style="text-align: left;">Username: admin<br>Password: admin</td>
+<td style="text-align: left;">Sistem menerima autentikasi dan mengarahkan pengguna ke Dashboard Utama Petugas TU (<code>/admin/dashboard</code>)</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Mengetikkan Username dan password benar akun Siswa, kemudian klik tombol Login</td>
+<td style="text-align: left;">Username: siswa_adam<br>Password: siswa123</td>
+<td style="text-align: left;">Sistem menerima autentikasi dan mengarahkan pengguna ke Portal Layanan Mandiri Siswa (<code>/siswa/pengajuan</code>)</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Mengklik tombol Logout dari sesi aktif pengguna</td>
+<td style="text-align: left;">Sesi aktif: Petugas TU / Siswa<br>Aksi: Klik <em>"Logout"</em></td>
+<td style="text-align: left;">Sistem memusnahkan sesi token JWT di local storage dan mengembalikan pengguna ke halaman Login (<code>/login</code>)</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2.2 Modul 2: Formulir Pengajuan Surat Mandiri Siswa</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">No</th>
+<th style="text-align: left;">Skenario Pengujian</th>
+<th style="text-align: left;">Test Case</th>
+<th style="text-align: left;">Hasil yang Diharapkan</th>
+<th style="text-align: center;">Hasil Pengujian</th>
+<th style="text-align: center;">Kesimpulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">Mengirim formulir pengajuan surat tanpa memilih jenis surat</td>
+<td style="text-align: left;">Jenis Surat: (Belum dipilih)<br>Keperluan: Lomba Sains<br>File: berkas.pdf</td>
+<td style="text-align: left;">Sistem menolak submit formulir dan menampilkan peringatan <em>"Pilih jenis surat yang diajukan"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Mengisi formulir dengan kolom keperluan kosong</td>
+<td style="text-align: left;">Jenis Surat: Surat Keterangan Siswa Aktif<br>Keperluan: (kosong)<br>File: berkas.pdf</td>
+<td style="text-align: left;">Sistem menolak submit formulir dan menampilkan peringatan <em>"Alasan/keperluan permohonan wajib diisi"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Mengunggah berkas persyaratan dengan ukuran melebihi batas (Ukuran $&gt; 2\text{ MB}$)</td>
+<td style="text-align: left;">File: scan_rapor_besar.pdf (Ukuran 4,5 MB)</td>
+<td style="text-align: left;">Sistem memblokir unggahan file di sisi frontend &amp; backend dengan notifikasi <em>"Ukuran file maksimal 2 MB"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Mengunggah berkas persyaratan dengan format terlarang (.exe, .php, .sh)</td>
+<td style="text-align: left;">File: script_jahat.exe (Ukuran 500 KB)</td>
+<td style="text-align: left;">Sistem menolak file dan menampilkan peringatan <em>"Format file tidak diizinkan. Hanya menerima PDF, JPG, atau PNG"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Mengisi seluruh formulir pengajuan dengan data lengkap dan berkas valid (PDF $&lt; 2\text{ MB}$)</td>
+<td style="text-align: left;">Jenis Surat: Surat Keterangan Aktif<br>Keperluan: Pengurusan Beasiswa<br>File: kartu_pelajar.pdf (850 KB)</td>
+<td style="text-align: left;">Sistem berhasil menyimpan permohonan, menerbitkan Nomor Pengajuan unik (<code>REG-2026-XXXX</code>), dan status awal disetel ke <em>"Menunggu Verifikasi"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2.3 Modul 3: Pelacakan Status Pengajuan Surat (Tracking &amp; Timeline Stepper)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">No</th>
+<th style="text-align: left;">Skenario Pengujian</th>
+<th style="text-align: left;">Test Case</th>
+<th style="text-align: left;">Hasil yang Diharapkan</th>
+<th style="text-align: center;">Hasil Pengujian</th>
+<th style="text-align: center;">Kesimpulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">Melakukan pencarian status surat dengan kolom nomor pengajuan kosong</td>
+<td style="text-align: left;">Nomor Pengajuan: (kosong)<br>Aksi: Klik <em>"Lacak"</em></td>
+<td style="text-align: left;">Sistem menampilkan peringatan <em>"Masukkan nomor registrasi pengajuan surat"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">Melacak status dengan nomor pengajuan yang tidak terdaftar di database</td>
+<td style="text-align: left;">Nomor Pengajuan: <code>REG-9999-XXXX</code> (Fiktif)</td>
+<td style="text-align: left;">Sistem menampilkan informasi <em>"Nomor registrasi pengajuan tidak ditemukan. Periksa kembali nomor tiket Anda"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;">Melacak status surat yang valid dan berstatus <em>"Menunggu Verifikasi"</em></td>
+<td style="text-align: left;">Nomor Pengajuan: <code>REG-2026-0001</code><br>Status: Menunggu</td>
+<td style="text-align: left;">Sistem menampilkan data pemohon dan indikator stepper aktif pada tahap 1: <em>"Menunggu Verifikasi Berkas oleh TU"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;">Melacak status surat yang berstatus <em>"Ditolak"</em> lengkap dengan catatan revisi</td>
+<td style="text-align: left;">Nomor Pengajuan: <code>REG-2026-0002</code><br>Status: Ditolak</td>
+<td style="text-align: left;">Sistem menampilkan banner merah <em>"Pengajuan Ditolak"</em> beserta alasan penolakan: <em>"Kartu Keluarga buram, mohon upload ulang"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;">Melacak status surat yang berstatus <em>"Selesai"</em></td>
+<td style="text-align: left;">Nomor Pengajuan: <code>REG-2026-0003</code><br>Status: Selesai</td>
+<td style="text-align: left;">Sistem menampilkan stepper hijau penuh dan memunculkan tombol <em>"Unduh Surat Resmi (PDF)"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2.4 Modul 4: Verifikasi &amp; Disposisi Berkas oleh Petugas TU</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">No</th>
+<th style="text-align: left;">Skenario Pengujian</th>
+<th style="text-align: left;">Test Case</th>
+<th style="text-align: left;">Hasil yang Diharapkan</th>
+<th style="text-align: center;">Hasil Pengujian</th>
+<th style="text-align: center;">Kesimpulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">Petugas TU membuka menu inbox permohonan surat masuk</td>
+<td style="text-align: left;">Akun: Petugas TU<br>Menu: Inbox Pengajuan</td>
+<td style="text-align: left;">Sistem memuat tabel daftar permohonan surat masuk secara real-time dengan status terkini dan badge prioritas</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;">Petugas TU mengklik preview berkas persyaratan siswa</td>
+<td style="text-align: left;">Aksi: Klik ikon <em>"Lihat Berkas"</em> pada permohonan siswa</td>
+<td style="text-align: left;">Sistem membuka modal pratinjau dokumen PDF/gambar secara aman tanpa merusak halaman antarmuka utama</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Petugas TU menolak permohonan tanpa mengisi alasan/catatan penolakan</td>
+<td style="text-align: left;">Status: Tolak Pengajuan<br>Catatan Alasan: (kosong)</td>
+<td style="text-align: left;">Sistem menolak aksi penolakan dan mewajibkan petugas mengisi catatan: <em>"Catatan penolakan wajib diisi agar siswa dapat memperbaiki berkas"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
+<td style="text-align: left;">Petugas TU menolak permohonan dengan mengisi catatan alasan penolakan sah</td>
+<td style="text-align: left;">Status: Tolak Pengajuan<br>Catatan: <em>"Foto copy rapor semester ganjil belum dilegalisir"</em></td>
+<td style="text-align: left;">Sistem memperbarui status permohonan menjadi <em>"Ditolak"</em>, menyimpan log audit, dan mengirimkan catatan ke pelacakan siswa</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">22</td>
+<td style="text-align: left;">Petugas TU menyetujui permohonan surat yang berkasnya telah memenuhi syarat</td>
+<td style="text-align: left;">Status: Setujui Pengajuan<br>Aksi: Klik <em>"Verifikasi &amp; Terbitkan"</em></td>
+<td style="text-align: left;">Sistem memperbarui status permohonan menjadi <em>"Disetujui"</em>, memicu engine penomoran surat otomatis, dan status siap cetak</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2.5 Modul 5: Penomoran Otomatis &amp; Penerbitan Surat Digital PDF ber-QR Code</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">No</th>
+<th style="text-align: left;">Skenario Pengujian</th>
+<th style="text-align: left;">Test Case</th>
+<th style="text-align: left;">Hasil yang Diharapkan</th>
+<th style="text-align: center;">Hasil Pengujian</th>
+<th style="text-align: center;">Kesimpulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">23</td>
+<td style="text-align: left;">Pengujian pembentukan nomor urut surat resmi otomatis</td>
+<td style="text-align: left;">Input: Pengajuan disetujui bulan November 2026 urutan ke-5</td>
+<td style="text-align: left;">Sistem membentuk format nomor surat resmi secara dinamis: <code>005/SMK-PSKD/XI/2026</code> sesuai template jenis surat</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">Pengujian konsistensi bulan romawi pada nomor surat</td>
+<td style="text-align: left;">Input: Eksekusi transaksi pada bulan November (Index 10)</td>
+<td style="text-align: left;">Sistem mengonversi indeks bulan secara tepat menjadi angka romawi <code>"XI"</code> tanpa kekeliruan offset kalender</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
+<td style="text-align: left;">Pengujian pembentukan Tanda Tangan Digital QR Code verifikasi</td>
+<td style="text-align: left;">Input: ID Pengajuan <code>SURAT-2026-005</code></td>
+<td style="text-align: left;">Sistem menghasilkan QR Code SVG/PNG yang memuat tautan verifikasi otentikasi dokumen publik sekolah</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">26</td>
+<td style="text-align: left;">Siswa atau Petugas TU mengunduh file surat digital resmi (PDF)</td>
+<td style="text-align: left;">Aksi: Klik tombol <em>"Unduh Surat PDF"</em> pada pengajuan selesai</td>
+<td style="text-align: left;">Sistem mengunduh berkas PDF A4 resmi lengkap dengan kop surat sekolah, nomor surat, identitas siswa, isi surat, stempel, dan QR Code</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">27</td>
+<td style="text-align: left;">Memindai (<em>scan</em>) QR Code pada surat PDF menggunakan kamera smartphone</td>
+<td style="text-align: left;">Alat: Kamera HP / Pemindai QR<br>Target: QR Code di surat PDF</td>
+<td style="text-align: left;">Pemindai mengarahkan ke halaman verifikasi resmi web SIPESAT dan menyatakan: <em>"Dokumen Asli Diterbitkan oleh Tata Usaha Sekolah"</em></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2.6 Modul 6: Manajemen Data Master Persuratan &amp; Laporan Rekapitulasi</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">No</th>
+<th style="text-align: left;">Skenario Pengujian</th>
+<th style="text-align: left;">Test Case</th>
+<th style="text-align: left;">Hasil yang Diharapkan</th>
+<th style="text-align: center;">Hasil Pengujian</th>
+<th style="text-align: center;">Kesimpulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">28</td>
+<td style="text-align: left;">Petugas TU menambahkan jenis surat baru ke sistem</td>
+<td style="text-align: left;">Nama Surat: Surat Izin Observasi<br>Format: <code>{NOMOR}/OBS/SMK/{BULAN_ROMAWI}/{TAHUN}</code></td>
+<td style="text-align: left;">Sistem menyimpan jenis surat baru ke database dan langsung muncul pada pilihan formulir permohonan siswa</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">29</td>
+<td style="text-align: left;">Petugas TU menonaktifkan jenis surat lama (Soft Deactivation)</td>
+<td style="text-align: left;">Aksi: Ubah status jenis surat menjadi <em>"Nonaktif"</em></td>
+<td style="text-align: left;">Siswa tidak lagi dapat memilih jenis surat tersebut di formulir baru, namun riwayat pengajuan lama tetap terpelihara</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">Petugas TU menyaring laporan permohonan berdasarkan rentang tanggal</td>
+<td style="text-align: left;">Filter: Tanggal 01 Nov 2026 s.d. 30 Nov 2026</td>
+<td style="text-align: left;">Sistem menyaring dan hanya menampilkan data transaksi permohonan yang dibuat dalam rentang November 2026</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">31</td>
+<td style="text-align: left;">Petugas TU mengekspor laporan rekapitulasi persuratan</td>
+<td style="text-align: left;">Aksi: Klik tombol <em>"Ekspor Laporan (Excel / CSV)"</em></td>
+<td style="text-align: left;">Sistem mengunduh berkas rekapitulasi berisi data pemohon, jenis surat, tanggal pengajuan, tanggal terbit, dan status akhir</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2.7 Modul 7: Pengujian Keamanan &amp; Hak Akses (Security &amp; Route Protection)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">No</th>
+<th style="text-align: left;">Skenario Pengujian</th>
+<th style="text-align: left;">Test Case</th>
+<th style="text-align: left;">Hasil yang Diharapkan</th>
+<th style="text-align: center;">Hasil Pengujian</th>
+<th style="text-align: center;">Kesimpulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">32</td>
+<td style="text-align: left;">Siswa mencoba mengakses paksa URL khusus Petugas TU tanpa izin</td>
+<td style="text-align: left;">Role: Siswa<br>Aksi: Buka URL <code>/admin/dashboard</code> langsung di address bar</td>
+<td style="text-align: left;">Sistem menolak akses via middleware RBAC, menampilkan peringatan <em>"Akses Terlarang (403 Forbidden)"</em>, dan mengembalikan ke <code>/siswa</code></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">33</td>
+<td style="text-align: left;">Pengguna anonim mencoba mengakses endpoint API private tanpa token JWT</td>
+<td style="text-align: left;">Request: <code>GET /api/admin/pengajuan</code><br>Header: (Tanpa Authorization Bearer)</td>
+<td style="text-align: left;">Backend Express menolak request dengan respons <code>HTTP 401 Unauthorized</code> (<em>"Token autentikasi tidak ditemukan"</em>)</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">34</td>
+<td style="text-align: left;">Siswa mencoba mengunduh surat milik siswa lain dengan mengubah ID di URL</td>
+<td style="text-align: left;">Akun: Siswa A<br>Aksi: Akses URL unduh surat milik Siswa B</td>
+<td style="text-align: left;">Sistem memvalidasi kepemilikan data (<em>Data Isolation</em>) dan menolak aksi dengan respons <code>HTTP 403 Forbidden</code></td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">35</td>
+<td style="text-align: left;">Pengujian serangan Cross-Site Scripting (XSS) pada kolom teks alasan</td>
+<td style="text-align: left;">Input Keperluan: <code>&lt;script&gt;alert('hack')&lt;/script&gt;</code></td>
+<td style="text-align: left;">Sistem menyaring (<em>sanitasi</em>) tag HTML/JS sehingga tersimpan sebagai string teks biasa tanpa dieksekusi oleh peramban</td>
+<td style="text-align: center;">Sesuai harapan</td>
+<td style="text-align: center;"><strong>Valid</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>BAB III: ANALISIS HASIL PENGUJIAN &amp; METRIK KUALITAS</h2>
+<h3>3.1 Rekapitulasi Metrik Keberhasilan Pengujian</h3>
+<p>Berdasarkan eksekusi 35 skenario uji coba fungsionalitas kotak hitam (<em>Black Box Testing</em>) yang telah dipaparkan pada Bab II, diperoleh rekapitulasi metrik pengujian sistem SIPESAT sebagai berikut:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Kategori Modul Pengujian</th>
+<th style="text-align: center;">Jumlah Test Case</th>
+<th style="text-align: center;">Sesuai Harapan (Pass)</th>
+<th style="text-align: center;">Tidak Sesuai (Fail)</th>
+<th style="text-align: center;">Persentase Keberhasilan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Modul 1: Autentikasi &amp; Hak Akses Multi-Role</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modul 2: Formulir Pengajuan Surat Mandiri Siswa</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modul 3: Pelacakan Status Surat (Tracking Stepper)</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modul 4: Verifikasi &amp; Disposisi Petugas TU</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modul 5: Penomoran Otomatis &amp; Cetak PDF QR Code</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modul 6: Manajemen Data Master &amp; Laporan</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modul 7: Keamanan &amp; Hak Akses (Route Guard)</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TOTAL KESELURUHAN</strong></td>
+<td style="text-align: center;"><strong>35</strong></td>
+<td style="text-align: center;"><strong>35</strong></td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;"><strong>100% (SEMPURNA)</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 Analisis Kesiapan Implementasi &amp; Kualitas Perangkat Lunak</h3>
+<ol>
+<li><strong>Validasi Batas Beroperasi Sempurna</strong>: Seluruh penanganan kondisi input kosong, format berkas menyimpang, maupun batas ukuran berkas ($&gt; 2\text{ MB}$) berhasil ditolak secara konsisten oleh sistem dengan pesan ramah pengguna.</li>
+<li><strong>Integritas Penomoran &amp; Tanda Tangan Digital</strong>: Fungsi pembentukan nomor surat resmi (<code>generateNomorSuratResmi</code>) dan generator QR Code terbukti menghasilkan dokumen dinamis yang unik, tertelusur, dan bebas dari duplikasi nomor surat.</li>
+<li><strong>Pemisahan Hak Akses Ketat (RBAC)</strong>: Pengujian penetrasi sederhana pada rute administratif (<code>/admin/*</code>) dan isolasi kepemilikan data antar-siswa membuktikan bahwa middleware autentikasi JWT berhasil melindungi data sensitif sekolah dari akses tanpa hak.</li>
+</ol>
+<hr />
+<h2>BAB IV: KESIMPULAN &amp; TAUTAN KODE SUMBER</h2>
+<h3>4.1 Kesimpulan</h3>
+<p>Pelaksanaan pengujian perangkat lunak sistem <strong>SIPESAT (Sistem Informasi Pengajuan Surat Siswa Berbasis Web)</strong> menggunakan metode <em>Black Box Testing</em> telah diselesaikan secara tuntas. Dari 35 kasus pengujian yang mencakup seluruh modul operasional siswa dan petugas tata usaha:
+* <strong>Tingkat Keberhasilan Pengujian</strong>: <strong>100% Valid (Pass)</strong>.
+* <strong>Kepadatan Cacat (<em>Defect Density</em>)</strong>: <strong>0 Critical Bugs</strong>.
+* Sistem dinyatakan telah memenuhi seluruh spesifikasi kebutuhan perangkat lunak (SRS IEEE 830), aman dari kerentanan input dasar, serta berada dalam status <strong>Siap Produksi (<em>Production Ready</em>)</strong> untuk diimplementasikan di lingkungan sekolah.</p>
+<h3>4.2 Tautan Repositori GitHub Resmi</h3>
+<p>Sesuai arahan dosen pengampu mata kuliah Rekayasa Perangkat Lunak (RPL), seluruh kode sumber (<em>source code</em> frontend dan backend), skema database Prisma, serta naskah laporan tugas 1 sampai 11 dapat diakses secara publik dan transparan pada tautan berikut:</p>
+<p>🌐 <strong>Tautan Repositori GitHub SIPESAT</strong>:<br />
+👉 <a href="https://github.com/themodeid/Sipesat-RPL"><code>https://github.com/themodeid/Sipesat-RPL</code></a></p>
+<hr />
+<p><em>Disusun, diuji secara empiris, dan disahkan oleh Kelompok RPL 7 (Adam Wahyu Kurniawan dkk) untuk memenuhi penilaian resmi Tugas Pertemuan 11 Mata Kuliah Rekayasa Perangkat Lunak - Universitas Indraprasta PGRI (UNINDRA).</em></p>
+</body>
+</html>

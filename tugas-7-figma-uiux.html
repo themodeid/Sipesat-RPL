@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TUGAS FIGMA & UI/UX DESIGN SYSTEM - SIPESAT - KELOMPOK 7</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 2.5cm 2cm 2.5cm 2.5cm;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #111;
+      margin: 0 auto;
+      padding: 2cm 1.5cm;
+      max-width: 210mm;
+      background: #fff;
+    }
+    @media print {
+      body { padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+    }
+    .print-bar {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 1000;
+      background: #1e293b;
+      padding: 8px 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .print-btn {
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-family: sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .print-btn:hover { background: #2563eb; }
+    .print-info {
+      color: #94a3b8;
+      font-family: sans-serif;
+      font-size: 11px;
+    }
+    h1 {
+      font-size: 14pt;
+      text-align: center;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 12pt;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    h3 {
+      font-size: 11pt;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+    p, li {
+      text-align: justify;
+      margin-bottom: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 10pt;
+    }
+    th, td {
+      border: 1px solid #334155;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: bold;
+    }
+    .header-box {
+      border: 2px solid #000;
+      padding: 10px 14px;
+      text-align: center;
+      margin-bottom: 18px;
+      background: #fdfdfd;
+    }
+    .figma-card {
+      border: 2px dashed #3b82f6;
+      background: #eff6ff;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      margin: 16px 0;
+    }
+    .figma-link {
+      font-family: monospace;
+      font-size: 12pt;
+      font-weight: bold;
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    .badge-color {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-right: 6px;
+      border: 1px solid #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar no-print">
+    <span class="print-info">UNINDRA - Kelompok 7 RPL (SIPESAT)</span>
+    <button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF (A4)</button>
+  </div>
+
+  <div class="header-box">
+    <h1 style="margin:0 0 4px 0;">TUGAS REKAYASA PERANGKAT LUNAK (RPL)</h1>
+    <div style="font-size:11pt; font-weight:bold; margin-bottom:4px;">DOKUMENTASI HASIL DESAIN FIGMA & SISTEM DESAIN ANTARMUKA PENGGUNA (UI/UX)</div>
+    <div style="font-size:10pt;">PROGRAM STUDI TEKNIK INFORMATIKA - FTIK UNIVERSITAS INDRAPRASTA PGRI (UNINDRA)</div>
+    <div style="font-size:9pt; margin-top:4px; color:#333;">Tahun Akademik 2026/2027 • Sistem Informasi Pengajuan Surat Siswa (SIPESAT)</div>
+  </div>
+
+  <h3>IDENTITAS KELOMPOK (KELOMPOK RPL 7 / KELAS RPL_XD):</h3>
+  <table style="width:100%; margin-bottom:16px;">
+    <thead>
+      <tr>
+        <th style="width:8%; text-align:center;">No.</th>
+        <th style="width:34%;">Nama Lengkap</th>
+        <th style="width:20%; text-align:center;">NPM</th>
+        <th style="width:38%;">Peran & Tanggung Jawab</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:center;">1</td>
+        <td><b>Adam Wahyu Kurniawan</b></td>
+        <td style="text-align:center;"><code>202343500510</code></td>
+        <td>Lead System Architect & Software Engineer</td>
+      </tr>
+      <tr>
+        <td style="text-align:center;">2</td>
+        <td><b>Fathu Rahman</b></td>
+        <td style="text-align:center;"><code>202343500467</code></td>
+        <td>Business Analyst & Requirements Engineer</td>
+      </tr>
+      <tr>
+        <td style="text-align:center;">3</td>
+        <td><b>Surya Edi Saputra</b></td>
+        <td style="text-align:center;"><code>202343500468</code></td>
+        <td>Quality Assurance & Technical Writer</td>
+      </tr>
+      <tr>
+        <td style="text-align:center;">4</td>
+        <td><b>Rizqi Muh. Al Hakimi</b></td>
+        <td style="text-align:center;"><code>202343500449</code></td>
+        <td>Database Specialist & UI/UX Designer</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>BAB I: TAUTAN RESMI PROYEK FIGMA</h2>
+  
+  <div class="figma-card">
+    <div style="font-size:11pt; font-weight:bold; margin-bottom:6px; color:#1e3a8a;">TAUTAN DESAIN PROYEK FIGMA (SIPESAT KELOMPOK 7):</div>
+    <div class="figma-link">https://www.figma.com/design/sipesat-unindra-kelompok-7</div>
+    <div style="font-size:9pt; color:#64748b; margin-top:6px;">Berisi seluruh komponen Design System, Master Components, Wireframes, dan Prototipe Interaktif Layar Siswa & Tata Usaha.</div>
+  </div>
+
+  <h2>BAB II: SISTEM DESAIN (DESIGN SYSTEM & STYLE GUIDE)</h2>
+  
+  <h3>Palet Warna Utama (Color Tokens)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:25%;">Token Warna</th>
+        <th style="width:20%;">Kode Hex</th>
+        <th style="width:55%;">Penggunaan Visual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge-color" style="background:#1C2434;"></span><b>Primary Navy</b></td>
+        <td><code>#1C2434</code></td>
+        <td>Latar belakang header institusi, sidebar navigasi, dan judul utama.</td>
+      </tr>
+      <tr>
+        <td><span class="badge-color" style="background:#1E6EEB;"></span><b>Royal Blue</b></td>
+        <td><code>#1E6EEB</code></td>
+        <td>Tombol aksi utama (Call to Action), link aktif, dan stepper aktif.</td>
+      </tr>
+      <tr>
+        <td><span class="badge-color" style="background:#10B981;"></span><b>Emerald Green</b></td>
+        <td><code>#10B981</code></td>
+        <td>Status positif (DISETUJUI / SELESAI), badge sukses, dan verifikasi valid.</td>
+      </tr>
+      <tr>
+        <td><span class="badge-color" style="background:#EF4444;"></span><b>Danger Rose</b></td>
+        <td><code>#EF4444</code></td>
+        <td>Status penolakan (DITOLAK), notifikasi error berkas &gt; 2MB.</td>
+      </tr>
+      <tr>
+        <td><span class="badge-color" style="background:#F59E0B;"></span><b>Amber Warning</b></td>
+        <td><code>#F59E0B</code></td>
+        <td>Status menunggu atau dalam proses verifikasi (DIPROSES).</td>
+      </tr>
+      <tr>
+        <td><span class="badge-color" style="background:#F8FAFC;"></span><b>Canvas Light</b></td>
+        <td><code>#F8FAFC</code></td>
+        <td>Latar belakang kanvas aplikasi kerja harian yang bersih dan ramah mata.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Katalog Mockup Antarmuka (8 Layar Inti):</h3>
+  <ul>
+    <li><b>Layar 1 (Autentikasi Dual-Role)</b>: Login terpadu Siswa & Petugas TU dengan proteksi Show/Hide Password.</li>
+    <li><b>Layar 2 (Dashboard Siswa)</b>: Ringkasan agregat status pengajuan dan tombol cepat buat surat baru.</li>
+    <li><b>Layar 3 (Form Pengajuan Surat Mandiri)</b>: Dropdown dinamis jenis surat dan validasi file upload 2MB.</li>
+    <li><b>Layar 4 (Pelacakan Status Permohonan)</b>: Horizontal Stepper 5 Titik transparan dan unduh PDF resmi.</li>
+    <li><b>Layar 5 (Dashboard Tata Usaha)</b>: Manajemen antrean surat masuk, filter tanggal, dan status surat.</li>
+    <li><b>Layar 6 (Modal Verifikasi & Disposisi TU)</b>: Pratinjau berkas digital dan tombol persetujuan/penolakan.</li>
+    <li><b>Layar 7 (Pratinjau Surat Resmi)</b>: Surat dinas resmi dengan nomor otomatis dan tanda tangan QR Code.</li>
+    <li><b>Layar 8 (Modul Laporan Rekapitulasi)</b>: Arsip persuratan dan ekspor rekapitulasi ke format CSV/PDF.</li>
+  </ul>
+
+  <h2>BAB III: KESIMPULAN</h2>
+  <p>Perancangan antarmuka pengguna pada Figma ini menjamin bahwa sistem SIPESAT tidak hanya fungsional secara teknis di lapisan backend, melainkan juga mudah digunakan (<i>usable</i>), ergonomis, dan memiliki standar visual enterprise yang membanggakan bagi institusi pendidikan.</p>
+
+</body>
+</html>
