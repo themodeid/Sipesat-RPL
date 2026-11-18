@@ -49,6 +49,11 @@ Sesuai instruksi pengumpulan tugas besar Rekayasa Perangkat Lunak (RPL), berikut
 | **8** | **HASIL SISTEMNYA** | Monorepo Source Code: [`fe/`](fe/) (Next.js 14) & [`be/`](be/) (Express API) • [`tugas-10-konstruksi-implementasi.md`](tugas-10-konstruksi-implementasi.md) • [`tugas-11-pengujian-black-box.md`](tugas-11-pengujian-black-box.md) | Sistem web fullstack decoupled hidup, penomoran otomatis, TTE QR Code, dan hasil Black Box Testing 35 Test Cases (100% Pass). |
 | **9** | **FILE PPT PRESENTASI** | [`SIPESAT_PRESENTASI_KELOMPOK_7.pptx`](SIPESAT_PRESENTASI_KELOMPOK_7.pptx) | File presentasi resmi PowerPoint 12 slide modern Navy-Blue mencakup Latar Belakang, SRS, UML, Arsitektur, Demo Sistem & QnA. |
 
+> [!TIP]
+> **Unduh 1 Berkas PDF Master Konsolidasi (Lengkap 14 Halaman A4 Standar UNINDRA)**:  
+> Untuk kemudahan dosen atau penguji dalam memeriksa seluruh dokumen tugas besar sekaligus dalam satu berkas terpadu, telah disediakan:  
+> 📄 **[`LAPORAN_LENGKAP_PROJEK_RPL_SIPESAT_KELOMPOK_7.pdf`](LAPORAN_LENGKAP_PROJEK_RPL_SIPESAT_KELOMPOK_7.pdf)** *(Mencakup Cover Resmi UNINDRA, SRS, Use Case, Class, Activity, Sequence, Deployment Diagram, Figma UI/UX, Hasil Konstruksi & Testing, hingga Rangkuman Slide Presentasi)*.
+
 ---
 
 ## 📚 Pusat Unduhan Dokumen Tugas Kuliah (Academic Deliverables)
