@@ -14,36 +14,38 @@
 #set par(justify: true, leading: 0.75em)
 #set heading(numbering: "1.1")
 
-// ==================== COVER HALAMAN JUDUL ====================
+// ==================== COVER HALAMAN JUDUL DENGAN LOGO RESMI UNINDRA ====================
 #align(center)[
-  #v(0.5cm)
+  #v(0.2cm)
   #text(size: 14pt, weight: "bold")[
     LAPORAN AKHIR PROYEK REKAYASA PERANGKAT LUNAK (RPL)\
     DOKUMEN KONSOLIDASI 10 DELIVERABLES SISTEM
   ]
-  #v(0.8cm)
+  #v(0.5cm)
   #text(size: 13pt, weight: "bold")[
     SISTEM INFORMASI PENGAJUAN SURAT SISWA BERBASIS WEB\
     (SIPESAT)
   ]
-  #v(0.3cm)
+  #v(0.2cm)
   #text(size: 10.5pt, style: "italic")[
-    Otomatisasi Pelayanan Administrasi Persuratan Siswa & Tata Usaha Sekolah Menengah\
+    Studi Kasus: Pelayanan Administrasi Persuratan Siswa & Tata Usaha Sekolah (Versi Revisi)\
     Arsitektur Decoupled (Next.js 14 + Express.js TypeScript + Docker PostgreSQL 16)
   ]
   
-  #v(1.5cm)
-  #rect(width: 5.5cm, height: 4.5cm, stroke: 1.5pt + rgb("#1e293b"), radius: 4pt)[
-    #align(center + horizon)[
-      #text(size: 11pt, weight: "bold", fill: rgb("#1e293b"))[UNIVERSITAS\ INDRAPRASTA PGRI\ (UNINDRA)]
-      #v(6pt)
-      #text(size: 9.5pt, fill: rgb("#475569"))[FAKULTAS TEKNIK & ILMU KOMPUTER\ PROGRAM STUDI TEKNIK INFORMATIKA]
-    ]
+  #v(0.8cm)
+  #image("assets/logo_unindra.png", width: 4.5cm)
+  #v(0.2cm)
+  #text(size: 13pt, weight: "bold")[UNIVERSITAS INDRAPRASTA PGRI]\
+  #text(size: 12pt, weight: "bold")[(UNINDRA)]\
+  #v(3pt)
+  #text(size: 10.5pt, weight: "bold", fill: rgb("#334155"))[
+    FAKULTAS TEKNIK & ILMU KOMPUTER\
+    PROGRAM STUDI TEKNIK INFORMATIKA
   ]
   
-  #v(1.5cm)
+  #v(0.9cm)
   #text(size: 11pt, weight: "bold")[Disusun oleh KELOMPOK 7 (Kelas RPL_XD):]
-  #v(0.3cm)
+  #v(0.2cm)
   #table(
     columns: (0.8cm, 8.5cm, 3.5cm),
     align: (center, left, center),
@@ -56,7 +58,7 @@
     [4], [Rizqi Muh. Al Hakimi (Database Specialist & UI/UX)], [202343500449],
   )
   
-  #v(1.2cm)
+  #v(0.8cm)
   #text(size: 11pt, weight: "bold")[
     JAKARTA\
     TAHUN AKADEMIK 2026/2027
@@ -65,13 +67,13 @@
 
 #pagebreak()
 
-// ==================== DAFTAR DELIVERABLES MATRIKS ====================
+// ==================== MATRIKS 10 DELIVERABLES ====================
 #align(center)[
   #text(size: 13pt, weight: "bold")[MATRIKS KELENGKAPAN 10 DELIVERABLES PROYEK RPL]
 ]
 #v(0.3cm)
 
-Dokumen ini merupakan bundel resmi laporan tugas besar mata kuliah Rekayasa Perangkat Lunak (RPL) Kelompok 7 yang mengonsolidasikan kesepuluh poin penugasan ke dalam satu kesatuan dokumen utuh:
+Dokumen ini merupakan bundel resmi laporan tugas besar mata kuliah Rekayasa Perangkat Lunak (RPL) Kelompok 7 yang mengonsolidasikan kesepuluh poin penugasan secara runtut sesuai instruksi dosen pengampu:
 
 #table(
   columns: (0.8cm, 4.2cm, 4.0cm, 5.5cm),
@@ -91,14 +93,17 @@ Dokumen ini merupakan bundel resmi laporan tugas besar mata kuliah Rekayasa Pera
   [10], [FILE PPT PRESENTASI], [PowerPoint Widescreen], [BAB XI — 12 Slide Presentasi & Link GitHub],
 )
 
-#v(0.5cm)
+#v(0.4cm)
+> *Jaminan Integritas Versi Revisi*: Seluruh isi laporan ini 100% berbasis pada dokumen tugas **Versi Revisi Terbaru** (Perampingan 2 Role eksklusif: Siswa & Petugas TU, zero Kepala Sekolah, validasi batas upload 2 MB, dan penomoran resmi atomik).
+
+#v(0.3cm)
 *Tautan Repositori GitHub Resmi:*
 #link("https://github.com/themodeid/Sipesat-RPL")[https://github.com/themodeid/Sipesat-RPL]
 
 #pagebreak()
 
 // ==================== BAB I: PENDAHULUAN ====================
-= BAB I: PENDAHULUAN
+= BAB I: PENDAHULUAN & RUANG LINGKUP PRODUK
 == 1.1 Latar Belakang Masalah
 Pelayanan persuratan dinas bagi siswa di lingkungan sekolah menengah (seperti Surat Keterangan Siswa Aktif, Surat Rekomendasi Beasiswa, Surat Pengantar Legalisir Ijazah, dan Surat Dispensasi Kegiatan) selama ini diselenggarakan secara konvensional. Siswa diwajibkan datang langsung ke ruang Tata Usaha (TU) pada jam istirahat atau jam pulang sekolah untuk mengisi formulir kertas dan menyerahkan fotokopi berkas fisik.
 
@@ -120,12 +125,12 @@ Sistem Informasi Pengajuan Surat Siswa Berbasis Web (*SIPESAT*) dirancang untuk 
 
 // ==================== BAB II: SPESIFIKASI KEBUTUHAN (SRS) ====================
 = BAB II: 1. SPESIFIKASI KEBUTUHAN PERANGKAT LUNAK (SRS)
-_Standar Acuan: IEEE Std 830-1998 / Karl Wiegers (Tugas 2 RPL)_
+_Standar Acuan: IEEE Std 830-1998 / Karl Wiegers (Tugas 2 RPL Revisi)_
 
 == 2.1 Perampingan 2 Peran Pengguna Eksklusif (RBAC)
 Sesuai arahan dosen pengampu mata kuliah, struktur peran dirampingkan murni menjadi dua aktor pengguna:
 1. *Siswa (Pemohon)*: Aktor pengguna akhir yang memiliki hak akses mengajukan surat, mengunggah berkas syarat, melacak status, dan mengunduh surat resmi yang telah disahkan.
-2. *Petugas Tata Usaha / Admin (Verifikator & Pengesah)*: Aktor pengelola administrasi yang memiliki wewenang memeriksa kelengkapan berkas, memberikan disposisi persetujuan atau penolakan, menetapkan nomor surat resmi, dan menerbitkan laporan rekapitulasi.
+2. *Petugas Tata Usaha / Admin (Verifikator & Pengesah Tunggal)*: Aktor pengelola administrasi yang memiliki wewenang memeriksa kelengkapan berkas, memberikan disposisi persetujuan atau penolakan, menetapkan nomor surat resmi, dan menerbitkan laporan rekapitulasi. Peran Kepala Sekolah ditiadakan.
 
 == 2.2 Kebutuhan Fungsional Sistem (Functional Requirements)
 #table(
@@ -155,13 +160,13 @@ Sesuai arahan dosen pengampu mata kuliah, struktur peran dirampingkan murni menj
 
 // ==================== BAB III: USE CASE DIAGRAM ====================
 = BAB III: 2. PEMODELAN USE CASE DIAGRAM
-_Standar Acuan: UML 2.5 Use Case Modeling (Tugas 3 RPL)_
+_Standar Acuan: UML 2.5 Use Case Modeling (Tugas 3 RPL Revisi)_
 
 == 3.1 Visualisasi Diagram Use Case Sistem SIPESAT
 #align(center)[
   #image("assets/diagram_usecase.png", width: 95%)
   #v(4pt)
-  #text(size: 9.5pt, style: "italic")[Gambar 3.1: Use Case Diagram Sistem SIPESAT (2 Aktor, 18 Use Cases)]
+  #text(size: 9.5pt, style: "italic")[Gambar 3.1: Use Case Diagram Sistem SIPESAT (2 Aktor Login, 1 Aktor Publik, 18 Use Cases)]
 ]
 
 == 3.2 Uraian Paket Use Case
@@ -174,7 +179,7 @@ Sistem SIPESAT memetakan 18 Use Cases yang dikelompokkan ke dalam 3 paket layana
 
 // ==================== BAB IV: CLASS DIAGRAM ====================
 = BAB IV: 3. PEMODELAN CLASS DIAGRAM & BASIS DATA
-_Standar Acuan: UML 2.5 Static Structure Diagram (Tugas 6 RPL)_
+_Standar Acuan: UML 2.5 Static Structure Diagram (Tugas 6 RPL Revisi)_
 
 == 4.1 Visualisasi Class Diagram SIPESAT
 #align(center)[
@@ -205,7 +210,7 @@ Arsitektur database mengadopsi 7 tabel relasional terstandarisasi Bentuk Normal 
 
 // ==================== BAB V: ACTIVITY DIAGRAM ====================
 = BAB V: 4. PEMODELAN ACTIVITY DIAGRAM
-_Standar Acuan: UML 2.5 Multi-Swimlane Activity Diagram (Tugas 4 RPL)_
+_Standar Acuan: UML 2.5 Multi-Swimlane Activity Diagram (Tugas 4 RPL Revisi)_
 
 == 5.1 Visualisasi Activity Diagram Terpadu SIPESAT
 #align(center)[
@@ -222,7 +227,7 @@ _Standar Acuan: UML 2.5 Multi-Swimlane Activity Diagram (Tugas 4 RPL)_
 5. *Penerbitan Tiket*: Jika valid, sistem menyimpan data dengan status `DIAJUKAN` dan menerbitkan kode tiket pelacakan unik.
 6. *Pemeriksaan TU*: Petugas TU membuka antrean surat masuk dan memeriksa keabsahan berkas lampiran.
 7. *Percabangan Disposisi*:
-   - Jika berkas tidak valid: Petugas memilih *Tolak* disertai catatan perbaikan. Sistem mengubah status menjadi `DITOLAK` dan mengirim notifikasi ke dasbor siswa.
+   - Jika berkas tidak valid: Petugas memilih *Tolak* disertai catatan perbaikan. Sistem mengubah status menjadi `DITOLAK_PERLU_REVISI` dan mengirim notifikasi ke dasbor siswa.
    - Jika berkas valid: Petugas memilih *Setujui*. Sistem memanggil *Auto-Numbering Engine*, membuat stempel QR Code TTE, mengubah status menjadi `SELESAI`, dan menyusun file PDF resmi.
 8. *Penyelesaian*: Siswa mengunduh dokumen surat resmi ber-QR Code langsung dari web.
 
@@ -230,7 +235,7 @@ _Standar Acuan: UML 2.5 Multi-Swimlane Activity Diagram (Tugas 4 RPL)_
 
 // ==================== BAB VI: SEQUENCE DIAGRAM ====================
 = BAB VI: 5. PEMODELAN SEQUENCE DIAGRAM
-_Standar Acuan: UML 2.5 Pola Boundary - Control - Entity (BCE) (Tugas 4 RPL)_
+_Standar Acuan: UML 2.5 Pola Boundary - Control - Entity (BCE) (Tugas 4 RPL Revisi)_
 
 == 6.1 Visualisasi Sequence Diagram SIPESAT
 #align(center)[
