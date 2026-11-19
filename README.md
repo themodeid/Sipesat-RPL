@@ -52,8 +52,8 @@ Sesuai instruksi pengumpulan tugas besar Rekayasa Perangkat Lunak (RPL), berikut
 
 > [!TIP]
 > **BERKAS MASTER KONSOLIDASI UTAMA (10 DELIVERABLES LENGKAP DALAM 1 PDF TERPADU)**:  
-> Untuk kemudahan dosen pengampu atau penguji dalam memeriksa seluruh 10 deliverables tugas besar secara berurutan dalam satu buku laporan tunggal yang rapi (1 Cover Resmi Berlogo UNINDRA, Matriks 10 Deliverables, Daftar Isi, Penomoran Halaman Berkesinambungan 1–28, Tipografi Seragam Times New Roman, 39 FR & 30 NFR SRS, Seluruh Diagram UML Resolusi Tinggi, 35 Kasus Uji Black Box, Konstruksi Kode, hingga Rincian 12 Slide PPT):  
-> 👉 📄 **[`LAPORAN_LENGKAP_PROJEK_RPL_SIPESAT_KELOMPOK_7.pdf`](LAPORAN_LENGKAP_PROJEK_RPL_SIPESAT_KELOMPOK_7.pdf)** *(28 Halaman A4 Standar UNINDRA — Naskah Master Terpadu Bab I s.d. Bab X)*.
+> Untuk kemudahan dosen pengampu atau penguji dalam memeriksa seluruh 10 deliverables tugas besar secara berurutan dalam satu buku laporan tunggal yang rapi (1 Cover Resmi Berlogo UNINDRA, Matriks 10 Deliverables, Daftar Isi, Penomoran Halaman Berkesinambungan 1–29, Tipografi Seragam Times New Roman, 39 FR & 30 NFR SRS, Seluruh Diagram UML Resolusi Tinggi, 4 Artboard Mockup Visual Figma, 35 Kasus Uji Black Box, Konstruksi Kode, hingga Rincian 12 Slide PPT):  
+> 👉 📄 **[`LAPORAN_FINAL_10_DELIVERABLES_RPL_SIPESAT_KELOMPOK_7.pdf`](LAPORAN_FINAL_10_DELIVERABLES_RPL_SIPESAT_KELOMPOK_7.pdf)** *(29 Halaman A4 Standar UNINDRA — Naskah Master Terpadu Bab I s.d. Bab X)*.
 
 ---
 
