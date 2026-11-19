@@ -19,7 +19,7 @@
   #v(0.5cm)
   #text(size: 14pt, weight: "bold")[
     LAPORAN AKHIR PROYEK REKAYASA PERANGKAT LUNAK (RPL)\
-    DOKUMEN KONSOLIDASI 9 DELIVERABLES SISTEM
+    DOKUMEN KONSOLIDASI 10 DELIVERABLES SISTEM
   ]
   #v(0.8cm)
   #text(size: 13pt, weight: "bold")[
@@ -67,14 +67,14 @@
 
 // ==================== DAFTAR DELIVERABLES MATRIKS ====================
 #align(center)[
-  #text(size: 13pt, weight: "bold")[MATRIKS KELENGKAPAN 9 DELIVERABLES PROYEK RPL]
+  #text(size: 13pt, weight: "bold")[MATRIKS KELENGKAPAN 10 DELIVERABLES PROYEK RPL]
 ]
 #v(0.3cm)
 
-Dokumen ini merupakan bundel resmi laporan tugas besar mata kuliah Rekayasa Perangkat Lunak (RPL) Kelompok 7 yang mengonsolidasikan kesembilan poin penugasan ke dalam satu kesatuan dokumen utuh:
+Dokumen ini merupakan bundel resmi laporan tugas besar mata kuliah Rekayasa Perangkat Lunak (RPL) Kelompok 7 yang mengonsolidasikan kesepuluh poin penugasan ke dalam satu kesatuan dokumen utuh:
 
 #table(
-  columns: (0.8cm, 3.2cm, 4.0cm, 6.5cm),
+  columns: (0.8cm, 4.2cm, 4.0cm, 5.5cm),
   align: (center, left, left, left),
   stroke: 0.5pt + rgb("#cbd5e1"),
   fill: (col, row) => if row == 0 { rgb("#1e293b") } else if calc.even(row) { rgb("#f8fafc") } else { none },
@@ -86,8 +86,9 @@ Dokumen ini merupakan bundel resmi laporan tugas besar mata kuliah Rekayasa Pera
   [5], [SEQUENCE DIAGRAM], [UML 2.5 Pola BCE], [BAB VI — 4 Sequence Diagram Interaksi Objek],
   [6], [DEPLOYMENT DIAGRAM], [UML 2.5 3-Tier Node], [BAB VII — Arsitektur Fisik, Port & Docker],
   [7], [HASIL FIGMA], [Design System & UI], [BAB VIII — Color Tokens, Spacing, 8 Mockup Layar],
-  [8], [HASIL SISTEMNYA], [Fullstack Monorepo], [BAB IX — Konstruksi Next.js & Black Box Testing],
-  [9], [FILE PPT PRESENTASI], [PowerPoint Widescreen], [BAB X — 12 Slide Presentasi & Link GitHub],
+  [8], [FILE PENGUJIAN SOFTWARE], [Black Box Testing UNINDRA], [BAB IX — 35 Skenario Uji 7 Modul (100% Pass)],
+  [9], [HASIL SISTEMNYA], [Decoupled Monorepo], [BAB X — Konstruksi Next.js, Express & PostgreSQL],
+  [10], [FILE PPT PRESENTASI], [PowerPoint Widescreen], [BAB XI — 12 Slide Presentasi & Link GitHub],
 )
 
 #v(0.5cm)
@@ -118,7 +119,7 @@ Sistem Informasi Pengajuan Surat Siswa Berbasis Web (*SIPESAT*) dirancang untuk 
 #pagebreak()
 
 // ==================== BAB II: SPESIFIKASI KEBUTUHAN (SRS) ====================
-= BAB II: SPESIFIKASI KEBUTUHAN PERANGKAT LUNAK (SRS)
+= BAB II: 1. SPESIFIKASI KEBUTUHAN PERANGKAT LUNAK (SRS)
 _Standar Acuan: IEEE Std 830-1998 / Karl Wiegers (Tugas 2 RPL)_
 
 == 2.1 Perampingan 2 Peran Pengguna Eksklusif (RBAC)
@@ -153,7 +154,7 @@ Sesuai arahan dosen pengampu mata kuliah, struktur peran dirampingkan murni menj
 #pagebreak()
 
 // ==================== BAB III: USE CASE DIAGRAM ====================
-= BAB III: PEMODELAN USE CASE DIAGRAM
+= BAB III: 2. PEMODELAN USE CASE DIAGRAM
 _Standar Acuan: UML 2.5 Use Case Modeling (Tugas 3 RPL)_
 
 == 3.1 Visualisasi Diagram Use Case Sistem SIPESAT
@@ -172,18 +173,25 @@ Sistem SIPESAT memetakan 18 Use Cases yang dikelompokkan ke dalam 3 paket layana
 #pagebreak()
 
 // ==================== BAB IV: CLASS DIAGRAM ====================
-= BAB IV: PEMODELAN CLASS DIAGRAM & BASIS DATA
+= BAB IV: 3. PEMODELAN CLASS DIAGRAM & BASIS DATA
 _Standar Acuan: UML 2.5 Static Structure Diagram (Tugas 6 RPL)_
 
-== 4.1 Struktur Hierarki Kelas & Hubungan OOP
+== 4.1 Visualisasi Class Diagram SIPESAT
+#align(center)[
+  #image("assets/diagram_class.png", width: 95%)
+  #v(4pt)
+  #text(size: 9.5pt, style: "italic")[Gambar 4.1: Class Diagram Sistem SIPESAT (UML 2.5)]
+]
+
+== 4.2 Struktur Hierarki Kelas & Hubungan OOP
 Arsitektur perangkat lunak SIPESAT memodelkan prinsip Object-Oriented Programming (OOP) secara ketat:
 - *Superclass Abstract Pengguna*: Membungkus atribut umum (`id_pengguna`, `username`, `password_hash`, `email`, `role`, `status_aktif`) dan metode operasi `login()`, `logout()`, `updatePassword()`.
 - *Subclass Siswa*: Mewarisi kelas Pengguna dengan spesialisasi atribut `nisn`, `nis`, `nama_lengkap`, `kelas`, `jurusan`, dan operasi `buatPengajuanSurat()`, `uploadBerkas()`, `lacakStatus()`.
-- *Subclass PetugasTU*: Mewarisi kelas Pengguna dengan spesialisasi atribut `nip`, `nama_petugas`, `nomor_sk`, `bagian`, dan operasi `verifikasiBerkas()`, `generateNomorSurat()`, `forwardKeKepsek()`.
+- *Subclass PetugasTU*: Mewarisi kelas Pengguna dengan spesialisasi atribut `nip`, `nama_petugas`, `nomor_sk`, `bagian`, dan operasi `verifikasiBerkas()`, `generateNomorSurat()`.
 - *Kelas PengajuanSurat*: Berelasi asosiasi `1..*` ke Siswa, `1..1` ke JenisSurat, dan `0..1` ke PetugasTU.
 - *Komposisi Mutlak*: Entitas `BerkasPersyaratan` dan `RiwayatStatus` terikat secara _Strong Ownership_ pada siklus hidup `PengajuanSurat`. Jika surat dihapus, berkas dan log riwayat ikut terhapus (_Cascade Delete_).
 
-== 4.2 Pemetaan ke Skema PostgreSQL Relasional (3NF)
+== 4.3 Pemetaan ke Skema PostgreSQL Relasional (3NF)
 Arsitektur database mengadopsi 7 tabel relasional terstandarisasi Bentuk Normal Ketiga (3NF):
 1. `tb_user`: Autentikasi kredensial dan role enum (`SISWA`, `PETUGAS_TU`, `ADMIN`).
 2. `tb_siswa`: Biodata master siswa sekolah menengah.
@@ -196,7 +204,7 @@ Arsitektur database mengadopsi 7 tabel relasional terstandarisasi Bentuk Normal 
 #pagebreak()
 
 // ==================== BAB V: ACTIVITY DIAGRAM ====================
-= BAB V: PEMODELAN ACTIVITY DIAGRAM
+= BAB V: 4. PEMODELAN ACTIVITY DIAGRAM
 _Standar Acuan: UML 2.5 Multi-Swimlane Activity Diagram (Tugas 4 RPL)_
 
 == 5.1 Visualisasi Activity Diagram Terpadu SIPESAT
@@ -221,7 +229,7 @@ _Standar Acuan: UML 2.5 Multi-Swimlane Activity Diagram (Tugas 4 RPL)_
 #pagebreak()
 
 // ==================== BAB VI: SEQUENCE DIAGRAM ====================
-= BAB VI: PEMODELAN SEQUENCE DIAGRAM
+= BAB VI: 5. PEMODELAN SEQUENCE DIAGRAM
 _Standar Acuan: UML 2.5 Pola Boundary - Control - Entity (BCE) (Tugas 4 RPL)_
 
 == 6.1 Visualisasi Sequence Diagram SIPESAT
@@ -241,10 +249,17 @@ Pemodelan Sequence Diagram SIPESAT mengadopsi standar bahan ajar UNINDRA:
 #pagebreak()
 
 // ==================== BAB VII: DEPLOYMENT DIAGRAM ====================
-= BAB VII: PEMODELAN DEPLOYMENT DIAGRAM
+= BAB VII: 6. PEMODELAN DEPLOYMENT DIAGRAM
 _Standar Acuan: UML 2.5 Hardware & Execution Architecture (Tugas 7 RPL)_
 
-== 7.1 Arsitektur Fisik 3-Tier Decoupled
+== 7.1 Visualisasi Deployment Diagram SIPESAT
+#align(center)[
+  #image("assets/diagram_deployment.png", width: 95%)
+  #v(4pt)
+  #text(size: 9.5pt, style: "italic")[Gambar 7.1: Deployment Diagram Topologi 3-Tier SIPESAT Web]
+]
+
+== 7.2 Arsitektur Fisik 3-Tier Decoupled
 Sistem SIPESAT dirancang menggunakan topologi terdistribusi tiga tingkatan komputasi:
 
 #table(
@@ -259,7 +274,7 @@ Sistem SIPESAT dirancang menggunakan topologi terdistribusi tiga tingkatan kompu
   [Tier 3: Database], [Docker Engine (Port 5432)], [Container PostgreSQL 16 Alpine mengelola penyimpanan basis data persisten via volume sipesat_postgres_data.],
 )
 
-== 7.2 Protokol Jaringan & Keamanan
+== 7.3 Protokol Jaringan & Keamanan
 - *HTTP / HTTPS (Port 3000)*: Mengirimkan aset antarmuka grafis ke peramban klien.
 - *REST API JSON over Bearer JWT (Port 5000)*: Komunikasi stateless pengiriman data dan mutasi permohonan surat.
 - *TCP/IP PostgreSQL Driver (Port 5432)*: Koneksi pooling data transaksi terisolasi via Docker bridge network.
@@ -267,7 +282,7 @@ Sistem SIPESAT dirancang menggunakan topologi terdistribusi tiga tingkatan kompu
 #pagebreak()
 
 // ==================== BAB VIII: HASIL FIGMA & UI/UX ====================
-= BAB VIII: HASIL DESAIN FIGMA & SISTEM DESAIN (UI/UX)
+= BAB VIII: 7. HASIL DESAIN FIGMA & SISTEM DESAIN (UI/UX)
 _Standar Acuan: UI/UX Design System & Interface Showcase (Tugas 7 RPL)_
 
 == 8.1 Tautan Publik Proyek Figma
@@ -283,53 +298,71 @@ Sistem mengadopsi palet institusional _Clean Institutional Modernism_:
 - *Slate Neutral (`#64748B`)*: Teks pendukung, border pemisah tabel, dan deskripsi formulir.
 
 == 8.3 Ringkasan 8 Layar Mockup Utama
-1. *Layar Login Dual-Role*: Autentikasi dengan tombol pintas akun demo Siswa dan Admin TU.
-2. *Dashboard Siswa*: 4 kartu ringkasan status pengajuan dan tombol cepat buat permohonan.
-3. *Formulir Pengajuan Surat Mandiri*: Dropdown dinamis dan area drag-and-drop file uploader (maks 2MB).
-4. *Pelacakan Status Permohonan*: Horizontal Stepper 5 tahapan transparan dan tombol unduh PDF resmi.
-5. *Dashboard Petugas Tata Usaha*: Antrean surat masuk, filter jenis surat, dan tanggal permohonan.
-6. *Modal Verifikasi Dokumen & Disposisi*: Pratinjau berkas digital dan tombol Setuju / Tolak.
-7. *Pratinjau Surat Resmi Hasil Cetak*: Kop surat sekolah, nomor otomatis, dan Tanda Tangan QR Code.
-8. *Modul Laporan Rekapitulasi*: Penyaringan periode dan ekspor rekapitulasi ke format CSV/PDF.
+1. *Layar 1: Login Dual-Role*: Autentikasi dengan tombol pintas akun demo Siswa dan Admin TU.
+2. *Layar 2: Dashboard Siswa*: 4 kartu ringkasan status pengajuan dan tombol cepat buat permohonan.
+3. *Layar 3: Formulir Pengajuan Mandiri*: Dropdown dinamis dan area drag-and-drop file uploader (maks 2MB).
+4. *Layar 4: Pelacakan Status Permohonan*: Horizontal Stepper 5 tahapan transparan dan tombol unduh PDF resmi.
+5. *Layar 5: Dashboard Petugas Tata Usaha*: Antrean surat masuk, filter jenis surat, dan tanggal permohonan.
+6. *Layar 6: Modal Verifikasi Dokumen*: Pratinjau berkas digital dan tombol Setuju / Tolak.
+7. *Layar 7: Pratinjau Surat Resmi Hasil Cetak*: Kop surat sekolah, nomor otomatis, dan Tanda Tangan QR Code.
+8. *Layar 8: Modul Laporan Rekapitulasi*: Penyaringan periode dan ekspor rekapitulasi ke format CSV/PDF.
 
 #pagebreak()
 
-// ==================== BAB IX: HASIL SISTEM & PENGUJIAN ====================
-= BAB IX: HASIL IMPLEMENTASI SISTEM & BLACK BOX TESTING
-_Standar Acuan: Konstruksi PL (Tugas 10) & Pengujian PL (Tugas 11 RPL)_
+// ==================== BAB IX: PENGUJIAN SOFTWARE ====================
+= BAB IX: 8. FILE PENGUJIAN SOFTWARE (BLACK BOX TESTING)
+_Standar Acuan: Pengujian PL Metodologi Black Box (Tugas 11 RPL UNINDRA)_
 
-== 9.1 Konstruksi Arsitektur Perangkat Lunak
-Sistem SIPESAT berhasil dibangun secara utuh dalam arsitektur monorepo terpisah:
-- *Frontend (`fe/`)*: Next.js 14 App Router, TypeScript, Tailwind CSS, Lucide Icons.
-- *Backend (`be/`)*: Node.js Express, TypeScript, Prisma ORM, JSON Web Token (JWT), Multer File Uploader, PDFKit.
-- *Infrastruktur*: Container PostgreSQL 16 Alpine, skrip otomasi `start-local.bat` dan `migrate.bat`.
+== 9.1 Metodologi & Lingkungan Pengujian
+Pengujian perangkat lunak sistem SIPESAT dieksekusi secara empiris menggunakan metode *Black Box Testing* berstandar format akademik UNINDRA (kolom merah muda/pink):
+- *Equivalence Partitioning (EP)*: Menguji partisi data valid dan tidak valid pada login, input formulir, dan upload dokumen.
+- *Boundary Value Analysis (BVA)*: Menguji ambang batas 2 MB pada Multer file upload.
+- *Role-Based Access Control (RBAC)*: Memverifikasi route guard antara portal Siswa (`/siswa/*`) dan portal Admin TU (`/admin/*`).
+- *Lingkungan Pengujian*: Node.js 18/20, Next.js 14, PostgreSQL 16 Docker, Google Chrome & Microsoft Edge.
 
-== 9.2 Hasil Pengujian Black Box Testing (35 Test Cases)
-Pengujian fungsionalitas sistem dieksekusi menggunakan metode _Black Box Testing_ berstandar format akademik UNINDRA (Tugas 11):
-
+== 9.2 Matriks Rekapitulasi Pengujian (35 Test Cases)
 #table(
   columns: (1.0cm, 5.5cm, 3.5cm, 4.5cm),
   align: (center, left, center, center),
   stroke: 0.5pt + rgb("#cbd5e1"),
   fill: (col, row) => if row == 0 { rgb("#1e293b") } else if calc.even(row) { rgb("#f8fafc") } else { none },
-  table.header([*#text(fill: white)[No]*], [*#text(fill: white)[Modul Pengujian]*], [*#text(fill: white)[Jumlah Skenario]*], [*#text(fill: white)[Status Pengujian]*]),
-  [1], [Modul Autentikasi & RBAC Guard], [5 Skenario Uji], [100% VALID (Pass)],
-  [2], [Modul Pengajuan Surat Siswa], [6 Skenario Uji], [100% VALID (Pass)],
-  [3], [Modul Validasi Upload Berkas (2 MB)], [5 Skenario Uji], [100% VALID (Pass)],
-  [4], [Modul Timeline Stepper Tracking], [4 Skenario Uji], [100% VALID (Pass)],
-  [5], [Modul Verifikasi & Disposisi TU], [5 Skenario Uji], [100% VALID (Pass)],
-  [6], [Modul Auto-Numbering & PDF QR TTE], [5 Skenario Uji], [100% VALID (Pass)],
-  [7], [Modul Rekapitulasi & Ekspor Laporan], [5 Skenario Uji], [100% VALID (Pass)],
+  table.header([*#text(fill: white)[No]*], [*#text(fill: white)[Kategori Modul Pengujian]*], [*#text(fill: white)[Jumlah Kasus]*], [*#text(fill: white)[Tingkat Keberhasilan]*]),
+  [1], [Modul 1: Autentikasi & Hak Akses Multi-Role], [7 Kasus Uji], [100% VALID (Pass)],
+  [2], [Modul 2: Formulir Pengajuan Mandiri Siswa], [5 Kasus Uji], [100% VALID (Pass)],
+  [3], [Modul 3: Pelacakan Status Surat (Stepper)], [5 Kasus Uji], [100% VALID (Pass)],
+  [4], [Modul 4: Verifikasi & Disposisi Petugas TU], [5 Kasus Uji], [100% VALID (Pass)],
+  [5], [Modul 5: Penomoran Otomatis & Cetak PDF QR], [5 Kasus Uji], [100% VALID (Pass)],
+  [6], [Modul 6: Master Persuratan & Rekapitulasi], [4 Kasus Uji], [100% VALID (Pass)],
+  [7], [Modul 7: Keamanan & Hak Akses Route Guard], [4 Kasus Uji], [100% VALID (Pass)],
+  [*Tot*], [*TOTAL KESELURUHAN PENGUJIAN*], [*35 Kasus Uji*], [*100% VALID (0 Bug)*],
 )
 
-*Hasil Pengujian*: Seluruh 35 skenario pengujian berstatus *VALID (100% Lulus)* tanpa ditemukan _critical defect_, membuktikan bahwa perangkat lunak telah memenuhi seluruh kontrak spesifikasi kebutuhan SRS.
+*Kesimpulan Pengujian*: 35 dari 35 skenario pengujian berstatus *VALID (100% Pass)*. Sistem dinyatakan bebas dari celah validasi dasar (*0 Critical Defect*) dan memenuhi kriteria _Production Ready_.
 
 #pagebreak()
 
-// ==================== BAB X: FILE PPT & PENUTUP ====================
-= BAB X: MATERI PRESENTASI & PENUTUP
+// ==================== BAB X: HASIL SISTEMNYA ====================
+= BAB X: 9. HASIL SISTEMNYA (KONSTRUKSI & IMPLEMENTASI)
+_Standar Acuan: Konstruksi PL Monorepo Decoupled (Tugas 10 RPL)_
 
-== 10.1 Ringkasan 12 Slide File Presentasi PowerPoint (.pptx)
+== 10.1 Arsitektur Monorepo & Direktori Kode Sumber
+Sistem SIPESAT telah terkonstruksi secara penuh dalam repositori kode sumber monorepo yang bersih dan modular:
+- *Frontend (`fe/`)*: Menggunakan Next.js 14 App Router, TypeScript, Tailwind CSS, Lucide React Icons. Menyajikan Server-Side Rendering (SSR) dan komponen interaktif reaktif.
+- *Backend (`be/`)*: Menggunakan Node.js Express, TypeScript, Prisma ORM, Bcrypt Password Hashing, JSON Web Token (JWT) Bearer Authentication, dan Multer File Middleware.
+- *Database*: Container PostgreSQL 16 Alpine yang dikelola via `docker-compose.yml` dengan volume persistensi data.
+- *Skrip Otomasi*: `start-local.bat` untuk menyalakan frontend dan backend secara simultan, serta `migrate.bat` untuk eksekusi migrasi skema dan database seeder.
+
+== 10.2 Pembuktian Fitur Kunci Sistem Nyata
+1. *Otomatisasi Penomoran Surat*: Fungsi `generateNomorSuratResmi()` mengompilasi nomor agenda urut tahunan, kode klasifikasi surat, bulan romawi dinamis, dan tahun kalender berjalan tanpa risiko duplikasi.
+2. *Penerbitan Tanda Tangan Elektronik QR Code*: Sistem menghasilkan QR Code dinamis yang menaut langsung ke rute verifikasi dokumen, membuktikan keabsahan surat secara publik.
+3. *Dokumen PDF Berstandar Cetak A4*: Mesin PDF generator mengompilasi kop dinas resmi, biodata pemohon, format paragraf surat dinas, blok pengesahan tanda tangan TU, dan stempel QR Code.
+
+#pagebreak()
+
+// ==================== BAB XI: FILE PPT PRESENTASI ====================
+= BAB XI: 10. FILE PPT PRESENTASI & TAUTAN PROYEK
+
+== 11.1 Ringkasan 12 Slide File Presentasi PowerPoint (.pptx)
 Berkas presentasi PowerPoint resmi telah disusun dalam format widescreen 16:9 (`SIPESAT_PRESENTASI_KELOMPOK_7.pptx`) mencakup:
 - *Slide 1*: Halaman Judul & Identitas Kelompok 7 UNINDRA.
 - *Slide 2*: Latar Belakang Masalah Persuratan Manual Sekolah.
@@ -344,7 +377,7 @@ Berkas presentasi PowerPoint resmi telah disusun dalam format widescreen 16:9 (`
 - *Slide 11*: Implementasi Sistem & Black Box Testing (35/35 Test Cases Valid).
 - *Slide 12*: Kesimpulan, Rekomendasi, dan Sesi Tanya Jawab (Q&A).
 
-== 10.2 Tautan Repositori GitHub Proyek
+== 11.2 Tautan Repositori GitHub Proyek
 Sesuai instruksi pengumpulan tugas besar, seluruh kode sumber, berkas diagram master (.drawio), dokumen laporan (.docx, .pdf, .md), dan file presentasi (.pptx) telah diarsipkan secara publik pada:
 
 #align(center)[
@@ -357,5 +390,5 @@ Sesuai instruksi pengumpulan tugas besar, seluruh kode sumber, berkas diagram ma
   ]
 ]
 
-== 10.3 Kesimpulan
-Perancangan dan implementasi Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT) membuktikan bahwa otomatisasi persuratan digital di lingkungan sekolah dapat diwujudkan secara efektif melalui arsitektur yang terstruktur rapi. Seluruh 9 deliverables penugasan mata kuliah Rekayasa Perangkat Lunak telah terselesaikan dengan tuntas, terverifikasi, dan siap dipertanggungjawabkan pada evaluasi akademik.
+= BAB XII: PENUTUP & KESIMPULAN
+Perancangan dan implementasi Sistem Informasi Pengajuan Surat Siswa Berbasis Web (SIPESAT) membuktikan bahwa otomatisasi persuratan digital di lingkungan sekolah dapat diwujudkan secara efektif melalui arsitektur yang terstruktur rapi. Seluruh 10 deliverables penugasan mata kuliah Rekayasa Perangkat Lunak telah terselesaikan dengan tuntas, terverifikasi 100%, dan siap dipertanggungjawabkan pada evaluasi akademik.
