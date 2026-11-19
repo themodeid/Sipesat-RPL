@@ -51,10 +51,9 @@ Sesuai instruksi pengumpulan tugas besar Rekayasa Perangkat Lunak (RPL), berikut
 | **10** | **FILE PPT PRESENTASI** | [`SIPESAT_PRESENTASI_KELOMPOK_7.pptx`](SIPESAT_PRESENTASI_KELOMPOK_7.pptx) | File presentasi resmi PowerPoint 12 slide modern Navy-Blue mencakup Latar Belakang, SRS, UML, Arsitektur, Demo Sistem & QnA. |
 
 > [!TIP]
-> **PILIHAN BERKAS MASTER KONSOLIDASI (SEMUA JADI SATU TUNGGAL)**:  
-> Untuk kemudahan dosen atau penguji dalam memeriksa seluruh deliverables tugas besar dalam satu file PDF tunggal, telah disediakan dua format master:  
-> 1. 📄 **[`LAPORAN_LENGKAP_PROJEK_RPL_SIPESAT_KELOMPOK_7.pdf`](LAPORAN_LENGKAP_PROJEK_RPL_SIPESAT_KELOMPOK_7.pdf)** *(17 Halaman A4 Standar UNINDRA: Cover Resmi, Matriks 10 Deliverables, 10 Bab Pembahasan Lengkap, dan Diagram High-Resolution)*.  
-> 2. 📦 **[`BUNDEL_LENGKAP_10_DELIVERABLES_PROJEK_RPL_SIPESAT.pdf`](BUNDEL_LENGKAP_10_DELIVERABLES_PROJEK_RPL_SIPESAT.pdf)** *(79 Halaman Utuh: Penggabungan Langsung Seluruh Halaman Dokumen Tugas Asli dari Nomor 1 s.d. 10 Menjadi Satu File PDF)*.
+> **BERKAS MASTER KONSOLIDASI UTAMA (10 DELIVERABLES LENGKAP DALAM 1 PDF TERPADU)**:  
+> Untuk kemudahan dosen pengampu atau penguji dalam memeriksa seluruh 10 deliverables tugas besar secara berurutan dalam satu buku laporan tunggal yang rapi (1 Cover Resmi Berlogo UNINDRA, Matriks 10 Deliverables, Daftar Isi, Penomoran Halaman Berkesinambungan 1–28, Tipografi Seragam Times New Roman, 39 FR & 30 NFR SRS, Seluruh Diagram UML Resolusi Tinggi, 35 Kasus Uji Black Box, Konstruksi Kode, hingga Rincian 12 Slide PPT):  
+> 👉 📄 **[`LAPORAN_LENGKAP_PROJEK_RPL_SIPESAT_KELOMPOK_7.pdf`](LAPORAN_LENGKAP_PROJEK_RPL_SIPESAT_KELOMPOK_7.pdf)** *(28 Halaman A4 Standar UNINDRA — Naskah Master Terpadu Bab I s.d. Bab X)*.
 
 ---
 
